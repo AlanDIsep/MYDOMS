@@ -1,56 +1,54 @@
 header
 {
+  text-decoration: none;
+  font-size : medium;
 	background-color: grey;
-	text-decoration: none;
 	text-align: left;
-  padding-color: blue;
+
 }
 
 body
 {
+  margin:0; padding:0;
+  height:100%;	
+  font-family: Kollektif;
   background-color: #14201C;
 }
-/*
-.bandeau 
-{
-  height:200px;
-  width:100%; 
-  background-color: #14201C;
-}
-*/
+
+
 .conteneur
 {
 	display: flex;
-  margin-top: 40%;
+  margin-top: 30%;  
 	flex-wrap: wrap;
-
+  
 }
 
 .bouton
 {
-	margin: auto;
-	vertical-align: middle;
+  margin: auto;  
 }
 
 .bouton a
 {
-	font-family: Verdana;
+  text-decoration: none;
+  text-align: center;
 	font-size: large;
-	text-decoration: none;
-    text-align: center;
-    width: 200px;
-    height: 43px;
-    padding: 15px; /*étaler le bouton*/
-    color: #000;
+  padding: 40px; /*étaler le bouton*/
+  border-radius: 20px; /*bords arrondis*/
+  border-width:2px; /*largeur  bords*/
+	border-style:outset;
+  border-color: #B3B191;
+
+  color: #000;
     background: linear-gradient( #FFF, 	#B3B191); /*degradé*/
-    border-radius: 8px; /*bords arrondis*/
-    text-shadow: 0px 1px 0px rgba( 255, 255, 255, 1); /*effet de profondeur*/
+  text-shadow: 0px 1px 0px rgba( 255, 255, 255, 1); /*effet de profondeur*/
 }
 
 .bouton a:hover
 {
 	color: #222;
-    background: linear-gradient( #777, #333);
+    background: linear-gradient( #B3B191, #FFF );
 }
 
 .bouton a:active
