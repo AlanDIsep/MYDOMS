@@ -1,0 +1,63 @@
+<!Doctype html>
+<html lang="fr">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='style.css' media='screen'/>
+
+<!------------------header-------------> 
+<header>
+    <title>Page 1</title>	
+    <img src="mydoms.jpg" alt="logo" class="logo">
+    
+    <nav aria-label="ariane" class="ariane">
+        <ul>
+            <li><a href="index.php" title="Accueil">Accueil</a></li>
+            <li><a href="formations.php" title="Page1">Page 1</a></li>
+            <li><span class="Page2">Page 2</span></li>
+        </ul>    
+    </nav>
+</header>
+
+<!-------------------Main--------------> 
+<main>
+    <div class="titlepage">
+        <div class="bordertitle">
+           Contact
+        </div>
+    </div>
+	
+	<div class="container">
+  <form action="action_page.php">
+
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" name="nom" placeholder="Votre nom">
+
+    <label for="prenom">Prénom</label>
+    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
+
+    <label for="object">Objet</label>
+    <select id="object" name="object">
+      <option value="Demande d'informations">Demande d'informations</option>
+      <option value="Problème d'utilisation">Problème d'utilisation</option>
+      <option value="Autre">Autre</option>
+    </select>
+
+    <label for="Message">Message</label>
+    <textarea id="message" name="message" placeholder="Ecrivez ici..." style="height:200px"></textarea>
+
+    <input type="submit" value="Envoyer">
+
+  </form>
+</div>
+	
+</main>
+
+<!-------------------Footer--------------> 
+<footer>
+    <div id="footer">
+        <p>SAS Domisep - Tous droits réservés<p>
+    </div>
+</footer>
+
+
+</html>
