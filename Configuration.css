@@ -1,0 +1,133 @@
+/*arrière plan*/
+body{
+  background-color : rgb(18, 31, 40);
+}
+
+/*Titre de la page*/
+t1 {
+  border-style: inset;
+  margin:2px 5px 2em 0;
+  padding:2px 50px;
+  background-color:#FFFAFA;
+  
+  position: fixed;
+    bottom: 500px;
+    right: 900px;
+    width: 200px;
+}
+
+/*Nom de la maison*/
+ a1{
+  border-style: inset;
+  margin:2px 5px 2em 0;
+  padding:2px 5px;
+  background-color:#FFFAFA;
+   
+   position: fixed;
+   bottom: 430px;
+   right: 1000px;
+   width: 120px;
+}
+
+/*Superficie de la pièce*/
+a2{
+    border: 15px solid white;
+    border-radius: 5px;
+    margin:2px 5px 2em 0;
+    padding:2px 5px;
+    background-color:#FFFAFA;
+  
+    position: fixed;
+    bottom: 320px;
+    right: 750px;
+    width: 150px;
+}
+
+/*Nombre de pièces*/
+a3{ style-color: rgb(18, 31, 40);
+    color: white;
+  
+    position: fixed;
+    bottom: 385px;
+    right: 450px;
+    width: 120px;
+}
+
+/*Capteur associés aux*/
+a4{color: white;
+  
+  position: fixed;
+    bottom: 365px;
+    right: 200px;
+    width: 120px;
+}
+
+/*maison.png*/
+.image1{
+  position: fixed;
+  bottom:185px;
+  right:1200px;
+  width:50px;
+  height: 50px;
+}
+/*interrogation.png*/
+.image2{
+  position: fixed;
+  bottom:125px;
+  right:1200px;
+  width:50px;
+  height: 50px;
+}
+/*parametre.png*/
+.image3{
+  position: fixed;
+  bottom:65px;
+  right:1200px;
+  width:50px;
+  height: 50px;
+  color : rgb(18, 31, 40);
+}
+/*logo.png*/
+.image4{
+  position: fixed;
+  bottom:450px;
+  right:80px;
+  width:250px;
+  height:250px;
+}
+
+div {
+    border: 2px solid;
+    padding: 20px;
+    width: 140px;
+    position: fixed;
+    bottom:170px;
+    right:135px;
+  resize: horizontal;
+  overflow: auto;
+  background-color:#FFFAFA;
+}
+div2{
+    border: 2px solid;
+    padding: 20px;
+    width: 140px;
+    position: fixed;
+    bottom:170px;
+    right:395px;
+  resize: horizontal;
+  overflow: auto;
+  background-color:#FFFAFA;
+}
+
+E1{
+	font-size: 1.5em;
+	font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  
+.button_group{
+  width: 100%;
+  display: flex;
+}
+
+
+}
