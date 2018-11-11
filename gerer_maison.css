@@ -1,48 +1,138 @@
-header
-{
-  text-decoration: none;
-  font-size : medium;
-	background-color: grey;
-	text-align: left;
 
+@font-face 
+{
+	font-family: Kollektif-Bold;
+	src: url("../kollektif/Kollektif-Bold.ttf"); 
+}
+  
+ @font-face 
+ {
+	font-family: Kollektif-Italic;
+	src: url("kollektif/Kollektif-Italic.ttf"); 
+ }
+
+ @font-face 
+ {
+	font-family: Kollektif;
+	src: url("kollektif/Kollektif.ttf"); 
+ }
+
+body 
+{
+      font: 75%/1.33 Verdana, sans-serif;
+      font-size : medium;
+	  background-color:#121F28;
+}   
+	     
+/*------------------header-------------*/
+.header 
+{
+	position: fixed;
+    left: 0;
+    right: 0;
+    height: 80px;
+    line-height: 80px;
+}
+	/*------------------Logo-------------*/
+.logo 
+{
+	float: left; 
+	display: block;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
 }
 
-body
+	/*------------------Titre Page-------------*/
+.titlepage
 {
-  margin:0; padding:0;
-  height:100%;	
-  font-family: Kollektif;
-  background-color: #14201C;
+	/*padding: 500px;*/
+	margin-top: 1em;
+	font-family: Kollektif;
+	font-size: 22px;
+	text-align: center;
+	letter-spacing: 5.8pt;
+	color: aliceblue;
 }
 
+.bordertitle
+{	
+	border: 1px solid #DCE837;/*épaisseur bordure et couleur*/
+	border-radius: 12px;
+	border-left-width: 31px;
+	border-right-width: 31px;
+	margin-left: 20%;
+	margin-right: 20%;
+	max-width: 100%;
+	padding-top : 2%;/*distance du texte par rapport à la bordure en haut*/
+	padding-bottom : 2%;/*distance du texte par rapport à la bordure en bas*/
+}
+
+	/*------------------Fil d'ariane-------------*/
+.ariane a:hover
+{
+	color : #DCE837;
+}
+
+.ariane ul 
+{
+	list-style: none;
+	padding: 0;
+	display: flex;
+	position: absolute;
+	top: 130px;
+	right: 0;
+	width: 300px;
+	height: 200px;
+	color: rgb(199, 199, 199)
+}
+
+.ariane a, .ariane span 
+{
+	padding: .5em 1em;
+	color: rgb(199, 199, 199)
+}
+
+.ariane li::before 
+{
+	content: "/";
+	color: rgb(199, 199, 199)
+}
+
+.ariane li:first-child::before 
+{
+	content: "";
+}
+
+/*------------------Main-------------*/
 
 .conteneur
 {
 	display: flex;
-  margin-top: 30%;  
-	flex-wrap: wrap;
-  
+	margin-top: 20%;  
+	flex-wrap: wrap; 
 }
 
 .bouton
 {
-  margin: auto;  
+ 	margin: auto;  
 }
 
 .bouton a
-{
-  text-decoration: none;
-  text-align: center;
-	font-size: large;
-  padding: 40px; /*étaler le bouton*/
-  border-radius: 20px; /*bords arrondis*/
-  border-width:2px; /*largeur  bords*/
+{	
+	text-decoration: none;
+	font-family: Kollektif;
+	font-size: 22px;
+	text-align: center;
+  	padding: 75px; /*étaler le bouton*/
+  	border-radius: 60px; /*bords arrondis*/
+  	border-width: 2px; /*largeur  bords*/
 	border-style:outset;
-  border-color: #B3B191;
-
-  color: #000;
+  	border-color: #B3B191;
+ 	color: #000;
     background: linear-gradient( #FFF, 	#B3B191); /*degradé*/
-  text-shadow: 0px 1px 0px rgba( 255, 255, 255, 1); /*effet de profondeur*/
+  	text-shadow: 0px 1px 0px rgba( 255, 255, 255, 1); /*effet de profondeur*/
 }
 
 .bouton a:hover
@@ -54,6 +144,17 @@ body
 .bouton a:active
 {
 	color: #000;
-  background: linear-gradient( #FFF, 	#B3B191);
+  	background: linear-gradient( #FFF, 	#B3B191);
+}
 
+/*------------------Footer-------------*/
+#footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+	color: black;
+	text-align: center;
+	font-size:small;
 }
