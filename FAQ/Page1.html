@@ -1,0 +1,118 @@
+<!Doctype html>
+<html lang="fr">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='style.css' media='screen'/>
+
+<!------------------header-------------> 
+<header>
+    <title>Page 1</title>	
+    <img src="mydoms.jpg" alt="logo" class="logo">
+    
+    <nav aria-label="ariane" class="ariane">
+        <ul>
+            <li><a href="index.php" title="Accueil">Accueil</a></li>
+            <li><a href="formations.php" title="Page1">Page 1</a></li>
+            <li><span class="Page2">Page 2</span></li>
+        </ul>    
+    </nav>
+</header>
+
+<!-------------------Main--------------> 
+<main>
+    <div class="titlepage">
+        <div class="bordertitle">
+            TITRE: FAQ 
+        </div>
+    </div>
+
+    <!-------------------Accordéon--------------> 
+
+    <h2 style=color:#DCE837>
+        Se connecter
+    </h2>
+    <button class="accordion">Comment se connecter ?</button>
+    <div class="panel">
+    <p>• Vous vous connectez pour la 1ère fois à votre Espace Client :
+            <br>
+            <br> ETAPE 1 : Saisissez votre identifiant et votre mot de passe temporaire reçus par courrier.
+            <br>
+            <br> ETAPE 2 : Personnalisation de votre mot de passe :
+            <br>
+            <br>- Il vous sera demandé de saisir 2 fois un nouveau mot de passe personnel composé de 8 caractères minimum (le nouveau mot de passe doit être différent du mot de passe temporaire et doit contenir au moins une lettre minuscule, une lettre majuscule, et un chiffre),
+            <br>- Une confirmation de la prise en compte de votre mot de passe personnel sera affichée,
+            <br>- Vous devrez ensuite vous identifier à nouveau pour accéder à votre Espace Client.
+            
+            <br><br><br>• Vous vous êtes déjà connecté à votre Espace Client : <br>
+            
+            <br>Connectez-vous à votre Espace Client avec votre identifiant et votre mot de passe personnel.</p>
+    </div>
+
+    <button class="accordion">J'ai oublié mon mot de passe personnel ?</button>
+    <div class="panel">
+    <p>Veuillez contacter par téléphone le service client DomIsep afin d'obtenir la procédure à suivre</p>
+    </div>
+
+    <button class="accordion">Modifier mon mot de passe personnel </button>
+    <div class="panel">
+    <p>Veuillez vous rendrez dans la rubrique "Mon Compte" / Modifier mon mot de passe</p>
+    </div>
+
+    <button class="accordion">Créer un compte utilisateur</button>
+    <div class="panel">
+    <p>Veuillez contacter par téléphone le service client DomIsep afin d'obtenir la procédure à suivre</p>
+    </div>
+    <br>
+    <br>
+    <h2 style=color:#DCE837>Eclairage</h2>
+    <button class="accordion">Différents modes</button>
+    <div class="panel">
+    <p>2 modes de contrôles vous sont proposés: 
+        <br>
+        • Mode Manuel:
+        <br>
+        • Mode Automatique:
+    </p>
+    </div>
+    <br>
+    <br>
+
+    <h2 style=color:#DCE837>Température</h2>
+    <button class="accordion">Différents modes</button>
+    <div class="panel">
+    <p>2 modes de contrôles vous sont proposés: 
+            <br>
+            • Mode Manuel:
+            <br>
+            • Mode Automatique:
+    </p>
+    </div>
+
+
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+    </script>
+</main>
+
+<!-------------------Footer--------------> 
+<footer>
+    <div id="footer">
+        <p>SAS Domisep - Tous droits réservés<p>
+    </div>
+</footer>
+
+
+</html>
