@@ -126,25 +126,25 @@ body
 	font-size: 22px;
 	text-align: center;
   	padding: 75px; /*étaler le bouton*/
-  	border-radius: 60px; /*bords arrondis*/
+  	border-radius: 50px; /*bords arrondis*/
   	border-width: 2px; /*largeur  bords*/
 	border-style:outset;
-  	border-color: #B3B191;
+	  border-color: #DCE649 ;
  	color: #000;
-    background: linear-gradient( #FFF, 	#B3B191); /*degradé*/
+    background: linear-gradient( #FFF, 	#FFF); /*degradé*/
   	text-shadow: 0px 1px 0px rgba( 255, 255, 255, 1); /*effet de profondeur*/
 }
 
 .bouton a:hover
 {
 	color: #222;
-    background: linear-gradient( #B3B191, #FFF );
+    background: linear-gradient( #DCE649, #FFF );
 }
 
 .bouton a:active
 {
 	color: #000;
-  	background: linear-gradient( #FFF, 	#B3B191);
+  	background: linear-gradient( #FFF, 	#DCE649);
 }
 
 /*------------------Footer-------------*/
