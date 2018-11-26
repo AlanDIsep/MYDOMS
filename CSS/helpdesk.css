@@ -23,9 +23,10 @@ body {
 
 
 
-tr {
-	width:100px;
-}
+th {
+	width:180px;
+	
+	}
 
 a {
   cursor: pointer;

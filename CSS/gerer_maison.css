@@ -33,125 +33,120 @@ body
     height: 80px;
     line-height: 80px;
 }
-	/*------------------Logo-------------*/
-.logo 
-{
-	float: left; 
-	display: block;
-	margin-top: 1em;
-	margin-left: auto;
-	margin-right: auto;
-	width: 20%;
-}
-
-	/*------------------Titre Page-------------*/
-.titlepage
-{
-	/*padding: 500px;*/
-	margin-top: 1em;
-	font-family: Kollektif;
-	font-size: 22px;
-	text-align: center;
-	letter-spacing: 5.8pt;
-	color: aliceblue;
-}
-
-.bordertitle
-{	
-	border: 1px solid #DCE837;/*épaisseur bordure et couleur*/
-	border-radius: 12px;
-	border-left-width: 31px;
-	border-right-width: 31px;
-	margin-left: 20%;
-	margin-right: 20%;
-	max-width: 100%;
-	padding-top : 2%;/*distance du texte par rapport à la bordure en haut*/
-	padding-bottom : 2%;/*distance du texte par rapport à la bordure en bas*/
-}
-
-	/*------------------Fil d'ariane-------------*/
+/*------------------Fil d'ariane-------------*/
 .ariane a:hover
-{
+{	
 	color : #DCE837;
 }
+	.ariane ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		position: absolute;
+		top: 130px;
+		right: 0;
+		width: 300px;
+		height: 200px;
+		color: rgb(199, 199, 199)
+		}
 
-.ariane ul 
-{
-	list-style: none;
-	padding: 0;
-	display: flex;
-	position: absolute;
-	top: 130px;
-	right: 0;
-	width: 300px;
-	height: 200px;
-	color: rgb(199, 199, 199)
-}
+	.ariane a,
+	.ariane span {
+		padding: .5em 1em;
+		color: rgb(199, 199, 199)
+		}
+	.ariane li::before {
+		content: "/";
+		color: rgb(199, 199, 199)
+		}
+	.ariane li:first-child::before {
+		content: "";
+	}
 
-.ariane a, .ariane span 
-{
-	padding: .5em 1em;
-	color: rgb(199, 199, 199)
-}
 
-.ariane li::before 
-{
-	content: "/";
-	color: rgb(199, 199, 199)
-}
-
-.ariane li:first-child::before 
-{
-	content: "";
-}
-
+	/*------------------Logo-------------*/
+	.logo {
+		float: left; 
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 20%;
+		}
 /*------------------Main-------------*/
+.main {
+	padding:312px 315px;
 
-.conteneur
-{
-	display: flex;
-	margin-top: 20%;  
-	flex-wrap: wrap; 
 }
 
-.bouton
-{
- 	margin: auto;  
-}
 
-.bouton a
-{	
-	text-decoration: none;
-	font-family: Kollektif;
-	font-size: 22px;
-	text-align: center;
-  	padding: 75px; /*étaler le bouton*/
-  	border-radius: 50px; /*bords arrondis*/
-  	border-width: 2px; /*largeur  bords*/
-	border-style:outset;
-	  border-color: #DCE649 ;
- 	color: #000;
-    background: linear-gradient( #FFF, 	#FFF); /*degradé*/
-  	text-shadow: 0px 1px 0px rgba( 255, 255, 255, 1); /*effet de profondeur*/
-}
+	/*------------------Titre Page-------------*/
+	.titlepage{
+		padding:90px;
+		font-family: Kollektif;
+		font-size: 22px;
+		text-align: center;
+		letter-spacing: 5.8pt;
+		color: aliceblue;
+	}
+	.bordertitle{	
+			border: 1px solid #DCE837;
+			border-radius: 12px;
+			border-left-width: 31px;
+			border-right-width: 31px;
+			margin-left: 20%;
+			margin-right: 20%;
+			max-width: 100%;
+			padding-top : 2%;
+			padding-bottom : 2%;
+	}
 
-.bouton a:hover
-{
-	color: #222;
-    background: linear-gradient( #DCE649, #FFF );
-}
+	.conteneur
+	{
+		display: flex;
+		margin-top: 10%;  
+		flex-wrap: wrap; 
+	}
 
-.bouton a:active
-{
-	color: #000;
-  	background: linear-gradient( #FFF, 	#DCE649);
-}
+	.bouton
+	{
+		margin: auto;  
+	}
+
+	.bouton a
+	{	
+		text-decoration: none;
+		font-family: Kollektif;
+		font-size: 22px;
+		text-align: center;
+		padding: 75px; /*étaler le bouton*/
+		border-radius: 50px; /*bords arrondis*/
+		border-width: 2px; /*largeur  bords*/
+		border-style:outset;
+		border-color: #DCE649 ;
+		color: #000;
+		background: linear-gradient( #FFF, 	#FFF); /*degradé*/
+		text-shadow: 0px 1px 0px rgba( 255, 255, 255, 1); /*effet de profondeur*/
+	}
+
+	.bouton a:hover
+	{
+		color: #222;
+		background: linear-gradient( #DCE649, #FFF );
+	}
+
+	.bouton a:active
+	{
+		color: #000;
+		background: linear-gradient( #FFF, 	#DCE649);
+	}
 
 /*------------------Footer-------------*/
 #footer{
 	position: fixed;
 	left: 0;
 	bottom: 0;
+	top: 93%;
 	width: 100%;
 	background-color: white;
 	color: black;

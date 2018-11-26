@@ -1,33 +1,44 @@
 <!Doctype html>
 <html lang="fr">
 
+<!-------------------Lien vers les feuilles CSS/icones/polices--------------> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel='stylesheet' type='text/css' href='../CSS/contact.css' media='screen'/>
+<link rel="icon" href="../CSS/images/contact.ico"/>
 
-<!------------------header-------------> 
+<!------------------Header-------------> 
+
+    <!------------------Logo-------------> 
 <header>
-    <title>Page 1</title>	
+    <title>Contact</title>	
     <img src="../CSS/mydoms.jpg" alt="logo" class="logo">
     
+    <!------------------Fil d'Ariane------------->   
     <nav aria-label="ariane" class="ariane">
         <ul>
-            <li><a href="index.php" title="Accueil">Accueil</a></li>
-            <li><a href="formations.php" title="Page1">Page 1</a></li>
-            <li><span class="Page2">Page 2</span></li>
+            <li><a href="Accueil.html" title="Accueil">Accueil</a></li>
+            <li><a href="#" title="Page1">Contact</a></li>
         </ul>    
     </nav>
 </header>
 
 <!-------------------Main--------------> 
+<body>
+
+    <!-------------------Titre de la Page--------------> 
 <main>
     <div class="titlepage">
         <div class="bordertitle">
            Contact
         </div>
     </div>
-	
-	<div class="container">
-  <form action="action_page.php">
+    <h1 align="center" style="color:#FFF">Formulaire </h1>
+    
+    <!-------------------Contenu--------------> 
+
+<div class="container">
+  
+    <form action="action_page.php">
 
     <label for="nom">Nom</label>
     <input type="text" id="nom" name="nom" placeholder="Votre nom">
@@ -36,6 +47,7 @@
     <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
 
     <label for="object">Objet</label>
+   
     <select id="object" name="object">
       <option value="Demande d'informations">Demande d'informations</option>
       <option value="Problème d'utilisation">Problème d'utilisation</option>
@@ -47,11 +59,15 @@
 
     <input type="submit" value="Envoyer">
 
-  </form>
+  </form><br><br>
 </div>
-	
-</main>
 
+<br><br><br><br>
+
+</div>
+
+</main>
+</body>
 <!-------------------Footer--------------> 
 <footer>
     <div id="footer">

@@ -22,79 +22,84 @@ body {
 	  }   
 	     
 /*------------------header-------------*/
-	.header {
-		position: fixed;
-		left: 0;
-		right: 0;
-		height: 80px;
-		line-height: 80px;
-	}
-	/*------------------Logo-------------*/
-	.logo {
-		float: left; 
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 20%;
-	}
-
-	/*------------------Fil d'ariane-------------*/
-.ariane a:hover
-{
-	color : #DCE837;
-}
-	.ariane ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		position: absolute;
-		top: 130px;
-		right: 0;
-		width: 300px;
-		height: 200px;
-		color: rgb(199, 199, 199)
-		}
-
-	.ariane a,
-	.ariane span {
-		padding: .5em 1em;
-		color: rgb(199, 199, 199)
-		}
-	.ariane li::before {
-		content: "/";
-		color: rgb(199, 199, 199)
-		}
-	.ariane li:first-child::before {
-		content: "";
-	}
-
-/*------------------Main-------------*/
-.main {
-	padding:312px 215px;
-}
-	/*------------------Titre Page-------------*/
-	.titlepage{
-		padding:150px;
-		font-family: Kollektif;
-		font-size: 22px;
-		text-align: center;
-		letter-spacing: 5.8pt;
-		color: aliceblue;
-	}
-	
-	/*Titre de la page*/
-	t1{
-		border-style: inset;
-		margin:2px 5px 2em 0;
-		padding:2px 50px;
-		background-color:#FFFAFA;
+.two { 
+	grid-column: 2 / 4;
+	grid-row: 1;
+  }
+  .three {
+	grid-column: 1;
+	grid-row: 5;
+  }
+  .four {
+	font-family: Kollektif-Italic;
+	color: aliceblue;
+	grid-column: 1;
+	grid-row: 1;
+  }
+  /*------------------Fil d'ariane-------------*/
+  .ariane a:hover
+  {
+	  color : #DCE837;
+  }
+	  .ariane ul {
+		  list-style: none;
+		  margin: 0;
+		  padding: 0;
+		  display: flex;
+		  position: absolute;
+		  top: 130px;
+		  right: 0;
+		  width: 300px;
+		  height: 200px;
+		  color: rgb(199, 199, 199)
+		  }
   
-		position: fixed;
-		bottom: 300px;
-		right: 900px;
-		width: 200px;
-	}
+	  .ariane a,
+	  .ariane span {
+		  padding: .5em 1em;
+		  color: rgb(199, 199, 199)
+		  }
+	  .ariane li::before {
+		  content: "/";
+		  color: rgb(199, 199, 199)
+		  }
+	  .ariane li:first-child::before {
+		  content: "";
+	  }
+  
+  
+	  /*------------------Logo-------------*/
+  .logo {
+	  float: left; 
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 20%;
+	  }
+  /*------------------Main-------------*/
+  .main {
+	  padding:312px 315px;
+  }
+	  /*------------------Titre Page-------------*/
+	  .titlepage{
+		  padding:90px;
+		  font-family: Kollektif;
+		  font-size: 22px;
+		  text-align: center;
+		  letter-spacing: 5.8pt;
+		  color: aliceblue;
+	  }
+	  .bordertitle{	
+			  border: 1px solid #DCE837;
+			  border-radius: 12px;
+			  border-left-width: 31px;
+			  border-right-width: 31px;
+			  margin-left: 20%;
+			  margin-right: 20%;
+			  max-width: 100%;
+			  padding-top : 2%;
+			  padding-bottom : 2%;
+	  }
 	
 	/*Nom de la maison*/
 	a1{
