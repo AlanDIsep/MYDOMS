@@ -108,23 +108,6 @@ body {
 		height:50%;
 	}
 
-	.wrapper {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-gap: 10px;
-		grid-auto-rows: minmax(100px, auto);
-		}
-
-	.one { 
-		font-family: Kollektif-Italic;
-		grid-column:1;
-		grid-row: 1;
-	  }
-	.two {
-		grid-column: 2;
-		grid-row: 1;
-		align-self: center;
-	  }
 
 	
 
