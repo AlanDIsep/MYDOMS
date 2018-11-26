@@ -1,10 +1,29 @@
+
+/*------------------test-------------*/
+
+@font-face {
+	font-family: kollektif-bold;
+	src: url('../kollektif/Kollektif-Bold.ttf'); 
+  }
+  
+  @font-face {
+	font-family: Kollektif-Italic;
+	src: url('kollektif/Kollektif-Italic.ttf'); 
+  }
+
+  @font-face {
+	font-family: Kollektif;
+	src: url('kollektif/Kollektif.ttf'); 
+  }
+
+
 body {
       margin:0; padding:0;
-      font: 75%/1.33 Verdana, sans-serif;
       font-size : medium;
       text-align:left;
       height:100%;	
 	  background-color:#121F28;
+	  font-family: Kollektif;
 
       }      
 
@@ -105,3 +124,65 @@ body {
 }
 
 
+.header {
+    left: 0; /* marge gauche */
+    right: 0; /* marge droite */
+    height: 80px;  /* hauteur de la boite de contenu */
+    line-height: 80px; /* hauteur minimale des lignes */
+}
+	/*------------------Logo-------------*/
+.logo {
+	float: left;  /* retiré du flux normal et placé à gauche */
+	display: block; /* affichage en blocs */
+	margin-left: auto; /* marges automatiques */
+	margin-right: auto;
+	width: 20%; /* largeur de l'élément vis à vis de la largeur de la page */
+	}
+
+.logo2 {
+	float: right;  /* retiré du flux normal et placé à droite */
+	margin-left: auto; /* marges automatiques */
+	margin-right: 8%;
+	max-width: 5%;
+	margin-top:7.5%;
+	} 
+	#logo
+{
+	background-image: url(mydoms.jpg);
+	background-position: 50%;
+	height: 200px;
+	width:20%;
+    margin-left: auto;
+    margin-right: auto;
+	border-radius:40px 40px 40px 40px;
+}
+
+	/*------------------Titre Page-------------*/
+	.titlepage{
+		padding:90px;
+		font-family: Kollektif;
+		font-size: 22px;
+		text-align: center;
+		letter-spacing: 5.8pt;
+		color: aliceblue;
+	}
+	.bordertitle{	
+			border: 1px solid #DCE837;
+			border-radius: 12px;
+			border-left-width: 31px;
+			border-right-width: 31px;
+			margin-left: 20%;
+			margin-right: 20%;
+			max-width: 100%;
+			padding-top : 2%;
+			padding-bottom : 2%;
+	}
+/*------------------Fil d'ariane-------------*/
+
+	.header {
+		left: 0; /* marge gauche */
+		right: 0; /* marge droite */
+		height: 80px;  /* hauteur de la boite de contenu */
+		line-height: 80px; /* hauteur minimale des lignes */
+
+	}
