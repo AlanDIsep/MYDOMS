@@ -1,76 +1,81 @@
 <!Doctype html>
 <html lang="fr">
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel='stylesheet' type='text/css' href='../CSS/Configuration.css' media='screen'/>
+<link rel='stylesheet' type='text/css' href='../CSS/CreationDeCompte.css' media='screen'/>
 
 <!------------------header-------------> 
 <header>
-    <title>Configuration</title>	
+    <title>Création de compte</title>	
     <img src="../CSS/mydoms.jpg" alt="logo" class="logo">
     
     <nav aria-label="ariane" class="ariane">
         <ul>
             <li><a href="index.php" title="Accueil">Accueil</a></li>
-            <li><a href="formations.php" title="Page1">Page 1</a></li>
-            <li><span class="Page2">Page 2</span></li>
+            <li><a href="formations.php" title="Page1">Mes accès</a></li>
         </ul>    
     </nav>
 </header>
 
-<!-------------------Main--------------> 
-<main>
-    <div class="titlepage">
-        <div class="bordertitle">
-            Configurer ma maison 
-        </div>
+<div class="titlepage">
+    <div class="bordertitle">
+        Configuration de la maison
     </div>
-	<a1>
-			Nom de la maison :
-	</a1>
-	<a2>
-			Superficie de la pièce :
-	</a2>
-	<a3>	
-			Nombre de pièce : 
-	</a3>
-	<a4>
-			Capteur associé aux pièces :
-	</a4>
-	
-	<form>
-  	<c>
-    <input type="text" id="uname" name="name"
-           placeholder="entrer votre nom de maison">
- 	 </c>
-	<f>
-  	<div>
-    <button>Envoyer</button>
-  	</div>
-	</f>
-	<d>
-    <input type="text" id="uname" name="name"
-           placeholder="entrer le nom du capteur">
- 	</d>
-	<e>
-  	<div>
-	
-    <button>Envoyer</button>
-	
-  	</div>
-	</e>
-	</form>
-	
-		<img src="../CSS/images/maison.png" class="image1" alt"maison">
-		<img src="../CSS/images/interrogation.png"class="image2" alt"interrogation">
-		<img src="../CSS/images/parametre.png" class="image3" alt"parametre">	
-	<b>
-	<input
-		type="range" id="start" name = "volume" 
-		min="0" max = "150"
-	>
-	</b>
-</main>
+</div>
+
+<!-------------------Main--------------> 
+<div class="wrapper">
+<div class="two">
+  <form action="/">
+    <label for="lname" class="titles">Nom de la maison</label>
+    <input type="text" id="lname" name="lname" placeholder="Entrer un nom">
+    </br>
+	<label for="superficie" class="titles">Superficie de la maison</label>
+	    </br>    </br>
+    <input type="range" list="superficie" id="start" name = "Superficie">
+<datalist id="superficie">
+  <option value="0" label="0%">
+  <option value="10">
+  <option value="20">
+  <option value="30">
+  <option value="40">
+  <option value="50" label="50%">
+  <option value="60">
+  <option value="70">
+  <option value="80">
+  <option value="90">
+  <option value="100" label="100%">
+</datalist>
+	</br>
+    <label for="piece" class="titles">Nombre de pièce </label></br>
+    <input type="number" id="piece" name="piece" placeholder="" min = "0" max = "20">
+    </br>
+
+    <label for="adresse" class="titles">nom des pièces</label>
+    <input type="text" id="adresse" name="adresse" placeholder="">
+  </form>
+
+    <label for="Pieces" class="titles">Capteur associés aux pièces</label>
+    <input type="text" id="Pieces" name="Pieces" placeholder="">
+    <label for="account" class="titles">Type de compte</label>
+    <select id="account" name="account">
+      <option value="administrateur">Administrateur</option>
+      <option value="utilisateur">Utilisateur</option>
+      <option value="helpdesk">Help Desk</option>
+    </select>
+  
+    <input type="submit" value="Inscription">
+  </form>
+</div>
+
+<div class="three"></div>
+
+<div class="four">
+    N'oubliez pas de consulter la FAQ en cas de soucis ou d'informations érronés    
+</div>
+</body>
+
+</html>
+
 
 <!-------------------Footer--------------> 
 <footer>
@@ -79,5 +84,5 @@
     </div>
 </footer>
 
-
+</div>
 </html>
