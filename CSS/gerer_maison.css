@@ -23,7 +23,13 @@ body
       font-size : medium;
 	  background-color:#121F28;
 }   
-	     
+.logo2 {
+	float: right;  /* retiré du flux normal et placé à droite */
+	margin-left: auto; /* marges automatiques */
+	margin-right: 8%;
+	max-width: 5%;
+	margin-top:7.5%;
+	} 
 /*------------------header-------------*/
 .header 
 {

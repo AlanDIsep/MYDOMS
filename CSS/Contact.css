@@ -108,7 +108,14 @@ body {
 		height:50%;
 	}
 
-
+	.logo2 {
+		float: right;  /* retiré du flux normal et placé à droite */
+		margin-left: auto; /* marges automatiques */
+		margin-right: 8%;
+		max-width: 5%;
+		margin-top:7.5%;
+		} 
+		#logo
 	
 
 /*------------------Footer-------------*/
@@ -122,19 +129,6 @@ body {
 	text-align: center;
 	font-size:small;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	/*------------------Fil d'ariane-------------*/
 	.ariane a:hover
