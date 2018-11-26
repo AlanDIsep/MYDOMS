@@ -1,0 +1,77 @@
+<!Doctype html>
+<html lang="fr">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='../CSS/gestion_eclairage.css' media='screen'/>
+<link rel="icon" href="../CSS/icons/lumiere.ico"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+<!------------------header------------->
+<header>
+    <title>Gestion de l'éclairage</title>
+    <a href="Accueil.html"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
+
+    <nav aria-label="ariane" class="ariane">
+        <ul>
+            <li><a href="index.php" title="Accueil">Accueil</a></li>
+            <li><a href="formations.php" title="Page1">Page 1</a></li>
+            <li><span class="Page2">Page 2</span></li>
+        </ul>
+    </nav>
+</header>
+
+<!-------------------Main-------------->
+<body>
+  <main>
+      <div class="titlepage">
+          <div class="bordertitle">
+             Gestion de l'éclairage
+          </div>
+      </div>
+
+  	<div class="container">
+    <button class="toggle">Chambre 1</button>
+
+     <button class="toggle">Salon</button>
+
+     <button class="toggle">Cuisine</button>
+
+    <button class="toggle">Chambre 2</button>
+  </div>
+  <div class="space"></div>
+
+  <div id="target">
+      <h2 style=color:black>
+        Statut de la lumière
+      </h2>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+        <p id="temp">50%</p>
+  </div>
+
+  <div class="space">                                                           <!--A laisser pour permettre de scroller la page-->
+    </form>
+  </div>
+
+  </main>
+</body>
+
+
+<!-------------------Footer-------------->
+<footer>
+    <div id="footer">
+        <p>SAS Domisep - Tous droits réservés<p>
+    </div>
+</footer>
+
+<script type="text/javascript">
+$('.toggle').click(function()                                                   <!--Lorsque l'on clique sur l'une des div toggle, on fait appel à la fonnction click-->
+{
+    $('#target').toggle('slow');                                                <!--La fonction toggle permet de retenir ou de développer du texte, ici elle developpe le contenu de id toggle de manière lente-->
+});
+ </script>
+
+</html>
