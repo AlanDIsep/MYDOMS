@@ -23,7 +23,7 @@
 </header>
 
 <!-------------------Main--------------> 
-
+<body>
 
     <!-------------------Titre de la Page--------------> 
 <main>
@@ -35,8 +35,10 @@
     <h1 align="center" style="color:#FFF">Formulaire </h1>
     
     <!-------------------Contenu--------------> 
-    <div class="container">
-  <form action="action_page.php">
+
+<div class="container">
+  
+    <form action="action_page.php">
 
     <label for="nom">Nom</label>
     <input type="text" id="nom" name="nom" placeholder="Votre nom">
@@ -45,6 +47,7 @@
     <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
 
     <label for="object">Objet</label>
+   
     <select id="object" name="object">
       <option value="Demande d'informations">Demande d'informations</option>
       <option value="Problème d'utilisation">Problème d'utilisation</option>
@@ -56,12 +59,15 @@
 
     <input type="submit" value="Envoyer">
 
-  </form>
-  <br>
+  </form><br><br>
 </div>
-<br><br><br><br>
-</main>
 
+<br><br><br><br>
+
+</div>
+
+</main>
+</body>
 <!-------------------Footer--------------> 
 <footer>
     <div id="footer">
