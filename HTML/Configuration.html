@@ -75,11 +75,26 @@
     <input type="submit" value="Enregistrer">
   </form>
 </div>
-<div2 class="five">
+<div class="five">
         <label for="resultat" class="titles">Resut</label>
-        <input type="text" class="div2" id="resultat" name="resultat" placeholder="">
-</div2 class="five">    
+        <input type="text"  id="resultat" name="resultat" placeholder="">
+</div class="five">    
 </div>
 </body>
 
 </html>
+
+
+<!------------------Java Script------------->
+<script type="text/javascript">
+var range = document.getElementById('range');
+var box = document.getElementById('box');
+
+function change_BRadius(){
+
+    var val= range.value;
+    box.style.borderRadius = val +"m^2"
+    box.innerHTML = "border-radius :" +val+ "m^2;"
+}
+</script>
+

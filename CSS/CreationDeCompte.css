@@ -204,12 +204,6 @@ div {
     padding: 20px;
 }
 
-.div2 {
-    border-radius: 5px;
-    background-color: #131f28;
-    padding: 20px;
-}
-
 
 /*------------------Footer-------------*/
 #footer{
@@ -222,4 +216,7 @@ div {
 	text-align: center;
 	font-size:small;
 }
+
+
+
 
