@@ -8,6 +8,11 @@ body {
 
       }      
 
+	  a{
+			text-decoration:none;
+			color:black;
+	  }
+	  
 #conteneur
 {
     display: flex;
@@ -21,7 +26,7 @@ body {
 
 
 
-.element:nth-child(1) /* On prend le deuxième bloc élément */
+.element1 /* On prend le premier bloc élément */
 {
     background-color:white;
 	border-width:2px;
@@ -33,7 +38,7 @@ body {
 	border-radius:20px 20px 20px 20px;
 }
 
-.element:nth-child(2) /* On prend le deuxième bloc élément */
+.element /* On prend le premier bloc élément */
 {
     background-color:white;
 	border-width:2px;
@@ -45,28 +50,7 @@ body {
 	border-radius:20px 20px 20px 20px;
 }
 
-.element:nth-child(3) /* On prend le deuxième bloc élément */
-{
-    background-color:white;
-	border-width:2px;
-	border-style:outset;
-	border-color:black;
-	height: 200px;
-	width:200px;
-	text-align:center;
-	border-radius:20px 20px 20px 20px;
-}
-.element:nth-child(4) /* On prend le deuxième bloc élément */
-{
-    background-color:white;
-	border-width:2px;
-	border-style:outset;
-	border-color:black;
-	height: 200px;
-	width:200px;
-	text-align:center;
-	border-radius:20px 20px 20px 20px;
-}
+
 
 #logo
 {
