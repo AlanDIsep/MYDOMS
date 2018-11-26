@@ -30,14 +30,23 @@
 
 <!-------------------Main--------------> 
 <div class="wrapper">
-<div class="two">
+<div class="one">
   <form action="/">
+    <label for="account" class="titles">Type de compte</label>
+        <select id="account" name="account">
+          <option value="administrateur">Administrateur</option>
+          <option value="utilisateur">Utilisateur</option>
+          <option value="helpdesk">Help Desk</option>
+        </select>
     <label for="lname" class="titles">Nom de la maison</label>
     <input type="text" id="lname" name="lname" placeholder="Entrer un nom">
     </br>
-	<label for="superficie" class="titles">Superficie de la maison</label>
-	    </br>    </br>
-    <input type="range" list="superficie" id="start" name = "Superficie">
+    <label for="superficie" class="titles">Superficie de la maison</label>
+      
+<div class="slidecontainer">
+        <input type="range" list="superficie" id="start" name = "Superficie" min="1" max="150" value="0" class="slider" id="myRange">
+</div>
+
 <datalist id="superficie">
   <option value="0" label="0%">
   <option value="10">
@@ -53,30 +62,23 @@
 </datalist>
 	</br>
     <label for="piece" class="titles">Nombre de pièce </label></br>
+</br>
     <input type="number" id="piece" name="piece" placeholder="" min = "0" max = "20">
-    </br>
+    </br></br>
 
-    <label for="adresse" class="titles">nom des pièces</label>
-    <input type="text" id="adresse" name="adresse" placeholder="">
+    <label for="name" class="titles">Nom des pièces</label>
+    <input type="text" id="nam" name="nam" placeholder="">
   </form>
 
     <label for="Pieces" class="titles">Capteur associés aux pièces</label>
     <input type="text" id="Pieces" name="Pieces" placeholder="">
-    <label for="account" class="titles">Type de compte</label>
-    <select id="account" name="account">
-      <option value="administrateur">Administrateur</option>
-      <option value="utilisateur">Utilisateur</option>
-      <option value="helpdesk">Help Desk</option>
-    </select>
-  
-    <input type="submit" value="Inscription">
+    <input type="submit" value="Enregistrer">
   </form>
 </div>
-
-<div class="three"></div>
-
-<div class="four">
-    N'oubliez pas de consulter la FAQ en cas de soucis ou d'informations érronés    
+<div2 class="five">
+        <label for="resultat" class="titles">Resut</label>
+        <input type="text" class="div2" id="resultat" name="resultat" placeholder="">
+</div2 class="five">    
 </div>
 </body>
 

@@ -27,7 +27,11 @@ body {
 	grid-auto-rows: minmax(100px, auto);
 	}
 /*------------------header-------------*/
-  .two { 
+ .one { 
+	grid-column: 1 / 3;
+	grid-row: 1;
+  }
+ .two { 
 	grid-column: 2 / 4;
 	grid-row: 1;
   }
@@ -39,6 +43,11 @@ body {
 	font-family: Kollektif-Italic;
 	color: aliceblue;
 	grid-column: 1;
+	grid-row: 1;
+  }
+  
+  .five { 
+	grid-column: 3;
 	grid-row: 1;
   }
 
@@ -82,6 +91,52 @@ body {
 	margin-right: auto;
 	width: 20%;
 	}
+
+	/*------------------Range Superficie-------------*/
+	.slidecontainer {
+		width: 100%;
+	}
+	/*------------------Barre-------------*/
+	.slider {
+		-webkit-appearance: none;
+		width: 50%;
+		height: 10px;
+		border-radius: 5px;
+		background: #fffcfc;
+		outline: none;
+		opacity: 0.7;
+		-webkit-transition: .2s;
+		transition: opacity .2s;
+	}
+	
+	.slider:hover {
+		opacity: 1;
+	}
+	/*------------------Bonton de Barre-------------*/
+	.slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		background: #DCE837;
+		cursor: pointer;
+	}
+	
+	.slider::-moz-range-thumb {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: #DCE837;
+		cursor: pointer;
+	}
+	var slider = document.getElementById("myRange");
+	var output = document.getElementById("demo");
+	output.innerHTML = slider.value;
+	
+	slider.oninput = function() {
+	  output.innerHTML = this.value;
+}
 /*------------------Main-------------*/
 .main {
 	padding:312px 315px;
@@ -117,6 +172,7 @@ body {
 	}
 
 
+
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -148,6 +204,11 @@ div {
     padding: 20px;
 }
 
+.div2 {
+    border-radius: 5px;
+    background-color: #131f28;
+    padding: 20px;
+}
 
 
 /*------------------Footer-------------*/
