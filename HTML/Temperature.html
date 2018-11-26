@@ -1,0 +1,71 @@
+<!Doctype html>
+<html lang="fr">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='../CSS/temperature.css' media='screen'/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+<!------------------header-------------> 
+<header>
+    <title>Page 1</title>	
+    <img src="mydoms.jpg" alt="logo" class="logo">
+    
+    <nav aria-label="ariane" class="ariane">
+        <ul>
+            <li><a href="index.php" title="Accueil">Accueil</a></li>
+            <li><a href="formations.php" title="Page1">Page 1</a></li>
+            <li><span class="Page2">Page 2</span></li>
+        </ul>    
+    </nav>
+</header>
+
+<!-------------------Main--------------> 
+<main>
+    <div class="titlepage">
+        <div class="bordertitle">
+           Gestion de la température
+        </div>
+    </div>
+	
+	<div class="container">
+  <button class="toggle">Chambre 1</button>
+	
+   <button class="toggle">Salon</button>
+
+   <button class="toggle">Cuisine</button>
+   
+  <button class="toggle">Chambre 2</button>
+</div>
+<div class="space"></div>
+<div id="target">
+  <h2>Statut</h2>
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+<p id="temp">21°C</p>
+</div>
+</div>
+
+<div class="space">
+  </form>
+</div>
+	
+</main>
+
+<!-------------------Footer--------------> 
+<footer>
+    <div id="footer">
+        <p>SAS Domisep - Tous droits réservés<p>
+    </div>
+</footer>
+
+<script type="text/javascript">
+$('.toggle').click(function() 
+{
+    $('#target').toggle('slow');
+});
+ </script>
+
+</html>
