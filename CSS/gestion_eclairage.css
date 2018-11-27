@@ -97,8 +97,7 @@ body {
 	}
 	/*------------------Contenu-------------*/
 	.toggle{
-		font-family: kollektif;
-
+		font-family: Kollektif;
 
 	}
 
@@ -183,8 +182,10 @@ input:checked + .slider:before {
 }
 
 .container {
-  padding: 2em;
-}
+	margin-left: auto;
+  margin-right: auto;
+	padding: 2em;
+	width: 55%;}
 
 /*-------- GENERAL BUTTON STYLING */
 button,
@@ -205,7 +206,7 @@ margin:auto;
 button {
   border: 3px solid #fff;
   border-radius: 5px;
-  color: #black;																																/*Couleur du texte*/
+  color: black;																																/*Couleur du texte*/
   display: block;
   font-size: 1.6em;
 	font-weight: bold;
@@ -233,8 +234,6 @@ button:hover {
 
 
 
-
-
 /*------------------Footer-------------*/
 #footer{
 	position: fixed;
@@ -247,3 +246,11 @@ button:hover {
 	font-size:small;
 
 }
+
+.logo2 {
+	float: right;  /* retiré du flux normal et placé à droite */
+	margin-left: auto; /* marges automatiques */
+	margin-right: 8%;
+	max-width: 5%;
+	margin-top:7.5%;
+	} 

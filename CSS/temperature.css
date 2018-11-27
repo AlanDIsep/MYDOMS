@@ -179,7 +179,10 @@ input:checked + .slider:before {
 }
 
 .container {
-  padding: 2em;
+	margin-left: auto;
+  margin-right: auto;
+	padding: 2em;
+	width: 60%;
 }
 
 /*-------- GENERAL BUTTON STYLING */
@@ -191,7 +194,11 @@ button::after {
 	transition: all 0.3s;
 }
 
+.toggle{
+	font-family: Kollektif;
 
+
+}
 #temp{
 font-size:100px;
 text-align:center;
@@ -242,3 +249,11 @@ button:hover {
 	font-size:small;
 	
 }
+
+.logo2 {
+	float: right;  /* retiré du flux normal et placé à droite */
+	margin-left: auto; /* marges automatiques */
+	margin-right: 8%;
+	max-width: 5%;
+	margin-top:7.5%;
+	} 
