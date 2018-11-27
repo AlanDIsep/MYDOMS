@@ -51,6 +51,12 @@
   </div>
 
   </main>
+    <script type="text/javascript">
+    $('.toggle').click(function()                                                   <!--Lorsque l'on clique sur l'une des div toggle, on fait appel à la fonnction click-->
+    {
+        $('#target').toggle('slow');                                                <!--La fonction toggle permet de retenir ou de développer du texte, ici elle developpe le contenu de id toggle de manière lente-->
+    });
+     </script>
 </body>
 
 
@@ -61,11 +67,6 @@
     </div>
 </footer>
 
-<script type="text/javascript">
-$('.toggle').click(function()                                                   <!--Lorsque l'on clique sur l'une des div toggle, on fait appel à la fonnction click-->
-{
-    $('#target').toggle('slow');                                                <!--La fonction toggle permet de retenir ou de développer du texte, ici elle developpe le contenu de id toggle de manière lente-->
-});
- </script>
+
 
 </html>
