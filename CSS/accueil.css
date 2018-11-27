@@ -55,7 +55,24 @@ body {
 	width:300px;
 	text-align:center;
 	border-radius:20px 20px 20px 20px;
+	opacity: 0.8;
+	transition: opacity 1s, transform 0.3s ease-in;
 }
+
+
+
+.element:hover{
+opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 1px 3px 8px 4px;
+}
+
+.element1:hover{
+opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 1px 3px 8px 4px;
+}	
+
 
 .element /* On prend le premier bloc élément */
 {
@@ -67,6 +84,8 @@ body {
 	width:200px;
 	text-align:center;
 	border-radius:20px 20px 20px 20px;
+	opacity: 0.8;
+	transition: opacity 1s, transform 0.3s ease-in;
 }
 
 
@@ -98,7 +117,8 @@ body {
 	margin-right:auto;
 	height:150px;
 	width:150px;
-}
+	}
+	
 .image3{
 	display:block;
 	width:auto;
@@ -106,7 +126,8 @@ body {
 	margin-right:auto;
 	height:100px;
 	width:100px;
-}
+	}
+	
 
 #bandeau {
 	background-color:#121F28;
