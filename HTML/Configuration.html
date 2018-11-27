@@ -37,12 +37,11 @@
     <label for="lname" class="titles">Nom de la maison</label>
     <input type="text" id="lname" name="lname" placeholder="Entrer un nom">
     </br>
-    <label for="superficie" class="titles">Superficie de la maison</label>
+    <label for="superficie" class="titles">Superficie de la maison: <span id="demo"></span>m2</label>
       
 <div class="slidecontainer">
-        <input type="range" list="superficie" id="start" name = "Superficie" min="1" max="150" value="0" class="slider" id="myRange">
-</div>
-
+    <input type="range" min="1" max="150" value="1" class="slider" id="superficie">
+  </div>
 <datalist id="superficie">
   <option value="0" label="0%">
   <option value="10">
@@ -56,13 +55,37 @@
   <option value="90">
   <option value="100" label="100%">
 </datalist>
-	</br>
-    <label for="piece" class="titles">Nombre de pièce </label></br>
+
+<script>
+    var slider = document.getElementById("superficie");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+    var add = function() 
+    {
+      var added = document.createElement("div");
+      document.getElementById("ID").appendChild(added);
+      added.setAttribute("id", "Task " + document.getElementById("ID").childElementCount);
+      added.appendChild(document.createElement("input"));
+      added.appendChild(document.createElement("br"));
+    };
+</script>
+
 </br>
     <input type="number" id="piece" name="piece" placeholder="" min = "0" max = "20">
     </br></br>
 
-    <label for="name" class="titles">Nom des pièces</label>
+    <form id="ID">
+        Name:
+        <br>
+        <input type="text" name="name">
+        <br>
+    </form>
+      <button onclick="add()">Add</button>
+
     <input type="text" id="nam" name="nam" placeholder="">
   </form>
 
@@ -92,5 +115,13 @@ function change_BRadius(){
     box.style.borderRadius = val +"m^2"
     box.innerHTML = "border-radius :" +val+ "m^2;"
 }
+
+var add = function() {
+  var added = document.createElement("div");
+  document.getElementById("ID").appendChild(added);
+  added.setAttribute("id", "Task " + document.getElementById("ID").childElementCount);
+  added.appendChild(document.createElement("input"));
+  added.appendChild(document.createElement("br"));
+};
 </script>
 
