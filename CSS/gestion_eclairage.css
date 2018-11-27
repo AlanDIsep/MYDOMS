@@ -1,17 +1,17 @@
 
 @font-face {
 	font-family: kollektif-bold;
-	src: url('../kollektif/Kollektif-Bold.ttf');
+	src: url('../CSS/kollektif/Kollektif-Bold.ttf');
   }
 
   @font-face {
 	font-family: Kollektif-Italic;
-	src: url('../kollektif/Kollektif-Italic.ttf');
+	src: url('../CSS/kollektif/Kollektif-Italic.ttf');
   }
 
   @font-face {
 	font-family: Kollektif;
-	src: url('../kollektif/Kollektif.ttf');
+	src: url('../CSS/kollektif/Kollektif.ttf');
   }
 
 body {
