@@ -34,15 +34,17 @@
 	
 	<div class="container">
         <button class="toggle">Chambre 1</button>     
-        <button class="toggle">Salon</button>
-        <button class="toggle">Cuisine</button> 
-        <button class="toggle">Chambre 2</button>
+        <button class="toggle1">Salon</button>
+        <button class="toggle2">Cuisine</button> 
+        <button class="toggle3">Chambre 2</button>
     </div>
     
     <div class="space"></div>
     
-    <div id="target">
-        <h2>Statut</h2>
+	
+    <div id="conteneur">
+	<div id="target">
+		<h2>Statut : Chambre 1 </h2>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
@@ -50,8 +52,37 @@
         <p id="temp">21°C</p>
     </div>
 
+	<div id="target1">
+        <h2>Statut</h2>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        <p id="temp">23°C</p>
+    </div>
+	
+	<div id="target2">
+        <h2>Statut</h2>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        <p id="temp">20°C </p>
+    </div>
+	
+	<div id="target3">
+        <h2>Statut</h2>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        <p id="temp">22°C</p>
+    </div>
+	</div>
+
 
     <div class="space"></div>
+	<div class="space"></div>
 
 	
 </main>
@@ -64,9 +95,24 @@
 </footer>
 
 <script type="text/javascript">
+
+//affichage de la première fenêtre
 $('.toggle').click(function() 
 {
     $('#target').toggle('slow');
+});
+//affichage de la deuxième fenêtre
+$('.toggle1').click(function() 
+{
+    $('#target1').toggle('slow');
+});
+$('.toggle2').click(function() 
+{
+    $('#target2').toggle('slow');
+});
+$('.toggle3').click(function() 
+{
+    $('#target3').toggle('slow');
 });
  </script>
 

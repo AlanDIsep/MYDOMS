@@ -115,15 +115,24 @@ body {
 	}
 	/*------------------Contenu-------------*/
 
-		
+	
+	#conteneur{
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	height:200px;
+	background-color:#121F28;
+	padding:20px;
+	}
+	
 	.space{
   padding:50px;
 }
 
 /*fenetre d'affichage*/
-#target {
+ #target {
   
-  width:60%;
+  width:30%;
   height:300px;
   padding:5px;
   display:none;
@@ -133,6 +142,46 @@ body {
   background:linear-gradient(#bdc3c7, #2c3e50);
 
 }
+
+ #target1 {
+  
+  width:30%;
+  height:300px;
+  padding:5px;
+  display:none;
+  border-radius:5px;
+  margin:auto;
+  bottom:20px;
+  background:linear-gradient(#bdc3c7, #2c3e50);
+
+}
+
+
+#target2 {
+  
+  width:30%;
+  height:300px;
+  padding:5px;
+  display:none;
+  border-radius:5px;
+  margin:auto;
+  bottom:20px;
+  background:linear-gradient(#bdc3c7, #2c3e50);
+  
+}
+
+#target3{
+  
+  width:30%;
+  height:300px;
+  padding:5px;
+  display:none;
+  border-radius:5px;
+  margin:auto;
+  bottom:20px;
+  background:linear-gradient(#bdc3c7, #2c3e50);
+}
+
 
 
 /*switch*/
@@ -171,6 +220,7 @@ body {
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
+  
 }
 
 input:checked + .slider {
@@ -184,8 +234,9 @@ input:focus + .slider {
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  transform: translateX(26px);   
 }
+
 
 /* Rounded sliders */
 .slider.round {
@@ -197,8 +248,8 @@ input:checked + .slider:before {
 }
 
 .container {
-	margin-left: auto;
-  margin-right: auto;
+	margin-left:23%;
+	margin-right: auto;
 	padding: 2em;
 	width: 60%;
 }
@@ -214,9 +265,19 @@ button::after {
 
 .toggle{
 	font-family: Kollektif;
-
-
 }
+
+.toggle1{
+	font-family: Kollektif;
+}
+
+
+.toggle1{
+	font-family: Kollektif;
+}
+
+
+
 #temp{
 font-size:100px;
 text-align:center;
@@ -224,10 +285,10 @@ margin:auto;
 }
 
 button {
-  background: none;
+
   border: 3px solid #fff;
   border-radius: 5px;
-  color: #fff;
+  color: black;
   display: block;
   font-size: 1.6em;
   font-weight: bold;
@@ -240,16 +301,24 @@ button {
 }
 
 button::before,
-button::after {
+button::after{
   background: #fff;
   content: '';
   position: absolute;
   z-index: -1;
 }
 
-button:hover {
-  color: #DCE837;
+
+button:{
+	background-color: #DCE837;
 }
+
+
+button:hover {
+  background: #DCE837;
+}
+
+
 
 
 

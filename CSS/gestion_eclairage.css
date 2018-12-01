@@ -223,7 +223,7 @@ margin:auto;
 button {
   border: 3px solid #fff;
   border-radius: 5px;
-  color: black;																																/*Couleur du texte*/
+  color: black;													/*Couleur du texte*/
   display: block;
   font-size: 1.6em;
 	font-weight: bold;
@@ -236,7 +236,7 @@ button {
 }
 
 button::before{
-	background: #eee																															/*Couleur du bouton avant le passage du curseur dessus*/
+	background: #eee;														/*Couleur du bouton avant le passage du curseur dessus*/
 }
 button::after {
   background: #fff;
@@ -246,7 +246,7 @@ button::after {
 }
 
 button:hover {
-  background: #DCE837;																													/*Change la couleur du texte du bouton au passage du curseur*/
+  background: #DCE837;																	/*Change la couleur du texte du bouton au passage du curseur*/
 }
 
 
