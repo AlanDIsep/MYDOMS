@@ -152,7 +152,7 @@ body {
   border-radius:5px;
   margin:auto;
   bottom:20px;
-  background-image:url(icons/lumiere.png);
+  background:linear-gradient(#bdc3c7, #2c3e50);
 
 }
 
