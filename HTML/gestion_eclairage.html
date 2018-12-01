@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel='stylesheet' type='text/css' href='../CSS/gestion_eclairage.css' media='screen'/>
+<link rel='stylesheet' type='text/css' href='../CSS/temperature.css' media='screen'/>
 <link rel="icon" href="../CSS/icons/lumiere.ico"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -36,37 +36,81 @@
       
 
   	<div class="container">
-    <button class="toggle">Chambre 1</button>
-
-     <button class="toggle">Salon</button>
-
-     <button class="toggle">Cuisine</button>
-
-    <button class="toggle">Chambre 2</button>
-  </div>
-  <div class="space"></div>
-
-  <div id="target">
-      <h2 style=color:black>
-        Statut de la lumière
-      </h2>
+        <button class="toggle">Chambre 1</button>     
+        <button class="toggle1">Salon</button>
+        <button class="toggle2">Cuisine</button> 
+        <button class="toggle3">Chambre 2</button>
+    </div>
+    
+    <div class="space"></div>
+    
+	
+    <div id="conteneur">
+	<div id="target">
+		<h2>Statut : Chambre 1 </h2>
         <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
+        <input type="checkbox">
+        <span class="slider round"></span>
         </label>
-        <p id="temp">50%</p>
-  </div>
+        <p id="temp">0%</p>
+    </div>
 
-  <div class="space">                                                           <!--A laisser pour permettre de scroller la page-->
-    </form>
-  </div>
+	<div id="target1">
+        <h2>Statut</h2>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        <p id="temp">55%</p>
+    </div>
+	
+	<div id="target2">
+        <h2>Statut</h2>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        <p id="temp">80% </p>
+    </div>
+	
+	<div id="target3">
+        <h2>Statut</h2>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        <p id="temp">10%</p>
+    </div>
+	</div>
+
+
+    <div class="space"></div>
+	<div class="space"></div>
 
   </main>
     <script type="text/javascript">
-    $('.toggle').click(function()                                                   <!--Lorsque l'on clique sur l'une des div toggle, on fait appel à la fonnction click-->
-    {
-        $('#target').toggle('slow');                                                <!--La fonction toggle permet de retenir ou de développer du texte, ici elle developpe le contenu de id toggle de manière lente-->
-    });
+    //affichage de la première fenêtre
+$('.toggle').click(function() 
+{
+    $('#target').toggle('slow');
+	$(this).toggleClass("active");
+});
+//affichage de la deuxième fenêtre
+$('.toggle1').click(function() 
+{
+    $('#target1').toggle('slow');
+	$(this).toggleClass("active");
+});
+$('.toggle2').click(function() 
+{
+    $('#target2').toggle('slow');
+	$(this).toggleClass("active");
+});
+$('.toggle3').click(function() 
+{
+	$('#target3').toggle('slow');
+	$(this).toggleClass("active");
+});
      </script>
 </body>
 

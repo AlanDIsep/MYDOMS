@@ -152,9 +152,10 @@ body {
   border-radius:5px;
   margin:auto;
   bottom:20px;
-  background:linear-gradient(#bdc3c7, #2c3e50);
+  background-image:url(icons/lumiere.png);
 
 }
+
 
 
 #target2 {
@@ -319,7 +320,9 @@ button:hover {
 }
 
 
-
+.active{
+ background: #DCE837;
+} 
 
 
 
