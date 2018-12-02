@@ -5,7 +5,7 @@
     <title>MyDoms Accueil</title>	
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
            <link rel='stylesheet' type='text/css' href='../CSS/admin.css' media='screen'/>
-	   
+	   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <nav>
   
@@ -17,11 +17,9 @@
   
   <ul>
     <li>Navigation</li>
-    <li><a class="active">Tableau de Bord</a></li>
-    <li><a>Statistiques</a></li>
-    <li><a>Utilisateurs</a></li>
-    <li><a>Tickets</a></li>
-    <li><a>FAQ</a></li>
+    <li><a onclick="myFunction()">Tableau de Bord</a></li>
+    <li onclick="myFunction1()"><a>Utilisateurs</a></li>
+    <li onclick="myFunction2()"><a>Tickets</a></li>
     <li><a>Paramètres</a></li>
   </ul>
   
@@ -29,8 +27,18 @@
 
 <main>
   
-  <h1>Dashboard</h1>
   
+  <h1 id="title">Administrator</h1>
+  
+  
+  </br>
+  
+  
+<div>  
+  
+  <!--div dashboard-->
+  <div id="dashboard">
+  </br>
   <div class="flex-grid">
     
     <div>
@@ -58,14 +66,118 @@
     </div>
     
   </div>
-  
-  <div class="flex-grid">
-    
-    <div>
-      <h2>Headline</h2>
-    </div>
-    
   </div>
+ 
+ <div class="flex-grid">
+  <div id="user">
+	<div class="two">
+	  <form action="/">
+		<label for="fname" class="titles">Prénom</label>
+		<input type="text" id="fname" name="firstname" placeholder="Votre prénom ...">
+
+		<label for="lname" class="titles">Nom</label>
+		<input type="text" id="lname" name="lastname" placeholder="Votre nom ...">
+		</br>
+		<label for="birthday" class="titles">Date de Naissance </label></br>
+		<input type="date" id="birthday" name="birthday" placeholder="Votre date de naissance ..."></br>
+		</br>
+
+		<label for="adresse" class="titles">Adresse Postale</label>
+		<input type="text" id="adresse" name="adresse" placeholder="Votre adresse postale ...">
+
+		<label for="codepostal" class="titles">Code Postal</label>
+		<input type="text" id="codepostal" name="codepostal" placeholder="Votre code postal ...">
+
+		<label for="Ville" class="titles">Ville</label>
+		<input type="text" id="ville" name="ville" placeholder="Votre ville ...">
+
+		<label for="pays" class="titles">Pays</label>
+		<input type="text" id="pays" name="pays" placeholder="Votre pays ...">
+
+		<label for="email" class="titles">E-mail</label>
+		<input type="text" id="email" name="email" placeholder="Votre E-mail ...">
+
+		<label for="number" class="titles">Numéro de contact</label>
+		<input type="text" id="number" name="number" placeholder="Votre numéro de téléphone ...">
+
+		<label for="account" class="titles">Type de compte</label>
+		<select id="account" name="account">
+		  <option value="administrateur">Administrateur</option>
+		  <option value="utilisateur">Utilisateur</option>
+		  <option value="helpdesk">Help Desk</option>
+		</select>
+	  
+		<input type="submit" value="Créer utilisateur">
+	  </form>
+	</div>
+</div>
+</div>
+
+
+ <div class="flex-grid">
+  <div id="tickets">
+ tickets
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+
+
+function myFunction() {
+    var x = document.getElementById("dashboard");
+	 var y = document.getElementById("user");
+	 var z = document.getElementById("tickets");
+    if (x.style.display == "none") {
+        x.style.display = "block";
+		y.style.display = "none";
+		z.style.display = "none";
+		document.getElementById("title").innerHTML = "Dashboard";
+    } else {
+        x.style.display = "block";
+		y.style.display = "none";
+		z.style.display = "none";
+		document.getElementById("title").innerHTML = "Dashboard";
+    }
+	}
+
+function myFunction1() {
+    var x = document.getElementById("user");
+	var y = document.getElementById("dashboard");
+	 var z = document.getElementById("tickets");
+    if (x.style.display == "none") {
+		 x.style.display = "block";
+		 y.style.display = "none";
+		 z.style.display = "none";
+		 document.getElementById("title").innerHTML = "Utilisateurs";
+    }  else {
+        x.style.display = "block";
+		y.style.display = "none";
+		z.style.display = "none";
+		document.getElementById("title").innerHTML = "Utilisateurs";
+		
+    }
+	}
+function myFunction2() {
+    var x = document.getElementById("tickets");
+	var y = document.getElementById("user");
+	 var z = document.getElementById("dashboard");
+    if (x.style.display == "none") {
+		 x.style.display = "block";
+		 y.style.display = "none";
+		 z.style.display = "none";
+		 document.getElementById("title").innerHTML = "Tickets";
+    } else {
+        x.style.display = "block";
+		y.style.display = "none";
+		z.style.display = "none";
+		document.getElementById("title").innerHTML = "Tickets";
+    }
+	
+}
+</script>  
   
 </main>
 

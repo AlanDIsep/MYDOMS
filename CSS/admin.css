@@ -72,7 +72,13 @@ nav ul a {
   border-bottom: 1px solid Darkslategrey;
 }
 
+#dashboard{
+display:none;}
 
+#user{
+display:none;}
+
+#tickets{display:none;}
 
 main {
   flex: 1;
@@ -90,6 +96,21 @@ main h1 {
   text-transform: uppercase;
   border-bottom: 1px solid #ddd;
 }
+
+.two { 
+	grid-column: 2 / 4;
+	grid-row: 1;
+	height:50%;
+	
+  }
+  
+  .wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+	}
+
 
 .flex-grid {
   display: flex;
