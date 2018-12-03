@@ -2,6 +2,7 @@
 <html lang="fr">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel='stylesheet' type='text/css' href='../CSS/Configuration.css' media='screen'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!------------------header-------------> 
 <header>
@@ -16,81 +17,131 @@
 			<!-------------------Titre de la Page--------------> 
 			<div class="titlepage">
 				<div class="bordertitle">
-					<a href="Accueil.html"><img title="Accueil" src="../CSS/icons/Bandeau/accueil.png" class="logo2"/></a>
-					<a href="gestion_eclairage.html"><img title="Éclairage" src="../CSS/icons/Bandeau/eclairage.png" class="logo2"/></a>
-					<a href="Temperature.html"><img title="Temperature" src="../CSS/icons/Bandeau/temperature.png" class="logo4"/></a>
-					<a href="FAQ.html"><img title="FAQ" src="../CSS/icons/Bandeau/faq.png" class="logo3"/></a>
-                    <a href="Contact.html"><img title="Contact" src="../CSS/icons/Bandeau/contact.png" class="logo3"/></a>
+          <a href="Accueil.html"><img title="Tableau de bord" src="../CSS/icons/Bandeau/bord.png" class="logo5"/></a>
+					<a href="gerer_maison.html"><img title="Gérer ma maison" src="../CSS/icons/Bandeau/accueil.png" class="logo6"/></a>
+          <a href="Profil.html"><img title="Profil" src="../CSS/icons/Bandeau/profil.png" class="logo3"/></a>
+          <a href="FAQ.html"><img title="FAQ" src="../CSS/icons/Bandeau/faq.png" class="logo3"/></a>
+          <a href="Contact.html"><img title="Contact" src="../CSS/icons/Bandeau/contact.png" class="logo3"/></a>
 
 				</div>
-			</div>
+      </div>
 <!-------------------Main--------------> 
-<div class="wrapper">
-<div class="one">
-  <form action="/">
-    <label for="account" class="titles">Type de compte</label>
-        <select id="account" name="account">
-          <option value="administrateur">Administrateur</option>
-          <option value="utilisateur">Utilisateur</option>
-          <option value="helpdesk">Help Desk</option>
-        </select>
-    <label for="lname" class="titles">Nom de la maison</label>
-    <input type="text" id="lname" name="lname" placeholder="Entrer un nom">
-    </br>
-    <label for="superficie" class="titles">Superficie de la maison</label>
-      
-<div class="slidecontainer">
-        <input type="range" list="superficie" id="start" name = "Superficie" min="1" max="150" value="0" class="slider" id="myRange">
+<div class="container">
+    
+    <form action="action_page.php">
+
+      <label for="nom">Nom de la Maison</label>
+        <input type="text" id="nommaison" name="nommaison" placeholder="Ex: Maison Paris">
+
+      <label for="superficie">Superficie de la Maison: <span id="demo"></span> m2</label>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="150" value="0" class="slider" id="myRange">
+          </div>
+        <br>
+        <label for="object">Nombre de pièces </label><br>
+        <form method="post" action="order.php">
+            <input type="number" style="text-align:center;" placeholder="Ex: 3" onkeyup="BuildFormFields(parseInt(this.value, 10));" />
+            <div id="FormFields" style="margin: 20px 0px;"></div>
+        </form>
+
+
+        <input type="submit" value="Enregistrer">
+
+</form><br><br>
 </div>
 
-<datalist id="superficie">
-  <option value="0" label="0%">
-  <option value="10">
-  <option value="20">
-  <option value="30">
-  <option value="40">
-  <option value="50" label="50%">
-  <option value="60">
-  <option value="70">
-  <option value="80">
-  <option value="90">
-  <option value="100" label="100%">
-</datalist>
-	</br>
-    <label for="piece" class="titles">Nombre de pièce </label></br>
-</br>
-    <input type="number" id="piece" name="piece" placeholder="" min = "0" max = "20">
-    </br></br>
+<br><br><br><br>
+<!-------------------Main--------------> 
 
-    <label for="name" class="titles">Nom des pièces</label>
-    <input type="text" id="nam" name="nam" placeholder="">
-  </form>
+<style>
+.slidecontainer {
+    width: 100%;
+}
 
-    <label for="Pieces" class="titles">Capteur associés aux pièces</label>
-    <input type="text" id="Pieces" name="Pieces" placeholder="">
-    <input type="submit" value="Enregistrer">
-  </form>
-</div>
-<div class="five">
-        <label for="resultat" class="titles">Resut</label>
-        <input type="text"  id="resultat" name="resultat" placeholder="">
-</div class="five">    
-</div>
-</body>
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #d0db36;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #d0db36;
+    cursor: pointer;
+}
+
+</style>
+
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+<!-------------------Liste déroulante pièces--------------> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+
+  function BuildFormFields($amount)
+  {
+    var
+      $container = document.getElementById('FormFields'),
+      $item, $field, $i;
+
+    $container.innerHTML = '';
+    for ($i = 0; $i < $amount; $i++) {
+      $item = document.createElement('div');
+      $item.style.margin = '3px';
+
+      $field = document.createElement('span');
+      $field.innerHTML = 'Nom de la Pièce';
+      $field.style.marginRight = '10px';
+      $item.appendChild($field);
+
+      $field = document.createElement('input');
+      $field.name = 'Nom[' + $i + ']';
+      $field.type = 'text';
+      $item.appendChild($field);
+
+      $container.appendChild($item);
+    }
+  }
+
+</script>
+
+</head>
+<body>
 
 </html>
 
 
-<!------------------Java Script------------->
-<script type="text/javascript">
-var range = document.getElementById('range');
-var box = document.getElementById('box');
 
-function change_BRadius(){
-
-    var val= range.value;
-    box.style.borderRadius = val +"m^2"
-    box.innerHTML = "border-radius :" +val+ "m^2;"
-}
-</script>
 

@@ -76,9 +76,13 @@ body
 	.logo5 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
-		max-width: 20%;
+		max-width: 23%;
 		} 
-	
+	.logo6 {  /* retiré du flux normal et placé à droite */
+		margin-left: auto; /* marges automatiques */
+		margin-right: auto;
+		max-width: 21%;
+		}
 		#logo
 	{
 		background-image: url(mydoms.jpg);
@@ -216,7 +220,7 @@ opacity: 1;
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	top: 93%;
+	top: 97%;
 	width: 100%;
 	background-color: white;
 	color: black;

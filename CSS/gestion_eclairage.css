@@ -67,14 +67,18 @@ body {
 	.logo4 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
-		max-width: 18%;
+		max-width: 20%;
 		} 
 	.logo5 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
 		max-width: 20%;
 		} 
-	
+		.logo6 {  /* retiré du flux normal et placé à droite */
+			margin-left: auto; /* marges automatiques */
+			margin-right: auto;
+			max-width: 21%;
+		}
 		#logo
 	{
 		background-image: url(mydoms.jpg);
