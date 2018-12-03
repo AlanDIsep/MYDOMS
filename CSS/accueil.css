@@ -90,16 +90,6 @@ opacity: 1;
 
 
 
-#logo
-{
-	background-image: url(mydoms.jpg);
-	background-position: 50%;
-	height: 200px;
-	width:20%;
-    margin-left: auto;
-    margin-right: auto;
-	border-radius:40px 40px 40px 40px;
-}
 
 .image{
 	display:block;
@@ -152,63 +142,65 @@ opacity: 1;
     line-height: 80px; /* hauteur minimale des lignes */
 }
 	/*------------------Logo-------------*/
-.logo {
-	float: left;  /* retiré du flux normal et placé à gauche */
-	display: block; /* affichage en blocs */
-	margin-left: auto; /* marges automatiques */
-	margin-right: auto;
-	width: 20%; /* largeur de l'élément vis à vis de la largeur de la page */
+
+	/*------------------Logo-------------*/
+	.logo {
+		float: left;  /* retiré du flux normal et placé à gauche */
+		display: block; /* affichage en blocs */
+		margin-left: auto; /* marges automatiques */
+		margin-right: auto;
+		width: 20%; /* largeur de l'élément vis à vis de la largeur de la page */
+		}
+	
+	.logo2 {  /* retiré du flux normal et placé à droite */
+		margin-left: auto; /* marges automatiques */
+		margin-right: auto;
+		max-width: 15%;
+		} 
+	.logo3 {  /* retiré du flux normal et placé à droite */
+		margin-left: auto; /* marges automatiques */
+		margin-right: auto;
+		max-width: 15%;
+		} 
+	.logo3bis {  /* retiré du flux normal et placé à droite */
+		float: right;
+		margin-top: 8%;
+		margin-left: auto; /* marges automatiques */
+		margin-right: 0;
+		max-width: 7%;
+		} 
+	
+	.logo3ter {  /* retiré du flux normal et placé à droite */
+		float: right;
+		margin-top: 1%;
+		margin-left: auto; /* marges automatiques */
+		margin-right: auto;
+		max-width: 10%;
+		} 
+	.logo4 {  /* retiré du flux normal et placé à droite */
+		margin-left: auto; /* marges automatiques */
+		margin-right: auto;
+		max-width: 18%;
+		} 
+	.logo5 {  /* retiré du flux normal et placé à droite */
+		margin-left: auto; /* marges automatiques */
+		margin-right: auto;
+		max-width: 20%;
+		} 
+	
+		#logo
+	{
+		background-image: url(mydoms.jpg);
+		background-position: 50%;
+		height: 200px;
+		width:19%;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius:40px 40px 40px 40px;
 	}
 
-.logo2 {  /* retiré du flux normal et placé à droite */
-	margin-left: auto; /* marges automatiques */
-	margin-right: auto;
-	max-width: 15%;
-	} 
-.logo3 {  /* retiré du flux normal et placé à droite */
-	float: right;
-	margin-top: 8%;
-	margin-left: auto; /* marges automatiques */
-	margin-right: 0;
-	max-width: 7.4%;
-	} 
-.logo3bis {  /* retiré du flux normal et placé à droite */
-	float: right;
-	margin-top: 8%;
-	margin-left: auto; /* marges automatiques */
-	margin-right: 0;
-	max-width: 7%;
-	} 
 
-.logo3ter {  /* retiré du flux normal et placé à droite */
-	float: right;
-	margin-top: 1%;
-	margin-left: auto; /* marges automatiques */
-	margin-right: auto;
-	max-width: 10%;
-	} 
-.logo4 {  /* retiré du flux normal et placé à droite */
-	margin-left: auto; /* marges automatiques */
-	margin-right: auto;
-	max-width: 18%;
-	} 
-.logo5 {  /* retiré du flux normal et placé à droite */
-	margin-left: auto; /* marges automatiques */
-	margin-right: auto;
-	max-width: 20%;
-	} 
-
-	#logo
-{
-	background-image: url(mydoms.jpg);
-	background-position: 50%;
-	height: 200px;
-	width:19%;
-    margin-left: auto;
-    margin-right: auto;
-	border-radius:40px 40px 40px 40px;
-}
-
+	
 	/*------------------Titre Page-------------*/
 	.titlepage{
 		padding:90px;
@@ -226,8 +218,8 @@ opacity: 1;
 			margin-left: 20%;
 			margin-right: 20%;
 			max-width: 100%;
-			padding-top : 2%;
-			padding-bottom : 2%;
+			padding-top : 0.2%;
+			padding-bottom : 0%;
 	}
 /*------------------Fil d'ariane-------------*/
 
