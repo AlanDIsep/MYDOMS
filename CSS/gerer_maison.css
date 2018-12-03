@@ -43,23 +43,12 @@ body
 		width: 20%; /* largeur de l'élément vis à vis de la largeur de la page */
 		}
 	
-	.logo2 {  /* retiré du flux normal et placé à droite */
-		margin-left: auto; /* marges automatiques */
-		margin-right: auto;
-		max-width: 15%;
-		} 
 	.logo3 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
-		max-width: 15%;
+		max-width: 13%;
 		} 
-	.logo3bis {  /* retiré du flux normal et placé à droite */
-		float: right;
-		margin-top: 8%;
-		margin-left: auto; /* marges automatiques */
-		margin-right: 0;
-		max-width: 7%;
-		} 
+
 	
 	.logo3ter {  /* retiré du flux normal et placé à droite */
 		float: right;
@@ -68,20 +57,16 @@ body
 		margin-right: auto;
 		max-width: 10%;
 		} 
-	.logo4 {  /* retiré du flux normal et placé à droite */
-		margin-left: auto; /* marges automatiques */
-		margin-right: auto;
-		max-width: 18%;
-		} 
+
 	.logo5 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
-		max-width: 23%;
+		max-width: 21%;
 		} 
 	.logo6 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
-		max-width: 21%;
+		max-width: 20%;
 		}
 		#logo
 	{

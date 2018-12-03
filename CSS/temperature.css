@@ -30,7 +30,6 @@ body {
     line-height: 80px;
 }
 	/*------------------Logo-------------*/
-	/*------------------Logo-------------*/
 	.logo {
 		float: left;  /* retiré du flux normal et placé à gauche */
 		display: block; /* affichage en blocs */
@@ -39,23 +38,12 @@ body {
 		width: 20%; /* largeur de l'élément vis à vis de la largeur de la page */
 		}
 	
-	.logo2 {  /* retiré du flux normal et placé à droite */
-		margin-left: auto; /* marges automatiques */
-		margin-right: auto;
-		max-width: 15%;
-		} 
 	.logo3 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
-		max-width: 15%;
+		max-width: 13%;
 		} 
-	.logo3bis {  /* retiré du flux normal et placé à droite */
-		float: right;
-		margin-top: 8%;
-		margin-left: auto; /* marges automatiques */
-		margin-right: 0;
-		max-width: 7%;
-		} 
+
 	
 	.logo3ter {  /* retiré du flux normal et placé à droite */
 		float: right;
@@ -64,20 +52,16 @@ body {
 		margin-right: auto;
 		max-width: 10%;
 		} 
-	.logo4 {  /* retiré du flux normal et placé à droite */
-		margin-left: auto; /* marges automatiques */
-		margin-right: auto;
-		max-width: 22%;
-		} 
+
 	.logo5 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
-		max-width: 20%;
+		max-width: 21%;
 		} 
-		.logo6 {  /* retiré du flux normal et placé à droite */
-			margin-left: auto; /* marges automatiques */
-			margin-right: auto;
-			max-width: 21%;
+	.logo6 {  /* retiré du flux normal et placé à droite */
+		margin-left: auto; /* marges automatiques */
+		margin-right: auto;
+		max-width: 20%;
 		}
 		#logo
 	{
@@ -90,7 +74,6 @@ body {
 		border-radius:40px 40px 40px 40px;
 	}
 	
-
 /*------------------Main-------------*/
 .main {
 	padding:312px 315px;
