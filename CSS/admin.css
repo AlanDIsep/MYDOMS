@@ -31,6 +31,11 @@ a:hover {
   color: black;
 }
 
+img{
+	height:35px;
+width:35px;}
+
+
 nav {
   width: 250px;
   background: #121F28;
