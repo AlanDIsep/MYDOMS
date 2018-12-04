@@ -265,6 +265,23 @@ opacity: 1;
 	  }
 	  
 	  .five { 
-		grid-column: 2;
-		grid-row: 3;
+		grid-column: 4;
+		grid-row: 1;
 	  }
+	  
+	  .sixth { 
+		grid-column: 4;
+		grid-row: 2;
+	  }
+	  	  
+	  .seven { 
+		grid-column: 5;
+		grid-row: 1;
+	  }	  
+	  .height { 
+		grid-column: 5;
+		grid-row: 2;
+	  }	  
+
+
+	  
