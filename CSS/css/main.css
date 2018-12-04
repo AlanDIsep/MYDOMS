@@ -225,6 +225,9 @@ iframe {
   justify-content: center;
   padding-top: 20px;
 }
+a#accueiltest {
+	display: block;
+}
 
 .login100-form-btn {
   font-family: Montserrat-Bold;
