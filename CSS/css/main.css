@@ -251,6 +251,11 @@ a#accueiltest {
   transition: all 0.4s;
 }
 
+a:link 
+{ 
+text-decoration:none; 
+} 
+
 .login100-form-btn:hover {
   background: #333333;
 }
