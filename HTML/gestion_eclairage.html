@@ -48,11 +48,19 @@
     <div id="conteneur">
 	<div id="target">
 		<h2>Statut : Chambre 1 </h2>
-        <label class="switch">
+        <div>
+		<label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
-        </label>
-        <p id="temp">0%</p>
+		</label></div>
+		
+        <output for="range" class="output" id="temp" value="0"></output>
+		</br></br></br>
+		
+		<label for="range">
+        <input type="range" name="range" id="range" min="0" max="100" step="5" value="0"/>
+		</label>
+ 
     </div>
 
 	<div id="target1">
@@ -113,6 +121,12 @@ $('.toggle3').click(function()
 });
      </script>
 </body>
+<script>
+
+$('#range').on("input", function() {
+    $('.output').val(this.value +"%" );
+    }).trigger("change");
+</script>
 
 
 <!-------------------Footer-------------->
