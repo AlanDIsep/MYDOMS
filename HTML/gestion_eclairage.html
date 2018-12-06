@@ -47,7 +47,7 @@
 	
     <div id="conteneur">
 	<div id="target">
-		<h2 class="color-t">Statut : Chambre 1 </h2>
+		<h2 class="color-t">Chambre 1 </h2>
         <div>
 		<label class="switch">
         <input type="checkbox">
@@ -64,12 +64,19 @@
     </div>
 
 	<div id="target1">
-        <h2>Statut</h2>
-        <label class="switch">
+        <h2 class="color-t">Salon </h2>
+        <div>
+		<label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
-        </label>
-        <p id="temp">55%</p>
+		</label></div>
+		</br>
+        <output for="range" class="output2" id="temp" value="0">20%</output>
+		</br></br>
+		
+		<label for="range">
+        <input type="range" name="range" id="range2" min="0" max="100" step="5" value="20"/>
+		</label>
     </div>
 	
 	<div id="target2">
@@ -125,6 +132,18 @@ $('.toggle3').click(function()
 
 $('#range').on("input", function() {
     $('.output').val(this.value +"%" );
+    }).trigger("change");
+	
+	$('#range2').on("input", function() {
+    $('.output2').val(this.value +"%" );
+    }).trigger("change");
+	
+	$('#range3').on("input", function() {
+    $('.output3').val(this.value +"%" );
+    }).trigger("change");
+	
+	$('#range4').on("input", function() {
+    $('.output4').val(this.value +"%" );
     }).trigger("change");
 </script>
 
