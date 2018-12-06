@@ -44,39 +44,69 @@
 	
     <div id="conteneur">
 	<div id="target">
-		<h2>Statut : Chambre 1 </h2>
+		<h2>Chambre 1 </h2>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
-        </label>
+        </label><span> Chauffage </span>
         <p id="temp">21°C</p>
+		</br>
+		</br>
+			
+			
+			<div id="modulator">
+			<button type="button" onClick="onClick2()" style="margin-left:15px;">-</button>
+			<p>Température désirée: <a id="clicks"></a>°</p>
+			<button type="button" onClick="onClick()">+</button>
+			</div>
+			
     </div>
 
 	<div id="target1">
-        <h2>Statut</h2>
+        <h2>Salon</h2>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
         </label>
         <p id="temp">23°C</p>
+		</br>
+		</br>
+		<div id="modulator">
+			<button type="button" onClick="onClick3()" style="margin-left:15px;">-</button>
+			<p>Température désirée: <a id="clicks2"></a>°</p>
+			<button type="button" onClick="onClick4()">+</button>
+			</div>
+			
     </div>
 	
 	<div id="target2">
-        <h2>Statut</h2>
+        <h2>Cuisine</h2>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
         </label>
         <p id="temp">20°C </p>
+		</br></br>
+		<div id="modulator">
+			<button type="button" onClick="onClick5()" style="margin-left:15px;">-</button>
+			<p>Température désirée: <a id="clicks3"></a>°</p>
+			<button type="button" onClick="onClick6()">+</button>
+			</div>
     </div>
 	
 	<div id="target3">
-        <h2>Statut</h2>
+        <h2>Chambre 2</h2>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
         </label>
-        <p id="temp">22°C</p>
+        <p id="temp">22°C</p></br></br>
+		<div id="modulator">
+			<button type="button" onClick="onClick7()" style="margin-left:15px;">-</button>
+			<p>Température désirée: <a id="clicks4"></a>°</p>
+			<button type="button" onClick="onClick8()">+</button>
+			</div>
+		
     </div>
 	</div>
 
@@ -120,5 +150,47 @@ $('.toggle3').click(function()
 });
  </script>
  
+ <script type="text/javascript">
+    var clicks = 20;
+	var clicks2 = 20;
+	var clicks3=20;
+	var clicks4=20;
+    <!-- fonctions de modulation de température souhaitée avec une fonction par bouton -->
+	function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+	};
+    function onClick2() {
+        clicks -= 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+	 <!-- fin-->
+	  <!-- Et on refait la même chose pour les autres fenêtres-->
+	function onClick3() {
+        clicks2 -= 1;
+        document.getElementById("clicks2").innerHTML = clicks2;
+    };
+	function onClick4() {
+        clicks2 += 1;
+        document.getElementById("clicks2").innerHTML = clicks2;
+    };
+	function onClick5() {
+        clicks3 -= 1;
+        document.getElementById("clicks3").innerHTML = clicks3;
+    };
+	function onClick6() {
+        clicks3 += 1;
+        document.getElementById("clicks3").innerHTML = clicks3;
+    };
+	function onClick7() {
+        clicks4 -= 1;
+        document.getElementById("clicks3").innerHTML = clicks4;
+    };
+	function onClick8() {
+        clicks4 += 1;
+        document.getElementById("clicks4").innerHTML = clicks4;
+    };
+	
+  </script>
 
 </html>
