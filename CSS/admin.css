@@ -36,6 +36,11 @@ img{
 width:35px;}
 
 
+th {
+	width:180px;
+	
+	}
+
 nav {
   width: 250px;
   background: #121F28;
@@ -49,7 +54,7 @@ nav header {
   font-size: 16px;
   color: #fff;
   border-bottom: 1px solid #121F28;
-  background: DarkBlue;
+  background: #121F28;
 }
 
 nav header span {
@@ -134,7 +139,7 @@ input[type=date], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-	display:block;
+	color:grey;
 }
 
 input[type=submit] {
@@ -149,7 +154,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #121F28;
 }
   
   .wrapper {
@@ -183,7 +188,15 @@ input[type=submit]:hover {
   font-weight: 300;
   text-transform: uppercase;
   border-bottom: 1px solid #ddd;
-  background: #fff;
+  background: #121F28;
+  color:white;
+}
+
+.kpi{
+	font-size:60px;
+	text-align :center;
+	display:block;
+	margin-top:20px;
 }
 
 #footer{
