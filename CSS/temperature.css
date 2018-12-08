@@ -141,7 +141,6 @@ body {
   margin:auto;
   bottom:20px;
   background:white;
-  background-size: 600px;
   margin-bottom:100px;
 
 }
@@ -156,7 +155,7 @@ body {
   margin:auto;
   bottom:20px;
   background:white;
-  
+  border:2px solid #DCE837;
   
 
 }
@@ -172,8 +171,8 @@ body {
   border-radius:5px;
   margin:auto;
   bottom:20px;
-  background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-  
+  background:white;
+  border:2px solid #DCE837;
 }
 
 #target3{
@@ -186,6 +185,7 @@ body {
   margin:auto;
   bottom:20px;
   background: white;
+  border:2px solid #DCE837;
 }
 
 
@@ -232,7 +232,7 @@ body {
 }
 
 input:checked + .slider {
-  background-color: green;
+  background-color: #DCE837;
 }
 
 input:focus + .slider {
@@ -284,10 +284,16 @@ button::after {
 	font-family: Kollektif;
 }
 
+.lumi{
+	height:10%;
+	width:18%;
+	display: block;
+	margin :auto;
+}
 
 
 #temp{
-font-size:70px;
+font-size:50px;
 text-align:center;
 margin:auto;
 color:#121F28;
