@@ -24,6 +24,7 @@ body {
 
 #tickets{
 	height:90%;
+	display:block;
 }
 
 th {
@@ -94,9 +95,8 @@ main {
 
 #stats{
 	display:none;
-	
-	
-}
+	height:500px;
+	}
 
 main h1 {
   height: 70px;

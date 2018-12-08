@@ -69,12 +69,13 @@ nav header span {
 }
 
 
-nav ul li:first-child {
-  padding: 15px;
-  color: rgba(255,255,255,.5);
-  text-transform: uppercase;
-  border-bottom: 1px solid #121F28;
-}
+
+/* nav ul li:first-child { */
+  /* padding: 15px; */
+  /* color: rgba(255,255,255,.5); */
+  /* text-transform: uppercase; */
+  /* border-bottom: 1px solid #121F28; */
+/* } */
 
 nav ul a {
   position: relative;
@@ -92,6 +93,10 @@ display:block;}
 display:none;}
 
 #tickets{display:none;
+height:500px;
+}
+
+#tickets2{display:block;
 height:500px;
 }
 
@@ -209,3 +214,15 @@ input[type=submit]:hover {
 	font-size:small;
 }
 
+	#stats{
+	display:none;
+	
+	}
+	
+	th{background:#121F28;
+	height:30px;
+	color:white;
+	
+	}
+	
+	
