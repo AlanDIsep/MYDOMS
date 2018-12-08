@@ -35,7 +35,7 @@
   <main>
       
 
-  	<div class="container">
+ <div class="container">
         <button class="toggle">Chambre 1</button>     
         <button class="toggle1">Salon</button>
         <button class="toggle2">Cuisine</button> 
@@ -69,7 +69,8 @@
 		<label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
-		</label></div>
+		</div>
+		</label>
 		</br>
         <output for="range" class="output2" id="temp" value="0">20%</output>
 		</br></br>
@@ -80,54 +81,71 @@
     </div>
 	
 	<div id="target2">
-        <h2>Statut</h2>
+        <h2>Cuisine</h2>
+		<div>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
-        </label>
-        <p id="temp">80% </p>
+        </label></div>
+		</br>
+        <output for="range" class="output3" id="temp" value="0">70%</output>
+		</br></br>
+		
+		<label for="range">
+        <input type="range" name="range" id="range3" min="0" max="100" step="5" value="70"/>
+		</label>
     </div>
 	
 	<div id="target3">
-        <h2>Statut</h2>
+        <h2>Chambre 2</h2>
+		<div>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
-        </label>
-        <p id="temp">10%</p>
+        </label></div>
+		</br>
+        <output for="range" class="output4" id="temp" value="0">20%</output>
+		</br></br>
+		
+		<label for="range">
+        <input type="range" name="range" id="range4" min="0" max="100" step="5" value="20"/>
+		</label>
     </div>
-	</div>
-
-
-    <div class="space"></div>
 	
+</div>	
+
+
 
   </main>
+  
+  
+  </body>
+  
     <script type="text/javascript">
     //affichage de la première fenêtre
-$('.toggle').click(function() 
-{
-    $('#target').toggle('slow');
-	$(this).toggleClass("active");
-});
-//affichage de la deuxième fenêtre
-$('.toggle1').click(function() 
-{
-    $('#target1').toggle('slow');
-	$(this).toggleClass("active");
-});
-$('.toggle2').click(function() 
-{
-    $('#target2').toggle('slow');
-	$(this).toggleClass("active");
-});
-$('.toggle3').click(function() 
-{
-	$('#target3').toggle('slow');
-	$(this).toggleClass("active");
-});
+	$('.toggle').click(function() 
+	{
+		$('#target').toggle('slow');
+		$(this).toggleClass("active");
+	});
+	//affichage de la deuxième fenêtre
+	$('.toggle1').click(function() 
+	{
+		$('#target1').toggle('slow');
+		$(this).toggleClass("active");
+	});
+	$('.toggle2').click(function() 
+	{
+		$('#target2').toggle('slow');
+		$(this).toggleClass("active");
+	});
+	$('.toggle3').click(function() 
+	{
+		$('#target3').toggle('slow');
+		$(this).toggleClass("active");
+	});
      </script>
-</body>
+
 <script>
 
 $('#range').on("input", function() {
@@ -148,6 +166,7 @@ $('#range').on("input", function() {
 </script>
 
 
+    
 <!-------------------Footer-------------->
 <footer>
     <div id="footer">

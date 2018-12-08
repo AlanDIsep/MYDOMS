@@ -63,7 +63,8 @@ body {
 		margin-right: auto;
 		max-width: 20%;
 		}
-		#logo
+	
+	#logo
 	{
 		background-image: url(mydoms.jpg);
 		background-position: 50%;
@@ -82,7 +83,7 @@ body {
 }
 	/*------------------Titre Page-------------*/
 	.titlepage{
-		padding:90px;
+		padding:65px;
 		font-family: Kollektif;
 		font-size: 22px;
 		text-align: center;
@@ -113,16 +114,19 @@ body {
 	}
 	
 	.space{
-  padding:30px;
+ padding:40px;
 }
 
+
+
 .color-t{
-	color:#DCE837;
+	color:#121F28;
 }
 
 #modulator{
 	display:Flex;
 	margin:auto;
+
 }
 
 /*fenetre d'affichage*/
@@ -132,11 +136,13 @@ body {
   height:400px;
   padding:5px;
   display:none;
+  border:2px solid #DCE837;
   border-radius:5px;
   margin:auto;
   bottom:20px;
-  background-image:url('icons/temperaturee.png');
+  background:white;
   background-size: 600px;
+  margin-bottom:100px;
 
 }
 
@@ -149,7 +155,9 @@ body {
   border-radius:5px;
   margin:auto;
   bottom:20px;
-  background: linear-gradient(to right top, #060003, #401d24, #78362c, #a45d22, #b89200, #adb011, #97cf37, #6fec65, #4bf08c, #1df3ae, #00f5cc, #06f5e5);
+  background:white;
+  
+  
 
 }
 
@@ -177,7 +185,7 @@ body {
   border-radius:5px;
   margin:auto;
   bottom:20px;
-  background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background: white;
 }
 
 
@@ -282,7 +290,7 @@ button::after {
 font-size:70px;
 text-align:center;
 margin:auto;
-color:#DCE837;
+color:#121F28;
 display:block;
 }
 
@@ -342,7 +350,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid #121F28;
   cursor: pointer;
   transition: .3s ease-in-out;
 }​
@@ -367,4 +375,3 @@ input[type="range"]::-webkit-slider-thumb {
 	font-size:small;
 	
 }
-
