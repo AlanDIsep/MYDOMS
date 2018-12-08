@@ -49,6 +49,7 @@
         <input type="checkbox">
         <span class="slider round"></span>
         </label>
+		<img src="../CSS/icons/temp.jpg" class="lumi"/></br>
         <p id="temp">21°C</p>
 		</br>
 		</br>
@@ -68,6 +69,8 @@
         <input type="checkbox">
         <span class="slider round"></span>
         </label>
+		</br>
+		<img src="../CSS/icons/temp.jpg" class="lumi"/></br>
         <p id="temp">23°C</p>
 		</br>
 		</br>
@@ -85,8 +88,11 @@
         <input type="checkbox">
         <span class="slider round"></span>
         </label>
-        <p id="temp">20°C </p>
-		</br></br>
+        <img src="../CSS/icons/temp.jpg" class="lumi"/>
+		</br>
+		<p id="temp">20°C </p>
+		</br>
+		</br>
 		<div id="modulator">
 			<button type="button" onClick="onClick5()" style="margin-left:15px;">-</button>
 			<p class="color-t">Température désirée: <a id="clicks3"></a>°</p>
@@ -99,8 +105,12 @@
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
-        </label>
-        <p id="temp">22°C</p></br></br>
+        </label></br>
+		<img src="../CSS/icons/temp.jpg" class="lumi"/>
+		</br>
+        <p id="temp">22°C</p>
+		</br>
+		</br>
 		<div id="modulator">
 			<button type="button" onClick="onClick7()" style="margin-left:15px;">-</button>
 			<p class="color-t">Température désirée: <a id="clicks4"></a>°</p>
@@ -159,13 +169,15 @@ $('.toggle3').click(function()
 	var clicks4=20;
     <!-- fonctions de modulation de température souhaitée avec une fonction par bouton -->
 	function onClick() {
-        clicks += 1;
+        if (clicks < 35) {
+		clicks += 1;
         document.getElementById("clicks").innerHTML = clicks;
-	};
+	}};
     function onClick2() {
-        clicks -= 1;
+        if (clicks > 13) {
+		clicks -= 1;
         document.getElementById("clicks").innerHTML = clicks;
-    };
+    }};
 	 <!-- fin-->
 	  <!-- Et on refait la même chose pour les autres fenêtres-->
 	function onClick3() {
@@ -186,7 +198,7 @@ $('.toggle3').click(function()
     };
 	function onClick7() {
         clicks4 -= 1;
-        document.getElementById("clicks3").innerHTML = clicks4;
+        document.getElementById("clicks4").innerHTML = clicks4;
     };
 	function onClick8() {
         clicks4 += 1;
