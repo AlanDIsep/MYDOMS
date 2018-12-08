@@ -16,33 +16,79 @@
   </header>
   
   <ul>
-    <li><a>Tickets</a></li>
-    <li><a>Statistiques</a></li>
+    <li><a onclick="myFunction()">Tickets</a></li>
+    <li><a onclick="myFunction1()">Statistiques</a></li>
   </ul>
   
 </nav>
 
 <main>
   
-  <h1>Tickets</h1>
+  <h1 id="title">Tickets</h1>
   
-  <div class="flex-grid">
+  <div id="tickets" class="flex-grid">
     
-    <div>
-      <table class="my_table">
-  <tr>
-    <th>ID</th>
-    <th>Statut</th>
-    <th>Auteur</th>
-    <th>Résumé</th>
-	<th>Assigné à</th>
-	<th>Date</th>
-  </tr>
-</table>
-    </div>
+      <div>
+	  </br>
+	  <table class="my_table">
+		  <tr>
+			<th>ID</th>
+			<th>Statut</th>
+			<th>Auteur</th>
+			<th>Résumé</th>
+			<th>Assigné à</th>
+			<th>Date</th>
+		  </tr>
+		</table>
+	  </div>
+   </div>
+	
+	
+<div id="stats" class="flex-grid">
     
+ </div>
+
   
 </main>
 
 </body>
+<script type="text/javascript">
+
+
+
+function myFunction() {
+    var x = document.getElementById("tickets");
+	 var y = document.getElementById("stats");
+    if (x.style.display == "none") {
+        x.style.display = "block";
+		y.style.display = "none";
+		z.style.display = "none";
+		document.getElementById("title").innerHTML = "Tickets";
+    } else {
+        x.style.display = "block";
+		y.style.display = "none";
+		z.style.display = "none";
+		document.getElementById("title").innerHTML = "Tickets";
+    }
+	}
+
+function myFunction1() {
+    var x = document.getElementById("stats");
+	var y = document.getElementById("tickets");
+	 
+    if (x.style.display == "none") {
+		 x.style.display = "block";
+		 y.style.display = "none";
+		 z.style.display = "none";
+		 document.getElementById("title").innerHTML = "Statistiques";
+    }  else {
+        x.style.display = "block";
+		y.style.display = "none";
+		z.style.display = "none";
+		document.getElementById("title").innerHTML = "Statistiques";
+		
+    }
+	}
+</script>
+
 </html>

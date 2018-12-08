@@ -22,6 +22,9 @@ body {
 }
 
 
+#tickets{
+	height:90%;
+}
 
 th {
 	width:180px;
@@ -89,6 +92,12 @@ main {
   background: #f5f5f5;
 }
 
+#stats{
+	display:none;
+	
+	
+}
+
 main h1 {
   height: 70px;
   margin: -25px -25px 25px -25px;
@@ -102,7 +111,7 @@ main h1 {
 
 .flex-grid {
   display: flex;
-  min-height: 180px;
+  min-height: 200px;
 }
 
 .flex-grid div {
@@ -110,12 +119,12 @@ main h1 {
   margin: 0 20px 20px 0;
   border: 1px solid #ddd;
   background: #fff;
+  
 }
 
 .flex-grid div:last-child {
   margin-right: 0;
-  height:500px;
-}
+  }
 
 .flex-grid div h2 {
   padding: 12px 15px;
@@ -123,5 +132,6 @@ main h1 {
   font-weight: 300;
   text-transform: uppercase;
   border-bottom: 1px solid #ddd;
-  background: #fff;
+  background: #121F28;
+  color:white;
 }
