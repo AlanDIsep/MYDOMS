@@ -56,7 +56,7 @@ body {
 		font-family: Kollektif;
 		text-align: center;
 		border: 1px solid #DCE837;
-		color: #DCE837
+		color: #DCE837;
 	}
 
 
@@ -190,13 +190,16 @@ opacity: 1;
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
 		max-width: 21%;
-		} 
+		}
+		
+		
 	.logo6 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
 		max-width: 20%;
 		}
-		#logo
+		
+	#logo
 	{
 		background-image: url(mydoms.jpg);
 		background-position: 50%;
