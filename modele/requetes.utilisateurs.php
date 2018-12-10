@@ -26,7 +26,7 @@ function rechercheParNom(PDO $bdd, string $nom): array {
 }
 
 /**
- * Récupère tous les enregistrements de la table users
+ * Récupère tous les enregistrements de la table utilisateur
  * @param PDO $bdd
  * @return array
  */
@@ -41,7 +41,7 @@ function recupereTousUtilisateurs(PDO $bdd): array {
  */
 function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
     
-    $query = ' INSERT INTO users (username, password) VALUES (:username, :password)';
+    $query = ' INSERT INTO utilisateur (username, password) VALUES (:username, :password)';
     $donnees = $bdd->prepare($query);
     $donnees->bindParam(":username", $utilisateur['username'], PDO::PARAM_STR);
     $donnees->bindParam(":password", $utilisateur['password']);

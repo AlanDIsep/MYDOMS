@@ -24,8 +24,8 @@ switch ($function) {
     
     case 'accueil':
         //affichage de l'accueil
-        $vue = "accueil";
-        $title = "Accueil";
+        $vue = "admin";
+        $title = "Admin";
         break;
         
         

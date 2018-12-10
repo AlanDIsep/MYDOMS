@@ -81,13 +81,22 @@
   </div>
  
  
-  <div id="user">
+<?php echo AfficheAlerte($alerte);?>
+
+
+<div id="user">
  <h2>Ajouter un utilisateur</h2>
-</br> 
+<br> 
  <div class="flex-grid">
  
 		<div class="two">
-		  <form action="/">
+    <form method="POST" action="">
+    <label for="id" class="titles">Identifiant</label>
+      <input type="text" id="fname" name="username" placeholder="Identifiant ...">
+      
+      <label for="mdp" class="titles">Mot de Passe</label>
+			<input type="text" id="fname" name="password" placeholder="Mot de Passe ...">
+
 			<label for="fname" class="titles">Prénom</label>
 			<input type="text" id="fname" name="firstname" placeholder="Prénom ...">
 			
