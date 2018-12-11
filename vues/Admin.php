@@ -20,6 +20,8 @@
     <li><a onclick="myFunction()">Tableau de Bord</a></li>
     <li onclick="myFunction1()"><a>Utilisateurs</a></li>
     <li onclick="myFunction2()"><a>Tickets</a></li>
+    <li onclick="myFunction3()"><a>Liste des Utilisateurs</a></li>
+
     
   </ul>
 
@@ -81,49 +83,55 @@
   </div>
  
  
-  <div id="user">
+<?php echo AfficheAlerte($alerte);?>
+
+
+<div id="user">
  <h2>Ajouter un utilisateur</h2>
-</br> 
+<br> 
  <div class="flex-grid">
- 
 		<div class="two">
-		  <form action="/">
-			<label for="fname" class="titles">Prénom</label>
-			<input type="text" id="fname" name="firstname" placeholder="Prénom ...">
-			
+
+    <form method="POST" action="">
+    <label for="id" class="titles">Adresse Mail</label>
+      <input type="text" id="fname" name="AdresseMail" placeholder="Adresse Mail ...">
+      
+      <label for="mdp" class="titles">Mot de Passe</label>
+			<input type="text" id="fname" name="password" placeholder="Mot de Passe ...">
+
 			<label for="lname" class="titles">Nom</label>
-			<input type="text" id="lname" name="lastname" placeholder="Nom ...">
+			<input type="text" id="lname" name="Nom" placeholder="Nom ...">
+      
+      <label for="fname" class="titles">Prénom</label>
+			<input type="text" id="fname" name="Prenom" placeholder="Prénom ...">
 			
 			<label for="birthday" class="titles">Date de Naissance </label></br>
-			<input type="date" id="birthday" name="birthday" placeholder="Date de naissance ..."></br>
+			<input type="date" id="birthday" name="DateDeNaissance" placeholder="Date de naissance ..."></br>
 			
 
 			<label for="adresse" class="titles">Adresse Postale</label>
-			<input type="text" id="adresse" name="adresse" placeholder="Adresse postale ...">
+			<input type="text" id="adresse" name="AdresseFacturation" placeholder="Adresse postale ...">
 		
 			<label for="codepostal" class="titles">Code Postal</label>
-			<input type="text" id="codepostal" name="codepostal" placeholder="Code postal ...">
+			<input type="text" id="codepostal" name="CodePostal" placeholder="Code postal ...">
 			
 			<label for="Ville" class="titles">Ville</label>
-			<input type="text" id="ville" name="ville" placeholder="Ville ...">
+			<input type="text" id="ville" name="Ville" placeholder="Ville ...">
 		
 			<label for="pays" class="titles">Pays</label>
-			<input type="text" id="pays" name="pays" placeholder="Pays ...">
-			
-			<label for="email" class="titles">E-mail</label>
-			<input type="text" id="email" name="email" placeholder="E-mail ...">
+			<input type="text" id="pays" name="Pays" placeholder="Pays ...">
 			
 			<label for="number" class="titles">Numéro de contact</label>
-			<input type="text" id="number" name="number" placeholder="Téléphone ...">
+			<input type="text" id="number" name="NumeroDeTelephone" placeholder="Téléphone ...">
 			
 			<label for="account" class="titles">Type de compte</label>
-			<select id="account" name="account">
-			  <option value="administrateur">Administrateur</option>
-			  <option value="utilisateur">Utilisateur</option>
-			  <option value="helpdesk">Help Desk</option>
+			<select id="account" name="DroitUtilisateur_id">
+			  <option value="1">Administrateur</option>
+			  <option value="2">Utilisateur</option>
+			  <option value="3">Help Desk</option>
 			</select>
 		  
-			<input type="submit" value="Créer utilisateur">
+			<input type="submit" name="submit">
 		  </form>
 		</div>
 </div>
@@ -133,7 +141,7 @@
  <div class="flex-grid">
   <div id="tickets">
 
- </br>
+ <br>
       <table class="my_table">
   <tr>
     <th>ID</th>
@@ -147,6 +155,50 @@
 </div>
 </div>
 
+<div id="listuser">
+<br> 
+<?php 
+/**
+* Vue : liste des utilisateurs inscrits
+*/
+?>
+
+<p><?php echo $entete; ?></p>
+
+<table>
+	<thead>
+		<tr>
+
+			<th>Nom</th>
+			<th>Mot de passe crypté</th>
+		</tr>
+	</thead>
+	<tbody>	
+	
+    <?php foreach ($liste as $element) { ?>
+    
+        <tr>
+        		<td>
+				<?php echo $element['AdresseMail']; ?>
+            	</td>
+        		<td>
+        			<?php echo $element['password']; ?>
+        		</td>
+        	</tr>
+    
+    <?php } ?>
+
+	</tbody>
+</table>
+
+
+<?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
+
+<p>
+	<a href="index.php">Retour</a>
+</p>
+</div>
+</div>
 </div>
 
 <script type="text/javascript">
@@ -201,6 +253,27 @@ function myFunction2() {
 		y.style.display = "none";
 		z.style.display = "none";
 		document.getElementById("title").innerHTML = "Tickets";
+    }
+	
+}
+
+function myFunction3() {
+    var x = document.getElementById("tickets");
+	var y = document.getElementById("user");
+	 var z = document.getElementById("dashboard");
+   var za = document.getElementById("listuser");
+    if (x.style.display == "none") {
+		 x.style.display = "none";
+		 y.style.display = "none";
+		 z.style.display = "none";
+     za.style.display = "block";
+		 document.getElementById("title").innerHTML = "Liste des utilisateurs";
+    } else {
+    x.style.display = "none";
+		y.style.display = "none";
+		z.style.display = "none";
+    za.style.display = "block";
+		document.getElementById("title").innerHTML = "Liste des Utilisateurs";
     }
 	
 }

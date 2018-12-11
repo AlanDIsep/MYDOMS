@@ -92,6 +92,9 @@ display:block;}
 #user{
 display:none;}
 
+#listuser{
+  display:none;}
+
 #tickets{display:none;
 height:500px;
 }
@@ -119,9 +122,13 @@ main h1 {
 }
 
 .two { 
-	grid-column: 2 / 4;
+	grid-column: 1/2;
 	grid-row: 1;
   }
+.three {
+  grid-column: 3/4;
+	grid-row: 1;
+}
   
   
   
