@@ -15,7 +15,7 @@ include('./modele/requetes.utilisateurs.php');
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
-    $function = "Admin";
+    $function = "Login";
 } else {
     $function = $_GET['fonction'];
 }
@@ -27,8 +27,55 @@ switch ($function) {
         $vue = "login";
         $title = "Login";
         break;
+    
+    case 'Accueil':
+        //affichage de l'accueil
+        $vue = "Accueil";
+        $title = "Accueil";
+    break;
+    
+    case 'Contact':
+        $vue = "Contact";
+        $title = "Contact";
+    break;
+    
+    case 'gestion_eclairage':
+        $vue = "gestion_eclairage";
+        $title = "Gestion de l'éclairage";
+    break;
+
+    case 'Profil':
+        $vue = "Profil";
+        $title = "Profil";
+    break;
+
+    case 'FAQ':
+    $vue = "FAQ";
+    $title = "FAQ";
+    break;
+
+    case 'About':
+        $vue = "About";
+        $title = "About";
+    break;
+
+    case 'Temperature':
+        $vue = "Temperature";
+        $title = "Gestion de la température";
+    break;
+
+    case 'gerer_maison':
+        //affichage de l'accueil
+        $vue = "gerer_maison";
+        $title = "Gestion de la Maison";
+    break;
         
-        
+    case 'Configuration':
+        //affichage de la page de configuration
+        $vue = "Configuration";
+        $title = "Configuration de la Maison";
+    break;
+
     case 'Admin':
     // inscription d'un nouvel utilisateur
         $vue = "Admin";
@@ -95,7 +142,5 @@ switch ($function) {
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 
-include ('vues/header.php');
 include ('vues/' . $vue . '.php');
-include ('vues/footer.php');
 

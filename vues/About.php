@@ -9,7 +9,7 @@
 <!------------------header-------------> 
 <header>
 		<title>À Propos</title>	
-		<a href="Accueil.html"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
+		<a href="index.php?cible=utilisateurs&fonction=Accueil"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
 		<img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"/>
 		
 		
@@ -19,11 +19,12 @@
 			<!-------------------Titre de la Page--------------> 
                         <div class="titlepage">
                         <div class="bordertitle">
-                                <a href="Accueil.html"><img title="Tableau de bord" src="../CSS/icons/Bandeau/bord.png" class="logo5"/></a>
-                                <a href="gerer_maison.html"><img title="Gérer ma maion" src="../CSS/icons/Bandeau/accueil.png" class="logo6"/></a>
-                                <a href="Profil.html"><img title="Profil" src="../CSS/icons/Bandeau/profil.png" class="logo3"/></a>
-                                <a href="FAQ.html"><img title="FAQ" src="../CSS/icons/Bandeau/faq.png" class="logo3"/></a>
-                                <a href="Contact.html"><img title="Contact" src="../CSS/icons/Bandeau/contact.png" class="logo3"/></a>
+                                 <a href="index.php?cible=utilisateurs&fonction=Accueil"><img title="Tableau de bord" src="../CSS/icons/Bandeau/bord.png" class="logo5"/></a>
+				<a href="index.php?cible=utilisateurs&fonction=gerer_maison"><img title="Gérer ma maion" src="../CSS/icons/Bandeau/accueil.png" class="logo6"/></a>
+				<a href="index.php?cible=utilisateurs&fonction=Profil"><img title="Profil" src="../CSS/icons/Bandeau/profil.png" class="logo3"/></a>
+                                <a href="index.php?cible=utilisateurs&fonction=FAQ"><img title="FAQ" src="../CSS/icons/Bandeau/faq.png" class="logo3"/></a>
+                                <a href="index.php?cible=utilisateurs&fonction=Contact"><img title="Contact" src="../CSS/icons/Bandeau/contact.png" class="logo3"/></a>
+
                         </div>
                         </div>
 

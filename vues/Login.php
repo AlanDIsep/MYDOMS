@@ -48,6 +48,9 @@
 						<a class="txt2" >
 							Si vous n'avez pas encore ou avez oublié votre identifiant ou mot de passe, merci de contacter le service client Domisep
 						</a>
+						<a href="index.php?cible=utilisateurs&fonction=Accueil">Interface user</a>
+						<a href="index.php?cible=utilisateurs&fonction=Admin">Interface admin</a>
+
 					</div>
 				</form>
 			</div>
