@@ -132,11 +132,12 @@
 		  
 			<input type="submit" name="submit">
 		  </form>
-		</div>
+    </div>
+    
 </div>
 </div>
-<p>Liste des utilisateurs : <a href="index.php?cible=utilisateurs&fonction=liste">lien</a></p>
 
+<p>Liste des utilisateurs : <a href="index.php?cible=utilisateurs&fonction=liste">lien</a></p>
 
  <div class="flex-grid">
   <div id="tickets">

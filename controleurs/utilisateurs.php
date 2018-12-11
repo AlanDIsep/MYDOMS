@@ -98,3 +98,4 @@ switch ($function) {
 include ('vues/header.php');
 include ('vues/' . $vue . '.php');
 include ('vues/footer.php');
+
