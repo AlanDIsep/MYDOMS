@@ -91,17 +91,17 @@
  
 		<div class="two">
     <form method="POST" action="">
-    <label for="id" class="titles">Identifiant</label>
-      <input type="text" id="fname" name="username" placeholder="Identifiant ...">
+    <label for="id" class="titles">Adresse Mail</label>
+      <input type="text" id="fname" name="AdresseMail" placeholder="Adresse Mail ...">
       
       <label for="mdp" class="titles">Mot de Passe</label>
 			<input type="text" id="fname" name="password" placeholder="Mot de Passe ...">
 
-			<label for="fname" class="titles">Prénom</label>
-			<input type="text" id="fname" name="Prenom" placeholder="Prénom ...">
-			
 			<label for="lname" class="titles">Nom</label>
 			<input type="text" id="lname" name="Nom" placeholder="Nom ...">
+      
+      <label for="fname" class="titles">Prénom</label>
+			<input type="text" id="fname" name="Prenom" placeholder="Prénom ...">
 			
 			<label for="birthday" class="titles">Date de Naissance </label></br>
 			<input type="date" id="birthday" name="DateDeNaissance" placeholder="Date de naissance ..."></br>
@@ -119,17 +119,14 @@
 			<label for="pays" class="titles">Pays</label>
 			<input type="text" id="pays" name="Pays" placeholder="Pays ...">
 			
-			<label for="email" class="titles">E-mail</label>
-			<input type="text" id="email" name="Email" placeholder="E-mail ...">
-			
 			<label for="number" class="titles">Numéro de contact</label>
 			<input type="text" id="number" name="NumeroDeTelephone" placeholder="Téléphone ...">
 			
 			<label for="account" class="titles">Type de compte</label>
 			<select id="account" name="DroitUtilisateur_id">
-			  <option value="administrateur">Administrateur</option>
-			  <option value="utilisateur">Utilisateur</option>
-			  <option value="helpdesk">Help Desk</option>
+			  <option value="1">Administrateur</option>
+			  <option value="2">Utilisateur</option>
+			  <option value="3">Help Desk</option>
 			</select>
 		  
 			<input type="submit" name="submit">

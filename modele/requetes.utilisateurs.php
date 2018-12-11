@@ -41,11 +41,19 @@ function recupereTousUtilisateurs(PDO $bdd): array {
  */
 function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
     
-    $query = ' INSERT INTO utilisateur (username, password, prenom) VALUES (:username, :password, :prenom)';
+    $query = ' INSERT INTO utilisateur (AdresseMail, password, Nom, Prenom, DateDeNaissance, AdresseFacturation, CodePostal, Ville, Pays, NumeroDeTelephone, DroitUtilisateur_id) VALUES (:AdresseMail, :password, :Nom, :Prenom, :DateDeNaissance, :AdresseFacturation, :CodePostal, :Ville, :Pays, :NumeroDeTelephone, :DroitUtilisateur_id)';
     $donnees = $bdd->prepare($query);
-    $donnees->bindParam(":username", $utilisateur['username'], PDO::PARAM_STR);
+    $donnees->bindParam(":AdresseMail", $utilisateur['AdresseMail'], PDO::PARAM_STR);
     $donnees->bindParam(":password", $utilisateur['password']);
-    $donnees->bindParam(":prenom", $utilisateur['prenom']);
+    $donnees->bindParam(":Nom", $utilisateur['Nom']);
+    $donnees->bindParam(":Prenom", $utilisateur['Prenom']);
+    $donnees->bindParam(":DateDeNaissance", $utilisateur['DateDeNaissance']);
+    $donnees->bindParam(":AdresseFacturation", $utilisateur['AdresseFacturation']);
+    $donnees->bindParam(":CodePostal", $utilisateur['CodePostal']);
+    $donnees->bindParam(":Ville", $utilisateur['Ville']);
+    $donnees->bindParam(":Pays", $utilisateur['Pays']);
+    $donnees->bindParam(":NumeroDeTelephone", $utilisateur['NumeroDeTelephone']);
+    $donnees->bindParam(":DroitUtilisateur_id", $utilisateur['DroitUtilisateur_id']);
     return $donnees->execute();
     
 }

@@ -35,9 +35,9 @@ switch ($function) {
         $alerte = false;
         
         // Cette partie du code est appelée si le formulaire a été posté
-        if (isset($_POST['username']) and isset($_POST['password'])) {
+        if (isset($_POST['AdresseMail']) and isset($_POST['password'])) {
             
-            if( !estUneChaine($_POST['username'])) {
+            if( !estUneChaine($_POST['AdresseMail'])) {
                 $alerte = "Le nom d'utilisateur doit être une chaîne de caractère.";
                 
             } else if( !estUnMotDePasse($_POST['password'])) {
@@ -48,8 +48,17 @@ switch ($function) {
                 
                 // 
                 $values = [
-                    'username' => $_POST['username'],
+                    'AdresseMail' => $_POST['AdresseMail'],
                     'password' => crypterMdp($_POST['password']), // on crypte le mot de passe
+                    'Nom' => $_POST['Nom'],
+                    'Prenom' => $_POST['Prenom'],
+                    'DateDeNaissance' => $_POST['DateDeNaissance'], 
+                    'AdresseFacturation' => $_POST['AdresseFacturation'], 
+                    'CodePostal' => $_POST['CodePostal'],
+                    'Ville' => $_POST['Ville'],
+                    'Pays' => $_POST['Pays'],
+                    'NumeroDeTelephone' => $_POST['NumeroDeTelephone'],
+                    'DroitUtilisateur_id' => $_POST['DroitUtilisateur_id'],
                 ];
 
                 // Appel à la BDD à travers une fonction du modèle.
