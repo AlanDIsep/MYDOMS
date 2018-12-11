@@ -17,8 +17,8 @@ $table = "utilisateur";
  */
 function rechercheParNom(PDO $bdd, string $nom): array {
     
-    $statement = $bdd->prepare('SELECT * FROM  utilisateur WHERE username = :username');
-    $statement->bindParam(":username", $value);
+    $statement = $bdd->prepare('SELECT * FROM  utilisateur WHERE AdresseMail = :AdresseMail');
+    $statement->bindParam(":AdresseMail", $value);
     $statement->execute();
     
     return $statement->fetchAll();

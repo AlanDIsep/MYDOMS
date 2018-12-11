@@ -20,7 +20,7 @@
     
         <tr>
         		<td>
-				<?php echo $element['username']; ?>
+				<?php echo $element['AdresseMail']; ?>
             	</td>
         		<td>
         			<?php echo $element['password']; ?>

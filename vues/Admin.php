@@ -20,7 +20,6 @@
     <li><a onclick="myFunction()">Tableau de Bord</a></li>
     <li onclick="myFunction1()"><a>Utilisateurs</a></li>
     <li onclick="myFunction2()"><a>Tickets</a></li>
-    <li onclick="myFunction3()"><a>Liste des Utilisateurs</a></li>
 
     
   </ul>
@@ -136,6 +135,7 @@
 		</div>
 </div>
 </div>
+<p>Liste des utilisateurs : <a href="index.php?cible=utilisateurs&fonction=liste">lien</a></p>
 
 
  <div class="flex-grid">
@@ -157,46 +157,7 @@
 
 <div id="listuser">
 <br> 
-<?php 
-/**
-* Vue : liste des utilisateurs inscrits
-*/
-?>
 
-<p><?php echo $entete; ?></p>
-
-<table>
-	<thead>
-		<tr>
-
-			<th>Nom</th>
-			<th>Mot de passe crypté</th>
-		</tr>
-	</thead>
-	<tbody>	
-	
-    <?php foreach ($liste as $element) { ?>
-    
-        <tr>
-        		<td>
-				<?php echo $element['AdresseMail']; ?>
-            	</td>
-        		<td>
-        			<?php echo $element['password']; ?>
-        		</td>
-        	</tr>
-    
-    <?php } ?>
-
-	</tbody>
-</table>
-
-
-<?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
-
-<p>
-	<a href="index.php">Retour</a>
-</p>
 </div>
 </div>
 </div>
@@ -257,26 +218,6 @@ function myFunction2() {
 	
 }
 
-function myFunction3() {
-    var x = document.getElementById("tickets");
-	var y = document.getElementById("user");
-	 var z = document.getElementById("dashboard");
-   var za = document.getElementById("listuser");
-    if (x.style.display == "none") {
-		 x.style.display = "none";
-		 y.style.display = "none";
-		 z.style.display = "none";
-     za.style.display = "block";
-		 document.getElementById("title").innerHTML = "Liste des utilisateurs";
-    } else {
-    x.style.display = "none";
-		y.style.display = "none";
-		z.style.display = "none";
-    za.style.display = "block";
-		document.getElementById("title").innerHTML = "Liste des Utilisateurs";
-    }
-	
-}
 </script>  
   
 </main>
