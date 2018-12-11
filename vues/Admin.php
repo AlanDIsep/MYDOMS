@@ -20,6 +20,8 @@
     <li><a onclick="myFunction()">Tableau de Bord</a></li>
     <li onclick="myFunction1()"><a>Utilisateurs</a></li>
     <li onclick="myFunction2()"><a>Tickets</a></li>
+    <li onclick="myFunction3()"><a>Liste des Utilisateurs</a></li>
+
     
   </ul>
 
@@ -88,8 +90,8 @@
  <h2>Ajouter un utilisateur</h2>
 <br> 
  <div class="flex-grid">
- 
 		<div class="two">
+
     <form method="POST" action="">
     <label for="id" class="titles">Adresse Mail</label>
       <input type="text" id="fname" name="AdresseMail" placeholder="Adresse Mail ...">
@@ -153,6 +155,11 @@
 </div>
 </div>
 
+<div id="listuser">
+<br> 
+
+</div>
+</div>
 </div>
 
 <script type="text/javascript">
@@ -207,6 +214,27 @@ function myFunction2() {
 		y.style.display = "none";
 		z.style.display = "none";
 		document.getElementById("title").innerHTML = "Tickets";
+    }
+	
+}
+
+function myFunction3() {
+    var x = document.getElementById("tickets");
+	var y = document.getElementById("user");
+	 var z = document.getElementById("dashboard");
+   var za = document.getElementById("listuser");
+    if (x.style.display == "none") {
+		 x.style.display = "none";
+		 y.style.display = "none";
+		 z.style.display = "none";
+     za.style.display = "block";
+		 document.getElementById("title").innerHTML = "Liste des utilisateurs";
+    } else {
+    x.style.display = "none";
+		y.style.display = "none";
+		z.style.display = "none";
+    za.style.display = "block";
+		document.getElementById("title").innerHTML = "Liste des Utilisateurs";
     }
 	
 }
