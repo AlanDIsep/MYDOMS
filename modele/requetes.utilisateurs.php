@@ -4,7 +4,7 @@
 include('requetes.generiques.php');
 
 //on définit le nom de la table
-$table = "users";
+$table = "utilisateur";
 
 // requêtes spécifiques à la table des capteurs
 
@@ -41,10 +41,11 @@ function recupereTousUtilisateurs(PDO $bdd): array {
  */
 function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
     
-    $query = ' INSERT INTO utilisateur (username, password) VALUES (:username, :password)';
+    $query = ' INSERT INTO utilisateur (username, password, prenom) VALUES (:username, :password, :prenom)';
     $donnees = $bdd->prepare($query);
     $donnees->bindParam(":username", $utilisateur['username'], PDO::PARAM_STR);
     $donnees->bindParam(":password", $utilisateur['password']);
+    $donnees->bindParam(":prenom", $utilisateur['prenom']);
     return $donnees->execute();
     
 }

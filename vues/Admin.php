@@ -98,41 +98,41 @@
 			<input type="text" id="fname" name="password" placeholder="Mot de Passe ...">
 
 			<label for="fname" class="titles">Prénom</label>
-			<input type="text" id="fname" name="firstname" placeholder="Prénom ...">
+			<input type="text" id="fname" name="Prenom" placeholder="Prénom ...">
 			
 			<label for="lname" class="titles">Nom</label>
-			<input type="text" id="lname" name="lastname" placeholder="Nom ...">
+			<input type="text" id="lname" name="Nom" placeholder="Nom ...">
 			
 			<label for="birthday" class="titles">Date de Naissance </label></br>
-			<input type="date" id="birthday" name="birthday" placeholder="Date de naissance ..."></br>
+			<input type="date" id="birthday" name="DateDeNaissance" placeholder="Date de naissance ..."></br>
 			
 
 			<label for="adresse" class="titles">Adresse Postale</label>
-			<input type="text" id="adresse" name="adresse" placeholder="Adresse postale ...">
+			<input type="text" id="adresse" name="AdresseFacturation" placeholder="Adresse postale ...">
 		
 			<label for="codepostal" class="titles">Code Postal</label>
-			<input type="text" id="codepostal" name="codepostal" placeholder="Code postal ...">
+			<input type="text" id="codepostal" name="CodePostal" placeholder="Code postal ...">
 			
 			<label for="Ville" class="titles">Ville</label>
-			<input type="text" id="ville" name="ville" placeholder="Ville ...">
+			<input type="text" id="ville" name="Ville" placeholder="Ville ...">
 		
 			<label for="pays" class="titles">Pays</label>
-			<input type="text" id="pays" name="pays" placeholder="Pays ...">
+			<input type="text" id="pays" name="Pays" placeholder="Pays ...">
 			
 			<label for="email" class="titles">E-mail</label>
-			<input type="text" id="email" name="email" placeholder="E-mail ...">
+			<input type="text" id="email" name="Email" placeholder="E-mail ...">
 			
 			<label for="number" class="titles">Numéro de contact</label>
-			<input type="text" id="number" name="number" placeholder="Téléphone ...">
+			<input type="text" id="number" name="NumeroDeTelephone" placeholder="Téléphone ...">
 			
 			<label for="account" class="titles">Type de compte</label>
-			<select id="account" name="account">
+			<select id="account" name="DroitUtilisateur_id">
 			  <option value="administrateur">Administrateur</option>
 			  <option value="utilisateur">Utilisateur</option>
 			  <option value="helpdesk">Help Desk</option>
 			</select>
 		  
-			<input type="submit" value="Créer utilisateur">
+			<input type="submit" name="submit">
 		  </form>
 		</div>
 </div>
@@ -142,7 +142,7 @@
  <div class="flex-grid">
   <div id="tickets">
 
- </br>
+ <br>
       <table class="my_table">
   <tr>
     <th>ID</th>

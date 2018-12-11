@@ -15,23 +15,23 @@ include('./modele/requetes.utilisateurs.php');
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
-    $function = "accueil";
+    $function = "Admin";
 } else {
     $function = $_GET['fonction'];
 }
 
 switch ($function) {
     
-    case 'accueil':
+    case 'Login':
         //affichage de l'accueil
         $vue = "login";
         $title = "Login";
         break;
         
         
-    case 'inscription':
+    case 'Admin':
     // inscription d'un nouvel utilisateur
-        $vue = "inscription";
+        $vue = "Admin";
         $alerte = false;
         
         // Cette partie du code est appelée si le formulaire a été posté
@@ -49,7 +49,7 @@ switch ($function) {
                 // 
                 $values = [
                     'username' => $_POST['username'],
-                    'password' => crypterMdp($_POST['password']) // on crypte le mot de passe
+                    'password' => crypterMdp($_POST['password']), // on crypte le mot de passe
                 ];
 
                 // Appel à la BDD à travers une fonction du modèle.

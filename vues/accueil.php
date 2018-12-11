@@ -1,5 +1,5 @@
 <?php 
-/**
+/**x
 * Vue : accueil
 */
 ?>
