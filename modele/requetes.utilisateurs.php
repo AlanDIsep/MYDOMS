@@ -58,9 +58,9 @@ function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
     
 }
 
-function formulaireDeContact(PDO $bdd, array $utilisateur) {
+function ajouterPanne(PDO $bdd, array $panne) {
     
-    $query = ' INSERT INTO utilisateur (Nom, Prenom, Object, AdresseFacturation, CodePostal, Ville, Pays, NumeroDeTelephone, DroitUtilisateur_id) VALUES (:AdresseMail, :password, :Nom, :Prenom, :DateDeNaissance, :AdresseFacturation, :CodePostal, :Ville, :Pays, :NumeroDeTelephone, :DroitUtilisateur_id)';
+    $query = ' INSERT INTO panne (DescriptionPanne, Type, Date, Equipement_id, DroitUtilisateur_idDroitUtilisateur, idUtilisateur) VALUES (:DescriptionPanne, :Type, :Date, :Equipement_id, :DroitUtilisateur_idDroitUtilisateur, :idUtilisateur)';
     $donnees = $bdd->prepare($query);
     $donnees->bindParam(":AdresseMail", $utilisateur['AdresseMail'], PDO::PARAM_STR);
     $donnees->bindParam(":password", $utilisateur['password']);
@@ -73,6 +73,14 @@ function formulaireDeContact(PDO $bdd, array $utilisateur) {
     $donnees->bindParam(":Pays", $utilisateur['Pays']);
     $donnees->bindParam(":NumeroDeTelephone", $utilisateur['NumeroDeTelephone']);
     $donnees->bindParam(":DroitUtilisateur_id", $utilisateur['DroitUtilisateur_id']);
+    return $donnees->execute();
+}
+
+function ajouterTypePanne(PDO $bdd, array $typePanne) {
+    
+    $query = ' INSERT INTO typePanne (typePanne) VALUES (:typePanne)';
+    $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":typePanne", $typePanne['typePanne'], PDO::PARAM_STR);
     return $donnees->execute();
 }
 

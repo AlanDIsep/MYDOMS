@@ -28,34 +28,44 @@
 
 				</div>
 			</div>
-    <h1 align="center" style="color:#FFF">Formulaire de contact</h1>
+    <h1 align="center" style="color:#FFF">Support technique</h1>
 
     <!-------------------Contenu-------------->
 
     <div class="container">
 
-        <form action="action_page.php">
+        <form method="POST" action="">
+        <label for="Nom">Id utilisateur:</label>
+        <?php
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse = $bdd->query('SELECT * FROM utilisateur');
+            while ($donnees = $reponse->fetch()){?>
+            <?php echo $donnees['Nom'];?>
+            <?php } $reponse->closeCursor(); // Termine le traitement de la requête ?>
+            <br><br>
+            <label for="idequipement">Id Équipement</label>
+            <input type="text" id="prenom" name="prenom" placeholder="N° de série de votre équipement">
 
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" placeholder="Votre nom">
-
-            <label for="prenom">Prénom</label>
-            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
-
-            <label for="object">Objet</label>
-
-            <select id="object" name="object">
-                <option value="Demande d'informations">Demande d'informations</option>
-                <option value="Problème d'utilisation">Problème d'utilisation</option>
-                <option value="Autre">Autre</option>
-								<option value="Demande ajout de maison">Demander d'ajouter une maison </option>
+            <label for="object">Type de panne</label>
+            <select > 
+                <?php
+                $table="typePanne";
+                $resultat=$bdd->query("SELECT * FROM typePanne");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="' . $data['typePanne'] . '">' . $data['typePanne'] . '</option>';
+                } ?>
             </select>
 
-            <label for="Message">Message</label>
-            <textarea id="message" name="message" placeholder="Ecrivez ici..." style="height:200px"></textarea>
+            <label for="Message">Description de la panne</label>
+            <textarea id="message" name="descriptionpanne" placeholder="Ecrivez ici..." style="height:200px"></textarea>
 
+            <label for="date">Date de la panne</label><br>
+            <input type="date" id="datepanne" name="datepanne">
+            <br><br>
             <input type="submit" value="Envoyer">
-
     </form><br><br>
     </div>
 
@@ -75,3 +85,4 @@
 
 
 </html>
+

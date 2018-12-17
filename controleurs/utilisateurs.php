@@ -89,6 +89,7 @@ switch ($function) {
                 
             } else if( !estUnMotDePasse($_POST['password'])) {
                 $alerte = "Le mot de passe n'est pas correct.";
+            
                 
             } else {
                 // Tout est ok, on peut inscrire le nouvel utilisateur
@@ -110,6 +111,7 @@ switch ($function) {
 
                 // Appel à la BDD à travers une fonction du modèle.
                 $retour = ajouteUtilisateur($bdd, $values);
+
                 
                 if ($retour) {
                     $alerte = "Inscription réussie";
@@ -117,6 +119,13 @@ switch ($function) {
                     $alerte = "L'inscription dans la BDD n'a pas fonctionné";
                 }
             }
+        }
+        else if(isset($_POST['typePanne'])) {
+            $values = [
+                'typePanne' => $_POST['typePanne'],
+            ];
+            // Appel à la BDD à travers une fonction du modèle.
+            $retour = ajouterTypePanne($bdd, $values);
         }
         $title = "Inscription";
         break;
