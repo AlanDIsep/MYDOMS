@@ -60,19 +60,13 @@ function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
 
 function ajouterPanne(PDO $bdd, array $panne) {
     
-    $query = ' INSERT INTO panne (DescriptionPanne, Type, Date, Equipement_id, DroitUtilisateur_idDroitUtilisateur, idUtilisateur) VALUES (:DescriptionPanne, :Type, :Date, :Equipement_id, :DroitUtilisateur_idDroitUtilisateur, :idUtilisateur)';
+    $query = ' INSERT INTO panne (DescriptionPanne, Date, Equipement_id,DroitUtilisateur_idDroitUtilisateur, typePanne) VALUES (:DescriptionPanne, :Date, :Equipement_id, :DroitUtilisateur_idDroitUtilisateur, :typePanne)';
     $donnees = $bdd->prepare($query);
-    $donnees->bindParam(":AdresseMail", $utilisateur['AdresseMail'], PDO::PARAM_STR);
-    $donnees->bindParam(":password", $utilisateur['password']);
-    $donnees->bindParam(":Nom", $utilisateur['Nom']);
-    $donnees->bindParam(":Prenom", $utilisateur['Prenom']);
-    $donnees->bindParam(":DateDeNaissance", $utilisateur['DateDeNaissance']);
-    $donnees->bindParam(":AdresseFacturation", $utilisateur['AdresseFacturation']);
-    $donnees->bindParam(":CodePostal", $utilisateur['CodePostal']);
-    $donnees->bindParam(":Ville", $utilisateur['Ville']);
-    $donnees->bindParam(":Pays", $utilisateur['Pays']);
-    $donnees->bindParam(":NumeroDeTelephone", $utilisateur['NumeroDeTelephone']);
-    $donnees->bindParam(":DroitUtilisateur_id", $utilisateur['DroitUtilisateur_id']);
+    $donnees->bindParam(":DescriptionPanne", $panne['DescriptionPanne']);
+    $donnees->bindParam(":Date", $panne['Date']);
+    $donnees->bindParam(":DroitUtilisateur_idDroitUtilisateur", $panne['DroitUtilisateur_idDroitUtilisateur']);
+    $donnees->bindParam(":Equipement_id", $panne['Equipement_id']);
+    $donnees->bindParam(":typePanne", $panne['typePanne']);
     return $donnees->execute();
 }
 
@@ -81,6 +75,15 @@ function ajouterTypePanne(PDO $bdd, array $typePanne) {
     $query = ' INSERT INTO typePanne (typePanne) VALUES (:typePanne)';
     $donnees = $bdd->prepare($query);
     $donnees->bindParam(":typePanne", $typePanne['typePanne'], PDO::PARAM_STR);
+    return $donnees->execute();
+}
+
+function ajouterFAQ(PDO $bdd, array $faq) {
+    
+    $query = ' INSERT INTO faq (QuestionRecurentes, Reponse) VALUES (:QuestionRecurentes, :Reponse)';
+    $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":QuestionRecurentes", $faq['QuestionRecurentes']);
+    $donnees->bindParam(":Reponse", $faq['Reponse']);
     return $donnees->execute();
 }
 

@@ -37,6 +37,30 @@ switch ($function) {
     case 'Contact':
         $vue = "Contact";
         $title = "Contact";
+         // Cette partie du code est appelée si le formulaire a été posté
+         if (isset($_POST['DescriptionPanne'])) {
+
+                // Tout est ok, on peut envoyer le formulaure
+                
+                // 
+                $values = [
+                    'DescriptionPanne' => $_POST['DescriptionPanne'],
+                    'Date' => $_POST['Date'],
+                    'Equipement_id' => $_POST['Equipement_id'], 
+                    'DroitUtilisateur_idDroitUtilisateur' => $_POST['DroitUtilisateur_idDroitUtilisateur'], 
+                    'typePanne' => $_POST['typePanne'], 
+                ];
+
+                // Appel à la BDD à travers une fonction du modèle.
+                $retour = ajouterPanne($bdd, $values);
+
+                
+                if ($retour) {
+                    $alerte = "Panne transmise au support technique";
+                } else {
+                    $alerte = "L'inscription dans la BDD n'a pas fonctionné";
+                }
+            }
     break;
     
     case 'gestion_eclairage':
@@ -120,16 +144,25 @@ switch ($function) {
                 }
             }
         }
+        
         else if(isset($_POST['typePanne'])) {
             $values = [
                 'typePanne' => $_POST['typePanne'],
             ];
             // Appel à la BDD à travers une fonction du modèle.
             $retour = ajouterTypePanne($bdd, $values);
+            }
+
+        else if (isset($_POST['QuestionRecurentes'])){
+            $values = [
+                'QuestionRecurentes' => $_POST['QuestionRecurentes'],
+                'Reponse' => $_POST['Reponse'],
+            ];
+            // Appel à la BDD à travers une fonction du modèle.
+            $retour = ajouterFAQ($bdd, $values);
         }
-        $title = "Inscription";
         break;
-        
+    
     case 'liste':
     // Liste des utilisateurs déjà enregistrés
         $vue = "liste";

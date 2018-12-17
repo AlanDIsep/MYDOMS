@@ -134,6 +134,15 @@
       <input type="submit" value="Ajouter la Panne">
     </form>   
 
+    <h2>Ajouter une FAQ</h2>
+    <form method="POST" action="">
+      <label for="id" class="titles">Question posée</label>
+      <input type="text" id="qstion" name="QuestionRecurentes" placeholder="Renseigner la question ...">
+      <label for="id" class="titles">Réponse à la question</label>
+      <input type="text" id="fnnnname" name="Reponse" placeholder="Renseigner la réponse à la question ...">
+      <input type="submit" value="Ajouter la question">
+    </form>   
+
       <table class="my_table">
       <tr>
         <th>ID</th>

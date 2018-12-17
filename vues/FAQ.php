@@ -91,6 +91,23 @@
             • Mode Automatique:
     </p>
     </div>
+    <?php
+                $table="faq";
+                $resultat=$bdd->query("SELECT * FROM faq");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['QuestionRecurentes'].'">' . $data['QuestionRecurentes'] . '</option>';
+                } ?>
+    </button>
+    <div class="panel">
+    <?php
+                $table="faq";$resultat=$bdd->query("SELECT * FROM faq");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {echo  '<option value="'.$data['Reponse'].'">' . $data['Reponse'] . '</option>';} 
+                ?>
+    </div>
 
 
     <script>
