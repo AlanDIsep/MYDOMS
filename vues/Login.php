@@ -1,12 +1,4 @@
 <?php
-   
-/*try{
-    $bdd = new PDO('mysql:host=localhost:8889;dbname=mydoms;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-}
-catch(Exception $e)
-{
-    die('Erreur : '.$e->getMessage());
-}
 
 
 /*
@@ -27,6 +19,8 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
          
 		    $email = htmlentities($_POST['email'], ENT_QUOTES, "ISO-8859-1"); // le htmlentities() passera les guillemets en entités HTML, ce qui empêchera les injections SQL
             $MotDePasse = htmlentities($_POST['pass'], ENT_QUOTES, "ISO-8859-1");
+			$crypt = password_hash($MotDePasse,PASSWORD_BCRYPT);
+			
             //on se connecte à la base de données:
 			$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
             //on vérifie que la connexion s'effectue correctement:
@@ -44,7 +38,7 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
                     // on ouvre la session avec $_SESSION:
                     $_SESSION['email'] = $email; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     echo "Vous êtes à présent connecté !";
-					 
+					header('Location: vues/Admin.php'); 
 					 
                 }
             }
