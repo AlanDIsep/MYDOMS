@@ -18,7 +18,7 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = "Login";
 } else {
     $function = $_GET['fonction'];
-}
+}   
 
 switch ($function) {
     
@@ -98,6 +98,26 @@ switch ($function) {
         //affichage de la page de configuration
         $vue = "Configuration";
         $title = "Configuration de la Maison";
+        $entete = "Voici la liste :";
+        if (isset($_POST['NomMaison'])) {
+            $values = [
+            'NomMaison' => $_POST['NomMaison'],
+            /*'NumUtilisateur_id' => $_POST['NumUtilisateur_id'],*/
+            /*'NombreHabitant' => $_POST['NombreHabitant'], */
+            /*'Pays' => $_POST['Pays'], */
+            /*'CodePostal' => $_POST['CodePostal'], */
+            'Superficie' => $_POST['Superficie'], 
+            /*'Adresse' => $_POST['Adresse'], */
+            ]; 
+            $retour = ajouteMaison($bdd, $values);
+        }
+            else {
+
+            $configuration = recupereMaisons($bdd);
+            if(empty($liste)) {
+                $alerte = "Aucun utilisateur inscrit pour le moment";
+            }
+            }
     break;
 
     case 'Admin':

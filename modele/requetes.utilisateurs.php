@@ -35,6 +35,10 @@ function recupereTousUtilisateurs(PDO $bdd): array {
     return $bdd->query($query)->fetchAll();
 }
 
+function recupereMaisons(PDO $bdd): array {
+    $query = 'SELECT * FROM habitation';
+    return $bdd->query($query)->fetchAll();
+}
 /**
  * Ajoute un nouvel utilisateur dans la base de données
  * @param array $utilisateur
@@ -54,6 +58,21 @@ function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
     $donnees->bindParam(":Pays", $utilisateur['Pays']);
     $donnees->bindParam(":NumeroDeTelephone", $utilisateur['NumeroDeTelephone']);
     $donnees->bindParam(":DroitUtilisateur_id", $utilisateur['DroitUtilisateur_id']);
+    return $donnees->execute();
+    
+}
+
+function ajouteMaison(PDO $bdd, array $habitation) {
+    
+    $query = ' INSERT INTO habitation (Adresse, Superficie, CodePostal, Pays, NombreHabitant, NumUtilisateur_id, NomMaison) VALUES (:Adresse, :Superficie,:CodePostal, :Pays, :NombreHabitant, :NumUtilisateur_id, :NomMaison)';
+    $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":Adresse", $habitation['Adresse'], PDO::PARAM_STR);
+    $donnees->bindParam(":Superficie", $habitation['Superficie']);
+    $donnees->bindParam(":CodePostal", $habitation['CodePostal']);
+    $donnees->bindParam(":Pays", $habitation['Pays']);
+    $donnees->bindParam(":NombreHabitant", $habitation['NombreHabitant']);
+    $donnees->bindParam(":NumUtilisateur_id", $habitation['NumUtilisateur_id']);
+    $donnees->bindParam(":NomMaison", $habitation['NomMaison']);
     return $donnees->execute();
     
 }

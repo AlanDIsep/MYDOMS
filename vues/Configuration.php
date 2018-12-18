@@ -27,28 +27,62 @@
 				</div>
       </div>
 <!-------------------Main--------------> 
+<div class="wrapper">
+<div class="one">
 <div class="container">
-    
-    <form action="action_page.php">
+    <h2> Ajouter une Maison</h2>
+    <form method="POST" action="">
 
       <label for="nom">Nom de la Maison</label>
-        <input type="text" id="nommaison" name="nommaison" placeholder="Ex: Maison Paris">
+        <input type="text" id="nommaison" name="NomMaison" placeholder="Ex: Maison Paris">
 
       <label for="superficie">Superficie de la Maison: <span id="demo"></span> m2</label>
         <div class="slidecontainer">
-            <input type="range" min="1" max="150" value="0" class="slider" id="myRange">
+            <input type="range" min="1" max="150" value="0" name="Superficie" class="slider" id="myRange">
           </div>
         <br>
         <label for="object">Nombre de pièces </label><br>
-        <form method="post" action="order.php">
-            <input type="number" style="text-align:center;" placeholder="Ex: 3" onkeyup="BuildFormFields(parseInt(this.value, 10));" />
-            <div id="FormFields" style="margin: 20px 0px;"></div>
-        </form>
+
+        <input type="number" style="text-align:center;" name="Superficie" placeholder="Ex: 3" onkeyup="BuildFormFields(parseInt(this.value, 10));" />
+        <div id="FormFields" style="margin: 20px 0px;"></div>
 
 
         <input type="submit" value="Enregistrer">
 
 </form><br><br>
+</div>
+</div>
+<div class="two">
+<div class="container">
+<h2> Liste de(s) Maison(s)</h2>
+  <?php echo $entete; ?></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Maison</th>
+        <th>Superficie</th>
+      </tr>
+    </thead>
+    <tbody>	
+      <?php foreach ($Configuration as $element) { ?>
+          <tr>
+              <td>
+          <?php echo $element['NomMaison']; ?>
+                </td>
+              <td>
+                <?php echo $element['Superficie']; ?>
+              </td>
+            </tr>
+      
+      <?php } ?>
+
+    </tbody>
+  </table>
+
+  <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
+    
+</div>
+</div>
 </div>
 
 <br><br><br><br>
