@@ -1,6 +1,6 @@
 <?php
 
-session_start(); // à mettre tout en haut du fichier .php, cette fonction propre à PHP servira à maintenir la $_SESSION
+ // à mettre tout en haut du fichier .php, cette fonction propre à PHP servira à maintenir la $_SESSION
 if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
     // on vérifie que le champ "Pseudo" n'est pas vide
     // empty vérifie à la fois si le champ est vide et si le champ existe belle et bien (is set)
@@ -29,7 +29,8 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
                 } else {
                     // on ouvre la session avec $_SESSION:
-                    $_SESSION['email'] = $email; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
+                    session_start();
+					$_SESSION['email'] = $email; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     $_SESSION['pass'] = $MotDePasse; 
 					header('Location: index.php?cible=utilisateurs&fonction=Accueil'); 
 					 
