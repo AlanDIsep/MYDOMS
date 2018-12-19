@@ -41,6 +41,6 @@ function estUnMotDePasse($chaine): bool
 
 function crypterMdp($password) {
     //return sha1($password);
-    return password_hash($password, PASSWORD_BCRYPT);
+    return md5($password);
 }
 

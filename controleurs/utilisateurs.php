@@ -19,7 +19,7 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = "Login";
 } else {
     $function = $_GET['fonction'];
-}
+}   
 
 switch ($function) {
 
@@ -99,6 +99,32 @@ switch ($function) {
         //affichage de la page de configuration
         $vue = "Configuration";
         $title = "Configuration de la Maison";
+        if (isset($_POST['NomMaison'])) {
+            $values = [
+            'NomMaison' => $_POST['NomMaison'],
+            'NumUtilisateur_id' => $_POST['NumUtilisateur_id'],
+            'NombreHabitant' => $_POST['NombreHabitant'],
+            'Pays' => $_POST['Pays'], 
+            'CodePostal' => $_POST['CodePostal'], 
+            'Superficie' => $_POST['Superficie'], 
+            'Adresse' => $_POST['Adresse'],
+            ]; 
+            $retour = ajouteMaison($bdd, $values);
+        }
+
+        elseif(isset($_POST['idHabitation'])) {
+            $values = [
+                'idHabitation' => $_POST['idHabitation'],
+                ]; 
+            $retour = supprimeMaisons($bdd,$values);
+        }
+        
+        else {
+            $configuration = recupereMaisons($bdd);
+        }
+
+
+            
     break;
 
     case 'Admin':
