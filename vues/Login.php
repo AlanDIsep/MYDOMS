@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
                     // on ouvre la session avec $_SESSION:
                     $_SESSION['email'] = $email; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     echo "Vous êtes à présent connecté !";
-					header('Location: vues/accueil.php'); 
+					header('Location: index.php?cible=utilisateurs&fonction=Accueil'); 
 					 
                 }
             }
