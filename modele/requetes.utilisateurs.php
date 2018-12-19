@@ -5,6 +5,7 @@ include('requetes.generiques.php');
 
 //on définit le nom de la table
 $table = "utilisateur";
+$table = "habitation";
 
 // requêtes spécifiques à la table des capteurs
 
@@ -74,6 +75,12 @@ function ajouteMaison(PDO $bdd, array $habitation) {
     $donnees->bindParam(":NumUtilisateur_id", $habitation['NumUtilisateur_id']);
     $donnees->bindParam(":NomMaison", $habitation['NomMaison']);
     return $donnees->execute();
+    
+}
+
+function supprimeMaison(PDO $bdd, array $habitation) {
+    $ID=$_GET['idHabitation'];
+    $sql = ' DELETE FROM habitation WHERE idHabitation='$ID'';
     
 }
 

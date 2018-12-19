@@ -32,22 +32,27 @@
 <div class="container">
     <h2> Ajouter une Maison</h2>
     <form method="POST" action="">
-
-      <label for="nom">Nom de la Maison</label>
+    <label for="nom">ID Utilisateur:</label><br>
+      <label for="nom">Nom de la Maison*</label>
         <input type="text" id="nommaison" name="NomMaison" placeholder="Ex: Maison Paris">
 
-      <label for="superficie">Superficie de la Maison: <span id="demo"></span> m2</label>
+      <label for="superficie">Superficie de la Maison:* <span id="demo"></span> m2</label>
         <div class="slidecontainer">
-            <input type="range" min="1" max="150" value="0" name="Superficie" class="slider" id="myRange">
-          </div>
-        <br>
-        <label for="object">Nombre de pièces </label><br>
+          <input type="range" min="1" max="150" value="0" name="Superficie" class="slider" id="myRange">
+          </div><br>
+      <label for="object">Nombre d'habitants* </label><br>
+        <input type="number" name="NombreHabitant"placeholder="Ex: 3" required/><br><br>
 
-        <input type="number" style="text-align:center;" name="Superficie" placeholder="Ex: 3" onkeyup="BuildFormFields(parseInt(this.value, 10));" />
-        <div id="FormFields" style="margin: 20px 0px;"></div>
+      <label for="object">Adresse*</label><br>
+        <input type="text" name="Adresse" placeholder="Ex: 2 rue de la Paix"required/><br><br>
 
+      <label for="object">Code Postal</label><br>
+        <input type="number" name="CodePostal" placeholder="Ex: 75001" required/><br><br>
 
-        <input type="submit" value="Enregistrer">
+      <label for="object">Pays</label><br>
+        <input type="text" name="Pays"placeholder="Ex: Françe" required/><br><br>
+
+        <input type="submit" name="submit" value="Enregistrer">
 
 </form><br><br>
 </div>
@@ -55,22 +60,41 @@
 <div class="two">
 <div class="container">
 <h2> Liste de(s) Maison(s)</h2>
-  <?php echo $entete; ?></p>
-  <table>
+  <table id="customers">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Maison</th>
         <th>Superficie</th>
+        <th>Nombre d'habitant</th>
+        <th>Adresse</th>
+        <th>Code Postal</th>
+        <th>Pays</th>
       </tr>
     </thead>
     <tbody>	
-      <?php foreach ($Configuration as $element) { ?>
+      <?php foreach ($configuration as $element) { ?>
           <tr>
               <td>
-          <?php echo $element['NomMaison']; ?>
+                <?php echo $element['idHabitation']; ?>
+              </td>
+              <td>
+                <?php echo $element['NomMaison']; ?>
                 </td>
               <td>
-                <?php echo $element['Superficie']; ?>
+                <?php echo $element['Superficie']; ?> m2
+              </td>
+              <td>
+                <?php echo $element['NombreHabitant']; ?>
+              </td>
+              <td>
+                <?php echo $element['Adresse']; ?>
+              </td>
+              <td>
+                <?php echo $element['CodePostal']; ?>
+              </td>
+              <td>
+                <?php echo $element['Pays']; ?>
               </td>
             </tr>
       
@@ -82,6 +106,18 @@
   <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
     
 </div>
+</div>
+
+
+<div class="three">
+<div class="container">
+<h2> Supprimer une Maison</h2>
+<form method="POST" action="">
+    <label for="nom">Rentrer l'ID de la Maison à supprimer</label>
+    <input type="number" name="idHabitation" placeholder="Ex: 1" required>
+    <input type="submit" name="submit" value="Supprimer la Maison">
+</form>
+
 </div>
 </div>
 
