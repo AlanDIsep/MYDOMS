@@ -51,7 +51,14 @@ else {
 	<div id="profil">
 	<img src="../CSS/icons/profile.jpg" alt="user" class="image"/>
 	<h3>Mon Profil</h3>
-
+	<p> Adresse Mail </p>
+	<?php
+                $table = "utilisateur";
+				// On récupère tout le contenu de la table utilisateur
+				$ID_user=$_SESSION['AdresseMail'];
+				$reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail = $ID_user");
+				?>
+				
 	<p> Nom </p>
 	<p> Prénom </p>
 	<p> Adresse </p>
