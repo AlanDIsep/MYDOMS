@@ -47,8 +47,20 @@
             <label for="idequipement">Id Équipement *</label>
             <input type="text" id="prenom" name="Equipement_id" placeholder="N° de série de votre équipement" required>
 
+						<label for="object">Type de capteur</label>
+						<select name="Type" >
+								<?php
+								$table="equipement";
+								$resultat=$bdd->query("SELECT * FROM equipement");
+								$resultat->setFetchMode(PDO::FETCH_ASSOC);
+								foreach ($resultat as $data)
+								{
+								echo  '<option value="'.$data['Type'].'">' . $data['Type'] . '</option>';
+								} ?>
+						</select>
+						
             <label for="object">Type de panne *</label>
-            <select name="typePanne" > 
+            <select name="typePanne" >
                 <?php
                 $table="typePanne";
                 $resultat=$bdd->query("SELECT * FROM typePanne");
@@ -58,7 +70,6 @@
                 echo  '<option value="'.$data['typePanne'].'">' . $data['typePanne'] . '</option>';
                 } ?>
             </select>
-
             <label for="Message">Description de la panne * </label>
             <textarea id="message" name="DescriptionPanne" placeholder="Ecrivez ici..." style="height:200px" required></textarea>
 
@@ -86,4 +97,3 @@
 
 
 </html>
-

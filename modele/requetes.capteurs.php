@@ -5,10 +5,9 @@
  */
 
 // on récupère les requêtes génériques
-include('requetes.generiques.php');
 
 //on définit le nom de la table
-$table = "sensors";
+$table = "equipement";
 
 
 
@@ -19,10 +18,17 @@ $table = "sensors";
  * @param string $type
  * @return array
  */
-function rechercheParType(PDO $bdd, string $table, string $type): array {
-    
-    return recherche($bdd, $table, ['type' => $type]);
-    
-}
+ function recupereTousTypesCapteurs(PDO $bdd): array {
+     $query = 'SELECT * FROM equipement';
+     return $bdd->query($query)->fetchAll();
+ }
+
+ function ajouterTypeCapteur(PDO $bdd, array $equipement) {
+
+     $query = ' INSERT INTO equipement (Type) VALUES (:Type)';
+     $donnees = $bdd->prepare($query);
+     $donnees->bindParam(":Type", $equipement['Type'], PDO::PARAM_STR);
+     return $donnees->execute();
+ }
 
 ?>
