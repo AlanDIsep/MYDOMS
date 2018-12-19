@@ -78,9 +78,9 @@ function ajouteMaison(PDO $bdd, array $habitation) {
     
 }
 
-function supprimeMaison(PDO $bdd, array $habitation) {
-    $ID=$_GET['idHabitation'];
-    $sql = ' DELETE FROM habitation WHERE idHabitation='$ID'';
+function supprimeMaisons(PDO $bdd, array $habitation) {
+    $donnees->bindParam(":idHabitation", $habitation['idHabitation']);
+    $sql = " DELETE FROM habitation WHERE idHabitation='$donnees'";
     
 }
 
