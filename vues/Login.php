@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
          
 		    $email = htmlentities($_POST['email'], ENT_QUOTES, "ISO-8859-1"); // le htmlentities() passera les guillemets en entités HTML, ce qui empêchera les injections SQL
             $MotDePasse = htmlentities($_POST['pass'], ENT_QUOTES, "ISO-8859-1");
-			$crypt = password_hash($MotDePasse,PASSWORD_BCRYPT);
+			
 			
             //on se connecte à la base de données:
 			$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
@@ -29,7 +29,7 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
 				
             } else {
                 // on fait maintenant la requête dans la base de données pour rechercher si ces données existe et correspondent:
-                $Requete = mysqli_query($mysqli,"SELECT * FROM utilisateur WHERE AdresseMail = '".$email."' AND password = '".$MotDePasse."';");//si vous avez enregistré le mot de passe en md5() il vous suffira de faire la vérification en mettant mdp = '".md5($MotDePasse)."' au lieu de mdp = '".$MotDePasse."'
+                $Requete = mysqli_query($mysqli,"SELECT * FROM utilisateur WHERE AdresseMail = '".$email."' AND password = '".md5($MotDePasse)."';");//si vous avez enregistré le mot de passe en md5() il vous suffira de faire la vérification en mettant mdp = '".md5($MotDePasse)."' au lieu de mdp = '".$MotDePasse."'
                 // si il y a un résultat, mysqli_num_rows() nous donnera alors 1
                 // si mysqli_num_rows() retourne 0 c'est qu'il a trouvé aucun résultat
                 if(mysqli_num_rows($Requete) == 0) {
@@ -38,7 +38,7 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
                     // on ouvre la session avec $_SESSION:
                     $_SESSION['email'] = $email; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     echo "Vous êtes à présent connecté !";
-					header('Location: vues/Admin.php'); 
+					header('Location: vues/accueil.php'); 
 					 
                 }
             }
