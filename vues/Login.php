@@ -30,7 +30,7 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
                 } else {
                     // on ouvre la session avec $_SESSION:
                     $_SESSION['email'] = $email; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
-                    echo "Vous êtes à présent connecté !";
+                    $_SESSION['pass'] = $MotDePasse; 
 					header('Location: index.php?cible=utilisateurs&fonction=Accueil'); 
 					 
                 }
