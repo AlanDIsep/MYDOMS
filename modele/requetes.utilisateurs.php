@@ -8,6 +8,7 @@ $table = "utilisateur";
 $table = "habitation";
 
 
+
 // requêtes spécifiques à la table des capteurs
 
 

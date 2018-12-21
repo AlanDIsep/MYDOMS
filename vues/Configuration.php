@@ -62,7 +62,8 @@ else {
       <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
 			<br>
     <br>
-      <a name=$id>
+    <input value= echo $id >
+
       <label for="nom">Nom de la Maison*</label>
         <input type="text" id="nommaison" name="NomMaison" placeholder="Ex: Maison Paris">
 

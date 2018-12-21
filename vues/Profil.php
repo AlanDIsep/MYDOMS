@@ -16,7 +16,7 @@ else {
 	echo 'Les variables ne sont pas déclarées.';
 }
 
-include Configuration.php;
+
 ?>
 
 <!Doctype html>
