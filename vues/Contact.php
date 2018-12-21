@@ -1,3 +1,19 @@
+<?php
+
+// On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+session_start ();
+
+// On récupère nos variables de session
+if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
+
+	echo '<body>';
+	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
+	echo '<br />';
+}
+else {
+	echo 'Les variables ne sont pas déclarées.';
+}
+?>
 <!Doctype html>
 <html lang="fr">
 
@@ -11,7 +27,7 @@
 <header>
 		<title>Accueil</title>
 		<a href="index.php?cible=utilisateurs&fonction=Accueil"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
-		<img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"/>
+		<a href="vues/deconnexion.php"><img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"></a>
 
 
 </header>
@@ -47,8 +63,20 @@
             <label for="idequipement">Id Équipement *</label>
             <input type="text" id="prenom" name="Equipement_id" placeholder="N° de série de votre équipement" required>
 
+            <label for="object">Type de capteur</label>
+            <select name="typePanne" >
+                <?php
+                $table="equipement";
+                $resultat=$bdd->query("SELECT * FROM equipement");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['Type'].'">' . $data['Type'] . '</option>';
+                } ?>
+            </select>
+						
             <label for="object">Type de panne *</label>
-            <select name="typePanne" > 
+            <select name="typePanne" >
                 <?php
                 $table="typePanne";
                 $resultat=$bdd->query("SELECT * FROM typePanne");
@@ -58,7 +86,6 @@
                 echo  '<option value="'.$data['typePanne'].'">' . $data['typePanne'] . '</option>';
                 } ?>
             </select>
-
             <label for="Message">Description de la panne * </label>
             <textarea id="message" name="DescriptionPanne" placeholder="Ecrivez ici..." style="height:200px" required></textarea>
 
@@ -67,7 +94,7 @@
             <input type="text" id="DroitUtilisateur_idDroitUtilisateur" name="DroitUtilisateur_idDroitUtilisateur" required>
             <br><br>
             <input type="submit" value="Envoyer">
-    </form><br><br>
+         </form><br><br>
     </div>
 
     <br><br><br><br>
@@ -86,4 +113,3 @@
 
 
 </html>
-

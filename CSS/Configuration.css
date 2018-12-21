@@ -103,10 +103,42 @@ body {
 			padding-top : 0.2%;
 			padding-bottom : 0%;
 	}
+	/*------------------wrapper-------------*/
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 5px;
+		grid-auto-rows: minmax(100px, auto);
+		}
+
+	 .one {
+		grid-column: 1;
+		grid-row: 1/5;
+	  }
+	 .two {
+		grid-column: 2/6;
+		grid-row: 1/2;
+	  }
+	  .three {
+		grid-column: 2/7;
+		grid-row: 2;
+	  }
 	/*------------------Contenu-------------*/
 
 		
 	input[type=text], select, textarea {
+		font-family: Kollektif;
+		width: 100%; 
+		padding: 12px;
+		border: 1px solid #ccc; /* bord gris des cases */
+		border-radius: 4px; /* bord rond des cases */
+		box-sizing: border-box; /* Assure l'alignement des cases */
+		margin-top: 6px; 
+		margin-bottom: 16px; 
+		resize: vertical /* Permet aux utilisateurs de redimensionner une case */
+	}
+
+	input[type=number] {
 		font-family: Kollektif;
 		width: 100%; 
 		padding: 12px;
@@ -139,13 +171,35 @@ body {
 		border-radius: 10px;
 		background-color: #f2f2f2;
 		padding: 20px;
-		width:60%;
-		margin-left:auto;
-		margin-right:auto;
-		height:50%;
+		width:90%;
+		height:30%;
+		margin-left: 2%;
+		font-size: 12px;
 	}
 
-
+	#customers {
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+		font-size: 12px;
+	  }
+	  
+	  #customers td, #customers th {
+		border: 1px solid #ddd;
+		padding: 8px;
+	  }
+	  
+	  #customers tr:nth-child(even){background-color: #f2f2f2;}
+	  
+	  #customers tr:hover {background-color: #ddd;}
+	  
+	  #customers th {
+		padding-top: 12px;
+		padding-bottom: 12px;
+		text-align: left;
+		background-color: #4CAF50;
+		color: white;
+	  }
 	
 
 /*------------------Footer-------------*/

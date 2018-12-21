@@ -2,7 +2,7 @@
 	font-family: Kollektif;
 	src: url('kollektif/Kollektif.ttf');
  }
- 
+
 
 * {
   margin: 0;
@@ -38,7 +38,7 @@ width:35px;}
 
 th {
 	width:180px;
-	
+
 	}
 
 nav {
@@ -65,7 +65,7 @@ nav header span {
   margin: 0 10px 0 0;
   vertical-align: middle;
   border: 1px solid #fff;
-  
+
 }
 
 
@@ -83,7 +83,7 @@ nav ul a {
   padding: 15px 15px 17px;
   color: #fff;
   border-bottom: 1px solid Darkslategrey;
-  
+
 }
 
 #dashboard{
@@ -121,12 +121,12 @@ main h1 {
   border-bottom: 1px solid #ddd;
 }
 
-.one { 
+.one {
 	grid-column: 1;
 	grid-row: 1;
   }
 
-.two { 
+.two {
 	grid-column: 2/5;
 	grid-row: 1;
   }
@@ -134,10 +134,10 @@ main h1 {
   grid-column: 3/4;
 	grid-row: 1;
 }
-  
-  
-  
-  
+
+
+
+
 input[type=text], select {
     width: 60%;
     padding: 5px 8px;
@@ -185,9 +185,9 @@ input[type=submit] {
 
 
 input[type=submit]:hover {
-    background-color: #121F28;
+    background-color: #DCE836;
 }
-  
+
   .wrapper {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -199,7 +199,7 @@ input[type=submit]:hover {
 .flex-grid {
   display: flex;
   min-height: 180px;
-  
+
 }
 
 .flex-grid div {
@@ -242,13 +242,11 @@ input[type=submit]:hover {
 
 	#stats{
 	display:none;
-	
+
 	}
-	
+
 	th{background:#121F28;
 	height:30px;
 	color:white;
-	
+
 	}
-	
-	

@@ -3,7 +3,7 @@
 // requêtes génériques pour récupérer les données de la BDD
 
 // Appel du fichier déclarant PDO
-include("modele/connexion.php"); 
+include("modele/connexion.php");
 
 /**
  * Récupère tous les éléments d'une table
@@ -24,23 +24,23 @@ function recupereTous(PDO $bdd, string $table): array {
  * @return array
  */
 function recherche(PDO $bdd, string $table, array $attributs): array {
-    
+
     $where = "";
     foreach($attributs as $key => $value) {
         $where .= "$key = :$key" . ", ";
     }
     $where = substr_replace($where, '', -2, 2);
-    
+
     $statement = $bdd->prepare('SELECT * FROM ' . $table . ' WHERE ' . $where);
-    
-    
+
+
     foreach($attributs as $key => $value) {
         $statement->bindParam(":$key", $value);
     }
     $statement->execute();
-    
+
     return $statement->fetchAll();
-    
+
 }
 
 /**
@@ -64,7 +64,7 @@ function insertion(PDO $bdd, array $values, string $table): bool {
     $valeurs = substr_replace($valeurs, '', -2, 2);
 
     $query = ' INSERT INTO ' . $table . ' (' . $attributs . ') VALUES (' . $valeurs . ')';
-    
+
     $donnees = $bdd->prepare($query);
     $requete = "";
     foreach ($values as $key => $value) {

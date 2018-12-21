@@ -1,3 +1,19 @@
+<?php
+
+// On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+session_start ();
+
+// On récupère nos variables de session
+if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
+
+	echo '<body>';
+	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
+	echo '<br />';
+}
+else {
+	echo 'Les variables ne sont pas déclarées.';
+}
+?>
 <!Doctype html>
 
 <html lang="fr">
@@ -12,7 +28,7 @@
 <header>
 		<title>Accueil</title>
 		<a href="index.php?cible=utilisateurs&fonction=Accueil"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
-		<a href="Login.html"></a><img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"/></a>
+		<a href="vues/deconnexion.php"><img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"></a>
 
 
 </header>
@@ -35,7 +51,14 @@
 	<div id="profil">
 	<img src="../CSS/icons/profile.jpg" alt="user" class="image"/>
 	<h3>Mon Profil</h3>
-
+	<p> Adresse Mail </p>
+	<?php
+                $table = "utilisateur";
+				// On récupère tout le contenu de la table utilisateur
+				$ID_user=$_SESSION['AdresseMail'];
+				$reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail = $ID_user");
+				?>
+				
 	<p> Nom </p>
 	<p> Prénom </p>
 	<p> Adresse </p>
