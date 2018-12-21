@@ -161,8 +161,8 @@ input[type=date], select {
 
 input[type=submit] {
     width: 20%;
-    background-color: rgb(165, 27, 27);
-    color: rgb(165, 27, 27);
+    background-color: #DCE837;
+    color: #121F28;
     padding: 14px 20px;
     margin:0;
     border: none;
@@ -185,7 +185,7 @@ input[type=submit] {
 
 
 input[type=submit]:hover {
-    background-color: #DCE836;
+    background-color: rgb(105, 112, 1);
 }
 
   .wrapper {

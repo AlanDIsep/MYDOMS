@@ -193,12 +193,18 @@ switch ($function) {
             $retour = ajouterFAQ($bdd, $values);
         }
 
-        else if(isset($_POST['Type'])){
-          $values = [
-            'Type' => $_POST['Type'],
-          ];
-          // Appel à la BDD à travers une fonction du modèle.
-          $retour = ajouterTypeCapteur($bdd, $values);
+        break;
+    
+    case 'liste':
+    // Liste des utilisateurs déjà enregistrés
+        $vue = "liste";
+        $title = "Liste des utilisateurs inscrits";
+        $entete = "Voici la liste :";
+        
+        $liste = recupereTousUtilisateurs($bdd);
+        
+        if(empty($liste)) {
+            $alerte = "Aucun utilisateur inscrit pour le moment";
         }
 
 
