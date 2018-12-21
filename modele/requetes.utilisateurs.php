@@ -7,6 +7,7 @@ include('requetes.generiques.php');
 $table = "utilisateur";
 $table = "habitation";
 
+
 // requêtes spécifiques à la table des capteurs
 
 
