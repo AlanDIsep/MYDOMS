@@ -37,4 +37,4 @@
 <?php echo AfficheAlerte($alerte); ?>
 
 
-<p><a href="index.php?cible=capteurs&fonction=ajout">Ajouter un capteur</a> | <a href="index.php?cible=capteurs&fonction=recherche">Chercher des capteurs</a> | <a href="index.php">Accueil</a></p>
+<p><a href="index.php?cible=capteurs&fonction=ajoutTypeCapteur">Ajouter un capteur</a> | <a href="index.php?cible=capteurs&fonction=recherche">Chercher des capteurs</a> | <a href="index.php">Accueil</a></p>
