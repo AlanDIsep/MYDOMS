@@ -50,20 +50,39 @@ else {
 
 	<div id="profil">
 	<img src="../CSS/icons/profile.jpg" alt="user" class="image"/>
-	<h3>Mon Profil</h3>
-	<p> Adresse Mail </p>
+	<h3>Mon Profil:</h3>
+	<p> Adresse Mail: </p>
+	<div class="champs">
 	<?php
-                $table = "utilisateur";
-				// On récupère tout le contenu de la table utilisateur
-				$ID_user=$_SESSION['AdresseMail'];
-				$reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail = $ID_user");
-				?>
-				
-	<p> Nom </p>
-	<p> Prénom </p>
-	<p> Adresse </p>
-	<p> Date de Naissance</p>
-	<p>Maison actuellement gérée</p>
+		if (isset($_SESSION['email'])) {
+
+		echo '<body>';
+		echo ''.$_SESSION['email'].'';
+		echo '<br />';
+		}else {
+		echo 'Les variables ne sont pas déclarées.';
+}
+?>
+	</div>	
+	<p> Nom: </p>
+
+	<div class="champs">
+	<?php
+		if (isset($_SESSION['email'])) {
+
+		echo '<body>';
+		echo ''.$_SESSION['email'].'';
+		echo '<br />';
+		}else {
+		echo 'Les variables ne sont pas déclarées.';
+}
+?>
+	</div>	
+	
+	<p> Prénom: </p>
+	<p> Adresse: </p>
+	<p> Date de Naissance:</p>
+	<p>Maison actuellement gérée:</p>
 	<p>
 	</div>
 

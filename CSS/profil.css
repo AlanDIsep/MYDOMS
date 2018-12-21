@@ -117,6 +117,21 @@ body {
 	text-align:center;
 	}
 
+	.champs{
+		text-align:center;
+		font-family: Kollektif;
+		width: 50%; 
+		margin:auto;
+		padding: 12px;
+		border: 1px solid #deea32; /* bord gris des cases */
+		border-radius: 4px; /* bord rond des cases */
+		box-sizing: border-box; /* Assure l'alignement des cases */
+		margin-top: 6px; 
+		margin-bottom: 6px; 
+		font-size: 11px;
+
+		}
+
 	.space{
 	padding:50px;
 	}
