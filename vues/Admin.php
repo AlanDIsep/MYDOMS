@@ -19,7 +19,7 @@
     <li>Navigation</li>
     <li><a onclick="myFunction()">Tableau de Bord</a></li>
     <li onclick="myFunction1()"><a>Utilisateurs</a></li>
-    <li onclick="myFunction2()"><a>Tickets</a></li>
+    <li onclick="myFunction2()"><a>Gestion du formulaire</a></li>
     <li onclick="myFunction3()"><a>Capteurs</a></li>
     <!-- <li onclick="myFunction3()"><a>Ajouter un capteur</a></li> -->
   </ul>
@@ -126,7 +126,9 @@
       </div>
     </div>
 
-    <div id="tickets">
+  
+  
+  <div id="data_form">
     <div class="flex-grid"><br><br>
       <div class="two">
         <h2>Ajouter une Panne</h2>
@@ -152,6 +154,13 @@
           <input type="submit" value="Ajouter le capteur">
         </form>
 
+		  </div>
+      </div>
+    </div>
+		  
+		  
+		  
+		  <div id=ta>
           <table class="my_table">
           <tr>
             <th>ID</th>
@@ -162,14 +171,13 @@
             <th>Date</th>
           </tr>
           </table>
-        </div>
-      </div>
-    </div>
+        
+		
     <!-- rajout -->
-    <div id="capteur">
+    <div id="capteur" style="height:600px;">
       <div class="flex-grid">
         <div class="two">
-          <h2>Ajouter un capteur</h2>
+          <h2>Ajouter un capteur </h2>
           <form method="POST" action="">
             <label for="id" class="titles">Type de capteur</label>
             <input type="text" id="Type" name="Type" placeholder="Renseigner le type de capteur ...">
@@ -191,23 +199,23 @@
        var x = document.getElementById("dashboard");
     	 var y = document.getElementById("user");
     	 var z = document.getElementById("tickets");
-       // rajout
+		var b = document.getElementById("data_form");       
        var a = document.getElementById("capteur");
        //fin rajout
         if (x.style.display == "none") {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
-        //rajout
-        a.style.display = "none";
+			a.style.display = "none";
+			b.style.display = "none";
         //fin rajout
     		document.getElementById("title").innerHTML = "Tableau de bord";
         } else {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
-        //rajout
-        a.style.display = "none";
+			a.style.display = "none";
+			b.style.display = "none";
         //fin rajout
     		document.getElementById("title").innerHTML = "Tableau de bord";
         }
@@ -250,10 +258,9 @@
     		 x.style.display = "block";
     		 y.style.display = "none";
     		 z.style.display = "none";
-         //rajout
-         a.style.display = "none";
+			 a.style.display = "none";
          //fin rajout
-    		 document.getElementById("title").innerHTML = "Tickets";
+    		 document.getElementById("title").innerHTML = "Ajouter des données formulaire";
         } else {
             x.style.display = "block";
     		y.style.display = "none";
@@ -261,7 +268,7 @@
         //rajout
         a.style.display = "none";
         //fin rajout
-    		document.getElementById("title").innerHTML = "Tickets";
+    		document.getElementById("title").innerHTML = "Ajouter des données formulaire";
         }
 
     }
@@ -274,8 +281,8 @@
        // rajout
        var a = document.getElementById("tickets");
        //fin rajout
-        if (x.style.display == "block") {
-    		 x.style.display = "none";
+        if (x.style.display == "none") {
+    		 x.style.display = "block";
     		 y.style.display = "none";
     		 z.style.display = "none";
          //rajout
