@@ -1,5 +1,6 @@
 <?php
 
+
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
 
@@ -90,7 +91,7 @@ else {
       </tr>
     </thead>
     <tbody>	
-      <?php foreach ($configuration as $element) { ?>
+      <?php foreach ((array) $configuration as $element) { ?>
           <tr>
               <td>
                 <?php echo $element['idHabitation']; ?>
@@ -134,6 +135,8 @@ else {
     <input type="number" name="idHabitation" placeholder="Ex: 1" required>
     <input type="submit" name="submit" value="Supprimer la Maison">
 </form>
+
+
 
 </div>
 </div>

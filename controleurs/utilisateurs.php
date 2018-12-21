@@ -112,11 +112,15 @@ switch ($function) {
             $retour = ajouteMaison($bdd, $values);
         }
 
-        elseif(isset($_POST['idHabitation'])) {
-            $values = [
-                'idHabitation' => $_POST['idHabitation'],
-                ]; 
-            $retour = supprimeMaisons($bdd,$values);
+      //$id=$_POST['idHabitation'];
+	  if(isset($_POST['idHabitation'])) {
+            //$values = [
+				//'idHabitation' => $_POST['idHabitation'],
+                //]; 
+            //$retour = supprimeMaisons($bdd,$values);
+			
+			$sql = "DELETE FROM habitation WHERE idHabitation='11'"; 
+			$bdd->exec($sql);
         }
         
         else {

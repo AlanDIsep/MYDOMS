@@ -32,7 +32,18 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
                     session_start();
 					$_SESSION['email'] = $email; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     $_SESSION['pass'] = $MotDePasse; 
+					
+					$connex_id = 'SELECT DroitUtilisateur_Id FROM utilisateur';
+					if($connex_id = 1){
+					header('Location: index.php?cible=utilisateurs&fonction=Admin'); 
+					}
+					if($connex_id = 2){
 					header('Location: index.php?cible=utilisateurs&fonction=Accueil'); 
+					}
+					//if($connex_id = 3){
+					//header('Location: index.php?cible=utilisateurs&fonction=Admin'); 
+					//}
+					
 					 
                 }
             }
