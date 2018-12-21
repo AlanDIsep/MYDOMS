@@ -31,4 +31,14 @@ $table = "equipement";
      return $donnees->execute();
  }
 
+ function ajouterCapteur(PDO $bdd, array $equipement){
+
+      $query = 'INSERT INTO equipement (Type, Nom, Etat,NuméroDeSérie) VALUES (:Type, :Nom, :Etat,:NuméroDeSérie)';
+      $donnees = $bdd->prepare($query);
+      $donnees->bindParam(":Type", $equipement['Type'], PDO::PARAM_STR);
+      $donnees->bindParam(":Nom", $equipement['Nom'], PDO::PARAM_STR);
+      $donnees->bindParam(":etat", $equipement['etat'], PDO::PARAM_STR);
+      $donnees->bindParam(":NumeroDeSerie", $equipement['NumeroDeSerie'], PDO::PARAM_STR);
+      return $donnees->execute();
+  }
 ?>

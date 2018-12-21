@@ -147,6 +147,7 @@
           <input type="submit" value="Ajouter la question">
         </form>
 
+<<<<<<< HEAD
         <h2>Ajouter un capteur</h2>
         <form method="POST" action="">
           <label for="id" class="titles">Type de capteur</label>
@@ -161,6 +162,8 @@
 		  
 		  
 		  <div id=ta>
+=======
+>>>>>>> 71d18b880f1126b36b9269f1d57896e3ad19f16b
           <table class="my_table">
           <tr>
             <th>ID</th>
@@ -178,13 +181,43 @@
       <div class="flex-grid">
         <div class="two">
           <h2>Ajouter un capteur </h2>
+=======
+
+          <h2>Lister un capteur dans la FAQ</h2>
+>>>>>>> 71d18b880f1126b36b9269f1d57896e3ad19f16b
           <form method="POST" action="">
             <label for="id" class="titles">Type de capteur</label>
             <input type="text" id="Type" name="Type" placeholder="Renseigner le type de capteur ...">
-            <input type="submit" value="Ajouter le capteur">
+            <input type="submit" value="Lister le capteur">
           </form>
+
+          <h2>Ajouter un capteur</h2>
+              <form method="POST" action="">
+
+                <label for="Type" class="titles">Utilisateur</label>
+                <input type="text" id="Type" name="id" placeholder="ID de l'utilisateur qui détient le capteur...">
+
+                <label for="Type" class="titles">Type de capteur</label>
+                <input type="text" id="Type" name="Type" placeholder="Type de capteur...">
+
+                <label for="Nom" class="titles">Nom du capteur</label>
+                <input type="text" id="Nom" name="Nom" placeholder="Nom du capteur...">
+
+                <label for="Etat" class="titles">Etat</label>
+                <input type="text" id="Etat" name="Etat" placeholder="Etat du capteur lors de l'installation ...">
+
+                <label for="NumeroDeSerie" class="titles">Numéro de série</label></br>
+                <input type="text" id="NumeroDeSerie" name="DateDeNaissance" placeholder="Date de naissance ..."></br>
+
+                <label for="Piece_id" class="titles">ID de la piece dans laquelle le capteur sera</label>
+                <input type="text" id="Piece_id" name="Piece_id" placeholder="ID de la piece dans laquelle le capteur sera...">
+
+                <input type="submit" value="Ajouter un capteur">
+
         </div>
+
       </div>
+    </div>
 
     <!-- fin du rajout -->
 

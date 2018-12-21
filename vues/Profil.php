@@ -10,11 +10,15 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
 	echo '<br />';
 	$email=$_SESSION['email'];
+	
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
 }
+
+include Configuration.php;
 ?>
+
 <!Doctype html>
 
 <html lang="fr">
@@ -122,8 +126,22 @@ else {
 
 
 	<p>Maison actuellement gérée:</p>
+	<div class="champs">
+	<?php
+			$table = "utilisateur";
+			$table = "habitation";
+			// On récupère tout le contenu de la table utilisateur
+			$id1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+			$id=$donnees['id'];
+            $reponse = $bdd->query("SELECT * FROM habitation WHERE NumUtilisateur_id=$id");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['NomMaison'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	<br><br>
 	<p>
 	</div>
+
 
 <div class="space">
 

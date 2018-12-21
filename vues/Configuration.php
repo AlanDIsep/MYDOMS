@@ -9,12 +9,13 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
 	echo '<body>';
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
-	echo '<br />';
+  echo '<br />';
+  $email=$_SESSION['email'];
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
-}
-?>
+} ?>
+
 
 <!Doctype html>
 <html lang="fr">
@@ -50,7 +51,18 @@ else {
 <div class="container">
     <h2> Ajouter une Maison</h2>
     <form method="POST" action="">
-    <label for="nom">ID Utilisateur:</label><br>
+    <label for="nom">ID Utilisateur:</label>
+    <?php
+			$table = "utilisateur";
+			$table = "habitation";
+			// On récupère tout le contenu de la table utilisateur
+			$reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+      $id = $reponse->fetch()?>
+      <?php echo $id['id'];?>
+      <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+    <br>
+      <a name=$id>
       <label for="nom">Nom de la Maison*</label>
         <input type="text" id="nommaison" name="NomMaison" placeholder="Ex: Maison Paris">
 
@@ -131,7 +143,7 @@ else {
 <div class="container">
 <h2> Supprimer une Maison</h2>
 <form method="POST" action="">
-    <label for="nom">Rentrer l'ID de la Maison à supprimer</label>
+    <label for="nom">Rentrer l'ID de la Maison à supprimer*</label>
     <input type="number" name="idHabitation" placeholder="Ex: 1" required>
     <input type="submit" name="submit" value="Supprimer la Maison">
 </form>

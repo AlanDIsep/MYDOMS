@@ -19,7 +19,7 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = "Login";
 } else {
     $function = $_GET['fonction'];
-}   
+}
 
 switch ($function) {
 
@@ -104,11 +104,11 @@ switch ($function) {
             'NomMaison' => $_POST['NomMaison'],
             'NumUtilisateur_id' => $_POST['NumUtilisateur_id'],
             'NombreHabitant' => $_POST['NombreHabitant'],
-            'Pays' => $_POST['Pays'], 
-            'CodePostal' => $_POST['CodePostal'], 
-            'Superficie' => $_POST['Superficie'], 
+            'Pays' => $_POST['Pays'],
+            'CodePostal' => $_POST['CodePostal'],
+            'Superficie' => $_POST['Superficie'],
             'Adresse' => $_POST['Adresse'],
-            ]; 
+            ];
             $retour = ajouteMaison($bdd, $values);
         }
 
@@ -116,19 +116,19 @@ switch ($function) {
 	  if(isset($_POST['idHabitation'])) {
             //$values = [
 				//'idHabitation' => $_POST['idHabitation'],
-                //]; 
+                //];
             //$retour = supprimeMaisons($bdd,$values);
-			
-			$sql = "DELETE FROM habitation WHERE idHabitation='11'"; 
+
+			$sql = "DELETE FROM habitation WHERE idHabitation='11'";
 			$bdd->exec($sql);
         }
-        
+
         else {
             $configuration = recupereMaisons($bdd);
         }
 
 
-            
+
     break;
 
     case 'Admin':
@@ -176,14 +176,6 @@ switch ($function) {
             }
         }
 
-        else if(isset($_POST['typePanne'])) {
-            $values = [
-                'typePanne' => $_POST['typePanne'],
-            ];
-            // Appel à la BDD à travers une fonction du modèle.
-            $retour = ajouterTypePanne($bdd, $values);
-            }
-
         else if (isset($_POST['QuestionRecurentes'])){
             $values = [
                 'QuestionRecurentes' => $_POST['QuestionRecurentes'],
@@ -194,15 +186,15 @@ switch ($function) {
         }
 
         break;
-    
+
     case 'liste':
     // Liste des utilisateurs déjà enregistrés
         $vue = "liste";
         $title = "Liste des utilisateurs inscrits";
         $entete = "Voici la liste :";
-        
+
         $liste = recupereTousUtilisateurs($bdd);
-        
+
         if(empty($liste)) {
             $alerte = "Aucun utilisateur inscrit pour le moment";
         }
