@@ -9,6 +9,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo '<body>';
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
 	echo '<br />';
+	$email=$_SESSION['email'];
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
@@ -50,7 +51,7 @@ else {
 
 	<div id="profil">
 	<img src="../CSS/icons/profile.jpg" alt="user" class="image"/>
-	<h3>Mon Profil:</h3>
+	<h3>MON PROFIL</h3>
 	<p> Adresse Mail: </p>
 	<div class="champs">
 	<?php
@@ -68,20 +69,58 @@ else {
 
 	<div class="champs">
 	<?php
-		if (isset($_SESSION['email'])) {
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['Nom'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	
 
-		echo '<body>';
-		echo ''.$_SESSION['email'].'';
-		echo '<br />';
-		}else {
-		echo 'Les variables ne sont pas déclarées.';
-}
-?>
-	</div>	
-	
+
 	<p> Prénom: </p>
+
+	<div class="champs">
+	<?php
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['Prenom'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	
+
+
 	<p> Adresse: </p>
+
+	<div class="champs">
+	<?php
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['AdresseFacturation'];?>, <?php echo $donnees['CodePostal'];?>, <?php echo $donnees['Ville'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	
+
+
 	<p> Date de Naissance:</p>
+
+	<div class="champs">
+	<?php
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['DateDeNaissance'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	
+
+
 	<p>Maison actuellement gérée:</p>
 	<p>
 	</div>
