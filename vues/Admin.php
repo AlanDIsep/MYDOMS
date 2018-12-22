@@ -180,6 +180,7 @@
     <div id="capteur" style="height:600px;">
       <div class="flex-grid">
         <div class="two">
+<<<<<<< HEAD
           <h2>Ajouter un capteur </h2>
 =======
 

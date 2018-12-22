@@ -35,30 +35,21 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
 					
 					
 					
-					$connex_id = mysqli_query($mysqli,"SELECT DroitUtilisateur_Id FROM utilisateur where AdresseMail = '".$email."' ");
-					$row=mysqli_fetch_array($connex_id);
+					$connex_id = mysqli_query($mysqli,"SELECT DroitUtilisateur_Id FROM utilisateur where AdresseMail = '".$email."'");
+					$row = mysqli_fetch_assoc($connex_id);
 					
-
-					if($row[0] = 1){
+					if(($row['DroitUtilisateur_Id']) == 1){
 					header('Location: index.php?cible=utilisateurs&fonction=Admin');
-					echo $row[0];
 					exit();
 					}
 					
-					
-					
-					/*else{
-					header('Location: index.php?cible=utilisateurs&fonction=Accueil');
-					echo $row;
-					exit();
-					}
-					elseif($connex_id = 2){
+					if(($row['DroitUtilisateur_Id']) == 2){
 					header('Location: index.php?cible=utilisateurs&fonction=Accueil'); 
 					exit();
 					}
-					if($connex_id == 3){
-					header('Location: index.php?cible=utilisateurs&fonction=Helpdesk'); 
-					}*/
+					
+					
+					
 					
 					 
                 }
