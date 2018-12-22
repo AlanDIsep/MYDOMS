@@ -147,7 +147,7 @@
           <input type="submit" value="Ajouter la question">
         </form>
 
-<<<<<<< HEAD
+
         <h2>Ajouter un capteur</h2>
         <form method="POST" action="">
           <label for="id" class="titles">Type de capteur</label>
@@ -163,8 +163,6 @@
 	
 	<!---.------------------------------------------------------------------------------>	 
 		  <div id="tickets">
-=======
->>>>>>> 71d18b880f1126b36b9269f1d57896e3ad19f16b
           <table class="my_table">
           <tr>
             <th>ID</th>
@@ -183,12 +181,12 @@
     <div id="capteur" style="height:700px;">
       <div class="flex-grid">
         <div class="two">
-<<<<<<< HEAD
+
           <h2>Ajouter un capteur </h2>
-=======
+
 
           <h2>Lister un capteur dans la FAQ</h2>
->>>>>>> 71d18b880f1126b36b9269f1d57896e3ad19f16b
+
           <form method="POST" action="">
             <label for="id" class="titles">Type de capteur</label>
             <input type="text" id="Type" name="Type" placeholder="Renseigner le type de capteur ...">
