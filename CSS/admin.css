@@ -92,6 +92,12 @@ display:block;}
 #user{
 display:none;}
 
+#data_form{
+display:none;}
+
+#capteur{
+display:none;}
+
 #listuser{
   display:none;}
 

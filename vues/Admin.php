@@ -32,8 +32,8 @@
       <h1 id="title">Tableau de Bord</h1><br>
 
     <div>
-
-      <!--div dashboard-->
+	  
+      <!--div dashboard---------------------------------------------------------------------------------->
       <div id="dashboard"><br>
         <div class="flex-grid">
 
@@ -70,12 +70,12 @@
         </div>
       </div>
     </div>
-
+	<!---.------------------------------------------------------------------------------>
 
 
     <?php echo AfficheAlerte($alerte);?>
 
-
+	<!---.------------------------------------------------------------------------------>
     <div id="user">
       <h2>Ajouter un utilisateur</h2><br>
       <div class="flex-grid">
@@ -125,9 +125,9 @@
         </div>
       </div>
     </div>
-
+	<!---.---------------------------------------------------------------------------------------------------->
   
-  
+  <!---.------------------------------------------------------------------------------>
   <div id="data_form">
     <div class="flex-grid"><br><br>
       <div class="two">
@@ -158,10 +158,11 @@
 		  </div>
       </div>
     </div>
+	<!---.------------------------------------------------------------------------------>	  
 		  
-		  
-		  
-		  <div id=ta>
+	
+	<!---.------------------------------------------------------------------------------>	 
+		  <div id="tickets">
 =======
 >>>>>>> 71d18b880f1126b36b9269f1d57896e3ad19f16b
           <table class="my_table">
@@ -174,10 +175,12 @@
             <th>Date</th>
           </tr>
           </table>
-        
-		
-    <!-- rajout -->
-    <div id="capteur" style="height:600px;">
+       </div> 
+<!---.------------------------------------------------------------------------------>	 
+
+
+    <!---.------------------------------------------------------------------------------>	 
+    <div id="capteur" style="height:700px;">
       <div class="flex-grid">
         <div class="two">
 <<<<<<< HEAD
@@ -235,14 +238,14 @@
     	 var z = document.getElementById("tickets");
 		var b = document.getElementById("data_form");       
        var a = document.getElementById("capteur");
-       //fin rajout
+       
         if (x.style.display == "none") {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
 			a.style.display = "none";
 			b.style.display = "none";
-        //fin rajout
+        
     		document.getElementById("title").innerHTML = "Tableau de bord";
         } else {
             x.style.display = "block";
@@ -250,7 +253,7 @@
     		z.style.display = "none";
 			a.style.display = "none";
 			b.style.display = "none";
-        //fin rajout
+        
     		document.getElementById("title").innerHTML = "Tableau de bord";
         }
     	}
@@ -258,50 +261,46 @@
     function myFunction1() {
       var x = document.getElementById("user");
     	var y = document.getElementById("dashboard");
-    	var z = document.getElementById("tickets");
-      // rajout
-      var a = document.getElementById("capteur");
+    	var z = document.getElementById("data_form");       
+       var a = document.getElementById("capteur");
+     
       //fin rajout
         if (x.style.display == "none") {
     		 x.style.display = "block";
     		 y.style.display = "none";
     		 z.style.display = "none";
-         //rajout
-         a.style.display = "none";
-         //fin rajout
+			 a.style.display = "none";
+         
     		 document.getElementById("title").innerHTML = "Utilisateurs";
         }  else {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
-        //rajout
-        a.style.display = "none";
-        //fin rajout
+		    a.style.display = "none";
+        
     		document.getElementById("title").innerHTML = "Utilisateurs";
 
         }
     	}
     function myFunction2() {
-        var x = document.getElementById("tickets");
+        var x = document.getElementById("data_form"); 
     	var y = document.getElementById("user");
-    	 var z = document.getElementById("dashboard");
-       // rajout
+    	 var z = document.getElementById("dashboard");     
        var a = document.getElementById("capteur");
-       //fin rajout
+       
         if (x.style.display == "none") {
     		 x.style.display = "block";
     		 y.style.display = "none";
     		 z.style.display = "none";
 			 a.style.display = "none";
-         //fin rajout
+        
     		 document.getElementById("title").innerHTML = "Ajouter des données formulaire";
         } else {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
-        //rajout
-        a.style.display = "none";
-        //fin rajout
+		    a.style.display = "none";
+        
     		document.getElementById("title").innerHTML = "Ajouter des données formulaire";
         }
 
@@ -312,24 +311,21 @@
         var x = document.getElementById("capteur");
     	var y = document.getElementById("user");
     	 var z = document.getElementById("dashboard");
-       // rajout
-       var a = document.getElementById("tickets");
-       //fin rajout
+       var a = document.getElementById("data_form");
+       
         if (x.style.display == "none") {
     		 x.style.display = "block";
     		 y.style.display = "none";
     		 z.style.display = "none";
-         //rajout
-         a.style.display = "none";
-         //fin rajout
+			 a.style.display = "none";
+         
     		 document.getElementById("title").innerHTML = "Capteurs";
         } else {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
-        //rajout
-        a.style.display = "none";
-        //fin rajout
+			a.style.display = "none";
+        
     		document.getElementById("title").innerHTML = "Capteurs";
         }
 
