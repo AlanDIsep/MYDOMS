@@ -182,7 +182,7 @@
       <div class="flex-grid">
         <div class="two">
 
-          <h2>Ajouter un capteur </h2>
+     
 
 
           <h2>Lister un capteur dans la FAQ</h2>
@@ -192,7 +192,7 @@
             <input type="text" id="Type" name="Type" placeholder="Renseigner le type de capteur ...">
             <input type="submit" value="Lister le capteur">
           </form>
-
+		  
           <h2>Ajouter un capteur</h2>
               <form method="POST" action="">
 
@@ -317,14 +317,14 @@
     		 z.style.display = "none";
 			 a.style.display = "none";
          
-    		 document.getElementById("title").innerHTML = "Capteurs";
+    		 document.getElementById("title").innerHTML = "Gestion des Capteurs";
         } else {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
 			a.style.display = "none";
         
-    		document.getElementById("title").innerHTML = "Capteurs";
+    		document.getElementById("title").innerHTML = "Gestion des Capteurs";
         }
 
     }
