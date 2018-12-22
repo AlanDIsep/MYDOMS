@@ -2,7 +2,7 @@
 
 
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
-session_start ();
+require "controleurs/verif_session.php";
 
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {

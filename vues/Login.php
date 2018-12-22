@@ -1,5 +1,6 @@
 <?php
 
+
  // à mettre tout en haut du fichier .php, cette fonction propre à PHP servira à maintenir la $_SESSION
 if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
     // on vérifie que le champ "Pseudo" n'est pas vide
@@ -48,6 +49,10 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
 					exit();
 					}
 					
+					/*if(($row['DroitUtilisateur_Id']) == 3){
+					header('Location: index.php?cible=utilisateurs&fonction=Helpdesk'); 
+					exit();
+					}*/
 					
 					
 					

@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php
+//session_start ();
+
+require "controleurs/verif_session.php";
+
+
+
+
+// On récupère nos variables de session
+if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
+
+
+	$email=$_SESSION['email'];
+	
+}
+else {
+	echo 'Les variables ne sont pas déclarées.';
+}
+?>
 
 <head>
     <title>MyDoms Accueil</title>
@@ -23,11 +42,12 @@
     <li onclick="myFunction3()"><a>Capteurs</a></li>
     <!-- <li onclick="myFunction3()"><a>Ajouter un capteur</a></li> -->
   </ul>
-
+  
 </nav>
 
   <main>
-
+  
+  <span style="float:right;"><a href="vues/deconnexion.php"><img title="Logout" src="../CSS/icons/deco.png" class="logo3ter"></a></span>
 
       <h1 id="title">Tableau de Bord</h1><br>
 
@@ -43,7 +63,17 @@
 
           <div>
             <h2>Total Maisons</h2>
-          <p class="kpi">12</p>
+          <p class="kpi">
+					<?php 
+					$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
+					$table = "habitation";
+					$nbr_maison = mysqli_query($mysqli,"SELECT COUNT(idHabitation) AS nb_maison FROM habitation");
+					$row = mysqli_fetch_assoc($nbr_maison);
+					echo $row['nb_maison'];
+					?>
+					
+					
+		  </p>
           </div>
 
           <div>
