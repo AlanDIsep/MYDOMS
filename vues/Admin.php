@@ -192,7 +192,7 @@ else {
 		  
 	
 	<!---.------------------------------------------------------------------------------>	 
-		  <div id="tickets">
+		  <div id="data-form">
           <table class="my_table">
           <thead>
           <tr>
@@ -214,7 +214,7 @@ else {
                 <?php echo $element['DescriptionPanne']; ?>
                 </td>
               <td>
-                <?php echo $element['TypePanne']; ?>
+                <?php echo $element['typePanne']; ?>
               </td>
               <td>
                 <?php echo $element['Date']; ?>
@@ -223,7 +223,7 @@ else {
                 <?php echo $element['Equipement_id']; ?>
               </td>
               <td>
-                <?php echo $element['IdUtilisateur']; ?>
+                <?php echo $element['DroitUtilisateur_idDroitUtilisateur']; ?>
               </td>
             </tr>
       

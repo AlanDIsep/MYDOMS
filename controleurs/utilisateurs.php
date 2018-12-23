@@ -185,6 +185,9 @@ switch ($function) {
             // Appel à la BDD à travers une fonction du modèle.
             $retour = ajouterFAQ($bdd, $values);
         }
+        else {
+            $configuration = recuperePanne($bdd);
+        }
 
         break;
 
