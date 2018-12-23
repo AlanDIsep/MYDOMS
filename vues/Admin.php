@@ -5,6 +5,16 @@
 
 require "controleurs/verif_session.php";
 
+/*$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
+$connex_id = mysqli_query($mysqli,"SELECT DroitUtilisateur_Id FROM utilisateur where AdresseMail = '".$email."'");
+$row = mysqli_fetch_assoc($connex_id);
+
+$_SESSION['email'] = $email; 
+
+if(($row['DroitUtilisateur_Id']) != 1){
+					echo"acces interdit";
+					exit();
+					}*/
 
 
 
@@ -40,7 +50,7 @@ else {
     <li onclick="myFunction1()"><a>Utilisateurs</a></li>
     <li onclick="myFunction2()"><a>Gestion du formulaire</a></li>
     <li onclick="myFunction3()"><a>Capteurs</a></li>
-    <!-- <li onclick="myFunction3()"><a>Ajouter un capteur</a></li> -->
+    <li onclick="myFunction4()"><a>Tickets</a></li>
   </ul>
   
 </nav>
@@ -291,21 +301,21 @@ else {
     	var y = document.getElementById("dashboard");
     	var z = document.getElementById("data_form");       
        var a = document.getElementById("capteur");
-     
+     var b = document.getElementById("tickets");
       //fin rajout
         if (x.style.display == "none") {
     		 x.style.display = "block";
     		 y.style.display = "none";
     		 z.style.display = "none";
 			 a.style.display = "none";
-         
+			b.style.display = "none";
     		 document.getElementById("title").innerHTML = "Utilisateurs";
         }  else {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
 		    a.style.display = "none";
-        
+			 b.style.display = "none";
     		document.getElementById("title").innerHTML = "Utilisateurs";
 
         }
@@ -315,20 +325,21 @@ else {
     	var y = document.getElementById("user");
     	 var z = document.getElementById("dashboard");     
        var a = document.getElementById("capteur");
+	   var b = document.getElementById("tickets");
        
         if (x.style.display == "none") {
     		 x.style.display = "block";
     		 y.style.display = "none";
     		 z.style.display = "none";
 			 a.style.display = "none";
-        
+			b.style.display = "none";
     		 document.getElementById("title").innerHTML = "Ajouter des données formulaire";
         } else {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
 		    a.style.display = "none";
-        
+			b.style.display = "none";
     		document.getElementById("title").innerHTML = "Ajouter des données formulaire";
         }
 
@@ -340,25 +351,53 @@ else {
     	var y = document.getElementById("user");
     	 var z = document.getElementById("dashboard");
        var a = document.getElementById("data_form");
-       
+       var b = document.getElementById("tickets");
+
         if (x.style.display == "none") {
     		 x.style.display = "block";
     		 y.style.display = "none";
     		 z.style.display = "none";
 			 a.style.display = "none";
-         
+			b.style.display = "none";
     		 document.getElementById("title").innerHTML = "Gestion des Capteurs";
         } else {
             x.style.display = "block";
     		y.style.display = "none";
     		z.style.display = "none";
 			a.style.display = "none";
-        
+			b.style.display = "none";
     		document.getElementById("title").innerHTML = "Gestion des Capteurs";
         }
 
     }
     //fin rajout
+
+	  function myFunction4() {
+        var x = document.getElementById("tickets");
+    	var y = document.getElementById("user");
+    	 var z = document.getElementById("dashboard");
+       var a = document.getElementById("data_form");
+	    var b = document.getElementById("capteur");
+       
+        if (x.style.display == "none") {
+    		 x.style.display = "block";
+    		 y.style.display = "none";
+    		 z.style.display = "none";
+			 a.style.display = "none";
+			 b.style.display = "none";
+         
+    		 document.getElementById("title").innerHTML = "Tickets";
+        } else {
+            x.style.display = "block";
+    		y.style.display = "none";
+    		z.style.display = "none";
+			a.style.display = "none";
+			b.style.display = "none";
+    		document.getElementById("title").innerHTML = "Tickets";
+        }
+
+    }
+
 
     </script>
 
