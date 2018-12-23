@@ -39,7 +39,7 @@ function recupereTousUtilisateurs(PDO $bdd): array {
 }
 
 function recupereMaisons(PDO $bdd): array {
-    $query = 'SELECT * FROM habitation';
+    $query = "SELECT * FROM habitation";
     return $bdd->query($query)->fetchAll();
 }
 /**

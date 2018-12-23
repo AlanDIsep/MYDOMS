@@ -2,7 +2,7 @@
 
 
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
-require "controleurs/verif_session.php";
+session_start ();
 
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
@@ -52,17 +52,18 @@ else {
     <h2> Ajouter une Maison</h2>
     <form method="POST" action="">
     <label for="nom">ID Utilisateur:</label>
-    <?php
-			$table = "utilisateur";
-			$table = "habitation";
-			// On récupère tout le contenu de la table utilisateur
-			$reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-      $id = $reponse->fetch()?>
-      <?php echo $id['id'];?>
-      <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+    <select name="NumUtilisateur_id" >
+                <?php
+                $table="utilisateur";
+                $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
+                } ?>
+            </select>
 			<br>
     <br>
-    <input value= echo $id >
 
       <label for="nom">Nom de la Maison*</label>
         <input type="text" id="nommaison" name="NomMaison" placeholder="Ex: Maison Paris">

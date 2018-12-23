@@ -14,6 +14,7 @@
 include('./modele/requetes.utilisateurs.php');
 include('./modele/requetes.capteurs.php');
 
+
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = "Login";
