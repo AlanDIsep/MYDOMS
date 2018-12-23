@@ -8,7 +8,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
 	echo '<body>';
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
-	echo '<br />';
+    echo '<br />';
+    $email=$_SESSION['email'];
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
@@ -52,14 +53,16 @@ else {
 
         <form method="POST" action="">
         <label for="Nom">Id utilisateur:</label>
-        <?php
-            $table = "utilisateur";
-            // On récupère tout le contenu de la table utilisateur
-            $reponse = $bdd->query('SELECT * FROM utilisateur');
-            while ($donnees = $reponse->fetch()){?>
-            <?php echo $donnees['Nom'];?>
-            <?php } $reponse->closeCursor(); // Termine le traitement de la requête ?>
-            <br><br>
+        <select name="DroitUtilisateur_idDroitUtilisateur" >
+                <?php
+                $table="utilisateur";
+                $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
+                } ?>
+            </select>
             <label for="idequipement">Id Équipement *</label>
             <input type="text" id="prenom" name="Equipement_id" placeholder="N° de série de votre équipement" required>
 
@@ -91,7 +94,6 @@ else {
 
             <label for="date">Date de la panne *</label><br>
             <input type="date" id="datepanne" name="Date" required>
-            <input type="text" id="DroitUtilisateur_idDroitUtilisateur" name="DroitUtilisateur_idDroitUtilisateur" required>
             <br><br>
             <input type="submit" value="Envoyer">
          </form><br><br>
