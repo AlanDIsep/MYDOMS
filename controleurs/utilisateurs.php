@@ -187,7 +187,9 @@ switch ($function) {
         }
         else {
             $configuration = recuperePanne($bdd);
+            /*$configuration = recupereTousUtilisateurs($bdd);*/
         }
+
 
         break;
 
