@@ -194,6 +194,7 @@ else {
 	<!---.------------------------------------------------------------------------------>	 
 		  <div id="tickets">
           <table class="my_table">
+          <thead>
           <tr>
             <th>ID</th>
             <th>Statut</th>
@@ -202,6 +203,36 @@ else {
             <th>Assigné à</th>
             <th>Date</th>
           </tr>
+          </thead>
+          <tbody>	
+          <?php foreach ((array) $configuration as $element) { ?>
+          <tr>
+              <td>
+                <?php echo $element['idHabitation']; ?>
+              </td>
+              <td>
+                <?php echo $element['NomMaison']; ?>
+                </td>
+              <td>
+                <?php echo $element['Superficie']; ?> m2
+              </td>
+              <td>
+                <?php echo $element['NombreHabitant']; ?>
+              </td>
+              <td>
+                <?php echo $element['Adresse']; ?>
+              </td>
+              <td>
+                <?php echo $element['CodePostal']; ?>
+              </td>
+              <td>
+                <?php echo $element['Pays']; ?>
+              </td>
+            </tr>
+      
+      <?php } ?>
+
+    </tbody>
           </table>
        </div> 
 <!---.------------------------------------------------------------------------------>	 
@@ -227,10 +258,29 @@ else {
               <form method="POST" action="">
 
                 <label for="Type" class="titles">Utilisateur</label>
-                <input type="text" id="Type" name="id" placeholder="ID de l'utilisateur qui détient le capteur...">
+                <br>
+                <select name="id" >
+                <?php
+                $table="utilisateur";
+                $resultat=$bdd->query("SELECT id FROM utilisateur");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
+                } ?>
+                </select><br><br>
 
-                <label for="Type" class="titles">Type de capteur</label>
-                <input type="text" id="Type" name="Type" placeholder="Type de capteur...">
+                <label for="Type" class="titles">Type de capteur</label><br>
+                <select name="Type" >
+                <?php
+                $table="equipement";
+                $resultat=$bdd->query("SELECT * FROM equipement");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['Type'].'">' . $data['Type'] . '</option>';
+                } ?>
+                </select><br><br>
 
                 <label for="Nom" class="titles">Nom du capteur</label>
                 <input type="text" id="Nom" name="Nom" placeholder="Nom du capteur...">
