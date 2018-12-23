@@ -2,6 +2,7 @@
 
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 require "controleurs/verif_session.php";
+include('controleurs/nb_online.php');
 
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
