@@ -197,36 +197,33 @@ else {
           <thead>
           <tr>
             <th>ID</th>
-            <th>Statut</th>
-            <th>Auteur</th>
-            <th>Résumé</th>
-            <th>Assigné à</th>
+            <th>Description</th>
+            <th>Type de Panne</th>
             <th>Date</th>
+            <th>Id Equipement</th>
+            <th>Id Utilisateur</th>
           </tr>
           </thead>
           <tbody>	
           <?php foreach ((array) $configuration as $element) { ?>
           <tr>
               <td>
-                <?php echo $element['idHabitation']; ?>
+                <?php echo $element['idPanne']; ?>
               </td>
               <td>
-                <?php echo $element['NomMaison']; ?>
+                <?php echo $element['DescriptionPanne']; ?>
                 </td>
               <td>
-                <?php echo $element['Superficie']; ?> m2
+                <?php echo $element['TypePanne']; ?>
               </td>
               <td>
-                <?php echo $element['NombreHabitant']; ?>
+                <?php echo $element['Date']; ?>
               </td>
               <td>
-                <?php echo $element['Adresse']; ?>
+                <?php echo $element['Equipement_id']; ?>
               </td>
               <td>
-                <?php echo $element['CodePostal']; ?>
-              </td>
-              <td>
-                <?php echo $element['Pays']; ?>
+                <?php echo $element['IdUtilisateur']; ?>
               </td>
             </tr>
       
