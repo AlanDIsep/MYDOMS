@@ -167,7 +167,8 @@ else {
 
 	<!--- J'ai mis tout ca entre crochet parceque j ai un pb de else if dans requete utilisateur -->
 	<!---.------------------------------------------------------------------------------>	 
-  <!---<div>
+  <h2>Liste des utilisateurs</h2><br>
+  <div>
           <table class="my_table">
           <thead>
           <tr>
@@ -184,7 +185,7 @@ else {
           </tr>
           </thead>
           <tbody>	
-          <?php foreach ((array) $configuration as $element) { ?>
+          <?php foreach ((array) $configurations as $element) { ?>
           <tr>
               <td>
                 <?php echo $element['id']; ?>
@@ -223,7 +224,7 @@ else {
 
     </tbody>
           </table>
-       </div> -->
+       </div><br><br>
       <h2>Ajouter un utilisateur</h2><br>
       <div class="flex-grid">
         <div class="two">
