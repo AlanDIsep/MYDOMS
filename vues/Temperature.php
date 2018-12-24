@@ -82,7 +82,9 @@ else {
     </div>
 
 	<div id="target1">
-        <h2>Salon</h2>
+        <h2>
+			 Salon
+		</h2>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>

@@ -146,7 +146,7 @@ else {
 <div class="three">
 <div class="container">
 <h2> Supprimer une Maison</h2>
-<form method="POST" action="">
+<form method="POST" action="controleurs/suppr_maison.php">
     <label for="nom">Rentrer l'ID de la Maison à supprimer*</label>
     <input type="number" name="idHabitation" placeholder="Ex: 1" required>
     <input type="submit" name="submit" value="Supprimer la Maison">
