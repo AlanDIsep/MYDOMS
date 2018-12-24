@@ -167,8 +167,10 @@ else {
 
 	<!--- J'ai mis tout ca entre crochet parceque j ai un pb de else if dans requete utilisateur -->
 	<!---.------------------------------------------------------------------------------>	 
+  <div class="flex-grid">
+  <div class="two">
   <h2>Liste des utilisateurs</h2><br>
-  <div>
+  
           <table class="my_table">
           <thead>
           <tr>
@@ -223,11 +225,11 @@ else {
       <?php } ?>
 
     </tbody>
-          </table>
-       </div><br><br>
-      <h2>Ajouter un utilisateur</h2><br>
+    </table>
+    </div></div><br><br>
       <div class="flex-grid">
         <div class="two">
+        <h2>Ajouter un utilisateur</h2><br>
 
           <form method="POST" action="">
             <label for="id" class="titles">Adresse Mail</label>
@@ -261,18 +263,24 @@ else {
             <label for="number" class="titles">Numéro de contact</label>
             <input type="text" id="number" name="NumeroDeTelephone" placeholder="Téléphone ...">
 
-            <label for="account" class="titles">Type de compte</label>
+            <label for="account" class="titles">Type de compte</label><br>
             <select id="account" name="DroitUtilisateur_id">
               <option value="1">Administrateur</option>
               <option value="2">Utilisateur</option>
               <option value="3">Help Desk</option>
-            </select>
+            </select><br><br>
 
             <input type="submit" name="submit">
           </form>
         </div>
       </div>
-    </div>
+        <div class="flex-grid">
+        <div class="two">
+        <h2>Supprimer un utilisateur</h2><br>
+        <label for="number" class="titles">Rentrer l'ID de l'utilisateur à supprimer</label><br>
+        <input type="text" id="number" name="???" placeholder="Téléphone ..."><br><br>
+        <input type="submit" name="submit">
+        </div></div></div>
 	<!---.---------------------------------------------------------------------------------------------------->
   
   <!---.------------------------------------------------------------------------------>
@@ -296,13 +304,6 @@ else {
         </form>
 
 
-        <h2>Ajouter un capteur</h2>
-        <form method="POST" action="">
-          <label for="id" class="titles">Type de capteur</label>
-          <input type="text" id="Type" name="Type" placeholder="Renseigner le type de capteur ...">
-          <input type="submit" value="Ajouter le capteur">
-        </form>
-
 		  </div>
       </div>
     </div>
@@ -310,7 +311,8 @@ else {
 		  
 	
 	<!---.------------------------------------------------------------------------------>	 
-		  <div id="tickets">
+		  
+      <div id="tickets">
           <table class="my_table">
           <thead>
           <tr>
@@ -348,8 +350,18 @@ else {
       <?php } ?>
 
     </tbody>
-          </table>
+          </table><br><br>
+      <div class="flex-grid"><br><br>
+      <div class="two">
+          <h2> Supprimer une Panne</h2><br>
+          <form method="POST" action="">
+              <label for="nom">Rentrer l'ID de la panne à supprimer: *</label><br><br>
+              <input type="number" name="idHabitation" placeholder="Ex: 1" required><br><br>
+              <input type="submit" name="submit" value="Supprimer la panne"><br>  
+          </form>
        </div> 
+       </div>
+       </div>
 <!---.------------------------------------------------------------------------------>	 
 
 
@@ -358,17 +370,6 @@ else {
     <div id="capteur" style="height:700px;">
       <div class="flex-grid">
         <div class="two">
-
-     
-
-
-          <h2>Lister un capteur dans la FAQ</h2>
-
-          <form method="POST" action="">
-            <label for="id" class="titles">Type de capteur</label>
-            <input type="text" id="Type" name="Type" placeholder="Renseigner le type de capteur ...">
-            <input type="submit" value="Lister le capteur">
-          </form>
 		  
           <h2>Ajouter un capteur</h2>
               <form method="POST" action="">
@@ -405,7 +406,7 @@ else {
                 <input type="text" id="Etat" name="Etat" placeholder="Etat du capteur lors de l'installation ...">
 
                 <label for="NumeroDeSerie" class="titles">Numéro de série</label></br>
-                <input type="text" id="NumeroDeSerie" name="DateDeNaissance" placeholder="Date de naissance ..."></br>
+                <input type="text" id="NumeroDeSerie" name="DateDeNaissance" placeholder="Numéro de série affiché sur le capteur ..."></br>
 
                 <label for="Piece_id" class="titles">ID de la piece dans laquelle le capteur sera</label>
                 <input type="text" id="Piece_id" name="Piece_id" placeholder="ID de la piece dans laquelle le capteur sera...">
