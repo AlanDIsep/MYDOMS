@@ -185,6 +185,19 @@ switch ($function) {
             // Appel à la BDD à travers une fonction du modèle.
             $retour = ajouterFAQ($bdd, $values);
         }
+        else if (isset($_POST['Type'])){
+            $values = [
+                'Type' => $_POST['Type'],
+                'Nom' => $_POST['Nom'],
+                'Etat' => $_POST['Etat'],
+                'NumeroDeSerie' => $_POST['NumeroDeSerie'],
+                'Piece_id' => $_POST['Piece_id'],
+                'idUtilisateur' => $_POST['idUtilisateur'],
+                
+            ];
+            // Appel à la BDD à travers une fonction du modèle.
+            $retour = ajouterCapteur($bdd, $values);
+        }
         else {
             $configuration = recuperePanne($bdd);
             $configurations = recupereTousUtilisateurs($bdd);

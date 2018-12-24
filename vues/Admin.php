@@ -376,7 +376,7 @@ else {
 
                 <label for="Type" class="titles">Utilisateur</label>
                 <br>
-                <select name="id" >
+                <select name="idUtilisateur" >
                 <?php
                 $table="utilisateur";
                 $resultat=$bdd->query("SELECT id FROM utilisateur");
@@ -387,29 +387,23 @@ else {
                 } ?>
                 </select><br><br>
 
-                <label for="Type" class="titles">Type de capteur</label><br>
-                <select name="Type" >
-                <?php
-                $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement");
-                $resultat->setFetchMode(PDO::FETCH_ASSOC);
-                foreach ($resultat as $data)
-                {
-                echo  '<option value="'.$data['Type'].'">' . $data['Type'] . '</option>';
-                } ?>
+                <label for="Type" class="titles">Type de capteur*</label><br>
+                <input type="text" id="Nom" name="Type" placeholder="Ex: Température ..."required>
+                <br>
+
+                <label for="Nom" class="titles">Nom du capteur*</label>
+                <input type="text" id="Nom" name="Nom" placeholder="Ex: Chambre 1..." required>
+
+                <label for="Etat" class="titles">Etat*</label><br><br>
+                <select id="account" name="Etat">
+                  <option value="1">ON</option>
+                  <option value="2">OFF</option>
                 </select><br><br>
+                <label for="NumeroDeSerie" class="titles">Numéro de série*</label><br><br>
+                <input type="number" id="NumeroDeSerie" name="NumeroDeSerie" placeholder="Numéro de série affiché sur le capteur ..." required><br><br>
 
-                <label for="Nom" class="titles">Nom du capteur</label>
-                <input type="text" id="Nom" name="Nom" placeholder="Nom du capteur...">
-
-                <label for="Etat" class="titles">Etat</label>
-                <input type="text" id="Etat" name="Etat" placeholder="Etat du capteur lors de l'installation ...">
-
-                <label for="NumeroDeSerie" class="titles">Numéro de série</label></br>
-                <input type="text" id="NumeroDeSerie" name="DateDeNaissance" placeholder="Numéro de série affiché sur le capteur ..."></br>
-
-                <label for="Piece_id" class="titles">ID de la piece dans laquelle le capteur sera</label>
-                <input type="text" id="Piece_id" name="Piece_id" placeholder="ID de la piece dans laquelle le capteur sera...">
+                <label for="Piece_id" class="titles">ID de la pièce correspondante*</label><br><br>
+                <input type="number" id="Piece_id" name="Piece_id" placeholder="ID de la piece dans laquelle le capteur sera..."required><br><br>
 
                 <input type="submit" value="Ajouter un capteur">
 
