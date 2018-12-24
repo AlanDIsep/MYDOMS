@@ -47,6 +47,10 @@ function recuperePanne(PDO $bdd): array {
     $query = "SELECT * FROM panne";
     return $bdd->query($query)->fetchAll();
 }
+function recupereTousCapteurs(PDO $bdd): array {
+    $query = "SELECT * FROM equipement";
+    return $bdd->query($query)->fetchAll();
+}
 /**
  * Ajoute un nouvel utilisateur dans la base de données
  * @param array $utilisateur

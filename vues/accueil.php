@@ -50,14 +50,29 @@ else {
 	<div class="one">
 		<div class="container">
 		<img src="../CSS/images/temperaturedash.svg" class="imagedash">
-		Chambre 1<br>
+		<?php
+                $table="equipement";
+                $resultat=$bdd->query("SELECT * FROM equipement");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['Nom'].'">' . $data['Nom'] . '</option>';
+                } ?><br>
 		<hr width= 100% color=#DCE837>
-		<div class="temperature">20°C</div>
+		<div class="temperature">		
+			<?php
+                $table="equipement";
+                $resultat=$bdd->query("SELECT * FROM equipement");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['Donnée'].'">' . $data['Donnée'] . '</option>';
+                } ?><br></div>
 		</div>
 	</div>
 	<div class="two">
 			<div class="container">
-					<img src="../CSS/images/temperaturedash.svg" class="imagedash">
+			<img src="../CSS/images/temperaturedash.svg" class="imagedash">
 			Salon<br>
 			<hr width= 100% color=#DCE837>
 			<div class="temperature">18°C</div>

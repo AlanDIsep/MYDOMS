@@ -75,7 +75,7 @@ else {
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {
-                echo  '<option value="'.$data['Type'].'">' . $data['Type'] . '</option>';
+                echo  '<option value="'.$data['Type'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
                 } ?>
             </select>
 						
