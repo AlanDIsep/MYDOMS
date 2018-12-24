@@ -10,6 +10,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo '<body>';
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
 	echo '<br />';
+	$email=$_SESSION['email'];
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';

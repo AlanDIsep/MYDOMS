@@ -370,7 +370,53 @@ else {
     <div id="capteur" style="height:700px;">
       <div class="flex-grid">
         <div class="two">
-		  
+        <table class="my_table">
+        <h2>Liste des capteurs</h2>
+          <thead>
+          <tr>
+            <th>ID Capteur</th>
+            <th>Type</th>
+            <th>Nom</th>
+            <th>Etat</th>
+            <th>Donnée</th>
+            <th>Numéro de Série</th>
+            <th>ID de la pièce</th>
+            <th>ID de l'utilisateur</th>
+          </tr>
+          </thead>
+          <tbody>	
+          <?php foreach ((array) $configurations1 as $element) { ?>
+          <tr>
+              <td>
+                <?php echo $element['idEquipement']; ?>
+              </td>
+              <td>
+                <?php echo $element['Type']; ?>
+                </td>
+              <td>
+                <?php echo $element['Nom']; ?>
+              </td>
+              <td>
+                <?php echo $element['Etat']; ?>
+              </td>
+              <td>
+                <?php echo $element['Donnée']; ?>
+              </td>
+              <td>
+                <?php echo $element['NumeroDeSerie']; ?>
+              </td>
+              <td>
+                <?php echo $element['Piece_id']; ?>
+              </td>
+              <td>
+                <?php echo $element['idUtilisateur']; ?>
+              </td>
+            </tr>
+      
+      <?php } ?>
+
+    </tbody>
+          </table><br><br>
           <h2>Ajouter un capteur</h2>
               <form method="POST" action="">
 
@@ -407,9 +453,16 @@ else {
 
                 <input type="submit" value="Ajouter un capteur">
 
-        </div>
+        </div>      </div>
+        <div class="flex-grid">
+        <div class="two">
+        <h2> Supprimer un capteur</h2><br>
+          <form method="POST" action="">
+              <label for="nom">Rentrer l'ID du capteur à supprimer: *</label><br><br>
+              <input type="number" name="idHabitation" placeholder="Ex: 1" required><br><br>
+              <input type="submit" name="submit" value="Supprimer la panne"><br>  
+          </form>
 
-      </div>
     </div>
 
     <!-- fin du rajout -->
