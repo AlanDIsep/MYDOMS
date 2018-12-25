@@ -47,8 +47,8 @@ function recuperePanne(PDO $bdd): array {
     $query = "SELECT * FROM panne";
     return $bdd->query($query)->fetchAll();
 }
-function recupereTousCapteurs(PDO $bdd): array {
-    $query = "SELECT * FROM equipement";
+function supprimePanne(PDO $bdd): array {
+    $query = "DELETE FROM 'panne' WHERE `id` = 1";
     return $bdd->query($query)->fetchAll();
 }
 /**
