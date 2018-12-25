@@ -277,9 +277,11 @@ else {
         <div class="flex-grid">
         <div class="two">
         <h2>Supprimer un utilisateur</h2><br>
-        <label for="number" class="titles">Rentrer l'ID de l'utilisateur à supprimer</label><br>
-        <input type="text" id="number" name="???" placeholder="Téléphone ..."><br><br>
+        <form method="POST" action="controleurs/suppr_utilisateur.php">
+        <label for="number" class="titles">Rentrer l'ID de l'utilisateur à supprimer</label><br><br>
+        <input type="number" name="id" placeholder="ID de l'utilisateur à supprimer ..."><br><br>
         <input type="submit" name="submit">
+        </form>
         </div></div></div>
 	<!---.---------------------------------------------------------------------------------------------------->
   
@@ -303,7 +305,59 @@ else {
           <input type="submit" value="Ajouter la question">
         </form>
 
+        <h2> Liste de(s) Maison(s)</h2>
+  <table id="customers">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Maison</th>
+        <th>Superficie</th>
+        <th>Nombre d'habitant</th>
+        <th>Adresse</th>
+        <th>Code Postal</th>
+        <th>Pays</th>
+      </tr>
+    </thead>
+    <tbody>	
+      <?php foreach ((array) $configuration1 as $element) { ?>
+          <tr>
+              <td>
+                <?php echo $element['idHabitation']; ?>
+              </td>
+              <td>
+                <?php echo $element['NomMaison']; ?>
+                </td>
+              <td>
+                <?php echo $element['Superficie']; ?> m2
+              </td>
+              <td>
+                <?php echo $element['NombreHabitant']; ?>
+              </td>
+              <td>
+                <?php echo $element['Adresse']; ?>
+              </td>
+              <td>
+                <?php echo $element['CodePostal']; ?>
+              </td>
+              <td>
+                <?php echo $element['Pays']; ?>
+              </td>
+            </tr>
+      
+      <?php } ?>
 
+    </tbody>
+  </table>
+
+  <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
+    
+
+  <h2> Supprimer une Maison</h2>
+<form method="POST" action="controleurs/suppr_maison.php">
+    <label for="nom">Rentrer l'ID de la Maison à supprimer*</label><br><br>
+    <input type="number" name="idHabitation" placeholder="Ex: 1" required><br><br>
+    <input type="submit" name="submit" value="Supprimer la Maison">
+</form>
 		  </div>
       </div>
     </div>
@@ -315,6 +369,7 @@ else {
       <div id="tickets">
           <table class="my_table">
           <thead>
+          <h2>Liste des Pannes</h2>
           <tr>
             <th>ID</th>
             <th>Description</th>
@@ -354,7 +409,7 @@ else {
       <div class="flex-grid"><br><br>
       <div class="two">
           <h2> Supprimer une Panne</h2><br>
-          <form method="POST" action="">
+          <form method="POST" action="controleurs/suppr_panne.php">
               <label for="nom">Rentrer l'ID de la panne à supprimer: *</label><br><br>
               <input type="number" name="idPanne" placeholder="Ex: 1" required><br><br>
               <input type="submit" name="submit" value="Supprimer la panne"><br>  
@@ -434,7 +489,10 @@ else {
                 </select><br><br>
 
                 <label for="Type" class="titles">Type de capteur*</label><br>
-                <input type="text" id="Nom" name="Type" placeholder="Ex: Température ..."required>
+                <select id="account" name="Type">
+                  <option value="1">Température</option>
+                  <option value="2">Lumière</option>
+                </select><br>
                 <br>
 
                 <label for="Nom" class="titles">Nom du capteur*</label>
@@ -452,15 +510,16 @@ else {
                 <input type="number" id="Piece_id" name="Piece_id" placeholder="ID de la piece dans laquelle le capteur sera..."required><br><br>
 
                 <input type="submit" value="Ajouter un capteur">
+                </form>
 
         </div>      </div>
         <div class="flex-grid">
         <div class="two">
         <h2> Supprimer un capteur</h2><br>
-          <form method="POST" action="">
+          <form method="POST" action="controleurs/suppr_capteur.php">
               <label for="nom">Rentrer l'ID du capteur à supprimer: *</label><br><br>
-              <input type="number" name="idHabitation" placeholder="Ex: 1" required><br><br>
-              <input type="submit" name="submit" value="Supprimer la panne"><br>  
+              <input type="number" name="idEquipement" placeholder="Ex: 1" required><br><br>
+              <input type="submit" name="submit"><br>  
           </form>
 
     </div>

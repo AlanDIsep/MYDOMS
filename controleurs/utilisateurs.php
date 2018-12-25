@@ -120,7 +120,7 @@ switch ($function) {
                 //];
             //$retour = supprimeMaisons($bdd,$values);
 
-			$sql = "DELETE FROM habitation WHERE idHabitation='11'";
+			$sql = "DELETE FROM habitation WHERE idHabitation=''";
 			$bdd->exec($sql);
         }
 
@@ -202,6 +202,7 @@ switch ($function) {
             $configuration = recuperePanne($bdd);
             $configurations = recupereTousUtilisateurs($bdd);
             $configurations1 = recupereTousTypesCapteurs($bdd);
+            $configuration1 = recupereMaisons($bdd);
         }
 
 
