@@ -356,7 +356,7 @@ else {
           <h2> Supprimer une Panne</h2><br>
           <form method="POST" action="">
               <label for="nom">Rentrer l'ID de la panne à supprimer: *</label><br><br>
-              <input type="number" name="idHabitation" placeholder="Ex: 1" required><br><br>
+              <input type="number" name="idPanne" placeholder="Ex: 1" required><br><br>
               <input type="submit" name="submit" value="Supprimer la panne"><br>  
           </form>
        </div> 
