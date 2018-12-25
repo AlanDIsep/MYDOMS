@@ -97,7 +97,8 @@ else {
 		</br>
 		<div id="modulator">
 			<button type="button" onClick="onClick3()" style="margin-left:15px;">-</button>
-			<p class="color-t">Température désirée: <a id="clicks2"></a>°</p>
+			<p class="color-t">Température désirée: <a id="clicks2"></a>			
+			°</p>
 			<button type="button" onClick="onClick4()">+</button>
 			</div>
 			
@@ -188,7 +189,12 @@ $('.toggle3').click(function()
 	var clicks2 = 20;
 	var clicks3=20;
 	var clicks4=20;
-    <!-- fonctions de modulation de température souhaitée avec une fonction par bouton -->
+    
+	
+	
+	<!-- fonctions de modulation de température souhaitée avec une fonction par bouton -->
+	
+	
 	function onClick() {
         if (clicks < 35) {
 		clicks += 1;
@@ -201,6 +207,17 @@ $('.toggle3').click(function()
     }};
 	 <!-- fin-->
 	  <!-- Et on refait la même chose pour les autres fenêtres-->
+	
+	<?php 
+					$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
+					 
+					mysqli_query($mysqli,"DELETE FROM habitation WHERE idHabitation='".$idHabitation."'");
+					header('Location: ../index.php?cible=utilisateurs&fonction=Configuration'); 
+?>
+
+
+
+
 	function onClick3() {
         clicks2 -= 1;
         document.getElementById("clicks2").innerHTML = clicks2;
@@ -209,6 +226,8 @@ $('.toggle3').click(function()
         clicks2 += 1;
         document.getElementById("clicks2").innerHTML = clicks2;
     };
+
+
 	function onClick5() {
         clicks3 -= 1;
         document.getElementById("clicks3").innerHTML = clicks3;
@@ -217,6 +236,8 @@ $('.toggle3').click(function()
         clicks3 += 1;
         document.getElementById("clicks3").innerHTML = clicks3;
     };
+
+
 	function onClick7() {
         clicks4 -= 1;
         document.getElementById("clicks4").innerHTML = clicks4;
