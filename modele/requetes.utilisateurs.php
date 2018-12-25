@@ -92,7 +92,11 @@ function ajouteMaison(PDO $bdd, array $habitation) {
 //function supprimeMaisons(PDO $bdd, array $habitation) {
   //$donnees->bindParam(":idHabitation", $habitation['idHabitation']);
    //$sql = 'DELETE FROM habitation WHERE idHabitation="'.$donnees.'"';
-}
+<<<<<<< HEAD
+//}
+=======
+
+>>>>>>> 716e84334ae3b3dac547520a65c1273c06168733
 
 function ajouterPanne(PDO $bdd, array $panne) {
     

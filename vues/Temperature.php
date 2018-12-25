@@ -209,10 +209,9 @@ $('.toggle3').click(function()
 	  <!-- Et on refait la même chose pour les autres fenêtres-->
 	
 	<?php 
-					$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
+					//$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
+					 //mysqli_query($mysqli,"DELETE FROM habitation WHERE idHabitation='".$idHabitation."'");
 					 
-					mysqli_query($mysqli,"DELETE FROM habitation WHERE idHabitation='".$idHabitation."'");
-					header('Location: ../index.php?cible=utilisateurs&fonction=Configuration'); 
 ?>
 
 

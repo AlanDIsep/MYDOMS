@@ -49,89 +49,42 @@ else {
 <div class="wrapper">
 	<div class="one">
 		<div class="container">
+		<div class=temperature1>
 		<img src="../CSS/images/temperaturedash.svg" class="imagedash">
+		TEMPÉRATURE</div><br>
 		<?php
                 $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement");
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE Type='Température'");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
-                {
-                echo  '<option value="'.$data['Nom'].'">' . $data['Nom'] . '</option>';
-                } ?><br>
+                { 
+                echo  '<hr width= 100% color=#DCE837><option value="'.$data['Nom'].'">' . $data['Nom'] . '</option><div class=temperature><option value="'.$data['Donnée'].'">' . $data['Donnée'] . ' °C</div></option>';
+                } ?>
 		<hr width= 100% color=#DCE837>
-		<div class="temperature">		
-			<?php
-                $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement");
-                $resultat->setFetchMode(PDO::FETCH_ASSOC);
-                foreach ($resultat as $data)
-                {
-                echo  '<option value="'.$data['Donnée'].'">' . $data['Donnée'] . '</option>';
-                } ?><br></div>
+
 		</div>
 	</div>
 	<div class="two">
 			<div class="container">
-			<img src="../CSS/images/temperaturedash.svg" class="imagedash">
-			Salon<br>
-			<hr width= 100% color=#DCE837>
-			<div class="temperature">18°C</div>
-			</div>
-	</div>
-	<div class="three">
-			<div class="container">
-					<img src="../CSS/images/temperaturedash.svg" class="imagedash">
-			Cuisine
-			<hr width= 100% color=#DCE837>
-			<div class="temperature">21°C</div>
-			</div>
-	</div>
-	<div class="four">
-			<div class="container">
-					<img src="../CSS/images/temperaturedash.svg" class="imagedash">
-			Chambre 2
-			<hr width= 100% color=#DCE837>
-			<div class="temperature">20°C</div>
-			</div>
-	</div>
-
-	<div class="five">
-		<div class="container">
-				<img src="../CSS/images/lumieredash.svg" class="imagedash">
-		Chambre 1<br>
+			<div class=temperature1>
+		<img src="../CSS/images/lumieredash.svg" class="imagedash">
+		ÉCLAIRAGE</div><br>
+		<?php
+                $table="equipement";
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE Type='Éclairage'");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                { 
+                echo  '<hr width= 100% color=#DCE837><option value="'.$data['Nom'].'">' . $data['Nom'] . '</option><div class=temperature><option value="'.$data['Donnée'].'">' . $data['Donnée'] . ' %</div></option>';
+                } ?>
 		<hr width= 100% color=#DCE837>
-		<div class="temperature">ON</div>
-		</div>
-	</div>
-	<div class="sixth">
-			<div class="container">
-					<img src="../CSS/images/lumieredash.svg" class="imagedash">
-			Salon<br>
-			<hr width= 100% color=#DCE837>
-			<div class="temperature">OFF</div>
-			</div>
-	</div>
-	<div class="seven">
-			<div class="container">
-					<img src="../CSS/images/lumieredash.svg" class="imagedash">
-			Cuisine
-			<hr width= 100% color=#DCE837>
-			<div class="temperature">OFF</div>
-			</div>
-	</div>
-	<div class="height">
-			<div class="container">
-					<img src="../CSS/images/lumieredash.svg" class="imagedash">
-			Chambre 2
-			<hr width= 100% color=#DCE837>
-			<div class="temperature">ON</div>
-			</div>
-		</div>
+	</div></div>
+	
 	<div class="nine">
 			<div class="container">
 				Graphique
 				<hr width= 100% color=#DCE837>
-				<div class="temperature"></div>
+				<div class="temperature">Insérer contenu ici</div>
 			</div>
 		</div>
 </div>
