@@ -188,7 +188,41 @@ input[type=submit] {
 
 }
 
+input[type=number] {
+  font-family: Kollektif;
+  width: 100%; 
+  padding: 12px;
+  border: 1px solid #ccc; /* bord gris des cases */
+  border-radius: 4px; /* bord rond des cases */
+  box-sizing: border-box; /* Assure l'alignement des cases */
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical /* Permet aux utilisateurs de redimensionner une case */
+}
 
+input[type=date], select{
+  font-family: Kollektif;
+  width: 100%; 
+  padding: 12px;
+  border: 1px solid #ccc; /* bord gris des cases */
+  border-radius: 4px; /* bord rond des cases */
+  box-sizing: border-box; /* Assure l'alignement des cases */
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical /* Permet aux utilisateurs de redimensionner une case */
+}
+
+select{
+  font-family: Kollektif;
+  width: 100%; 
+  padding: 12px;
+  border: 1px solid #ccc; /* bord gris des cases */
+  border-radius: 4px; /* bord rond des cases */
+  box-sizing: border-box; /* Assure l'alignement des cases */
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical /* Permet aux utilisateurs de redimensionner une case */
+}
 
 input[type=submit]:hover {
     background-color: rgb(105, 112, 1);
