@@ -51,6 +51,7 @@ else {
     <li onclick="myFunction2()"><a>Gestion du formulaire</a></li>
     <li onclick="myFunction3()"><a>Capteurs</a></li>
     <li onclick="myFunction4()"><a>Tickets</a></li>
+	<li onclick="myFunction5()"><a>Maisons</a></li>
   </ul>
   
 </nav>
@@ -165,7 +166,7 @@ else {
 	<!---.------------------------------------------------------------------------------>
     <div id="user">
 
-	<!--- J'ai mis tout ca entre crochet parceque j ai un pb de else if dans requete utilisateur -->
+	
 	<!---.------------------------------------------------------------------------------>	 
   <div class="flex-grid">
   <div class="two">
@@ -305,59 +306,10 @@ else {
           <input type="submit" value="Ajouter la question">
         </form>
 
-        <h2> Liste de(s) Maison(s)</h2>
-  <table id="customers">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Maison</th>
-        <th>Superficie</th>
-        <th>Nombre d'habitant</th>
-        <th>Adresse</th>
-        <th>Code Postal</th>
-        <th>Pays</th>
-      </tr>
-    </thead>
-    <tbody>	
-      <?php foreach ((array) $configuration1 as $element) { ?>
-          <tr>
-              <td>
-                <?php echo $element['idHabitation']; ?>
-              </td>
-              <td>
-                <?php echo $element['NomMaison']; ?>
-                </td>
-              <td>
-                <?php echo $element['Superficie']; ?> m2
-              </td>
-              <td>
-                <?php echo $element['NombreHabitant']; ?>
-              </td>
-              <td>
-                <?php echo $element['Adresse']; ?>
-              </td>
-              <td>
-                <?php echo $element['CodePostal']; ?>
-              </td>
-              <td>
-                <?php echo $element['Pays']; ?>
-              </td>
-            </tr>
-      
-      <?php } ?>
 
-    </tbody>
-  </table>
-
-  <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
     
 
-  <h2> Supprimer une Maison</h2>
-<form method="POST" action="controleurs/suppr_maison.php">
-    <label for="nom">Rentrer l'ID de la Maison à supprimer*</label><br><br>
-    <input type="number" name="idHabitation" placeholder="Ex: 1" required><br><br>
-    <input type="submit" name="submit" value="Supprimer la Maison">
-</form>
+  
 		  </div>
       </div>
     </div>
@@ -422,7 +374,7 @@ else {
 
       
     <!---.------------------------------------------------------------------------------>	 
-    <div id="capteur" style="height:700px;">
+    <div id="capteur" style="height:90%;">
       <div class="flex-grid">
         <div class="two">
         <table class="my_table">
@@ -512,8 +464,10 @@ else {
                 <input type="submit" value="Ajouter un capteur">
                 </form>
 
-        </div>      </div>
-        <div class="flex-grid">
+        </div>  
+		</div>
+        
+		<div class="flex-grid">
         <div class="two">
         <h2> Supprimer un capteur</h2><br>
           <form method="POST" action="controleurs/suppr_capteur.php">
@@ -522,7 +476,77 @@ else {
               <input type="submit" name="submit"><br>  
           </form>
 
-    </div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+<div id="maisons"style="height:500px;">
+		 <div class="flex-grid">
+        <div class="two">
+	        <h2> Liste de(s) Maison(s)</h2>
+			  <table id="customers">
+				<thead>
+				  <tr>
+					<th>ID</th>
+					<th>Maison</th>
+					<th>Superficie</th>
+					<th>Nombre d'habitant</th>
+					<th>Adresse</th>
+					<th>Code Postal</th>
+					<th>Pays</th>
+				  </tr>
+				</thead>
+
+				<tbody>	
+				  <?php foreach ((array) $configuration1 as $element) { ?>
+					  <tr>
+						  <td>
+							<?php echo $element['idHabitation']; ?>
+						  </td>
+						  <td>
+							<?php echo $element['NomMaison']; ?>
+							</td>
+						  <td>
+							<?php echo $element['Superficie']; ?> m2
+						  </td>
+						  <td>
+							<?php echo $element['NombreHabitant']; ?>
+						  </td>
+						  <td>
+							<?php echo $element['Adresse']; ?>
+						  </td>
+						  <td>
+							<?php echo $element['CodePostal']; ?>
+						  </td>
+						  <td>
+							<?php echo $element['Pays']; ?>
+						  </td>
+						</tr>
+      
+				  <?php } ?>
+
+				</tbody>
+			  </table>
+			  </div>
+			  </div>
+
+  <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
+  </br>
+
+  <div class="flex-grid"><br><br>
+      <div class="two">
+	<h2> Supprimer une Maison</h2>
+		<form method="POST" action="controleurs/suppr_maison.php">
+			<label for="nom">Rentrer l'ID de la Maison à supprimer*</label><br><br>
+			<input type="number" name="idHabitation" placeholder="Ex: 1" required><br><br>
+			<input type="submit" name="submit" value="Supprimer la Maison">
+		</form>
+		</div>
+		</div>
+</div>
 
     <!-- fin du rajout -->
 
@@ -539,6 +563,8 @@ else {
     	 var z = document.getElementById("tickets");
 		var b = document.getElementById("data_form");       
        var a = document.getElementById("capteur");
+	   var c = document.getElementById("maisons");
+
        
         if (x.style.display == "none") {
             x.style.display = "block";
@@ -546,6 +572,7 @@ else {
     		z.style.display = "none";
 			a.style.display = "none";
 			b.style.display = "none";
+			c.style.display = "none";
         
     		document.getElementById("title").innerHTML = "Tableau de bord";
         } else {
@@ -554,7 +581,7 @@ else {
     		z.style.display = "none";
 			a.style.display = "none";
 			b.style.display = "none";
-        
+			c.style.display = "none";
     		document.getElementById("title").innerHTML = "Tableau de bord";
         }
     	}
@@ -565,6 +592,7 @@ else {
     	var z = document.getElementById("data_form");       
        var a = document.getElementById("capteur");
      var b = document.getElementById("tickets");
+	 var c = document.getElementById("maisons");
       //fin rajout
         if (x.style.display == "none") {
     		 x.style.display = "block";
@@ -572,6 +600,7 @@ else {
     		 z.style.display = "none";
 			 a.style.display = "none";
 			b.style.display = "none";
+			c.style.display = "none";
     		 document.getElementById("title").innerHTML = "Utilisateurs";
         }  else {
             x.style.display = "block";
@@ -579,6 +608,7 @@ else {
     		z.style.display = "none";
 		    a.style.display = "none";
 			 b.style.display = "none";
+			 c.style.display = "none";
     		document.getElementById("title").innerHTML = "Utilisateurs";
 
         }
@@ -589,6 +619,7 @@ else {
     	 var z = document.getElementById("dashboard");     
        var a = document.getElementById("capteur");
 	   var b = document.getElementById("tickets");
+	   var c = document.getElementById("maisons");
        
         if (x.style.display == "none") {
     		 x.style.display = "block";
@@ -596,6 +627,7 @@ else {
     		 z.style.display = "none";
 			 a.style.display = "none";
 			b.style.display = "none";
+			c.style.display = "none";
     		 document.getElementById("title").innerHTML = "Ajouter des données formulaire";
         } else {
             x.style.display = "block";
@@ -603,6 +635,7 @@ else {
     		z.style.display = "none";
 		    a.style.display = "none";
 			b.style.display = "none";
+			c.style.display = "none";
     		document.getElementById("title").innerHTML = "Ajouter des données formulaire";
         }
 
@@ -615,6 +648,7 @@ else {
     	 var z = document.getElementById("dashboard");
        var a = document.getElementById("data_form");
        var b = document.getElementById("tickets");
+	   var c = document.getElementById("maisons");
 
         if (x.style.display == "none") {
     		 x.style.display = "block";
@@ -622,6 +656,7 @@ else {
     		 z.style.display = "none";
 			 a.style.display = "none";
 			b.style.display = "none";
+			c.style.display = "none";
     		 document.getElementById("title").innerHTML = "Gestion des Capteurs";
         } else {
             x.style.display = "block";
@@ -629,6 +664,7 @@ else {
     		z.style.display = "none";
 			a.style.display = "none";
 			b.style.display = "none";
+			c.style.display = "none";
     		document.getElementById("title").innerHTML = "Gestion des Capteurs";
         }
 
@@ -641,6 +677,7 @@ else {
     	 var z = document.getElementById("dashboard");
        var a = document.getElementById("data_form");
 	    var b = document.getElementById("capteur");
+		var c = document.getElementById("maisons");
        
         if (x.style.display == "none") {
     		 x.style.display = "block";
@@ -648,7 +685,7 @@ else {
     		 z.style.display = "none";
 			 a.style.display = "none";
 			 b.style.display = "none";
-         
+			c.style.display = "none";
     		 document.getElementById("title").innerHTML = "Tickets";
         } else {
             x.style.display = "block";
@@ -656,7 +693,36 @@ else {
     		z.style.display = "none";
 			a.style.display = "none";
 			b.style.display = "none";
+			c.style.display = "none";
     		document.getElementById("title").innerHTML = "Tickets";
+        }
+
+    }
+
+	 function myFunction5() {
+        var x = document.getElementById("maisons");
+    	var y = document.getElementById("user");
+    	 var z = document.getElementById("dashboard");
+       var a = document.getElementById("data_form");
+	    var b = document.getElementById("capteur");
+		var c = document.getElementById("tickets");
+       
+        if (x.style.display == "none") {
+    		 x.style.display = "block";
+    		 y.style.display = "none";
+    		 z.style.display = "none";
+			 a.style.display = "none";
+			 b.style.display = "none";
+			c.style.display = "none";
+    		 document.getElementById("title").innerHTML = "Maisons";
+        } else {
+            x.style.display = "block";
+    		y.style.display = "none";
+    		z.style.display = "none";
+			a.style.display = "none";
+			b.style.display = "none";
+			c.style.display = "none";
+    		document.getElementById("title").innerHTML = "Maisons";
         }
 
     }
