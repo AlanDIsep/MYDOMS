@@ -3,6 +3,7 @@
 // on récupère les requêtes génériques
 include('requetes.generiques.php');
 
+
 //on définit le nom de la table
 $table = "utilisateur";
 $table = "habitation";

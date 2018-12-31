@@ -11,6 +11,10 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo '<body>';
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
 	echo '<br />';
+	$email=$_SESSION['email'];
+	$table = "utilisateur";
+	echo $bdd->query("SELECT id FROM utilisateur WHERE 'AdresseMail'='$email'");
+
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
@@ -54,7 +58,7 @@ else {
 		TEMPÉRATURE</div><br>
 		<?php
                 $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement WHERE Type='Température'");
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE $id='idUser'");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 { 
