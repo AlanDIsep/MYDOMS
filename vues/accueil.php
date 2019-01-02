@@ -12,8 +12,11 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
 	echo '<br />';
 	$email=$_SESSION['email'];
-	$table = "utilisateur";
-	echo $bdd->query("SELECT id FROM utilisateur WHERE 'AdresseMail'='$email'");
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees1 = $reponse1->fetch();
+			$id1 = $donnees1['id'];
 
 }
 else {
@@ -57,8 +60,8 @@ else {
 		<img src="../CSS/images/temperaturedash.svg" class="imagedash">
 		TEMPÉRATURE</div><br>
 		<?php
-                $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement WHERE $id='idUser'");
+				$table="equipement";
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Température'");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 { 
@@ -75,7 +78,7 @@ else {
 		ÉCLAIRAGE</div><br>
 		<?php
                 $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement WHERE Type='Éclairage'");
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Éclairage'");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 { 

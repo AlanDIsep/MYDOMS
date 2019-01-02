@@ -67,7 +67,12 @@ else {
     <br>
 
       <label for="nom">Nom de la Maison*</label>
-        <input type="text" id="nommaison" name="NomMaison" placeholder="Ex: Maison Paris">
+        <input type="text" id="nommaison" name="NomMaison" placeholder="<?php
+            $table = "utilisateur";
+            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['Nom'];?>
+            <?php $reponse->closeCursor();?>">
 
       <label for="superficie">Superficie de la Maison:* <span id="demo"></span> m2</label>
         <div class="slidecontainer">
@@ -92,49 +97,93 @@ else {
 </div>
 <div class="two">
 <div class="container">
-<h2> Liste de(s) Maison(s)</h2>
-  <table id="customers">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Maison</th>
-        <th>Superficie</th>
-        <th>Nombre d'habitant</th>
-        <th>Adresse</th>
-        <th>Code Postal</th>
-        <th>Pays</th>
-      </tr>
-    </thead>
-    <tbody>	
-      <?php foreach ((array) $configuration as $element) { ?>
-          <tr>
-              <td>
-                <?php echo $element['idHabitation']; ?>
-              </td>
-              <td>
-                <?php echo $element['NomMaison']; ?>
-                </td>
-              <td>
-                <?php echo $element['Superficie']; ?> m2
-              </td>
-              <td>
-                <?php echo $element['NombreHabitant']; ?>
-              </td>
-              <td>
-                <?php echo $element['Adresse']; ?>
-              </td>
-              <td>
-                <?php echo $element['CodePostal']; ?>
-              </td>
-              <td>
-                <?php echo $element['Pays']; ?>
-              </td>
-            </tr>
-      
-      <?php } ?>
+<h2> Ma maison</h2>
+<div id="profil">
+	<p> Adresse Mail: </p>
+	<div class="champs">
+	<?php
+		if (isset($_SESSION['email'])) {
 
-    </tbody>
-  </table>
+		echo '<body>';
+		echo ''.$_SESSION['email'].'';
+		echo '<br />';
+		}else {
+		echo 'Les variables ne sont pas déclarées.';
+}
+?>
+	</div>	
+	<p> Nom: </p>
+
+	<div class="champs">
+	<?php
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['Nom'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	
+
+
+	<p> Prénom: </p>
+
+	<div class="champs">
+	<?php
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['Prenom'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	
+
+
+	<p> Adresse: </p>
+
+	<div class="champs">
+	<?php
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['AdresseFacturation'];?>, <?php echo $donnees['CodePostal'];?>, <?php echo $donnees['Ville'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	
+
+
+	<p> Date de Naissance:</p>
+
+	<div class="champs">
+	<?php
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['DateDeNaissance'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	
+
+
+	<p>Maison actuellement gérée:</p>
+	<div class="champs">
+	<?php
+			$table = "utilisateur";
+			$table = "habitation";
+			// On récupère tout le contenu de la table utilisateur
+			$id1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+			$id=$donnees['id'];
+            $reponse = $bdd->query("SELECT * FROM habitation WHERE NumUtilisateur_id=$id");
+            $donnees = $reponse->fetch()?>
+            <?php echo $donnees['NomMaison'];?>
+            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+			<br>
+			</div>	<br><br>
+	<p>
+	</div>
 
   <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
     

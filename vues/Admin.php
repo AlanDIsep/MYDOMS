@@ -416,7 +416,7 @@ else {
                 <?php echo $element['Piece_id']; ?>
               </td>
               <td>
-                <?php echo $element['idUtilisateur']; ?>
+                <?php echo $element['idUser']; ?>
               </td>
             </tr>
       
@@ -432,11 +432,11 @@ else {
                 <select name="idUtilisateur" >
                 <?php
                 $table="utilisateur";
-                $resultat=$bdd->query("SELECT id FROM utilisateur");
+                $resultat=$bdd->query("SELECT * FROM utilisateur");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {
-                echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
+                echo  '<option value="'.$data['id'].'">' . $data['id'] . ' - '.$data['Nom'].'  '.$data['Prenom'].'</option>';
                 } ?>
                 </select><br><br>
 
