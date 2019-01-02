@@ -77,14 +77,14 @@ function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
 
 function ajouteMaison(PDO $bdd, array $habitation) {
     
-    $query = ' INSERT INTO habitation (Adresse, Superficie, CodePostal, Pays, NombreHabitant, NumUtilisateur_id, NomMaison) VALUES (:Adresse, :Superficie,:CodePostal, :Pays, :NombreHabitant, :NumUtilisateur_id, :NomMaison)';
+    $query = ' INSERT INTO habitation (Adresse, Superficie, CodePostal, Pays, NombreHabitant, idUtilisateur, NomMaison) VALUES (:Adresse, :Superficie,:CodePostal, :Pays, :NombreHabitant, :idUtilisateur, :NomMaison)';
     $donnees = $bdd->prepare($query);
     $donnees->bindParam(":Adresse", $habitation['Adresse'], PDO::PARAM_STR);
     $donnees->bindParam(":Superficie", $habitation['Superficie']);
     $donnees->bindParam(":CodePostal", $habitation['CodePostal']);
     $donnees->bindParam(":Pays", $habitation['Pays']);
     $donnees->bindParam(":NombreHabitant", $habitation['NombreHabitant']);
-    $donnees->bindParam(":NumUtilisateur_id", $habitation['NumUtilisateur_id']);
+    $donnees->bindParam(":idUtilisateur", $habitation['idUtilisateur']);
     $donnees->bindParam(":NomMaison", $habitation['NomMaison']);
     return $donnees->execute();
     

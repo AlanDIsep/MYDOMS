@@ -12,6 +12,12 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
   echo '<br />';
   $email=$_SESSION['email'];
+  $table = "utilisateur";
+  // On récupère tout le contenu de la table utilisateur
+  $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+  $donnees1 = $reponse1->fetch();
+  $id1 = $donnees1['id'];
+
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
@@ -50,143 +56,77 @@ else {
 <div class="wrapper">
 <div class="one">
 <div class="container">
-    <h2> Ajouter une Maison</h2>
+    <h2> Configuration d'un nouveau parcours lumineux</h2>
     <form method="POST" action="">
-    <label for="nom">ID Utilisateur:</label>
-    <select name="NumUtilisateur_id" >
-                <?php
-                $table="utilisateur";
-                $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-                $resultat->setFetchMode(PDO::FETCH_ASSOC);
-                foreach ($resultat as $data)
-                {
-                echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
-                } ?>
-            </select>
-			<br>
-    <br>
-
-      <label for="nom">Nom de la Maison*</label>
-        <input type="text" id="nommaison" name="NomMaison" placeholder="<?php
-            $table = "utilisateur";
-            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-            $donnees = $reponse->fetch()?>
-            <?php echo $donnees['Nom'];?>
-            <?php $reponse->closeCursor();?>">
-
-      <label for="superficie">Superficie de la Maison:* <span id="demo"></span> m2</label>
-        <div class="slidecontainer">
-          <input type="range" min="1" max="150" value="0" name="Superficie" class="slider" id="myRange">
-          </div><br>
-      <label for="object">Nombre d'habitants* </label><br>
-        <input type="number" name="NombreHabitant"placeholder="Ex: 3" required/><br><br>
-
-      <label for="object">Adresse*</label><br>
-        <input type="text" name="Adresse" placeholder="Ex: 2 rue de la Paix"required/><br><br>
-
-      <label for="object">Code Postal</label><br>
-        <input type="number" name="CodePostal" placeholder="Ex: 75001" required/><br><br>
-
-      <label for="object">Pays</label><br>
-        <input type="text" name="Pays"placeholder="Ex: Françe" required/><br><br>
-
-        <input type="submit" name="submit" value="Enregistrer">
-
+    <label for="nom">Rentrer le nom du parcours: *</label><br>
+    <input type="text" name="nomParcours" placeholder="Ex: Chambre --> Cuisine" required><br><br>
+    <label for="object">Eclairages sélectionnés: *</label>
+      <select name="Capteur1" >
+      <option value=""></option>
+          <?php
+          $table="equipement";
+          $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Eclairage'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          } ?>
+      </select>
+      <select name="Capteur2" >
+      <option value=""></option>
+          <?php
+          $table="equipement";
+          $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1&& Type='Eclairage'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          } ?>
+      </select>
+      <select name="Capteur3" >
+      <option value=""></option>
+          <?php
+          $table="equipement";
+          $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1&& Type='Eclairage'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          } ?>
+      </select>
+      <select name="Capteur4" >
+      <option value=""></option>
+          <?php
+          $table="equipement";
+          $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1&& Type='Eclairage'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          } ?>
+      </select>
+      <input type="submit" name="submit" value="Ajouter le chemin lumineux"><br>  
 </form><br><br>
 </div>
 </div>
+
 <div class="two">
 <div class="container">
-<h2> Ma maison</h2>
-<div id="profil">
-	<p> Adresse Mail: </p>
-	<div class="champs">
-	<?php
-		if (isset($_SESSION['email'])) {
+    <h2> Suppression d'un parcours lumineux</h2>
+    <form method="POST" action="">
+    <label for="nom">Sélectionner le parcours à supprimer: *</label><br>
+    <select></select><br><br>
+    <input type="submit" name="submit" value="Supprimer le parcours sélectionné"><br>  
+</form><br><br>
+</div>
+</div>
 
-		echo '<body>';
-		echo ''.$_SESSION['email'].'';
-		echo '<br />';
-		}else {
-		echo 'Les variables ne sont pas déclarées.';
-}
-?>
-	</div>	
-	<p> Nom: </p>
-
-	<div class="champs">
-	<?php
-            $table = "utilisateur";
-            // On récupère tout le contenu de la table utilisateur
-            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-            $donnees = $reponse->fetch()?>
-            <?php echo $donnees['Nom'];?>
-            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
-			<br>
-			</div>	
-
-
-	<p> Prénom: </p>
-
-	<div class="champs">
-	<?php
-            $table = "utilisateur";
-            // On récupère tout le contenu de la table utilisateur
-            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-            $donnees = $reponse->fetch()?>
-            <?php echo $donnees['Prenom'];?>
-            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
-			<br>
-			</div>	
-
-
-	<p> Adresse: </p>
-
-	<div class="champs">
-	<?php
-            $table = "utilisateur";
-            // On récupère tout le contenu de la table utilisateur
-            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-            $donnees = $reponse->fetch()?>
-            <?php echo $donnees['AdresseFacturation'];?>, <?php echo $donnees['CodePostal'];?>, <?php echo $donnees['Ville'];?>
-            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
-			<br>
-			</div>	
-
-
-	<p> Date de Naissance:</p>
-
-	<div class="champs">
-	<?php
-            $table = "utilisateur";
-            // On récupère tout le contenu de la table utilisateur
-            $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-            $donnees = $reponse->fetch()?>
-            <?php echo $donnees['DateDeNaissance'];?>
-            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
-			<br>
-			</div>	
-
-
-	<p>Maison actuellement gérée:</p>
-	<div class="champs">
-	<?php
-			$table = "utilisateur";
-			$table = "habitation";
-			// On récupère tout le contenu de la table utilisateur
-			$id1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-			$id=$donnees['id'];
-            $reponse = $bdd->query("SELECT * FROM habitation WHERE NumUtilisateur_id=$id");
-            $donnees = $reponse->fetch()?>
-            <?php echo $donnees['NomMaison'];?>
-            <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
-			<br>
-			</div>	<br><br>
-	<p>
-	</div>
-
-  <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
-    
+<div class="three">
+<div class="container">
+    <h2> Parcours lumineux</h2>
+    <form method="POST" action="">
+</form><br><br>
+</div>
 </div>
 </div>
 
