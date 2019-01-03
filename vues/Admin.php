@@ -440,8 +440,8 @@ else {
                 <label for="Type" class="titles">Type de capteur*</label><br>
                 <select id="account" name="Type">
                   <option value=""></option>
-                  <option value="1">Température</option>
-                  <option value="2">Lumière</option>
+                  <option value="Température">Température</option>
+                  <option value="Éclairage">Éclairage</option>
                 </select><br>
                 <br>
 

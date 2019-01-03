@@ -58,11 +58,28 @@ else {
 <div class="container">
     <h2> Configuration d'un nouveau parcours lumineux</h2>
     <form method="POST" action="">
+    <label for="Nom">Id utilisateur:</label>
+
+    <select name="idUser" >
+          <?php
+          $table="utilisateur";
+          $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
+          } ?>
+      </select><br><br>
     <label for="nom">Rentrer le nom du parcours: *</label><br>
-    <input type="text" name="nomParcours" placeholder="Ex: Chambre --> Cuisine" required><br><br>
+    <input type="text" name="NomCheminLumineux" placeholder="Ex: Chambre --> Cuisine" required><br><br>
+    <label for="nom">Etat du chemin lumineux: *</label><br>
+    <select name="EtatCheminLumineux" >
+      <option value="1">ON</option>
+      <option value="0">OFF</option>
+    </select>
     <label for="object">Eclairages sélectionnés: *</label>
       <select name="Capteur1" >
-      <option value=""></option>
+      <option value="0"></option>
           <?php
           $table="equipement";
           $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Eclairage'");
@@ -73,7 +90,7 @@ else {
           } ?>
       </select>
       <select name="Capteur2" >
-      <option value=""></option>
+      <option value="0"></option>
           <?php
           $table="equipement";
           $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1&& Type='Eclairage'");
@@ -84,7 +101,7 @@ else {
           } ?>
       </select>
       <select name="Capteur3" >
-      <option value=""></option>
+      <option value="0"></option>
           <?php
           $table="equipement";
           $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1&& Type='Eclairage'");
@@ -95,7 +112,7 @@ else {
           } ?>
       </select>
       <select name="Capteur4" >
-      <option value=""></option>
+      <option value="0"></option>
           <?php
           $table="equipement";
           $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1&& Type='Eclairage'");
@@ -104,7 +121,8 @@ else {
           {
           echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
           } ?>
-      </select>
+      </select><br><br>
+
       <input type="submit" name="submit" value="Ajouter le chemin lumineux"><br>  
 </form><br><br>
 </div>
@@ -112,11 +130,19 @@ else {
 
 <div class="two">
 <div class="container">
-    <h2> Suppression d'un parcours lumineux</h2>
-    <form method="POST" action="">
+    <form method="POST" action="controleurs/suppr_cheminLumineux.php">
     <label for="nom">Sélectionner le parcours à supprimer: *</label><br>
-    <select></select><br><br>
-    <input type="submit" name="submit" value="Supprimer le parcours sélectionné"><br>  
+    <select>
+    <?php
+          $table="cheminLumineux";
+          $resultat=$bdd->query("SELECT * FROM cheminLumineux WHERE idUser=$id1");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value='.$data['idCheminLumineux'].'>' . $data['NomCheminLumineux'] . '</option>';
+          } ?>
+    </select><br><br>
+    <input type="submit" name="submit" value="Supprimer le chemin lumineux"><br> 
 </form><br><br>
 </div>
 </div>
@@ -124,8 +150,48 @@ else {
 <div class="three">
 <div class="container">
     <h2> Parcours lumineux</h2>
-    <form method="POST" action="">
-</form><br><br>
+    <table id="customers">
+          <thead>
+          <tr>
+            <th>Etat du chemin lumineux</th>
+            <th>Nom du chemin lumineux</th>
+            <th>Capteur 1</th>
+            <th>Capteur 2</th>
+            <th>Capteur 3</th>
+            <th>Capteur 4</th>
+            <th>ID User</th>
+          </tr>
+          </thead>
+          <tbody>	
+          <?php foreach ((array) $configurations21 as $element) { ?>
+          <tr>
+              <td>
+                <?php echo $element['EtatCheminLumineux']; ?>
+              </td>
+              <td>
+                <?php echo $element['NomCheminLumineux']; ?>
+                </td>
+              <td>
+                <?php echo $element['Capteur1']; ?>
+              </td>
+              <td>
+                <?php echo $element['Capteur2']; ?>
+              </td>
+              <td>
+                <?php echo $element['Capteur3']; ?>
+              </td>
+              <td>
+                <?php echo $element['Capteur4']; ?>
+              </td>
+              <td>
+                <?php echo $element['idUser']; ?>
+              </td>
+            </tr>
+      
+      <?php } ?>
+
+    </tbody>
+          </table><br><br>
 </div>
 </div>
 </div>

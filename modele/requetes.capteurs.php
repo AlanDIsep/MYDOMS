@@ -41,4 +41,23 @@ $table = "equipement";
       $donnees->bindParam(":idUser", $equipement['idUser'], PDO::PARAM_STR);
       return $donnees->execute();
   }
+
+  function ajouterCheminLumineux(PDO $bdd, array $cheminLumineux){
+
+    $query = 'INSERT INTO cheminLumineux (NomCheminLumineux,EtatCheminLumineux, Capteur1, Capteur2, Capteur3, Capteur4, idUser) VALUES (:NomCheminLumineux, :EtatCheminLumineux, :Capteur1, :Capteur2, :Capteur3, :Capteur4, :idUser)';
+    $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":NomCheminLumineux", $cheminLumineux['NomCheminLumineux']);
+    $donnees->bindParam(":EtatCheminLumineux", $cheminLumineux['EtatCheminLumineux']);
+    $donnees->bindParam(":Capteur1", $cheminLumineux['Capteur1']);
+    $donnees->bindParam(":Capteur2", $cheminLumineux['Capteur2']);
+    $donnees->bindParam(":Capteur3", $cheminLumineux['Capteur3']);
+    $donnees->bindParam(":Capteur4", $cheminLumineux['Capteur4']);
+    $donnees->bindParam(":idUser", $cheminLumineux['idUser']);
+    return $donnees->execute();
+}
+
+function recupereCheminLumineux(PDO $bdd): array {
+    $query = "SELECT * FROM cheminLumineux";
+    return $bdd->query($query)->fetchAll();
+}
 ?>

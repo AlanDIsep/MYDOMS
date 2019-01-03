@@ -100,32 +100,21 @@ switch ($function) {
         //affichage de la page de configuration
         $vue = "Configuration";
         $title = "Configuration de la Maison";
-        if (isset($_POST['NomMaison'])) {
+        if (isset($_POST['NomCheminLumineux'])) {
             $values = [
-            'NomMaison' => $_POST['NomMaison'],
-            'NumUtilisateur_id' => $_POST['NumUtilisateur_id'],
-            'NombreHabitant' => $_POST['NombreHabitant'],
-            'Pays' => $_POST['Pays'],
-            'CodePostal' => $_POST['CodePostal'],
-            'Superficie' => $_POST['Superficie'],
-            'Adresse' => $_POST['Adresse'],
+            'NomCheminLumineux' => $_POST['NomCheminLumineux'],
+            'EtatCheminLumineux' => $_POST['EtatCheminLumineux'],
+            'Capteur1' => $_POST['Capteur1'],
+            'Capteur2' => $_POST['Capteur2'],
+            'Capteur3' => $_POST['Capteur3'],
+            'Capteur4' => $_POST['Capteur4'],
+            'idUser' => $_POST['idUser'],
             ];
-            $retour = ajouteMaison($bdd, $values);
-        }
-
-      //$id=$_POST['idHabitation'];
-	  if(isset($_POST['idHabitation'])) {
-            //$values = [
-				//'idHabitation' => $_POST['idHabitation'],
-                //];
-            //$retour = supprimeMaisons($bdd,$values);
-
-			$sql = "DELETE FROM habitation WHERE idHabitation=''";
-			$bdd->exec($sql);
+            $retour = ajouterCheminLumineux($bdd, $values);
         }
 
         else {
-            $configuration = recupereMaisons($bdd);
+            $configurations21 = recupereCheminLumineux($bdd);
         }
 
 
