@@ -78,7 +78,7 @@ else {
             // On récupère tout le contenu de la table utilisateur
             $reponse = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
             $donnees = $reponse->fetch()?>
-            <?php $id1=$donnees['Nom'];?>
+            <?php echo $donnees['Nom'];?>
             <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
 			<br>
 			</div>	

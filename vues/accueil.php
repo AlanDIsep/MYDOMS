@@ -97,7 +97,7 @@ else {
 					$reponse = $bdd->query("SELECT SUM(CompteurTemp) AS sums FROM graph ");
 					$donnees = $reponse->fetch()?>
 					<?php $val1= $donnees['sums']; echo $val1?>
-					<?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
+					<?php  $reponse->closeCursor(); // Ici tu choppes val 1 ?>
 				<hr width= 100% color=#DCE837>
 				<div class="Graph"><?php echo "<img src='./graph1.php'/>";?></div>
 			</div>
