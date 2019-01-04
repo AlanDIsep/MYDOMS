@@ -130,19 +130,10 @@ else {
 
 <div class="two">
 <div class="container">
+<label for="nom">Sélectionner le parcours à supprimer: *</label><br>
     <form method="POST" action="controleurs/suppr_cheminLumineux.php">
-    <label for="nom">Sélectionner le parcours à supprimer: *</label><br>
-    <select>
-    <?php
-          $table="cheminLumineux";
-          $resultat=$bdd->query("SELECT * FROM cheminLumineux WHERE idUser=$id1");
-          $resultat->setFetchMode(PDO::FETCH_ASSOC);
-          foreach ($resultat as $data)
-          {
-          echo  '<option value='.$data['idCheminLumineux'].'>' . $data['NomCheminLumineux'] . '</option>';
-          } ?>
-    </select><br><br>
-    <input type="submit" name="submit" value="Supprimer le chemin lumineux"><br> 
+<input type="text" name="idCheminLumineux" placeholder="Ex: 1" required><br><br>
+<input type="submit" name="submit" value="Supprimer le chemin lumineux"><br> 
 </form><br><br>
 </div>
 </div>
@@ -153,6 +144,7 @@ else {
     <table id="customers">
           <thead>
           <tr>
+          <th>ID du chemin lumineux</th>
             <th>Etat du chemin lumineux</th>
             <th>Nom du chemin lumineux</th>
             <th>Capteur 1</th>
@@ -165,6 +157,9 @@ else {
           <tbody>	
           <?php foreach ((array) $configurations21 as $element) { ?>
           <tr>
+          <td>
+                <?php echo $element['idCheminLumineux']; ?>
+              </td>
               <td>
                 <?php echo $element['EtatCheminLumineux']; ?>
               </td>
@@ -192,6 +187,11 @@ else {
 
     </tbody>
           </table><br><br>
+</div>
+</div>
+<div class="four">
+<div class="container">
+<label for="nom">État des parcours: *</label><br>
 </div>
 </div>
 </div>

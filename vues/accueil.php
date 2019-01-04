@@ -30,6 +30,7 @@ else {
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel='stylesheet' type='text/css' href='../CSS/accueil.css' media='screen'/>
 <link rel="icon" href="../CSS/images/contact.ico"/>
+<link rel="stylesheet" href="./Style/style.css">
 <!------------------Header------------->
 
 	<header>
@@ -90,8 +91,15 @@ else {
 	<div class="nine">
 			<div class="container">
 				Graphique
+				<?php
+					$table = "graph";
+					// On récupère tout le contenu de la table utilisateur
+					$reponse = $bdd->query("SELECT SUM(CompteurTemp) AS sums FROM graph ");
+					$donnees = $reponse->fetch()?>
+					<?php $val1= $donnees['sums']; echo $val1?>
+					<?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>
 				<hr width= 100% color=#DCE837>
-				<div class="temperature">Insérer contenu ici</div>
+				<div class="Graph"><?php echo "<img src='./graph1.php'/>";?></div>
 			</div>
 		</div>
 </div>
