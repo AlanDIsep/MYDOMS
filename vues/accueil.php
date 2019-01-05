@@ -1,3 +1,4 @@
+
 <?php
 
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
@@ -10,6 +11,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
 	echo '<body>';
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
+	
 	echo '<br />';
 	$email=$_SESSION['email'];
 	//$table = "utilisateur";
@@ -34,6 +36,7 @@ else {
 <link rel='stylesheet' type='text/css' href='../CSS/accueil.css' media='screen'/>
 <link rel="icon" href="../CSS/images/contact.ico"/>
 <link rel="stylesheet" href="./Style/style.css">
+
 <!------------------Header------------->
 
 	<header>
@@ -93,16 +96,10 @@ else {
 	
 	<div class="nine">
 			<div class="container">
-				Graphique
+				Récapitulatif journalier
 				<?php
-					$table = "graph";
-					// On récupère tout le contenu de la table utilisateur
-					$reponse = $bdd->query("SELECT SUM(CompteurTemp) AS sums FROM graph ");
-					$donnees = $reponse->fetch()?>
-					<?php $val1= $donnees['sums']; echo $val1?>
-					<?php  $reponse->closeCursor(); // Ici tu choppes val 1 ?>
-				<hr width= 100% color=#DCE837>
-				<div class="Graph"><?php echo "<img src='./graph1.php'/>";?></div>
+				include("graphiqueAccueil.php") ?>
+
 			</div>
 		</div>
 </div>
@@ -112,5 +109,12 @@ else {
 <a href="index.php?cible=utilisateurs&fonction=About">© SAS Domisep - Tous droits réservés - A propos</a>
 </div>
 
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
 </body>
+
+
+
+
 </html>
