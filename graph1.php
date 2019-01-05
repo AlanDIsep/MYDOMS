@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <?php // content="text/plain; charset=utf-8"
 require_once ('./jpgraph-4.2.6/src/jpgraph.php');
@@ -37,6 +38,46 @@ nom;*/
 
 $mysqlQuery = @mysql_query($sql_ventes_par_mois, $mysqlCnx) or die('Pb de requête');
 
+=======
+<?php // content="text/plain; charset=utf-8"
+require_once ('./jpgraph-4.2.6/src/jpgraph.php');
+require ('./jpgraph-4.2.6/src/jpgraph_bar.php');
+
+
+// On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+
+// On récupère nos variables de session
+
+
+// ici les données à importer avec la base de donnée:
+
+$datay=array(1,6,10,1);
+//define('MYSQL_HOST', 'localhost');
+//define('MYSQL_USER', 'root');
+//define('MYSQL_PASS', '');
+//define('MYSQL_DATABASE', 'sysdom');
+
+//sql:
+/*$sql_... = <<<nom
+SELECT  
+	...( `...` ) AS ..., 
+	COUNT( `...` ) AS ..., 
+	SUM( `...` ) AS ...
+FROM ...
+WHERE ...( `...` ) = '...' 
+GROUP BY ...
+nom;*/
+
+//$mysqlCnx = @mysql_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASS) or die('Pb de connxion mysql');
+
+//@mysql_select_db(MYSQL_DATABASE) or die('Pb de sélection de la base');
+
+// Initialiser le tableau à 0 pour chaques jour
+/*$tableauVentes2006 = array(0,0,0,0,0,0,0,0,0,0,0,0); 
+
+$mysqlQuery = @mysql_query($sql_ventes_par_mois, $mysqlCnx) or die('Pb de requête');
+
+>>>>>>> 39a7e8211f86fac090a5f0ec8c2188952faac3dd
 while ($row_mois = mysql_fetch_array($mysqlQuery,  MYSQL_ASSOC)) {
 	$tableauVentes2006[$row_mois['MOIS']-1] = $row_mois['PRODUIT_VENTE']; 
 }*/
