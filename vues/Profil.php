@@ -134,7 +134,7 @@ else {
 			// On récupère tout le contenu de la table utilisateur
 			$id1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
 			$id=$donnees['id'];
-            $reponse = $bdd->query("SELECT * FROM habitation WHERE NumUtilisateur_id=$id");
+            $reponse = $bdd->query("SELECT * FROM habitation WHERE idUtilisateur=$id");
             $donnees = $reponse->fetch()?>
             <?php echo $donnees['NomMaison'];?>
             <?php  $reponse->closeCursor(); // Termine le traitement de la requête ?>

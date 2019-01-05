@@ -80,6 +80,18 @@ else {
 			<button type="button" onClick="onClick()">+</button>
 			</div>
 			
+			<form method="post">
+			<input type="submit" name="submit" value="submt"/>
+			</form>
+			<?php
+			if(isset($_POST['submit']))
+			{
+				$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
+				 $SQL = "UPDATE equipement SET consigne='.$clicks.' where idEquipement=1";
+				 $result = mysqli_query($mysqli,$SQL);
+			}
+			?>
+
     </div>
 
 	<div id="target1">
@@ -183,10 +195,17 @@ $('.toggle3').click(function()
 	$(this).toggleClass("active");
 });
  </script>
+
+ <?php
+	$clicks =20; // $clicks now holds 20
+	$clicks2 =20; // $clicks now holds 20
+	?>
  
  <script type="text/javascript">
-    var clicks = 20;
-	var clicks2 = 20;
+  
+
+	var clicks = <?php echo $clicks; ?>;
+	var clicks2 = <?php echo $clicks2; ?>;
 	var clicks3=20;
 	var clicks4=20;
     
@@ -197,8 +216,9 @@ $('.toggle3').click(function()
 	
 	function onClick() {
         if (clicks < 35) {
+		<?php $clicks += 1; ?>
 		clicks += 1;
-        document.getElementById("clicks").innerHTML = clicks;
+        document.getElementById("clicks").innerHTML = <?php echo $clicks2; ?>;
 	}};
     function onClick2() {
         if (clicks > 13) {
@@ -207,14 +227,6 @@ $('.toggle3').click(function()
     }};
 	 <!-- fin-->
 	  <!-- Et on refait la même chose pour les autres fenêtres-->
-	
-	<?php 
-					//$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
-					 //mysqli_query($mysqli,"DELETE FROM habitation WHERE idHabitation='".$idHabitation."'");
-					 
-?>
-
-
 
 
 	function onClick3() {

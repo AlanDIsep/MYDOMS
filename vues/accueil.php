@@ -12,8 +12,16 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
 	echo '<br />';
 	$email=$_SESSION['email'];
-	$table = "utilisateur";
-	echo $bdd->query("SELECT id FROM utilisateur WHERE 'AdresseMail'='$email'");
+<<<<<<< HEAD
+	//$table = "utilisateur";
+	//echo $bdd->query("SELECT id FROM utilisateur WHERE 'AdresseMail'='$email'");
+=======
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees1 = $reponse1->fetch();
+			$id1 = $donnees1['id'];
+>>>>>>> 827770976f5e133af40697174f6d732eae574d87
 
 }
 else {
@@ -27,6 +35,7 @@ else {
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel='stylesheet' type='text/css' href='../CSS/accueil.css' media='screen'/>
 <link rel="icon" href="../CSS/images/contact.ico"/>
+<link rel="stylesheet" href="./Style/style.css">
 <!------------------Header------------->
 
 	<header>
@@ -57,8 +66,8 @@ else {
 		<img src="../CSS/images/temperaturedash.svg" class="imagedash">
 		TEMPÉRATURE</div><br>
 		<?php
-                $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement WHERE $id='idUser'");
+				$table="equipement";
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Température'");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 { 
@@ -75,7 +84,7 @@ else {
 		ÉCLAIRAGE</div><br>
 		<?php
                 $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement WHERE Type='Éclairage'");
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Éclairage'");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 { 
@@ -87,8 +96,15 @@ else {
 	<div class="nine">
 			<div class="container">
 				Graphique
+				<?php
+					$table = "graph";
+					// On récupère tout le contenu de la table utilisateur
+					$reponse = $bdd->query("SELECT SUM(CompteurTemp) AS sums FROM graph ");
+					$donnees = $reponse->fetch()?>
+					<?php $val1= $donnees['sums']; echo $val1?>
+					<?php  $reponse->closeCursor(); // Ici tu choppes val 1 ?>
 				<hr width= 100% color=#DCE837>
-				<div class="temperature">Insérer contenu ici</div>
+				<div class="Graph"><?php echo "<img src='./graph1.php'/>";?></div>
 			</div>
 		</div>
 </div>

@@ -236,7 +236,8 @@ input[type=submit]:hover {
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 10px;
 	grid-auto-rows: minmax(100px, auto);
-	}
+  }
+  
 
 
 .flex-grid {
@@ -265,7 +266,16 @@ input[type=submit]:hover {
   background: #121F28;
   color:white;
 }
-
+	/* couleur de fond du formulaire */
+	.container {
+		border-radius: 10px;
+		background-color: #f2f2f2;
+		padding: 20px;
+		width:90%;
+		height:30%;
+		margin-left: 2%;
+		font-size: 12px;
+	}
 .kpi{
 	font-size:60px;
 	text-align :center;

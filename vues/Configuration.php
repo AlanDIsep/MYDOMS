@@ -12,6 +12,12 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
   echo '<br />';
   $email=$_SESSION['email'];
+  $table = "utilisateur";
+  // On récupère tout le contenu de la table utilisateur
+  $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+  $donnees1 = $reponse1->fetch();
+  $id1 = $donnees1['id'];
+
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
@@ -50,94 +56,143 @@ else {
 <div class="wrapper">
 <div class="one">
 <div class="container">
-    <h2> Ajouter une Maison</h2>
+    <h2> Configuration d'un nouveau parcours lumineux</h2>
     <form method="POST" action="">
-    <label for="nom">ID Utilisateur:</label>
-    <select name="NumUtilisateur_id" >
-                <?php
-                $table="utilisateur";
-                $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-                $resultat->setFetchMode(PDO::FETCH_ASSOC);
-                foreach ($resultat as $data)
-                {
-                echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
-                } ?>
-            </select>
-			<br>
-    <br>
+    <label for="Nom">Id utilisateur:</label>
 
-      <label for="nom">Nom de la Maison*</label>
-        <input type="text" id="nommaison" name="NomMaison" placeholder="Ex: Maison Paris">
+    <select name="idUser" >
+          <?php
+          $table="utilisateur";
+          $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
+          } ?>
+      </select><br><br>
+    <label for="nom">Rentrer le nom du parcours: *</label><br>
+    <input type="text" name="NomCheminLumineux" placeholder="Ex: Chambre --> Cuisine" required><br><br>
+    <label for="nom">Etat du chemin lumineux: *</label><br>
+    <select name="EtatCheminLumineux" >
+      <option value="1">ON</option>
+      <option value="0">OFF</option>
+    </select>
+    <label for="object">Eclairages sélectionnés: *</label>
+      <select name="Capteur1" >
+      <option value="0"></option>
+          <?php
+          $table="equipement";
+          $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Eclairage'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          } ?>
+      </select>
+      <select name="Capteur2" >
+      <option value="0"></option>
+          <?php
+          $table="equipement";
+          $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1&& Type='Eclairage'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          } ?>
+      </select>
+      <select name="Capteur3" >
+      <option value="0"></option>
+          <?php
+          $table="equipement";
+          $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1&& Type='Eclairage'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          } ?>
+      </select>
+      <select name="Capteur4" >
+      <option value="0"></option>
+          <?php
+          $table="equipement";
+          $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1&& Type='Eclairage'");
+          $resultat->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($resultat as $data)
+          {
+          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          } ?>
+      </select><br><br>
 
-      <label for="superficie">Superficie de la Maison:* <span id="demo"></span> m2</label>
-        <div class="slidecontainer">
-          <input type="range" min="1" max="150" value="0" name="Superficie" class="slider" id="myRange">
-          </div><br>
-      <label for="object">Nombre d'habitants* </label><br>
-        <input type="number" name="NombreHabitant"placeholder="Ex: 3" required/><br><br>
-
-      <label for="object">Adresse*</label><br>
-        <input type="text" name="Adresse" placeholder="Ex: 2 rue de la Paix"required/><br><br>
-
-      <label for="object">Code Postal</label><br>
-        <input type="number" name="CodePostal" placeholder="Ex: 75001" required/><br><br>
-
-      <label for="object">Pays</label><br>
-        <input type="text" name="Pays"placeholder="Ex: Françe" required/><br><br>
-
-        <input type="submit" name="submit" value="Enregistrer">
-
+      <input type="submit" name="submit" value="Ajouter le chemin lumineux"><br>  
 </form><br><br>
 </div>
 </div>
+
 <div class="two">
 <div class="container">
-<h2> Liste de(s) Maison(s)</h2>
-  <table id="customers">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Maison</th>
-        <th>Superficie</th>
-        <th>Nombre d'habitant</th>
-        <th>Adresse</th>
-        <th>Code Postal</th>
-        <th>Pays</th>
-      </tr>
-    </thead>
-    <tbody>	
-      <?php foreach ((array) $configuration as $element) { ?>
+<label for="nom">Sélectionner le parcours à supprimer: *</label><br>
+    <form method="POST" action="controleurs/suppr_cheminLumineux.php">
+<input type="text" name="idCheminLumineux" placeholder="Ex: 1" required><br><br>
+<input type="submit" name="submit" value="Supprimer le chemin lumineux"><br> 
+</form><br><br>
+</div>
+</div>
+
+<div class="three">
+<div class="container">
+    <h2> Parcours lumineux</h2>
+    <table id="customers">
+          <thead>
           <tr>
-              <td>
-                <?php echo $element['idHabitation']; ?>
+          <th>ID du chemin lumineux</th>
+            <th>Etat du chemin lumineux</th>
+            <th>Nom du chemin lumineux</th>
+            <th>Capteur 1</th>
+            <th>Capteur 2</th>
+            <th>Capteur 3</th>
+            <th>Capteur 4</th>
+            <th>ID User</th>
+          </tr>
+          </thead>
+          <tbody>	
+          <?php foreach ((array) $configurations21 as $element) { ?>
+          <tr>
+          <td>
+                <?php echo $element['idCheminLumineux']; ?>
               </td>
               <td>
-                <?php echo $element['NomMaison']; ?>
+                <?php echo $element['EtatCheminLumineux']; ?>
+              </td>
+              <td>
+                <?php echo $element['NomCheminLumineux']; ?>
                 </td>
               <td>
-                <?php echo $element['Superficie']; ?> m2
+                <?php echo $element['Capteur1']; ?>
               </td>
               <td>
-                <?php echo $element['NombreHabitant']; ?>
+                <?php echo $element['Capteur2']; ?>
               </td>
               <td>
-                <?php echo $element['Adresse']; ?>
+                <?php echo $element['Capteur3']; ?>
               </td>
               <td>
-                <?php echo $element['CodePostal']; ?>
+                <?php echo $element['Capteur4']; ?>
               </td>
               <td>
-                <?php echo $element['Pays']; ?>
+                <?php echo $element['idUser']; ?>
               </td>
             </tr>
       
       <?php } ?>
 
     </tbody>
-  </table>
-
-  <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
-    
+          </table><br><br>
+</div>
+</div>
+<div class="four">
+<div class="container">
+<label for="nom">État des parcours: *</label><br>
+</div>
 </div>
 </div>
 

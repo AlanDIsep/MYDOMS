@@ -33,14 +33,31 @@ $table = "equipement";
 
  function ajouterCapteur(PDO $bdd, array $equipement){
 
-      $query = 'INSERT INTO equipement (Type, Nom, Etat, NumeroDeSerie, Piece_id, idUtilisateur) VALUES (:Type, :Nom, :Etat,:NumeroDeSerie, :Piece_id, :idUtilisateur)';
+      $query = 'INSERT INTO equipement (Type, Nom, NumeroDeSerie, idUser) VALUES (:Type, :Nom, :NumeroDeSerie, :idUser)';
       $donnees = $bdd->prepare($query);
       $donnees->bindParam(":Type", $equipement['Type'], PDO::PARAM_STR);
       $donnees->bindParam(":Nom", $equipement['Nom'], PDO::PARAM_STR);
-      $donnees->bindParam(":Etat", $equipement['Etat'], PDO::PARAM_STR);
       $donnees->bindParam(":NumeroDeSerie", $equipement['NumeroDeSerie'], PDO::PARAM_STR);
-      $donnees->bindParam(":Piece_id", $equipement['Piece_id'], PDO::PARAM_STR);
-      $donnees->bindParam(":idUtilisateur", $equipement['idUtilisateur'], PDO::PARAM_STR);
+      $donnees->bindParam(":idUser", $equipement['idUser'], PDO::PARAM_STR);
       return $donnees->execute();
   }
+
+  function ajouterCheminLumineux(PDO $bdd, array $cheminLumineux){
+
+    $query = 'INSERT INTO cheminLumineux (NomCheminLumineux,EtatCheminLumineux, Capteur1, Capteur2, Capteur3, Capteur4, idUser) VALUES (:NomCheminLumineux, :EtatCheminLumineux, :Capteur1, :Capteur2, :Capteur3, :Capteur4, :idUser)';
+    $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":NomCheminLumineux", $cheminLumineux['NomCheminLumineux']);
+    $donnees->bindParam(":EtatCheminLumineux", $cheminLumineux['EtatCheminLumineux']);
+    $donnees->bindParam(":Capteur1", $cheminLumineux['Capteur1']);
+    $donnees->bindParam(":Capteur2", $cheminLumineux['Capteur2']);
+    $donnees->bindParam(":Capteur3", $cheminLumineux['Capteur3']);
+    $donnees->bindParam(":Capteur4", $cheminLumineux['Capteur4']);
+    $donnees->bindParam(":idUser", $cheminLumineux['idUser']);
+    return $donnees->execute();
+}
+
+function recupereCheminLumineux(PDO $bdd): array {
+    $query = "SELECT * FROM cheminLumineux";
+    return $bdd->query($query)->fetchAll();
+}
 ?>

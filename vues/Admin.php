@@ -293,7 +293,7 @@ else {
         <h2>Ajouter une Panne</h2>
         <form method="POST" action="">
           <label for="id" class="titles">Type de la panne</label>
-          <input type="text" id="fname" name="typePanne" placeholder="Renseignez le type de la panne ...">
+          <input type="text" id="fname" name="typePanne" placeholder="Renseignez le type de la panne ..." required>
           <input type="submit" value="Ajouter la Panne">
         </form>
 
@@ -387,7 +387,6 @@ else {
             <th>Etat</th>
             <th>Donnée</th>
             <th>Numéro de Série</th>
-            <th>ID de la pièce</th>
             <th>ID de l'utilisateur</th>
           </tr>
           </thead>
@@ -413,10 +412,7 @@ else {
                 <?php echo $element['NumeroDeSerie']; ?>
               </td>
               <td>
-                <?php echo $element['Piece_id']; ?>
-              </td>
-              <td>
-                <?php echo $element['idUtilisateur']; ?>
+                <?php echo $element['idUser']; ?>
               </td>
             </tr>
       
@@ -429,37 +425,31 @@ else {
 
                 <label for="Type" class="titles">Utilisateur</label>
                 <br>
-                <select name="idUtilisateur" >
+                <select name="idUser" >
+                <option value=""></option>
                 <?php
                 $table="utilisateur";
-                $resultat=$bdd->query("SELECT id FROM utilisateur");
+                $resultat=$bdd->query("SELECT * FROM utilisateur");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {
-                echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
+                echo  '<option value="'.$data['id'].'">' . $data['id'] . ' - '.$data['Nom'].'  '.$data['Prenom'].'</option>';
                 } ?>
                 </select><br><br>
 
                 <label for="Type" class="titles">Type de capteur*</label><br>
                 <select id="account" name="Type">
-                  <option value="1">Température</option>
-                  <option value="2">Lumière</option>
+                  <option value=""></option>
+                  <option value="Température">Température</option>
+                  <option value="Éclairage">Éclairage</option>
                 </select><br>
                 <br>
 
                 <label for="Nom" class="titles">Nom du capteur*</label>
                 <input type="text" id="Nom" name="Nom" placeholder="Ex: Chambre 1..." required>
-
-                <label for="Etat" class="titles">Etat*</label><br><br>
-                <select id="account" name="Etat">
-                  <option value="1">ON</option>
-                  <option value="2">OFF</option>
-                </select><br><br>
+                <br>
                 <label for="NumeroDeSerie" class="titles">Numéro de série*</label><br><br>
                 <input type="number" id="NumeroDeSerie" name="NumeroDeSerie" placeholder="Numéro de série affiché sur le capteur ..." required><br><br>
-
-                <label for="Piece_id" class="titles">ID de la pièce correspondante*</label><br><br>
-                <input type="number" id="Piece_id" name="Piece_id" placeholder="ID de la piece dans laquelle le capteur sera..."required><br><br>
 
                 <input type="submit" value="Ajouter un capteur">
                 </form>
@@ -490,7 +480,8 @@ else {
 			  <table id="customers">
 				<thead>
 				  <tr>
-					<th>ID</th>
+          <th>ID Maison</th>
+          <th>ID Utilisateur</th>
 					<th>Maison</th>
 					<th>Superficie</th>
 					<th>Nombre d'habitant</th>
@@ -505,7 +496,10 @@ else {
 					  <tr>
 						  <td>
 							<?php echo $element['idHabitation']; ?>
-						  </td>
+              </td>
+              <td>
+							<?php echo $element['idUtilisateur']; ?>
+              </td>
 						  <td>
 							<?php echo $element['NomMaison']; ?>
 							</td>
@@ -535,6 +529,65 @@ else {
 
   <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
   </br>
+
+  <!-------------------Main--------------> 
+<div class="flex-grid"><br><br>
+<div class="two">
+    <h2> Ajouter une Maison</h2>
+    <form method="POST" action="">
+    <label for="nom">ID Utilisateur:</label>
+    <select name="idUtilisateur" >
+                <?php
+                $table="utilisateur";
+                $resultat=$bdd->query("SELECT * FROM utilisateur");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['id'].'">' . $data['id'] . ' - '.$data['Nom'].'  '.$data['Prenom'].'</option>';
+                } ?>
+                </select>
+			<br>
+    <br>
+
+      <label for="nom">Nom de la Maison*</label>
+        <input type="text" id="nommaison" name="NomMaison" placeholder="Nom de la maison"><br>
+
+      <label for="superficie">Superficie de la Maison: <span id="demo"></span> m2 *</label>
+        <div class="slidecontainer">
+          <input type="range" min="1" max="150" value="0" name="Superficie" class="slider" id="myRange">
+          </div><br>
+      <label for="object">Nombre d'habitants* </label><br>
+        <input type="number" name="NombreHabitant"placeholder="Ex: 3" required/><br><br>
+
+      <label for="object">Adresse*</label><br>
+        <input type="text" name="Adresse" placeholder="Ex: 2 rue de la Paix"required/><br><br>
+
+      <label for="object">Code Postal</label><br>
+        <input type="number" name="CodePostal" placeholder="Ex: 75001" required/><br><br>
+
+      <label for="object">Pays</label><br>
+        <input type="text" name="Pays"placeholder="Ex: Françe" required/><br><br>
+
+        <input type="submit" name="submit" value="Enregistrer">
+
+</form><br>
+</div>
+</div>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+
+
+<br><br>
+
 
   <div class="flex-grid"><br><br>
       <div class="two">

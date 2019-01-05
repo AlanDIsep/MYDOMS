@@ -100,32 +100,21 @@ switch ($function) {
         //affichage de la page de configuration
         $vue = "Configuration";
         $title = "Configuration de la Maison";
-        if (isset($_POST['NomMaison'])) {
+        if (isset($_POST['NomCheminLumineux'])) {
             $values = [
-            'NomMaison' => $_POST['NomMaison'],
-            'NumUtilisateur_id' => $_POST['NumUtilisateur_id'],
-            'NombreHabitant' => $_POST['NombreHabitant'],
-            'Pays' => $_POST['Pays'],
-            'CodePostal' => $_POST['CodePostal'],
-            'Superficie' => $_POST['Superficie'],
-            'Adresse' => $_POST['Adresse'],
+            'NomCheminLumineux' => $_POST['NomCheminLumineux'],
+            'EtatCheminLumineux' => $_POST['EtatCheminLumineux'],
+            'Capteur1' => $_POST['Capteur1'],
+            'Capteur2' => $_POST['Capteur2'],
+            'Capteur3' => $_POST['Capteur3'],
+            'Capteur4' => $_POST['Capteur4'],
+            'idUser' => $_POST['idUser'],
             ];
-            $retour = ajouteMaison($bdd, $values);
-        }
-
-      //$id=$_POST['idHabitation'];
-	  if(isset($_POST['idHabitation'])) {
-            //$values = [
-				//'idHabitation' => $_POST['idHabitation'],
-                //];
-            //$retour = supprimeMaisons($bdd,$values);
-
-			$sql = "DELETE FROM habitation WHERE idHabitation=''";
-			$bdd->exec($sql);
+            $retour = ajouterCheminLumineux($bdd, $values);
         }
 
         else {
-            $configuration = recupereMaisons($bdd);
+            $configurations21 = recupereCheminLumineux($bdd);
         }
 
 
@@ -185,18 +174,37 @@ switch ($function) {
             // Appel à la BDD à travers une fonction du modèle.
             $retour = ajouterFAQ($bdd, $values);
         }
-        else if (isset($_POST['Etat'])){
+
+        else if (isset($_POST['typePanne'])){
+            $values = [
+                'typePanne' => $_POST['typePanne'],
+            ];
+            // Appel à la BDD à travers une fonction du modèle.
+            $retour = ajouterTypePanne($bdd, $values);
+        }
+
+        else if (isset($_POST['NumeroDeSerie'])){
             $values = [
                 'Type' => $_POST['Type'],
                 'Nom' => $_POST['Nom'],
-                'Etat' => $_POST['Etat'],
                 'NumeroDeSerie' => $_POST['NumeroDeSerie'],
-                'Piece_id' => $_POST['Piece_id'],
-                'idUtilisateur' => $_POST['idUtilisateur'],
+                'idUser' => $_POST['idUser'],
                 
             ];
             // Appel à la BDD à travers une fonction du modèle.
             $retour = ajouterCapteur($bdd, $values);
+        }
+        elseif (isset($_POST['NomMaison'])) {
+            $values = [
+            'NomMaison' => $_POST['NomMaison'],
+            'idUtilisateur' => $_POST['idUtilisateur'],
+            'NombreHabitant' => $_POST['NombreHabitant'],
+            'Pays' => $_POST['Pays'],
+            'CodePostal' => $_POST['CodePostal'],
+            'Superficie' => $_POST['Superficie'],
+            'Adresse' => $_POST['Adresse'],
+            ];
+            $retour = ajouteMaison($bdd, $values);
         }
         else {
             $configuration = recuperePanne($bdd);

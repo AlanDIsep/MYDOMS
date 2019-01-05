@@ -11,6 +11,11 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
     echo '<br />';
     $email=$_SESSION['email'];
+    $table = "utilisateur";
+    // On récupère tout le contenu de la table utilisateur
+    $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+    $donnees1 = $reponse1->fetch();
+    $id1 = $donnees1['id'];
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
@@ -64,14 +69,12 @@ else {
                 echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
                 } ?>
             </select>
-            <label for="idequipement">Id Équipement *</label>
-            <input type="text" id="prenom" name="Equipement_id" placeholder="N° de série de votre équipement" required>
 
             <label for="object">Type de capteur</label>
             <select name="typePanne" >
                 <?php
                 $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement");
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {
