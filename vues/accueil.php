@@ -12,22 +12,14 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
 	echo '<br />';
 	$email=$_SESSION['email'];
-<<<<<<< HEAD
-<<<<<<< HEAD
 	//$table = "utilisateur";
 	//echo $bdd->query("SELECT id FROM utilisateur WHERE 'AdresseMail'='$email'");
-=======
-=======
->>>>>>> 827770976f5e133af40697174f6d732eae574d87
+
             $table = "utilisateur";
             // On récupère tout le contenu de la table utilisateur
             $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
             $donnees1 = $reponse1->fetch();
 			$id1 = $donnees1['id'];
-<<<<<<< HEAD
->>>>>>> 827770976f5e133af40697174f6d732eae574d87
-=======
->>>>>>> 827770976f5e133af40697174f6d732eae574d87
 
 }
 else {
