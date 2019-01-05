@@ -60,6 +60,7 @@
 </td><td>End alignment</td></tr>
 </table>
 
+<<<<<<< HEAD
 <div style="font-weight:bold;font-family:arial;font-size:90%;">Description:</div>Specify start and end date alignment for the scale
 Possible values are
 <ol>
@@ -83,6 +84,31 @@ Possible values are
 <li> YEARADJ_5, Align on a 5 year basis
 </ul>
 </ol>
+=======
+<div style="font-weight:bold;font-family:arial;font-size:90%;">Description:</div>Specify start and end date alignment for the scale
+Possible values are
+<ol>
+<li> Alignment on a day basis
+<ul>
+<li> DAYADJ_1, Align on the start of a day
+<li> DAYADJ_7, Align on the start of a week
+<li> DAYADJ_WEEK, Synonym to DAYADJ_7
+</ul>
+
+<li> Alignment on a monthly basis
+<ul>
+<li> MONTHADJ_1, Align on a month start
+<li> MONTHADJ_6, Align on the start of halfyear
+</ul>
+
+<li> Alignment on a yearly basis
+<ul>
+<li> YEARADJ_1, Align on a year
+<li> YEARADJ_2, Align on a bi-yearly basis
+<li> YEARADJ_5, Align on a 5 year basis
+</ul>
+</ol>
+>>>>>>> 827770976f5e133af40697174f6d732eae574d87
 &nbsp;<br>
  &nbsp; <div style="font-weight:bold;font-family:arial;font-size:90%;">See also:</div><ul><li><a href="DateScale.html#_DATESCALE_SETTIMEALIGN">DateScale::SetTimeAlign()</a></ul>
 <div style="font-weight:bold;font-family:arial;font-size:90%;"><p>Example:</div><div style="padding:5px;border:dashed gray 1px;background-color:#f3f3f3;font-family:courier new;font-size:90%;font-weight:bold;"><b><span style="color: #000000">
@@ -126,6 +152,7 @@ Possible values are
 </td><td>End time alignment</td></tr>
 </table>
 
+<<<<<<< HEAD
 <div style="font-weight:bold;font-family:arial;font-size:90%;">Description:</div>Specify the start and end alignment with the time granularity. For date granularity see SetDateAlign(). Note that only one of SetDateAlign() and SetTimeAlign() can be used.
 
 For start and end alignment the following values are valid
@@ -157,6 +184,39 @@ For start and end alignment the following values are valid
 <li> HOURADJ_12, Align to the nearest tolw hour
 </ul>
 </ol>
+=======
+<div style="font-weight:bold;font-family:arial;font-size:90%;">Description:</div>Specify the start and end alignment with the time granularity. For date granularity see SetDateAlign(). Note that only one of SetDateAlign() and SetTimeAlign() can be used.
+
+For start and end alignment the following values are valid
+
+<ol>
+<li> Alignment on seconds
+<ul>
+<li> MINADJ_1, Align on a single second (This is the lowest resolution)
+<li> MINADJ_5, Align on the nearest 5 seconds
+<li> MINADJ_10, Align on the nearest 10 seconds
+<li> MINADJ_15, Align on the nearest 15 seconds
+<li> MINADJ_30, Align on the nearest 30 seconds
+</ul>
+<li> Alignment on minutes
+<ul>
+<li> MINADJ_1, Align to the nearest minute
+<li> MINADJ_5, Align on the nearest 5 minutes
+<li> MINADJ_10, Align on the nearest 10 minutes
+<li> MINADJ_15, Align on the nearest 15 minutes
+<li> MINADJ_30, Align on the nearest 30 minutes
+</ul>
+<li> Alignment on hours
+<ul>
+<li> HOURADJ_1, Align to the nearest hour
+<li> HOURADJ_2, Align to the nearest two hour
+<li> HOURADJ_3, Align to the nearest three hour
+<li> HOURADJ_4, Align to the nearest four hour
+<li> HOURADJ_6, Align to the nearest six hour
+<li> HOURADJ_12, Align to the nearest tolw hour
+</ul>
+</ol>
+>>>>>>> 827770976f5e133af40697174f6d732eae574d87
 &nbsp;<br>
  &nbsp; <div style="font-weight:bold;font-family:arial;font-size:90%;">See also:</div><ul><li><a href="DateScale.html#_DATESCALE_SETDATEALIGN">DateScale::SetDateAlign()</a></ul>
 <div style="font-weight:bold;font-family:arial;font-size:90%;"><p>Example:</div><div style="padding:5px;border:dashed gray 1px;background-color:#f3f3f3;font-family:courier new;font-size:90%;font-weight:bold;"><b><span style="color: #000000">
