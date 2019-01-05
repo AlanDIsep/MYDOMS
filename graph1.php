@@ -10,7 +10,7 @@ require ('./jpgraph-4.2.6/src/jpgraph_bar.php');
 
 // ici les données à importer avec la base de donnée:
 
-$datay=array($GET['val1'],6,10,1);
+$datay=array(1,6,10,1);
 //define('MYSQL_HOST', 'localhost');
 //define('MYSQL_USER', 'root');
 //define('MYSQL_PASS', '');
