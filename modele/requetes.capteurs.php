@@ -44,14 +44,18 @@ $table = "equipement";
 
   function ajouterCheminLumineux(PDO $bdd, array $cheminLumineux){
 
-    $query = 'INSERT INTO cheminLumineux (NomCheminLumineux,EtatCheminLumineux, Capteur1, Capteur2, Capteur3, Capteur4, idUser) VALUES (:NomCheminLumineux, :EtatCheminLumineux, :Capteur1, :Capteur2, :Capteur3, :Capteur4, :idUser)';
+    $query = 'INSERT INTO cheminLumineux (NomCheminLumineux,EtatCheminLumineux, Capteur1, IntensiteCapteur1, Capteur2, IntensiteCapteur2, Capteur3, IntensiteCapteur3, Capteur4, IntensiteCapteur4, idUser) VALUES (:NomCheminLumineux, :EtatCheminLumineux, :Capteur1,:IntensiteCapteur1, :Capteur2, :IntensiteCapteur2, :Capteur3, :IntensiteCapteur3, :Capteur4, :IntensiteCapteur4, :idUser)';
     $donnees = $bdd->prepare($query);
     $donnees->bindParam(":NomCheminLumineux", $cheminLumineux['NomCheminLumineux']);
     $donnees->bindParam(":EtatCheminLumineux", $cheminLumineux['EtatCheminLumineux']);
     $donnees->bindParam(":Capteur1", $cheminLumineux['Capteur1']);
+    $donnees->bindParam(":IntensiteCapteur1", $cheminLumineux['IntensiteCapteur1']);
     $donnees->bindParam(":Capteur2", $cheminLumineux['Capteur2']);
+    $donnees->bindParam(":IntensiteCapteur2", $cheminLumineux['IntensiteCapteur2']);
     $donnees->bindParam(":Capteur3", $cheminLumineux['Capteur3']);
+    $donnees->bindParam(":IntensiteCapteur3", $cheminLumineux['IntensiteCapteur3']);
     $donnees->bindParam(":Capteur4", $cheminLumineux['Capteur4']);
+    $donnees->bindParam(":IntensiteCapteur4", $cheminLumineux['IntensiteCapteur4']);
     $donnees->bindParam(":idUser", $cheminLumineux['idUser']);
     return $donnees->execute();
 }

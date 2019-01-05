@@ -77,7 +77,8 @@ else {
       <option value="1">ON</option>
       <option value="0">OFF</option>
     </select>
-    <label for="object">Eclairages sélectionnés: *</label>
+    <h3>Eclairages sélectionnés: *</h3><br>
+    <label for="object">Capteur 1: *</label>
       <select name="Capteur1" >
       <option value="0"></option>
           <?php
@@ -88,7 +89,16 @@ else {
           {
           echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
           } ?>
+        </select>
+        <label for="object">Intensité lumineuse - Capteur 1: *</label>
+      <select name="IntensiteCapteur1" >
+      
+            <option value="25">25%</option>
+            <option value="50">50%</option>
+            <option value="75">75%</option>
+            <option value="100">100%</option>
       </select>
+      <label for="object">Capteur 2:</label>
       <select name="Capteur2" >
       <option value="0"></option>
           <?php
@@ -100,6 +110,15 @@ else {
           echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
           } ?>
       </select>
+      <label for="object">Intensité lumineuse - Capteur 2: </label>
+      <select name="IntensiteCapteur2" >
+      <option value="0"></option>
+            <option value="25">25%</option>
+            <option value="50">50%</option>
+            <option value="75">75%</option>
+            <option value="100">100%</option>
+      </select>
+      <label for="object">Capteur 3: </label>
       <select name="Capteur3" >
       <option value="0"></option>
           <?php
@@ -111,6 +130,15 @@ else {
           echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
           } ?>
       </select>
+      <label for="object">Intensité lumineuse - Capteur 3: </label>
+      <select name="IntensiteCapteur3" >
+      <option value="0"></option>
+            <option value="25">25%</option>
+            <option value="50">50%</option>
+            <option value="75">75%</option>
+            <option value="100">100%</option>
+      </select>
+      <label for="object">Capteur 4:</label>
       <select name="Capteur4" >
       <option value="0"></option>
           <?php
@@ -122,6 +150,14 @@ else {
           echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
           } ?>
       </select><br><br>
+      <label for="object">Intensité lumineuse - Capteur 4: </label>
+      <select name="IntensiteCapteur4" >
+      <option value="0"></option>
+            <option value="25">25%</option>
+            <option value="50">50%</option>
+            <option value="75">75%</option>
+            <option value="100">100%</option>
+      </select>
 
       <input type="submit" name="submit" value="Ajouter le chemin lumineux"><br>  
 </form><br><br>

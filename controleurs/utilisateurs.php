@@ -105,9 +105,13 @@ switch ($function) {
             'NomCheminLumineux' => $_POST['NomCheminLumineux'],
             'EtatCheminLumineux' => $_POST['EtatCheminLumineux'],
             'Capteur1' => $_POST['Capteur1'],
+            'IntensiteCapteur1' => $_POST['IntensiteCapteur1'],
             'Capteur2' => $_POST['Capteur2'],
+            'IntensiteCapteur2' => $_POST['IntensiteCapteur2'],
             'Capteur3' => $_POST['Capteur3'],
+            'IntensiteCapteur3' => $_POST['IntensiteCapteur3'],
             'Capteur4' => $_POST['Capteur4'],
+            'IntensiteCapteur4' => $_POST['IntensiteCapteur4'],
             'idUser' => $_POST['idUser'],
             ];
             $retour = ajouterCheminLumineux($bdd, $values);

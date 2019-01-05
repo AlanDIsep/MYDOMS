@@ -329,7 +329,7 @@ else {
       <div class="two">
           <table class="my_table">
           <thead>
-          <h2>Liste des Pannes</h2>
+          <h2>Tickets - Liste des Pannes</h2>
           <tr>
             <th>ID</th>
             <th>Description</th>
@@ -368,7 +368,7 @@ else {
           </table><br><br></div></div>
       <div class="flex-grid"><br><br>
       <div class="two">
-          <h2> Supprimer une Panne</h2><br>
+          <h2> Supprimer un ticket</h2><br>
           <form method="POST" action="controleurs/suppr_panne.php">
               <label for="nom">Rentrer l'ID de la panne à supprimer: *</label><br><br>
               <input type="number" name="idPanne" placeholder="Ex: 1" required><br><br>
@@ -378,7 +378,7 @@ else {
        </div>
        <div class="flex-grid"><br><br>
       <div class="two">
-          <h2> Ajouter une Panne</h2><br>
+          <h2> Ajouter un ticket</h2><br>
           <form method="POST" action="">
         <label for="Nom">Id utilisateur:</label>
         <select name="DroitUtilisateur_idDroitUtilisateur" >
