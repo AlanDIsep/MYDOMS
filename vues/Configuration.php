@@ -203,16 +203,16 @@ else {
                 <?php echo $element['NomCheminLumineux']; ?>
                 </td>
               <td>
-                <?php echo $element['Capteur1']; ?>
+                <?php echo $element['Capteur1']; ?> - <?php echo $element['IntensiteCapteur1']; ?>%
               </td>
               <td>
-                <?php echo $element['Capteur2']; ?>
+                <?php echo $element['Capteur2']; ?> - <?php echo $element['IntensiteCapteur2']; ?>%
               </td>
               <td>
-                <?php echo $element['Capteur3']; ?>
+                <?php echo $element['Capteur3']; ?> - <?php echo $element['IntensiteCapteur3']; ?>%
               </td>
               <td>
-                <?php echo $element['Capteur4']; ?>
+                <?php echo $element['Capteur4']; ?> - <?php echo $element['IntensiteCapteur4']; ?>%
               </td>
               <td>
                 <?php echo $element['idUser']; ?>
