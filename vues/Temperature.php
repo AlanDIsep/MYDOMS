@@ -51,11 +51,39 @@ else {
 <!-------------------Main--------------> 
 <main>
 	
+	
+	<?php $mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889"); ?>
+	
+	
 	<div class="container">
-        <button class="toggle">Chambre 1</button>     
-        <button class="toggle1">Salon</button>
-        <button class="toggle2">Cuisine</button> 
-        <button class="toggle3">Chambre 2</button>
+        <button class="toggle">
+		<?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='1'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?>
+		</button>     
+        <button class="toggle1">
+		<?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='2'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?>
+		</button>
+        <button class="toggle2">
+		<?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='3'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?>
+		</button> 
+        <button class="toggle3">
+		<?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='4'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?>
+		</button>
     </div>
     
     <div class="space"></div>
@@ -63,13 +91,41 @@ else {
 	
     <div id="conteneur">
 	<div id="target">
-		<h2>Chambre 1 </h2>
-        <label class="switch">
-        <input type="checkbox">
+		<h2>
+		<?php 
+					$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='1'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?>
+		</h2>
+        <form method="post" action="">
+		<label class="switch">
+        <input type="checkbox" name="switch"
+		<?php
+		if(isset($_POST['switch'])) {
+		echo 'checked="checked"';
+		} else { 
+		}
+		?>
+		>
         <span class="slider round"></span>
         </label>
+		<?php
+		
+		$switch = (isset($_POST['switch'])) ? 1 : 0;
+		$SQL = "UPDATE equipement SET Etat='.$switch.' where idEquipement='5'";
+		$result = mysqli_query($mysqli,$SQL);
+		?>
+		<input type="submit" name="submit" value="appliquer"/>
+		
+		</form>
 		<img src="../CSS/icons/temp.jpg" class="lumi"/></br>
-        <p id="temp">21°C</p>
+        <p id="temp"><?php 
+					//$nom = mysqli_query($mysqli,"SELECT Donnée FROM equipement WHERE idEquipement='5'");
+					//$row = mysqli_fetch_assoc($nom);
+					//echo $row['Donnée'];
+					?>°C</p>
 		</br>
 		</br>
 			
@@ -81,12 +137,11 @@ else {
 			</div>
 			
 			<form method="post">
-			<input type="submit" name="submit" value="submt"/>
+			<input type="submit" name="submit" value="submit"/>
 			</form>
 			<?php
 			if(isset($_POST['submit']))
 			{
-				$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
 				 $SQL = "UPDATE equipement SET consigne='.$clicks.' where idEquipement=1";
 				 $result = mysqli_query($mysqli,$SQL);
 			}
@@ -96,13 +151,33 @@ else {
 
 	<div id="target1">
         <h2>
-			 Salon
+			<?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='2'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?>
 		</h2>
-        <label class="switch">
-        <input type="checkbox">
+         <form method="post" action="">
+		<label class="switch">
+        <input type="checkbox" name="switch2"
+		<?php
+		if(isset($_POST['switch2'])) {
+		echo 'checked="checked"';
+		} else { 
+		}
+		?>
+		>
         <span class="slider round"></span>
         </label>
-		</br>
+		<?php
+		
+		$switch2 = (isset($_POST['switch2'])) ? 1 : 0;
+		$SQL = "UPDATE equipement SET Etat='.$switch2.' where idEquipement='14'";
+		$result = mysqli_query($mysqli,$SQL);
+		?>
+		<input type="submit" name="submit2" value="appliquer"/>
+		
+		</form>
 		<img src="../CSS/icons/temp.jpg" class="lumi"/></br>
         <p id="temp">23°C</p>
 		</br>
@@ -117,11 +192,32 @@ else {
     </div>
 	
 	<div id="target2">
-        <h2>Cuisine</h2>
-        <label class="switch">
-        <input type="checkbox">
+        <h2><?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='3'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?></h2>
+         <form method="post" action="">
+		<label class="switch">
+        <input type="checkbox" name="switch3"
+		<?php
+		if(isset($_POST['switch3'])) {
+		echo 'checked="checked"';
+		} else { 
+		}
+		?>
+		>
         <span class="slider round"></span>
         </label>
+		<?php
+		
+		$switch3 = (isset($_POST['switch3'])) ? 1 : 0;
+		$SQL = "UPDATE equipement SET Etat='.$switch3.' where idEquipement='16'";
+		$result = mysqli_query($mysqli,$SQL);
+		?>
+		<input type="submit" name="submit3" value="appliquer"/>
+		
+		</form>
         <img src="../CSS/icons/temp.jpg" class="lumi"/>
 		</br>
 		<p id="temp">20°C </p>
@@ -135,7 +231,11 @@ else {
     </div>
 	
 	<div id="target3">
-        <h2>Chambre 2</h2>
+        <h2><?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='4'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?></h2>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
