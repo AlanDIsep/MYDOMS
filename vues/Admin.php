@@ -297,13 +297,19 @@ else {
           <input type="submit" value="Ajouter la Panne">
         </form>
 
-        <h2>Ajouter une FAQ</h2>
-        <form method="POST" action="">
-          <label for="id" class="titles">Question posée</label>
-          <input type="text" id="qstion" name="QuestionRecurentes" placeholder="Renseigner la question ...">
-          <label for="id" class="titles">Réponse à la question</label>
-          <input type="text" id="fnnnname" name="Reponse" placeholder="Renseigner la réponse à la question ...">
-          <input type="submit" value="Ajouter la question">
+        <h2>Supprimer un Type de Panne</h2>
+        <form method="POST" action="controleurs/suppr_typePanne.php">
+        <select name="typePanne" >
+                <?php
+                $table="typePanne";
+                $resultat=$bdd->query("SELECT * FROM typePanne");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['typePanne'].'">' . $data['typePanne'] . '</option>';
+                } ?>
+          </select>
+          <input type="submit" value="Supprimer le type de Panne">
         </form>
 
 
@@ -319,6 +325,8 @@ else {
 	<!---.------------------------------------------------------------------------------>	 
 		  
       <div id="tickets">
+      <div class="flex-grid"><br><br>
+      <div class="two">
           <table class="my_table">
           <thead>
           <h2>Liste des Pannes</h2>
@@ -357,7 +365,7 @@ else {
       <?php } ?>
 
     </tbody>
-          </table><br><br>
+          </table><br><br></div></div>
       <div class="flex-grid"><br><br>
       <div class="two">
           <h2> Supprimer une Panne</h2><br>
@@ -366,6 +374,56 @@ else {
               <input type="number" name="idPanne" placeholder="Ex: 1" required><br><br>
               <input type="submit" name="submit" value="Supprimer la panne"><br>  
           </form>
+       </div> 
+       </div>
+       <div class="flex-grid"><br><br>
+      <div class="two">
+          <h2> Ajouter une Panne</h2><br>
+          <form method="POST" action="">
+        <label for="Nom">Id utilisateur:</label>
+        <select name="DroitUtilisateur_idDroitUtilisateur" >
+                <?php
+                $table="utilisateur";
+                $resultat=$bdd->query("SELECT * FROM utilisateur WHERE DroitUtilisateur_id=2"); // Il faut que l'id corresponde a celui d'un utiisateur
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
+                } ?>
+            </select>
+
+            <label for="object">Type de capteur</label>
+            <select name="typePanne" >
+                <?php
+                $table="equipement";
+                $resultat=$bdd->query("SELECT * FROM equipement ");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['Type'].'">ID User:'. $data['idUser'] . ' - ' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+                } ?>
+            </select>
+						
+            <label for="object">Type de panne *</label>
+            <select name="typePanne" >
+                <?php
+                $table="typePanne";
+                $resultat=$bdd->query("SELECT * FROM typePanne");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['typePanne'].'">' . $data['typePanne'] . '</option>';
+                } ?>
+            </select><br><br>
+            <label for="Message">Description de la panne * </label><br><br>
+            <textarea id="message" name="DescriptionPanne" placeholder="Ecrivez ici..." style="height:200px" required></textarea>
+            <br><br>
+            <label for="date">Date de la panne *</label><br>
+            <input type="date" id="datepanne" name="Date" required>
+            <br><br>
+            <input type="submit" value="Envoyer">
+         </form><br><br>
+    </div>
        </div> 
        </div>
        </div>
