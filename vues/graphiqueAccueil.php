@@ -1,12 +1,13 @@
+
 <?php
- 
+include_once('Accueil.php');
 
  // On récupère tout le contenu de la table utilisateur
  $datetime = date("Y-m-d");
  $from_date = "$datetime 00:00:00";
 $to_date = "$datetime 04:59:59";
 $table = "graph";
- $reponse = $bdd->query("SELECT SUM(CompteurTemp) AS sums FROM graph WHERE Date >= '". $from_date . "' AND Date <= '" . $to_date . "'");
+ $reponse = $bdd->query("SELECT SUM(CompteurLum) AS sums FROM graph WHERE idUser=$id1 AND Date >= '". $from_date . "' AND Date <= '" . $to_date . "'");
  $donnees = $reponse->fetch()?>
  <?php $val1= $donnees['sums'];?>
  <?php  $reponse->closeCursor(); ?>
@@ -14,7 +15,7 @@ $table = "graph";
  $from_date2 = "$datetime 05:00:00";
 $to_date2 = "$datetime 09:59:59";
 $table = "graph";
- $reponse = $bdd->query("SELECT SUM(CompteurTemp) AS sums FROM graph WHERE Date >= '". $from_date2 . "' AND Date <= '" . $to_date2 . "'");
+ $reponse = $bdd->query("SELECT SUM(CompteurLum) AS sums FROM graph WHERE idUser=$id1 AND Date >= '". $from_date2 . "' AND Date <= '" . $to_date2 . "'");
  $donnees = $reponse->fetch()?>
  <?php $val2= $donnees['sums'];?>
  <?php  $reponse->closeCursor(); ?>
@@ -23,7 +24,7 @@ $table = "graph";
  $from_date3 = "$datetime 10:00:00";
 $to_date3 = "$datetime 14:59:59";
 $table = "graph";
- $reponse = $bdd->query("SELECT SUM(CompteurTemp) AS sums FROM graph WHERE Date >= '". $from_date3 . "' AND Date <= '" . $to_date3 . "'");
+ $reponse = $bdd->query("SELECT SUM(CompteurLum) AS sums FROM graph WHERE idUser=$id1 AND Date >= '". $from_date3 . "' AND Date <= '" . $to_date3 . "'");
  $donnees = $reponse->fetch()?>
  <?php $val3= $donnees['sums'];?>
  <?php  $reponse->closeCursor(); ?>
@@ -32,7 +33,7 @@ $table = "graph";
  $from_date4 = "$datetime 15:00:00";
 $to_date4 = "$datetime 20:59:59";
 $table = "graph";
- $reponse = $bdd->query("SELECT SUM(CompteurTemp) AS sums FROM graph WHERE Date >= '". $from_date4 . "' AND Date <= '" . $to_date4 . "'");
+ $reponse = $bdd->query("SELECT SUM(CompteurLum) AS sums FROM graph WHERE idUser=$id1 AND Date >= '". $from_date4 . "' AND Date <= '" . $to_date4 . "'");
  $donnees = $reponse->fetch()?>
  <?php $val4= $donnees['sums'];?>
  <?php  $reponse->closeCursor(); ?>
@@ -41,7 +42,7 @@ $table = "graph";
  $from_date5 = "$datetime 21:00:00";
 $to_date5 = "$datetime 23:59:59";
 $table = "graph";
- $reponse = $bdd->query("SELECT SUM(CompteurTemp) AS sums FROM graph WHERE Date >= '". $from_date5 . "' AND Date <= '" . $to_date5 . "'");
+ $reponse = $bdd->query("SELECT SUM(CompteurLum) AS sums FROM graph WHERE idUser=$id1 AND Date >= '". $from_date5 . "' AND Date <= '" . $to_date5 . "'");
  $donnees = $reponse->fetch()?>
  <?php $val5= $donnees['sums'];?>
  <?php  $reponse->closeCursor(); ?>
