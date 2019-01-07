@@ -151,9 +151,9 @@ else {
 		</form>
 		<img src="../CSS/icons/temp.jpg" class="lumi"/></br>
         <p id="temp"><?php 
-					//$nom = mysqli_query($mysqli,"SELECT Donnée FROM equipement WHERE idEquipement='5'");
-					//$row = mysqli_fetch_assoc($nom);
-					//echo $row['Donnée'];
+					$nom = mysqli_query($mysqli,"SELECT Donnee FROM equipement WHERE idEquipement='5'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Donnee'];
 					?>°C</p>
 		</br>
 		</br>
@@ -172,7 +172,7 @@ else {
 			
 			 <input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" />
 			
-			</br>
+			<br>
 			<input type="submit" value="submit"/>
 			</form>
 			<script>
