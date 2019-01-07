@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\controleurs",
-    "\\CSS",
     "\\modele",
     "\\vues"
   ],
-  "SelectedNode": "\\CSS\\admin.css",
+  "SelectedNode": "\\vues\\Temperature.php",
   "PreviewInSolutionExplorer": false
 }

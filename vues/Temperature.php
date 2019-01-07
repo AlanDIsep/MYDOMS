@@ -99,17 +99,14 @@ else {
 		<h2>
 		<?php 
 					
-					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='1'");
-					$row = mysqli_fetch_assoc($nom);
-					echo $row['Nom'];
-					?>
+		$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='1'");
+		$row = mysqli_fetch_assoc($nom);
+		echo $row['Nom'];
+		?>
 		</h2>
         <?php
-		
 		$etat = mysqli_query($mysqli,"SELECT Etat FROM equipement where idEquipement='5'");
-					$row = mysqli_fetch_assoc($etat);
-				
-					
+		$row = mysqli_fetch_assoc($etat);	
 		?>
 		
 		<!--------------------------------On/OFF-->
@@ -128,11 +125,7 @@ else {
         <span class="slider round"></span>
         </label>
 		<?php
-		
-		
-		
-		
-		
+
 		/*if(isset($_POST['switch']) and $row=1) {
 		$SQL = "UPDATE equipement SET Etat='1' where idEquipement='5'";
 		mysqli_query($mysqli,$SQL);
@@ -147,7 +140,6 @@ else {
 		mysqli_query($mysqli,$SQL);
 		}*/
 		
-
 		$switch = (isset($_POST['switch'])) ? 1 : 0;
 		$SQL = "UPDATE equipement SET Etat='.$switch.' where idEquipement='5'";
 		mysqli_query($mysqli,$SQL);

@@ -55,10 +55,29 @@ else {
       
 
  <div class="container">
-        <button class="toggle">Chambre 1</button>     
-        <button class="toggle1">Salon</button>
-        <button class="toggle2">Cuisine</button> 
-        <button class="toggle3">Chambre 2</button>
+        <button class="toggle">
+		<?php
+		//nom des boutons
+		$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='1'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?>
+		</button>     
+        <button class="toggle1"><?php
+		$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='2'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?></button>
+        <button class="toggle2"><?php
+		$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='3'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?></button> 
+        <button class="toggle3"><?php
+		$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='4'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?></button>
     </div>
     
     <div class="space"></div>
@@ -66,11 +85,25 @@ else {
 	
     <div id="conteneur">
 	<div id="target">
-		<h2 class="color-t">Chambre 1 </h2>
+		<h2 class="color-t"><?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='1'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?></h2>
         <div>
+		<form method="post">
+
 		<label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" name="switch"/>
         <span class="slider round"></span>
+		<?php
+		$switch = (isset($_POST['switch'])) ? 1 : 0;
+		$SQL = "UPDATE equipement SET Etat='.$switch.' where idEquipement='6'";
+		mysqli_query($mysqli,$SQL);
+		?>
+		<input type="submit" value="submit">
+
+		</form>
 		</label></div>
 		</br>
 		<img src="../CSS/icons/lumi.jpg" class="lumi"/>
@@ -85,7 +118,11 @@ else {
     </div>
 
 	<div id="target1">
-        <h2 class="color-t">Salon </h2>
+        <h2 class="color-t"><?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='2'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?></h2>
         <div>
 		<label class="switch">
         <input type="checkbox">
@@ -104,7 +141,11 @@ else {
     </div>
 	
 	<div id="target2">
-        <h2>Cuisine</h2>
+        <h2><?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='3'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?></h2>
 		<div>
         <label class="switch">
         <input type="checkbox">
@@ -122,7 +163,11 @@ else {
     </div>
 	
 	<div id="target3">
-        <h2>Chambre 2</h2>
+        <h2><?php 
+					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='4'");
+					$row = mysqli_fetch_assoc($nom);
+					echo $row['Nom'];
+					?></h2>
 		<div>
         <label class="switch">
         <input type="checkbox">
@@ -191,7 +236,10 @@ $('#range').on("input", function() {
 	$('#range4').on("input", function() {
     $('.output4').val(this.value +"%" );
     }).trigger("change");
+
 </script>
+
+
 
 
     
