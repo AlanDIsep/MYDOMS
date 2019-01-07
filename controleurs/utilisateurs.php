@@ -48,9 +48,9 @@ switch ($function) {
                 $values = [
                     'DescriptionPanne' => $_POST['DescriptionPanne'],
                     'Date' => $_POST['Date'],
-                    'Equipement_id' => $_POST['Equipement_id'],
                     'DroitUtilisateur_idDroitUtilisateur' => $_POST['DroitUtilisateur_idDroitUtilisateur'],
                     'typePanne' => $_POST['typePanne'],
+                    'Equipement_id'=> $_POST['Equipement_id'],
                 ];
 
                 // Appel à la BDD à travers une fonction du modèle.
@@ -186,17 +186,46 @@ switch ($function) {
             // Appel à la BDD à travers une fonction du modèle.
             $retour = ajouterTypePanne($bdd, $values);
         }
+        else if (isset($_POST['DescriptionPanne'])) {
 
-        else if (isset($_POST['NumeroDeSerie'])){
+            // Tout est ok, on peut envoyer le formulaure
+
+            //
             $values = [
-                'Type' => $_POST['Type'],
-                'Nom' => $_POST['Nom'],
-                'NumeroDeSerie' => $_POST['NumeroDeSerie'],
-                'idUser' => $_POST['idUser'],
-                
+                'DescriptionPanne' => $_POST['DescriptionPanne'],
+                'Date' => $_POST['Date'],
+                'DroitUtilisateur_idDroitUtilisateur' => $_POST['DroitUtilisateur_idDroitUtilisateur'],
+                'typePanne' => $_POST['typePanne'],
+                'Equipement_id'=> $_POST['Equipement_id'],
             ];
+
             // Appel à la BDD à travers une fonction du modèle.
-            $retour = ajouterCapteur($bdd, $values);
+            $retour = ajouterPanne($bdd, $values);
+
+
+            if ($retour) {
+                $alerte = "Panne transmise au support technique";
+            } else {
+                $alerte = "L'inscription dans la BDD n'a pas fonctionné";
+            }
+        }
+
+        else if (isset($_POST['DescriptionPanne'])) {
+
+            // Tout est ok, on peut envoyer le formulaure
+
+            //
+            $values = [
+                'DescriptionPanne' => $_POST['DescriptionPanne'],
+                'Date' => $_POST['Date'],
+                'DroitUtilisateur_idDroitUtilisateur' => $_POST['DroitUtilisateur_idDroitUtilisateur'],
+                'typePanne' => $_POST['typePanne'],
+                'Equipement_id'=> $_POST['Equipement_id'],
+            ];
+
+            // Appel à la BDD à travers une fonction du modèle.
+            $retour = ajouterPanne($bdd, $values);
+
         }
         elseif (isset($_POST['NomMaison'])) {
             $values = [

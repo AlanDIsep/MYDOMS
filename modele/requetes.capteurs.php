@@ -64,4 +64,6 @@ function recupereCheminLumineux(PDO $bdd): array {
     $query = "SELECT * FROM cheminLumineux";
     return $bdd->query($query)->fetchAll();
 }
+
+
 ?>

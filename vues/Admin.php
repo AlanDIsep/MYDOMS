@@ -393,14 +393,14 @@ else {
             </select>
 
             <label for="object">Type de capteur</label>
-            <select name="typePanne" >
+            <select name="Equipement_id" >
                 <?php
                 $table="equipement";
                 $resultat=$bdd->query("SELECT * FROM equipement ");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {
-                echo  '<option value="'.$data['Type'].'">ID User:'. $data['idUser'] . ' - ' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+                echo  '<option value="'.$data['idEquipement'].'">ID User:'. $data['idUser'] . ' - ' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
                 } ?>
             </select>
 						
@@ -416,7 +416,7 @@ else {
                 } ?>
             </select><br><br>
             <label for="Message">Description de la panne * </label><br><br>
-            <textarea id="message" name="DescriptionPanne" placeholder="Ecrivez ici..." style="height:200px" required></textarea>
+            <textarea id="message" name="DescriptionPanne" placeholder="Ecrivez ici..." style="width:100%" required></textarea>
             <br><br>
             <label for="date">Date de la panne *</label><br>
             <input type="date" id="datepanne" name="Date" required>
@@ -464,7 +464,7 @@ else {
                 <?php echo $element['Etat']; ?>
               </td>
               <td>
-                <?php echo $element['Donnée']; ?>
+                <?php echo $element['Donnee']; ?>
               </td>
               <td>
                 <?php echo $element['NumeroDeSerie']; ?>

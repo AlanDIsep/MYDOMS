@@ -58,8 +58,7 @@ else {
     <div class="container">
 
         <form method="POST" action="">
-        <label for="Nom">Id utilisateur:</label>
-        <select name="DroitUtilisateur_idDroitUtilisateur" >
+        <select name="DroitUtilisateur_idDroitUtilisateur" style="visibility:hidden;" >
                 <?php
                 $table="utilisateur";
                 $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
@@ -71,14 +70,14 @@ else {
             </select>
 
             <label for="object">Type de capteur</label>
-            <select name="typePanne" >
+            <select name="Equipement_id" >
                 <?php
                 $table="equipement";
                 $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {
-                echo  '<option value="'.$data['Type'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+                echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
                 } ?>
             </select>
 						
