@@ -97,9 +97,9 @@ else {
 
 				echo'<label class="switch">';
 				echo '<input type="checkbox" name="switch"/>';
-				echo'<span class="slider round"></span>';
+				echo '<span class="slider round"></span>';
 				
-				 $switch = (isset($_POST['switch'])) ? 1 : 0;
+				 $switch = (isset($_POST['switch'])) ? 0:1;
 				 $SQL = "UPDATE equipement SET Etat='.$switch.' WHERE Nom='$nom' ";
 				mysqli_query($mysqli,$SQL);
 				
