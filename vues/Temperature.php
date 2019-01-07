@@ -91,6 +91,7 @@ else {
 				echo '<div id="conteneur" style="width:100%">';
 				echo '<div id="target" style="width:50%">';
 			    //echo  '<hr width= 100% color=#DCE837><option value="'.$data['Nom'].'">' . $data['Nom'] . '</option><div class=temperature><option value="'.$data['Donnee'].'">' . $data['Donnee'] . ' °C</div></option>';
+				$nom=$data['Nom'];
 				echo $data['Nom'];
 				echo'<form method="post">';
 
@@ -99,7 +100,7 @@ else {
 				echo'<span class="slider round"></span>';
 				
 				 $switch = (isset($_POST['switch'])) ? 1 : 0;
-				 $SQL = "UPDATE equipement SET Etat='.$switch.'";
+				 $SQL = "UPDATE equipement SET Etat='.$switch.' WHERE Nom='$nom' ";
 				mysqli_query($mysqli,$SQL);
 				
 				echo '<button type="submit" name="action">';
