@@ -79,7 +79,8 @@ else {
 					$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
 					$table = "habitation";
 					$nbr_maison = mysqli_query($mysqli,"SELECT COUNT(idHabitation) AS nb_maison FROM habitation");
-					$row = mysqli_fetch_assoc($nbr_maison);
+          $row = mysqli_fetch_assoc($nbr_maison);
+          $nb_maisons=$row['nb_maison'];
 					echo $row['nb_maison'];
 					?>
 					
@@ -93,7 +94,8 @@ else {
 					<?php $mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
 					$table = "utilisateur";
 					$nb_user = mysqli_query($mysqli,"SELECT COUNT(id) AS nb_user FROM utilisateur");
-					$row = mysqli_fetch_assoc($nb_user);
+          $row = mysqli_fetch_assoc($nb_user);
+          $nb_utilisateurs=$row['nb_user'];
 					echo $row['nb_user']; ?>
 		  </p>
           </div>
@@ -130,8 +132,9 @@ else {
 
 					// -------
 					// ÉTAPE 3 : on compte le nombre d'IP stockées dans la table. C'est le nombre de visiteurs connectés.
-					$retour = mysqli_query($mysqli,'SELECT COUNT(*) AS nbre_entrees FROM connectes');
-					$donnees = mysqli_fetch_assoc($retour);
+          $retour = mysqli_query($mysqli,'SELECT COUNT(*) AS nbre_entrees FROM connectes');
+          $donnees = mysqli_fetch_assoc($retour);
+          $nb_connectes=$donnees['nbre_entrees'];
 
 
 					// Ouf ! On n'a plus qu'à afficher le nombre de connectés !
@@ -145,7 +148,8 @@ else {
 					<?php $mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
 					$table = "panne";
 					$nb_panne = mysqli_query($mysqli,"SELECT COUNT(idPanne) AS nb_panne FROM panne");
-					$row = mysqli_fetch_assoc($nb_panne);
+          $row = mysqli_fetch_assoc($nb_panne);
+          $nb_panne=$row['nb_panne'];
 					echo $row['nb_panne']; ?>
 		  </p>
         </div>
@@ -155,6 +159,8 @@ else {
 
         <div style="height:400px;">
           <h2>Statistiques</h2>
+          <?php
+				include("graphiqueAdmin.php") ?>
         </div>
       </div>
     </div>
