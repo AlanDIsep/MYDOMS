@@ -170,7 +170,7 @@ else {
 		
 			?>
 			
-			 <input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" />
+			<input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" />
 			
 			</br>
 			<input type="submit" value="submit"/>
@@ -211,37 +211,18 @@ else {
         <span class="slider round"></span>
         </label>
 		<?php
-		
-		
 		$etat = mysqli_query($mysqli,"SELECT Etat FROM equipement where idEquipement='14'");
-					$row2 = mysqli_fetch_assoc($etat);
-					
-		
-		
-		
-		/*if(isset($_POST['switch2']) and $row=1) {
-		$SQL = "UPDATE equipement SET Etat='1' where idEquipement='14'";
-		mysqli_query($mysqli,$SQL);
-		} else if(!isset($_POST['switch2']) and $row=1) { 
-		$SQL = "UPDATE equipement SET Etat='0' where idEquipement='14'";
-		mysqli_query($mysqli,$SQL);
-		} else if(isset($_POST['switch2']) and $row=0) { 
-		$SQL = "UPDATE equipement SET Etat='1' where idEquipement='14'";
-		mysqli_query($mysqli,$SQL);
-		} else if(!isset($_POST['switch2']) and $row=0) { 
-		$SQL = "UPDATE equipement SET Etat='0' where idEquipement='14'";
-		mysqli_query($mysqli,$SQL);
-		}*/
-		
+		$row2 = mysqli_fetch_assoc($etat);
 
 		$switch2 = (isset($_POST['switch2'])) ? 1 : 0;
 
 
-		$SQL1 = "UPDATE equipement SET Etat='.$switch2.' where idEquipement='14'";
+		//$SQL1 = "UPDATE equipement SET Etat='.$switch2.' where idEquipement='14'";
 		mysqli_query($mysqli,$SQL1);
 		?>
+
+		<button	type="submit" name="activation" value="14">Envoyer</button>
 		
-		<input type="submit" value="submit"/>
 		
 		</form>
 		<img src="../CSS/icons/temp.jpg" class="lumi"/></br>
