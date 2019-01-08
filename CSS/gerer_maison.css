@@ -1,31 +1,31 @@
 
-@font-face 
+@font-face
 {
 	font-family: Kollektif-Bold;
-	src: url("../kollektif/Kollektif-Bold.ttf"); 
+	src: url("../kollektif/Kollektif-Bold.ttf");
 }
-  
- @font-face 
+
+ @font-face
  {
 	font-family: Kollektif-Italic;
-	src: url("kollektif/Kollektif-Italic.ttf"); 
+	src: url("kollektif/Kollektif-Italic.ttf");
  }
 
- @font-face 
+ @font-face
  {
 	font-family: Kollektif;
-	src: url("kollektif/Kollektif.ttf"); 
+	src: url("kollektif/Kollektif.ttf");
  }
 
-body 
+body
 {
       font: 75%/1.33 Verdana, sans-serif;
       font-size : medium;
 	  background-color:#121F28;
-}   
+}
 
 /*------------------header-------------*/
-.header 
+.header
 {
 	position: fixed;
     left: 0;
@@ -42,27 +42,27 @@ body
 		margin-right: auto;
 		width: 20%; /* largeur de l'élément vis à vis de la largeur de la page */
 		}
-	
+
 	.logo3 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
 		max-width: 13%;
-		} 
+		}
 
-	
+
 	.logo3ter {  /* retiré du flux normal et placé à droite */
 		float: right;
 		margin-top: 1%;
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
 		max-width: 10%;
-		} 
+		}
 
 	.logo5 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
 		max-width: 21%;
-		} 
+		}
 	.logo6 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
@@ -78,7 +78,7 @@ body
 		margin-right: auto;
 		border-radius:40px 40px 40px 40px;
 	}
-	
+
 /*------------------Main-------------*/
 .main {
 	padding:312px 315px;
@@ -95,7 +95,7 @@ body
 		letter-spacing: 5.8pt;
 		color: aliceblue;
 	}
-	.bordertitle{	
+	.bordertitle{
 			border: 1px solid #DCE837;
 			border-radius: 12px;
 			border-left-width: 31px;
@@ -110,17 +110,17 @@ body
 	.conteneur
 	{
 		display: flex;
-		margin-top: 10%;  
-		flex-wrap: wrap; 
+		margin-top: 10%;
+		flex-wrap: wrap;
 	}
 
 	.bouton
 	{
-		margin: auto;  
+		margin: auto;
 	}
 
 	.bouton a
-	{	
+	{
 		text-decoration: none;
 		font-family: Kollektif;
 		font-size: 22px;
@@ -146,11 +146,12 @@ body
 		color: #000;
 		background: linear-gradient( #FFF, 	#DCE649);
 	}
-	
-	
+
+
 	.element1 /* On prend le premier bloc élément */
 {
-    background-color:white;
+  text-decoration: none;
+	background-color:white;
 	border-width:2px;
 	border-style:outset;
 	border-color:black;
@@ -160,6 +161,7 @@ body
 	border-radius:20px 20px 20px 20px;
 	opacity: 0.8;
 	transition: opacity 1s, transform 0.3s ease-in;
+	t
 }
 
 
@@ -174,7 +176,7 @@ opacity: 1;
 opacity: 1;
   transform: scale(1.1);
   box-shadow: 1px 3px 8px 4px;
-}	
+}
 #conteneur
 {
     display: flex;
@@ -184,7 +186,7 @@ opacity: 1;
 	margin-left:50px;
 	background-color:#121F28;
 	border-color:black;
-	 
+
 }
 
 .image2{
@@ -195,7 +197,7 @@ opacity: 1;
 	height:130px;
 	width:180px;
 	}
-	
+
 	.space{
 	padding:50px;
 	}

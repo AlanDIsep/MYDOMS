@@ -63,6 +63,21 @@ switch ($function) {
                     $alerte = "L'inscription dans la BDD n'a pas fonctionné";
                 }
             }
+          if (isset($_POST['EnvoyerMail'])) {
+
+            $values = [
+                'ObjetDuMail' => $_POST['ObjetDuMail'],
+                'ContenuDuMail' => $_POST['ContenuDuMail'],
+            ];
+            $retour = envoyerMail($bdd, $values);
+
+            if ($retour) {
+                $alerte = "Le mail a bien été envoyé";
+            } else {
+                $alerte = "Un problème semble être survenu. Veuillez nous en excuser";
+            }
+
+                    }
     break;
 
     case 'gestion_eclairage':
