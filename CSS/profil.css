@@ -73,6 +73,17 @@ body {
 			margin-right: auto;
 			border-radius:40px 40px 40px 40px;
 		}
+		input[type=submit] {
+			font-family: Kollektif;
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer; /* bouton envoyer */
+			display: block;
+			margin: auto;
+		}
 		
 /*------------------Main-------------*/
 .main {
@@ -110,6 +121,46 @@ body {
 	width:50%;
 	background:white;
 	border-radius:10px;
+	}
+
+	input[type=text], select, textarea {
+		font-family: Kollektif;
+		width: 50%; 
+		display: block;
+		margin: auto;
+		padding: 12px;
+		border: 1px solid #DCE837; /* bord gris des cases */
+		border-radius: 4px; /* bord rond des cases */
+		box-sizing: border-box; /* Assure l'alignement des cases */
+		margin-top: 6px; 
+		margin-bottom: 16px; 
+		resize: vertical /* Permet aux utilisateurs de redimensionner une case */
+	}
+	.button {
+		font-family: Kollektif;
+		background-color: #4CAF50;
+		color: white;
+		padding: 5px 10px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer; /* bouton envoyer */
+		display: block;
+		margin: auto;
+		align-content: center;
+	}
+	
+	input[type=Date], select, textarea {
+		font-family: Kollektif;
+		width: 50%; 
+		display: block;
+		margin: auto;
+		padding: 12px;
+		border: 1px solid #DCE837; /* bord gris des cases */
+		border-radius: 4px; /* bord rond des cases */
+		box-sizing: border-box; /* Assure l'alignement des cases */
+		margin-top: 6px; 
+		margin-bottom: 16px; 
+		resize: vertical /* Permet aux utilisateurs de redimensionner une case */
 	}
 
 	

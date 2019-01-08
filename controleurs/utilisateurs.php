@@ -261,6 +261,12 @@ switch ($function) {
             $alerte = "Aucun utilisateur inscrit pour le moment";
         }
 
+        break;
+        
+    case 'Modification_Profil':
+        $vue = "Modification_Profil";
+        $title = "Modifier son profil";
+
 
       break;
     default:

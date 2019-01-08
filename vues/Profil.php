@@ -141,8 +141,12 @@ else {
 			<br>
 			</div>	<br><br>
 	<p>
+	<div class="button">
+	<a style="text-align:center" href="index.php?cible=utilisateurs&fonction=Modification_Profil">
+	<h4 style="color:white">Modifier</h4>
+	</a>
 	</div>
-
+	</div>
 
 <div class="space">
 
