@@ -3,17 +3,17 @@
 
 @font-face {
 	font-family: kollektif-bold;
-	src: url('../kollektif/Kollektif-Bold.ttf'); 
+	src: url('../kollektif/Kollektif-Bold.ttf');
   }
-  
+
   @font-face {
 	font-family: Kollektif-Italic;
-	src: url('kollektif/Kollektif-Italic.ttf'); 
+	src: url('kollektif/Kollektif-Italic.ttf');
   }
 
   @font-face {
 	font-family: Kollektif;
-	src: url('kollektif/Kollektif.ttf'); 
+	src: url('kollektif/Kollektif.ttf');
   }
 
 body {
@@ -21,8 +21,8 @@ body {
       font-size : medium;
 	  background-color:#121F28;
 
-	  }   
-	     
+	  }
+
 /*------------------Header-------------*/
 .header {
     left: 0; /* marge gauche */
@@ -38,27 +38,27 @@ body {
 		margin-right: auto;
 		width: 20%; /* largeur de l'élément vis à vis de la largeur de la page */
 		}
-	
+
 	.logo3 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
 		max-width: 13%;
-		} 
+		}
 
-	
+
 	.logo3ter {  /* retiré du flux normal et placé à droite */
 		float: right;
 		margin-top: 1%;
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
 		max-width: 10%;
-		} 
+		}
 
 	.logo5 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
 		max-width: 21%;
-		} 
+		}
 	.logo6 {  /* retiré du flux normal et placé à droite */
 		margin-left: auto; /* marges automatiques */
 		margin-right: auto;
@@ -74,13 +74,13 @@ body {
 		margin-right: auto;
 		border-radius:40px 40px 40px 40px;
 	}
-	
+
 
 
 /*------------------Main-------------*/
 .main {
 	padding:312px 315px;
-	
+
 
 }
 	/*------------------Titre Page-------------*/
@@ -92,7 +92,7 @@ body {
 		letter-spacing: 5.8pt;
 		color: aliceblue;
 	}
-	.bordertitle{	
+	.bordertitle{
 			border: 1px solid #DCE837;
 			border-radius: 12px;
 			border-left-width: 31px;
@@ -105,45 +105,45 @@ body {
 	}
 	/*------------------Contenu-------------*/
 
-		
+
 	input[type=text], select, textarea {
 		font-family: Kollektif;
-		width: 100%; 
+		width: 100%;
 		padding: 12px;
 		border: 1px solid #ccc; /* bord gris des cases */
 		border-radius: 4px; /* bord rond des cases */
 		box-sizing: border-box; /* Assure l'alignement des cases */
-		margin-top: 6px; 
-		margin-bottom: 16px; 
+		margin-top: 6px;
+		margin-bottom: 16px;
 		resize: vertical /* Permet aux utilisateurs de redimensionner une case */
 	}
 
 	input[type=number], select{
 		font-family: Kollektif;
-		width: 100%; 
+		width: 100%;
 		padding: 12px;
 		border: 1px solid #ccc; /* bord gris des cases */
 		border-radius: 4px; /* bord rond des cases */
 		box-sizing: border-box; /* Assure l'alignement des cases */
-		margin-top: 6px; 
-		margin-bottom: 16px; 
+		margin-top: 6px;
+		margin-bottom: 16px;
 		resize: vertical /* Permet aux utilisateurs de redimensionner une case */
 	}
 
 	input[type=date], select{
 		font-family: Kollektif;
-		width: 100%; 
+		width: 100%;
 		padding: 12px;
 		border: 1px solid #ccc; /* bord gris des cases */
 		border-radius: 4px; /* bord rond des cases */
 		box-sizing: border-box; /* Assure l'alignement des cases */
-		margin-top: 6px; 
-		margin-bottom: 16px; 
+		margin-top: 6px;
+		margin-bottom: 16px;
 		resize: vertical /* Permet aux utilisateurs de redimensionner une case */
 	}
 
 
-	
+
 	input[type=submit] {
 		font-family: Kollektif;
 		background-color: #4CAF50;
@@ -154,7 +154,7 @@ body {
 		cursor: pointer; /* bouton envoyer */
 	}
 
-	
+
 	input[type=submit]:hover {
 		background-color: #45a049; /* souris au dessus du bouton envoyer */
 	}
@@ -170,8 +170,18 @@ body {
 		height:100%;
 	}
 
+	.containertwo {
+		border-radius: 10px;
+		background-color: #f2f2f2;
+		padding: 20px;
+		width:60%;
+		margin-left:auto;
+		margin-right:auto;
+		height:50%;
+	}
 
-	
+
+
 
 /*------------------Footer-------------*/
 #footer{
@@ -184,5 +194,3 @@ body {
     text-align: center;
 	font-size:small;
 }
-
-	

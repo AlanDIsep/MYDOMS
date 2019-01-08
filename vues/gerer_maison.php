@@ -25,15 +25,15 @@ else {
 <body>
 <!------------------header------------->
 <header>
-		<title>Gérer ma maison</title>	
+		<title>Gérer ma maison</title>
 		<a href="index.php?cible=utilisateurs&fonction=Accueil"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
 		<a href="vues/deconnexion.php"><img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"></a>
-		
-		
+
+
 </header>
 
-		
-			<!-------------------Titre de la Page--------------> 
+
+			<!-------------------Titre de la Page-------------->
 			<div class="titlepage">
 				<div class="bordertitle">
 					<a href="index.php?cible=utilisateurs&fonction=Accueil"><img title="Tableau de bord" src="../CSS/icons/Bandeau/bord.png" class="logo5"/></a>
@@ -47,9 +47,9 @@ else {
 
 <!-------------------Main-------------->
 <main>
-    
-      <div id="conteneur">
-    
+
+<div id="conteneur">
+
 	<div class="element1">
 	<a href="index.php?cible=utilisateurs&fonction=Configuration">
 	<br>
@@ -57,7 +57,7 @@ else {
 	<br>
 	<img src="../CSS/icons/Bandeau/configuration.jpg" class="image2"/>
 	</div>
-	
+
 	<div class="element1">
 	<a href="index.php?cible=utilisateurs&fonction=Temperature">
 	<br>
@@ -65,7 +65,7 @@ else {
 	<br>
 	<img src="../CSS/icons/Bandeau/temperature.png" class="image2"/>
 	</div>
-    
+
 	<div class="element1">
 	<a href="index.php?cible=utilisateurs&fonction=gestion_eclairage">
 	<br>
@@ -73,10 +73,7 @@ else {
 	<br>
 	<img src="../CSS/icons/Bandeau/eclairage.png" class="image2"/>
 	</div>
-    
-	
-	
-	
+
 </div>
     </div>
 </main>

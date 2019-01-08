@@ -52,8 +52,38 @@ else {
 			</div>
 			<!-------------------Contenu-------------->
 <br>
-<br>
-		<div class="container">
+		<h1 align="center" style="color:#FFF">Autres demandes</h1>
+		<div class="containertwo">
+			<h3>Envoyez un mail au service de DomIsep</h3>
+			<label for="object">Envoyer un mail</label>
+			<?php
+			$destinataire = 'alan.daibisaram@isep.fr';
+			// Pour les champs $expediteur / $copie / $destinataire, séparer par une virgule s'il y a plusieurs adresses
+			$expediteur = 'alan.daibisaram@isep.fr';
+			$objet = 'Test'; // Objet du message
+			$headers  = 'MIME-Version: 1.0' . "\n"; // Version MIME
+			$headers .= 'Reply-To: '.$expediteur."\n"; // Mail de reponse
+			$headers .= 'From: "Nom_de_expediteur"<'.$expediteur.'>'."\n"; // Expediteur
+			$headers .= 'Delivered-to: '.$destinataire."\n"; // Destinataire
+			$headers .= 'Cc: '.$copie."\n"; // Copie Cc
+			$headers .= 'Bcc: '.$copie_cachee."\n\n"; // Copie cachée Bcc
+			$message = 'Un Bonjour de Developpez.com!';
+			if (mail($destinataire, $objet, $message, $headers)) // Envoi du message
+			{
+			    echo 'Votre message a bien été envoyé ';
+			}
+			else // Non envoyé
+			{
+			    echo "Votre message n'a pas pu être envoyé";
+			}
+			?>
+		</div>
+
+		<h1 align="center" style="color:#FFF">Support technique</h1>
+
+
+
+    <div class="container">
 
         <form method="POST" action="">
         <select name="DroitUtilisateur_idDroitUtilisateur" style="visibility:hidden;" >
