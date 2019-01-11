@@ -165,7 +165,15 @@ else {
 <div class="container">
 <label for="nom">Sélectionner le parcours à supprimer: *</label><br>
     <form method="POST" action="controleurs/suppr_cheminLumineux.php">
-<input type="text" name="idCheminLumineux" placeholder="Ex: 1" required><br><br>
+    <select name="idCheminLumineux">
+    <?php
+      				$table="cheminLumineux";
+      				$resultat=$bdd->query("SELECT * FROM cheminLumineux WHERE idUser=$id1");
+      				$resultat->setFetchMode(PDO::FETCH_ASSOC);
+      				foreach ($resultat as $data)
+      				{
+      				echo  '<option value="'.$data['idCheminLumineux'].'">' . $data['NomCheminLumineux'] . '</option>';
+      				} ?>
 <input type="submit" name="submit" value="Supprimer le chemin lumineux"><br> 
 </form><br><br>
 </div>
@@ -180,11 +188,10 @@ else {
           <th>ID du chemin lumineux</th>
             <th>Etat du chemin lumineux</th>
             <th>Nom du chemin lumineux</th>
-            <th>Capteur 1</th>
-            <th>Capteur 2</th>
-            <th>Capteur 3</th>
-            <th>Capteur 4</th>
-            <th>ID User</th>
+            <th>Capteur</th>
+            <th>Capteur</th>
+            <th>Capteur</th>
+            <th>Capteur</th>
           </tr>
           </thead>
           <tbody>	
@@ -210,9 +217,6 @@ else {
               </td>
               <td>
                 <?php echo $element['Capteur4']; ?> / <?php echo $element['IntensiteCapteur4']; ?>%
-              </td>
-              <td>
-                <?php echo $element['idUser']; ?>
               </td>
             </tr>
       
