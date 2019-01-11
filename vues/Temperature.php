@@ -104,15 +104,16 @@ else {
 				 </div></form>';
 					
 <<<<<<< HEAD
-
 				echo "</div>";
 					
 					
 				/*
+=======
 				}
 				?>
 				
 				<?php /*
+>>>>>>> 98fe755b84bb90818d0f90fb5c6aad5e421de022
 				echo'<form method="post" action="">';
 			
 			
