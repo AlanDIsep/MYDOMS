@@ -58,9 +58,8 @@ else {
 <div class="container">
     <h2> Configuration d'un nouveau parcours lumineux</h2>
     <form method="POST" action="">
-    <label for="Nom">Id utilisateur:</label>
 
-    <select name="idUser" >
+    <select name="idUser"style="visibility:hidden;" >
           <?php
           $table="utilisateur";
           $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
@@ -72,9 +71,7 @@ else {
       </select><br><br>
     <label for="nom">Rentrer le nom du parcours: *</label><br>
     <input type="text" name="NomCheminLumineux" placeholder="Ex: Chambre --> Cuisine" required><br><br>
-    <label for="nom">Etat du chemin lumineux: *</label><br>
-    <select name="EtatCheminLumineux" >
-      <option value="1">ON</option>
+    <select name="EtatCheminLumineux" style="visibility:hidden;">
       <option value="0">OFF</option>
     </select>
     <h3>Eclairages sélectionnés: *</h3><br>
@@ -92,7 +89,7 @@ else {
         </select>
         <label for="object">Intensité lumineuse - Capteur 1: *</label>
       <select name="IntensiteCapteur1" >
-      
+      <option value="0"></option>
             <option value="25">25%</option>
             <option value="50">50%</option>
             <option value="75">75%</option>
@@ -227,7 +224,32 @@ else {
 </div>
 <div class="four">
 <div class="container">
-<label for="nom">État des parcours: *</label><br>
+<h2>État des parcours</h2>
+<div id="conteneur">
+<?php
+$table="cheminLumineux";
+$resultattt4=$bdd->query("SELECT * FROM cheminLumineux WHERE idUser=$id1");
+$resultattt4->setFetchMode(PDO::FETCH_ASSOC);
+foreach ($resultattt4 as $data)
+{
+echo '				
+<div id="conteneur" style="width:100% ">
+<div id="target" style="width:50%">
+<label for="nom">' . $data['NomCheminLumineux'] . '</label><br><br><br>
+<form method="POST" action="./controleurs/update_CheminLumineux.php">
+<label class="switch">
+
+<input type="checkbox" name="switch"/>
+<span class="slider round"></span>
+ <br>
+ <select name="idCheminLumineux" style="visibility:hidden;">
+ <option value="'.$data['idCheminLumineux'].'">'.$data['idCheminLumineux'].'</option>
+ </select>
+ <button type="submit" value="submit">Valider</button>
+ </div>
+ </div></form>';
+
+} ?>
 </div>
 </div>
 </div>
