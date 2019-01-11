@@ -92,70 +92,63 @@ else {
 				echo'</button>' ;    
 				echo'</div>';*/
 				
+				
 				echo '
-				<div id="conteneur" style="width:100% ">
-				<div id="target" style="width:50%">';
+				<div id="conteneur" style="width:200px ">
+				<div id="target" style="width:200px">';
 				$nom = $data['Nom'];
+				$consigne= $data['consigne'];
 				echo $nom;
+				
+				
 				echo'<form method="POST" action="./controleurs/update_Button.php">
 				<label class="switch">
 				<br>
-				<br>
-				<input type="checkbox" name="switch"/>
-				<span class="slider round"></span>
+				<br>';
+				echo'<input type="checkbox" name="switch"
+				>';
+				
+				echo'<span class="slider round"></span>
 				 <br>
 				 <select name="ideq" style="visibility:hidden;">
 				 <option value="'.$data['idEquipement'].'">' . $data['idEquipement'] . '</option>
-				 </select>
-				<button type="submit" value="submit">
-				</form>
-				 <form method="post" action="">
-				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" />
-				 <button type="submit" value="submit">
-				 </form>
-				 </div>
-				 </div>
+				 </select>';
 				
-				 ';
-					$temp= $_POST["range"];
-				if(isset($_POST["range"]))
-					{
-				 $SQL = "UPDATE equipement SET consigne='$temp' where idEquipement='$ideq'";
-				  mysqli_query($mysqli,$SQL);
-					}
-					
-				}
-				?>
 				
-				<?php /*
-				echo'<form method="post" action="">';
-			
-			
-				 echo'<input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" />';
-			
-				echo '<br>';
-				echo '<input type="submit" value="submit">';
-				
-					
-				echo "</div>";
-
-				$temp= $_POST["range"];
-				if(isset($_POST["range"]))
-			{
-				 $SQL = "UPDATE equipement SET consigne='$temp' where idEquipement='$ideq'";
-				  mysqli_query($mysqli,$SQL);
-			}
-               echo'</form>';
-                 */
-	?>
-		<script>
+				echo'<script>
 			function updateTextInput(val) {
-			document.getElementById('textInput').value=val+'°'; 
-			 }</script>
- 
-	<?php
+			document.getElementById("textInput").value=val+"°"; 
+			 }</script>';	
+				
+				echo'<div id="modulator">
 			
-			?>
+			<p class="color-t">Température désirée: <a id="clicks"></a><output type="text" id="textInput" value="">'.$consigne.'°</p> </div>
+
+				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" style="width:100px"/>
+				<br>
+				<button type="submit" value="submit">
+
+				</form>';
+				
+				
+				echo'</div>';
+				 echo'</div>';
+					
+				
+				}
+
+				
+				?>
+	
+
+		
+
+		
+
+
+		
+ 
+	
 	<!-------------------------------------------------------------------------------------------------------------------->
 	
 
