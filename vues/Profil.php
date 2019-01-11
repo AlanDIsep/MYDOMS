@@ -61,8 +61,6 @@ else {
 	<div class="champs">
 	<?php
 		if (isset($_SESSION['email'])) {
-
-		echo '<body>';
 		echo ''.$_SESSION['email'].'';
 		echo '<br />';
 		}else {
@@ -133,6 +131,7 @@ else {
 			$table = "habitation";
 			// On récupère tout le contenu de la table utilisateur
 			$id1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+			// On récupère l'id de la table habitation
 			$id=$donnees['id'];
             $reponse = $bdd->query("SELECT * FROM habitation WHERE idUtilisateur=$id");
             $donnees = $reponse->fetch()?>
