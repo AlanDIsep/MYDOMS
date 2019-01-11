@@ -90,10 +90,6 @@ function ajouteMaison(PDO $bdd, array $habitation) {
     
 }
 
-//function supprimeMaisons(PDO $bdd, array $habitation) {
-  //$donnees->bindParam(":idHabitation", $habitation['idHabitation']);
-   //$sql = 'DELETE FROM habitation WHERE idHabitation="'.$donnees.'"';
-//}
 
 function ajouterPanne(PDO $bdd, array $panne) {
     
@@ -102,8 +98,8 @@ function ajouterPanne(PDO $bdd, array $panne) {
     $donnees->bindParam(":DescriptionPanne", $panne['DescriptionPanne']);
     $donnees->bindParam(":Date", $panne['Date']);
     $donnees->bindParam(":DroitUtilisateur_idDroitUtilisateur", $panne['DroitUtilisateur_idDroitUtilisateur']);
-    $donnees->bindParam(":Equipement_id", $panne['Equipement_id']);
     $donnees->bindParam(":typePanne", $panne['typePanne']);
+    $donnees->bindParam(":Equipement_id", $panne['Equipement_id']);
     return $donnees->execute();
 }
 

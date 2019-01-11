@@ -79,7 +79,8 @@ else {
 					$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
 					$table = "habitation";
 					$nbr_maison = mysqli_query($mysqli,"SELECT COUNT(idHabitation) AS nb_maison FROM habitation");
-					$row = mysqli_fetch_assoc($nbr_maison);
+          $row = mysqli_fetch_assoc($nbr_maison);
+          $nb_maisons=$row['nb_maison'];
 					echo $row['nb_maison'];
 					?>
 					
@@ -93,7 +94,8 @@ else {
 					<?php $mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
 					$table = "utilisateur";
 					$nb_user = mysqli_query($mysqli,"SELECT COUNT(id) AS nb_user FROM utilisateur");
-					$row = mysqli_fetch_assoc($nb_user);
+          $row = mysqli_fetch_assoc($nb_user);
+          $nb_utilisateurs=$row['nb_user'];
 					echo $row['nb_user']; ?>
 		  </p>
           </div>
@@ -130,8 +132,9 @@ else {
 
 					// -------
 					// ÉTAPE 3 : on compte le nombre d'IP stockées dans la table. C'est le nombre de visiteurs connectés.
-					$retour = mysqli_query($mysqli,'SELECT COUNT(*) AS nbre_entrees FROM connectes');
-					$donnees = mysqli_fetch_assoc($retour);
+          $retour = mysqli_query($mysqli,'SELECT COUNT(*) AS nbre_entrees FROM connectes');
+          $donnees = mysqli_fetch_assoc($retour);
+          $nb_connectes=$donnees['nbre_entrees'];
 
 
 					// Ouf ! On n'a plus qu'à afficher le nombre de connectés !
@@ -145,7 +148,8 @@ else {
 					<?php $mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
 					$table = "panne";
 					$nb_panne = mysqli_query($mysqli,"SELECT COUNT(idPanne) AS nb_panne FROM panne");
-					$row = mysqli_fetch_assoc($nb_panne);
+          $row = mysqli_fetch_assoc($nb_panne);
+          $nb_panne=$row['nb_panne'];
 					echo $row['nb_panne']; ?>
 		  </p>
         </div>
@@ -155,6 +159,8 @@ else {
 
         <div style="height:400px;">
           <h2>Statistiques</h2>
+          <?php
+				include("graphiqueAdmin.php") ?>
         </div>
       </div>
     </div>
@@ -393,14 +399,14 @@ else {
             </select>
 
             <label for="object">Type de capteur</label>
-            <select name="typePanne" >
+            <select name="Equipement_id" >
                 <?php
                 $table="equipement";
                 $resultat=$bdd->query("SELECT * FROM equipement ");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {
-                echo  '<option value="'.$data['Type'].'">ID User:'. $data['idUser'] . ' - ' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+                echo  '<option value="'.$data['idEquipement'].'">ID User:'. $data['idUser'] . ' - ' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
                 } ?>
             </select>
 						
@@ -416,7 +422,7 @@ else {
                 } ?>
             </select><br><br>
             <label for="Message">Description de la panne * </label><br><br>
-            <textarea id="message" name="DescriptionPanne" placeholder="Ecrivez ici..." style="height:200px" required></textarea>
+            <textarea id="message" name="DescriptionPanne" placeholder="Ecrivez ici..." style="width:100%" required></textarea>
             <br><br>
             <label for="date">Date de la panne *</label><br>
             <input type="date" id="datepanne" name="Date" required>
@@ -464,7 +470,7 @@ else {
                 <?php echo $element['Etat']; ?>
               </td>
               <td>
-                <?php echo $element['Donnée']; ?>
+                <?php echo $element['Donnee']; ?>
               </td>
               <td>
                 <?php echo $element['NumeroDeSerie']; ?>

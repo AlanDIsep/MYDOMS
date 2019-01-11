@@ -135,7 +135,6 @@ body {
   width:20%;
   height:400px;
   padding:5px;
-  display:none;
   border:2px solid #DCE837;
   border-radius:5px;
   margin:auto;
@@ -150,7 +149,7 @@ body {
   width:20%;
   height:400px;
   padding:5px;
-  display:none;
+  
   border-radius:5px;
   margin:auto;
   bottom:20px;
@@ -167,7 +166,7 @@ body {
   width:20%;
   height:400px;
   padding:5px;
-  display:none;
+  
   border-radius:5px;
   margin:auto;
   bottom:20px;
@@ -181,7 +180,7 @@ body {
   width:20%;
   height:400px;
   padding:5px;
-  display:none;
+ 
   border-radius:5px;
   margin:auto;
   bottom:20px;
