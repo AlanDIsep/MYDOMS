@@ -262,16 +262,6 @@ input:checked + .slider:before {
 	padding: 2em;
 	width: 60%;
 }
-	
-input[type=submit] {
-  font-family: Kollektif;
-  background-color: #d0db36;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer; /* bouton envoyer */
-}
 
 /*-------- GENERAL BUTTON STYLING */
 button,
@@ -336,6 +326,9 @@ button::after{
 }
 
 
+button:{
+	background-color: #DCE837;
+}
 
 
 button:hover {
