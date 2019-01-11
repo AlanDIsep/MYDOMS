@@ -37,7 +37,7 @@ else {
 			<!-------------------Titre de la Page-------------->
 			<div class="titlepage">
 				<div class="bordertitle">
-                    <a href="index.php?cible=utilisateurs&fonction=Accueil"><img title="Tableau de bord" src="../CSS/icons/Bandeau/bord.png" class="logo5"/></a>
+          <a href="index.php?cible=utilisateurs&fonction=Accueil"><img title="Tableau de bord" src="../CSS/icons/Bandeau/bord.png" class="logo5"/></a>
 					<a href="index.php?cible=utilisateurs&fonction=gerer_maison"><img title="Gérer ma maion" src="../CSS/icons/Bandeau/accueil.png" class="logo6"/></a>
 					<a href="index.php?cible=utilisateurs&fonction=Profil"><img title="Profil" src="../CSS/icons/Bandeau/profil.png" class="logo3"/></a>
          			<a href="index.php?cible=utilisateurs&fonction=FAQ"><img title="FAQ" src="../CSS/icons/Bandeau/faq1.png" class="logo3"/></a>
@@ -51,6 +51,11 @@ else {
     <!-------------------Accordéon-------------->
 
 <br>
+<br>
+<br>
+<br>
+<br>
+
 		<h2 style=color:#DCE837>Se connecter</h2>
 
     <button class="accordion">Comment se connecter ?</button>
@@ -93,11 +98,10 @@ else {
     <p>• Votre application vous permet de gérer vos CeMAC d'éclairage en toute quiétude.
 		Pour se faire suivez les étapes suivantes:
 				<br>
-				<br> Accédez à l'onglet Gestion maison
-        <br> Cliquez sur la catégorie <b><a href="index.php?cible=utilisateurs&fonction=Eclairage" style="text-decoration:none">Eclairage</a>
+				<br> Accédez à l'onglet <a href="index.php?cible=utilisateurs&fonction=gerer_maison" style="text-decoration:none">Gestion maison</a>
+        <br> Cliquez sur la catégorie <a href="index.php?cible=utilisateurs&fonction=Temperature" style="text-decoration:none">Eclairage</a>
     </p>
     </div>
-    <br>
     <br>
 
     <h2 style=color:#DCE837>Température</h2>
@@ -106,12 +110,46 @@ else {
     <p>• Votre application vous permet de gérer vos CeMAC de température en toute quiétude.
 		Pour se faire suivez les étapes suivantes:
 			<br>
-			<br>- Accédez à l'onglet Gestion maison
-			<br>- Cliquez sur la catégorie <a href="index.php?cible=utilisateurs&fonction=Temperature" style="text-decoration:none">Température</a>
+			<br>  Accédez à l'onglet <a href="index.php?cible=utilisateurs&fonction=gerer_maison" style="text-decoration:none">Gestion maison</a>
+			<br>  Cliquez sur la catégorie <a href="index.php?cible=utilisateurs&fonction=Temperature" style="text-decoration:none">Température</a>
     </p>
     </div>
+
 		<h2 style=color:#DCE837>Utilisation</h2>
-    <?php
+		<button class="accordion">Comment utiliser l'application ?</button>
+    <div class="panel">
+			<p>Une fois connectée, vous pourrez aisément profiter des fonctionnalités proposées par votre application domotique</p>
+		</div>
+			<button class="accordion">Navigation</button>
+			<div class="panel">
+				<p>La partie supérieur de l'application vous permet de naviguer à travers les différentes fonctionnalités à ce jour proposées</p>
+			</div>
+			<button class="accordion">Tableau de bord</button>
+			<div class="panel">
+				<p>La page <a href="index.php?cible=utilisateurs&fonction=Accueil" style="text-decoration:none">"Tableau de bord"</a>, la première page à laquelle vous accedez une fois connectée,
+				vous donne la possibilité de visualiser l'état de vos capteurs à l'instant T.</p>
+				<p>De même, vous pourrez obtenir les statistiques d'utilisation de votre application.</p>
+			</div>
+			<button class="accordion">Gestion maison</button>
+			<div class="panel">
+				<p>La page <a href="index.php?cible=utilisateurs&fonction=gerer_maison" style="text-decoration:none">"Gestion maison"</a>, vous permet de gérer vos capteurs de
+				température et de luminosité. L'utilisation de ces capteurs est décrite dans les sections plus basses.</p>
+			</div>
+			<button class="accordion">FAQ</button>
+			<div class="panel">
+				<p>La page <a href="index.php?cible=utilisateurs&fonction=FAQ" style="text-decoration:none">"FAQ"</a>, vous permet d'avoir toutes les solutions
+				dex problématiques récurrentes rencontrées par les utilisateurs de la solution.</p>
+			</div>
+				<button class="accordion">Contact</button>
+				<div class="panel">
+				<p>Enfin la page, <a href="index.php?cible=utilisateurs&fonction=contact" style="text-decoration:none">"Contact"</a> vous permet de contacter les services
+				de DomIsep</p>
+				</div>
+			</p>
+    </div>
+
+
+		<?php
                 $table="faq";
                 $resultat=$bdd->query("SELECT * FROM faq");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
@@ -128,6 +166,14 @@ else {
                 {echo  '<option value="'.$data['Reponse'].'">' . $data['Reponse'] . '</option>';}
                 ?>
     </div>
+
+		<h2 style=color:#DCE837>Autres demandes</h2>
+		<button class="accordion">Contacter les services DomIsep</button>
+		<div class="panel">
+		<p>Vous pouvez contacter par mail le service DomIsep à l'adresse suivante pour toutes autres demandes ou questions :</p>
+		<p align="center">administrateur@gmal.com</p>
+		</div>
+
 
 
     <script>
