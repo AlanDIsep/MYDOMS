@@ -86,10 +86,13 @@ else {
 				echo $data['Nom'];
 				echo'</button>' ;    
 				echo'</div>';*/
+				
 				echo '
 				<div id="conteneur" style="width:100% ">
-				<div id="target" style="width:50%">
-				<form method="POST" action="./controleurs/update_Button.php">
+				<div id="target" style="width:50%">';
+				$nom = $data['Nom'];
+				echo $nom;
+				echo'<form method="POST" action="./controleurs/update_Button.php">
 				<label class="switch">
 				<br>
 				<br>
@@ -99,9 +102,22 @@ else {
 				 <select name="ideq" style="visibility:hidden;">
 				 <option value="'.$data['idEquipement'].'">' . $data['idEquipement'] . '</option>
 				 </select>
+				<button type="submit" value="submit">
+				</form>
+				 <form method="post" action="">
+				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" />
 				 <button type="submit" value="submit">
+				 </form>
 				 </div>
-				 </div></form>';
+				 </div>
+				
+				 ';
+					$temp= $_POST["range"];
+				if(isset($_POST["range"]))
+					{
+				 $SQL = "UPDATE equipement SET consigne='$temp' where idEquipement='$ideq'";
+				  mysqli_query($mysqli,$SQL);
+					}
 					
 				}
 				?>
