@@ -83,6 +83,7 @@ else {
       		</select>
       </div>
       	<br>
+        <h2 style=color:#DCE837 align="center">Signaler une panne capteur</h2>
 		<div class="container">
 
         <form method="POST" action="">
