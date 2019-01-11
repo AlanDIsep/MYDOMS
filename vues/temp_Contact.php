@@ -51,46 +51,46 @@ else {
 				</div>
 			</div>
 			<!-------------------Contenu-------------->
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <h2 style=color:#DCE837 align="center">Autres demandes</h2>
-      	<div class="containertwo">
-      		<label for="object">Administration de l'application </label>
-      		<select name="Equipement_id" >
-      				<?php
-      				$table="equipement";
-      				$resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1");
-      				$resultat->setFetchMode(PDO::FETCH_ASSOC);
-      				foreach ($resultat as $data)
-      				{
-      				echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
-      				} ?>
-      		</select>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2 style=color:#DCE837 align="center">Autres demandes</h2>
+	<div class="containertwo">
+		<label for="object">Administration de l'application </label>
+		<select name="Equipement_id" >
+				<?php
+				$table="equipement";
+				$resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1");
+				$resultat->setFetchMode(PDO::FETCH_ASSOC);
+				foreach ($resultat as $data)
+				{
+				echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+				} ?>
+		</select>
 
-      		<label for="object">Service commercial </label>
-      		<select name="Equipement_id" >
-      				<?php
-      				$table="equipement";
-      				$resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1");
-      				$resultat->setFetchMode(PDO::FETCH_ASSOC);
-      				foreach ($resultat as $data)
-      				{
-      				echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
-      				} ?>
-      		</select>
-      </div>
-      	<br>
-        <h2 style=color:#DCE837 align="center">Signaler une panne capteur</h2>
+		<label for="object">Service commercial </label>
+		<select name="Equipement_id" >
+				<?php
+				$table="equipement";
+				$resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1");
+				$resultat->setFetchMode(PDO::FETCH_ASSOC);
+				foreach ($resultat as $data)
+				{
+				echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+				} ?>
+		</select>
+</div>
+	<br>
+	<h2 style=color:#DCE837 align="center">Signaler panne capteur</h2>
 		<div class="container">
 
         <form method="POST" action="">
         <select name="DroitUtilisateur_idDroitUtilisateur" style="visibility:hidden;" >
                 <?php
                 $table="utilisateur";
-                $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+                $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='administrateur@domisep.fr');
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {
@@ -98,7 +98,7 @@ else {
                 } ?>
             </select>
 
-            <label for="object">Type de capteur</label>
+            <label for="object">Type de capteur </label>
             <select name="Equipement_id" >
                 <?php
                 $table="equipement";
@@ -110,7 +110,7 @@ else {
                 } ?>
             </select>
 
-            <label for="object">Type de panne *</label>
+            <label for="object">Type de panne </label>
             <select name="typePanne" >
                 <?php
                 $table="typePanne";

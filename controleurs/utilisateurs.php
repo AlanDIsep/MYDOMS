@@ -103,8 +103,16 @@ switch ($function) {
     case 'Temperature':
         $vue = "Temperature";
         $title = "Gestion de la température";
-    break;
 
+        $values = [
+            'QuestionRecurentes' => $_POST['QuestionRecurentes'],
+            'Reponse' => $_POST['Reponse'],
+        ];
+        // Appel à la BDD à travers une fonction du modèle.
+        $retour = ajouterGraph($bdd, $values);
+    
+    break;
+    
     case 'gerer_maison':
         //affichage de l'accueil
         $vue = "gerer_maison";

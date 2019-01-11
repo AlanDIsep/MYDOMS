@@ -13,6 +13,11 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	$email=$_SESSION['email'];
 	$rep = mysqli_query($mysqli,"SELECT id FROM utilisateur WHERE AdresseMail='$email'");
 	$row = mysqli_fetch_assoc($rep);
+	    $table = "utilisateur";
+    // On récupère tout le contenu de la table utilisateur
+    $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+    $donnees1 = $reponse1->fetch();
+    $id1 = $donnees1['id'];
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
