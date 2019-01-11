@@ -103,12 +103,12 @@ else {
 				 </div>
 				 </div></form>';
 					
-<<<<<<< HEAD
 
 				echo "</div>";
 					
 					
 				/*
+
 				}
 				?>
 				
