@@ -77,7 +77,7 @@ else {
 			$id1 = $donnees1['id'];
 
                $table="equipement";
-                $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Température'");
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Temperature'");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 { 
@@ -90,32 +90,63 @@ else {
 				
 				echo '<div id="conteneur" style="width:100%">';
 				echo '<div id="target" style="width:50%">';
-			    //echo  '<hr width= 100% color=#DCE837><option value="'.$data['Nom'].'">' . $data['Nom'] . '</option><div class=temperature><option value="'.$data['Donnee'].'">' . $data['Donnee'] . ' °C</div></option>';
-				$nom=$data['Nom'];
-				echo $data['Nom'];
-				echo'<form method="post">';
+			    
+				$nom = $data['Nom'];
+				$ideq=$data['idEquipement'];
+
+				
+				echo $nom;
+				$type = $data['Type'];
+				
+				
+				echo'<form method="post" action="">';
 
 				echo'<label class="switch">';
 				echo '<input type="checkbox" name="switch"/>';
 				echo '<span class="slider round"></span>';
 				
-				 $switch = (isset($_POST['switch'])) ? 0:1;
-				 $SQL = "UPDATE equipement SET Etat='.$switch.' WHERE Nom='$nom' ";
-				mysqli_query($mysqli,$SQL);
-				
-				echo '<button type="submit" name="action">';
+				 $switch = (isset($_POST['switch'])) ? 1 : 0;
+				 $SQL = "UPDATE equipement SET Etat='$switch' WHERE idEquipement=5";
+				 mysqli_query($mysqli,$SQL);
+
+				echo '<br>';
+				echo '<button type="submit">';
 
 				echo'</form>';
 				
-				echo "</div>";
+				
+					
+					echo "</div>";
+					
+					
+				/*
+				echo'<form method="post" action="">';
+			
+			
+				 echo'<input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" />';
+			
+				echo '</br>';
+				echo '<input type="submit" value="submit">';
+				
+					
 				echo "</div>";
 
-
-               
-                } ?>
-		
+				$temp= $_POST["range"];
+				if(isset($_POST["range"]))
+			{
+				 $SQL = "UPDATE equipement SET consigne='$temp' where idEquipement='$ideq'";
+				  mysqli_query($mysqli,$SQL);
+			}
+               echo'</form>';
+                 */}?>
+		<script>
+			function updateTextInput(val) {
+			document.getElementById('textInput').value=val+'°'; 
+			 }</script>
  
-	
+	<?php
+			
+			?>
 	<!-------------------------------------------------------------------------------------------------------------------->
 	
 
