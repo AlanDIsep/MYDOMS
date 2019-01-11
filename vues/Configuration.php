@@ -58,9 +58,8 @@ else {
 <div class="container">
     <h2> Configuration d'un nouveau parcours lumineux</h2>
     <form method="POST" action="">
-    <label for="Nom">Id utilisateur:</label>
 
-    <select name="idUser" >
+    <select name="idUser" style="visibility:hidden">
           <?php
           $table="utilisateur";
           $resultat=$bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
@@ -69,12 +68,10 @@ else {
           {
           echo  '<option value="'.$data['id'].'">' . $data['id'] . '</option>';
           } ?>
-      </select><br><br>
+      </select>
     <label for="nom">Rentrer le nom du parcours: *</label><br>
-    <input type="text" name="NomCheminLumineux" placeholder="Ex: Chambre --> Cuisine" required><br><br>
-    <label for="nom">Etat du chemin lumineux: *</label><br>
-    <select name="EtatCheminLumineux" >
-      <option value="1">ON</option>
+    <input type="text" name="NomCheminLumineux" placeholder="Ex: Chambre --> Cuisine" required>
+    <select name="EtatCheminLumineux" style="visibility:hidden" >
       <option value="0">OFF</option>
     </select>
     <h3>Eclairages sélectionnés: *</h3><br>
@@ -92,7 +89,7 @@ else {
         </select>
         <label for="object">Intensité lumineuse - Capteur 1: *</label>
       <select name="IntensiteCapteur1" >
-      
+            <option value="0"></option>
             <option value="25">25%</option>
             <option value="50">50%</option>
             <option value="75">75%</option>
@@ -183,11 +180,10 @@ else {
           <th>ID du chemin lumineux</th>
             <th>Etat du chemin lumineux</th>
             <th>Nom du chemin lumineux</th>
-            <th>Capteur 1</th>
-            <th>Capteur 2</th>
-            <th>Capteur 3</th>
-            <th>Capteur 4</th>
-            <th>ID User</th>
+            <th>Capteur</th>
+            <th>Capteur</th>
+            <th>Capteur</th>
+            <th>Capteur</th>
           </tr>
           </thead>
           <tbody>	
@@ -213,9 +209,6 @@ else {
               </td>
               <td>
                 <?php echo $element['Capteur4']; ?> / <?php echo $element['IntensiteCapteur4']; ?>%
-              </td>
-              <td>
-                <?php echo $element['idUser']; ?>
               </td>
             </tr>
       

@@ -10,6 +10,9 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	echo '<body>';
 	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
 	echo '<br />';
+	$email=$_SESSION['email'];
+	$rep = mysqli_query($mysqli,"SELECT id FROM utilisateur WHERE AdresseMail='$email'");
+	$row = mysqli_fetch_assoc($rep);
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
@@ -51,123 +54,66 @@ else {
 
 <!-------------------Main-------------->
 <body>
+
+<?php $mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889"); ?>
+  
+  
   <main>
       
 
- <div class="container">
-        <button class="toggle">
-		<?php
-		//nom des boutons
-		$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='1'");
-					$row = mysqli_fetch_assoc($nom);
-					echo $row['Nom'];
-					?>
-		</button>     
-        <button class="toggle1"><?php
-		$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='2'");
-					$row = mysqli_fetch_assoc($nom);
-					echo $row['Nom'];
-					?></button>
-        <button class="toggle2"><?php
-		$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='3'");
-					$row = mysqli_fetch_assoc($nom);
-					echo $row['Nom'];
-					?></button> 
-        <button class="toggle3"><?php
-		$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='4'");
-					$row = mysqli_fetch_assoc($nom);
-					echo $row['Nom'];
-					?></button>
-    </div>
-    
-    <div class="space"></div>
-    
-	
-    <div id="conteneur">
-	<div id="target">
-		<h2 class="color-t"><?php 
-					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='1'");
-					$row = mysqli_fetch_assoc($nom);
-					echo $row['Nom'];
-					?></h2>
-        <div>
-		<form method="post">
+ <div id="conteneur">
+        <?php
+			
+			 $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees1 = $reponse1->fetch();
+			$id1 = $donnees1['id'];
 
-		<label class="switch">
-        <input type="checkbox" name="switch"/>
-        <span class="slider round"></span>
-		<?php
-		$switch = (isset($_POST['switch'])) ? 1 : 0;
-		$SQL = "UPDATE equipement SET Etat='.$switch.' where idEquipement='6'";
-		mysqli_query($mysqli,$SQL);
-		?>
-		<input type="submit" value="submit">
+               $table="equipement";
+                $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Eclairage'");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                { 
+				/*echo'<div class="container">';
+				echo '<button class="toggle">';
+				echo $data['Nom'];
+				echo'</button>' ;    
+				echo'</div>';*/
+				
+				
+				echo '<div id="conteneur" style="width:100%">';
+				echo '<div id="target" style="width:50%">';
+			    
+				$nom = $data['Nom'];
+				$ideq=$data['idEquipement'];
 
-		</form>
-		</label></div>
-		</br>
-		<img src="../CSS/icons/lumi.jpg" class="lumi"/>
-		</br>
-        <output for="range" class="output" id="temp" value="0">0%</output>
-		</br>
-		
-		<label for="range">
-        <input type="range" name="range" id="range" min="0" max="100" step="5" value="0"/>
-		</label>
- 
-    </div>
+				
+				echo $nom;
+				$type = $data['Type'];
+				
+				
+				echo'<form method="post" action="">';
+				
+				echo'<label class="switch">';
+				echo '<input type="checkbox" name="switch"/>';
+				echo '<span class="slider round"></span>';
+				
+				 $switch = (isset($_POST['switch'])) ? 1 : 0;
+				 $SQL = "UPDATE equipement SET Etat='$switch' WHERE idEquipement='$ideq'";
+				 mysqli_query($mysqli,$SQL);
 
-	<div id="target1">
-        <h2 class="color-t"><?php 
-					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='2'");
-					$row = mysqli_fetch_assoc($nom);
-					echo $row['Nom'];
-					?></h2>
-        <div>
-		<label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-		</label>
-		</div>
-		</br>
-		<img src="../CSS/icons/lumi.jpg" class="lumi"/>
-		</br>
-        <output for="range" class="output2" id="temp" value="0">20%</output>
-		</br>
-		
-		<label for="range">
-        <input type="range" name="range" id="range2" min="0" max="100" step="5" value="20"/>
-		</label>
-    </div>
+				echo '<br>';
+				echo '<button type="submit">';
+
+				echo'</form>';
+				echo '</div>'; 
+
+				}
+				?>
 	
-	<div id="target2">
-        <h2><?php 
-					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='3'");
-					$row = mysqli_fetch_assoc($nom);
-					echo $row['Nom'];
-					?></h2>
-		<div>
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-        </label></div>
-		</br>
-		<img src="../CSS/icons/lumi.jpg" class="lumi"/>
-		</br>
-        <output for="range" class="output3" id="temp" value="0">70%</output>
-		</br>
-		
-		<label for="range">
-        <input type="range" name="range" id="range3" min="0" max="100" step="5" value="70"/>
-		</label>
-    </div>
-	
-	<div id="target3">
-        <h2><?php 
-					$nom = mysqli_query($mysqli,"SELECT Nom FROM equipement where Piece_id='4'");
-					$row = mysqli_fetch_assoc($nom);
-					echo $row['Nom'];
-					?></h2>
+	<!--<div id="target3">
+        <h2>
 		<div>
         <label class="switch">
         <input type="checkbox">
@@ -183,7 +129,7 @@ else {
         <input type="range" name="range" id="range4" min="0" max="100" step="5" value="20"/>
 		</label>
 		
-    </div>
+    </div> -->
 	
 </div>	
 
@@ -194,7 +140,7 @@ else {
   
   </body>
   
-    <script type="text/javascript">
+    <script type="text/javascript">/*s
     //affichage de la première fenêtre
 	$('.toggle').click(function() 
 	{
@@ -221,7 +167,7 @@ else {
 
 <script>
 
-$('#range').on("input", function() {
+/*$('#range').on("input", function() {
     $('.output').val(this.value +"%" );
     }).trigger("change");
 	
