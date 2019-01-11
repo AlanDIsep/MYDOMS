@@ -86,46 +86,40 @@ else {
 				echo $data['Nom'];
 				echo'</button>' ;    
 				echo'</div>';*/
-				
-				
-				echo '<div id="conteneur" style="width:100%">';
-				echo '<div id="target" style="width:50%">';
-			    
-				$nom = $data['Nom'];
-				$ideq=$data['idEquipement'];
-
-				
-				echo $nom;
-				$type = $data['Type'];
-				
-				
-				echo'<form method="post" action="">';
-
-				echo'<label class="switch">';
-				echo '<input type="checkbox" name="switch"/>';
-				echo '<span class="slider round"></span>';
-				
-				 $switch = (isset($_POST['switch'])) ? 1 : 0;
-				 $SQL = "UPDATE equipement SET Etat='$switch' WHERE idEquipement=5";
-				 mysqli_query($mysqli,$SQL);
-
-				echo '<br>';
-				echo '<button type="submit">';
-
-				echo'</form>';
-				
-				
+				echo '
+				<div id="conteneur" style="width:100%">
+				<div id="target" style="width:50%">
+				<form method="POST" action="./controleurs/update_Button.php">
+				<label class="switch">
+				<br>
+				<br>
+				<input type="checkbox" name="switch"/>
+				<span class="slider round"></span>
+				 <br>
+				 <select name="ideq">
+				 <option value="'.$data['idEquipement'].'">' . $data['idEquipement'] . '</option>
+				 </select>
+				 <button type="submit" value="submit">
+				 </div>
+				 </div></form>';
 					
-					echo "</div>";
+<<<<<<< HEAD
+				echo "</div>";
 					
 					
 				/*
+=======
+				}
+				?>
+				
+				<?php /*
+>>>>>>> 98fe755b84bb90818d0f90fb5c6aad5e421de022
 				echo'<form method="post" action="">';
 			
 			
 				 echo'<input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" />';
 			
-				echo '</br>';
+				echo '<br>';
 				echo '<input type="submit" value="submit">';
 				
 					
@@ -138,7 +132,8 @@ else {
 				  mysqli_query($mysqli,$SQL);
 			}
                echo'</form>';
-                 */}?>
+                 */
+	?>
 		<script>
 			function updateTextInput(val) {
 			document.getElementById('textInput').value=val+'°'; 
