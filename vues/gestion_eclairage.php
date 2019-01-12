@@ -82,32 +82,50 @@ else {
 				echo'</div>';*/
 				
 				
-				echo '<div id="conteneur" style="width:100%">';
-				echo '<div id="target" style="width:50%">';
-			    
+				echo '
+				<div id="conteneur" style="width:200px ">
+				<div id="target" style="width:200px">';
 				$nom = $data['Nom'];
-				$ideq=$data['idEquipement'];
+				$consigne= $data['consigne'];
+				$donnee= $data['Donnee'];
+				echo '<h2>'.$nom.'</h2>';
+				
+				
+				echo'<form method="POST" action="./controleurs/update_Button_lum.php">
+				<label class="switch">
+				<br>
+				<br>';
+				echo'<input type="checkbox" name="switch"
+				>';
+				
+				echo'<span class="slider round"></span>
+				 <br>
+				 <select name="ideq" style="visibility:hidden;">
+				 <option value="'.$data['idEquipement'].'">' . $data['idEquipement'] . '</option>
+				 </select>';
+				
+				echo'
+				 <img src="../CSS/icons/lumi.jpg" style="width:50%;"/>
+				<p id="temp">'.$donnee.'% </p>';
 
+				echo'<script>
+			function updateTextInput(val) {
+			document.getElementById("textInput").value=val+"%"; 
+			 }</script>';	
 				
-				echo $nom;
-				$type = $data['Type'];
-				
-				
-				echo'<form method="post" action="">';
-				
-				echo'<label class="switch">';
-				echo '<input type="checkbox" name="switch"/>';
-				echo '<span class="slider round"></span>';
-				
-				 $switch = (isset($_POST['switch'])) ? 1 : 0;
-				 $SQL = "UPDATE equipement SET Etat='$switch' WHERE idEquipement='$ideq'";
-				 mysqli_query($mysqli,$SQL);
+				echo'<div id="modulator">
+			
+			<p class="color-t">Intensité désirée: <a id="clicks"></a><output type="text" id="textInput" value="">'.$consigne.'%</p> </div>
 
-				echo '<br>';
-				echo '<button type="submit">';
+				 <input type="range" name="range" id="range" min="0" max="100" step="5" value="50" onchange="updateTextInput(this.value);" style="width:150px"/>
+				<br><br>
+				<button type="submit" style="font-size:small;">Appliquer</button>
 
-				echo'</form>';
-				echo '</div>'; 
+				</form>';
+				
+				
+				echo'</div>';
+				 echo'</div>';
 
 				}
 				?>
@@ -167,22 +185,9 @@ else {
 
 <script>
 
-/*$('#range').on("input", function() {
+$('#range').on("input", function() {
     $('.output').val(this.value +"%" );
     }).trigger("change");
-	
-	$('#range2').on("input", function() {
-    $('.output2').val(this.value +"%" );
-    }).trigger("change");
-	
-	$('#range3').on("input", function() {
-    $('.output3').val(this.value +"%" );
-    }).trigger("change");
-	
-	$('#range4').on("input", function() {
-    $('.output4').val(this.value +"%" );
-    }).trigger("change");
-
 </script>
 
 
