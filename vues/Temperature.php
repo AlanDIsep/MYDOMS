@@ -98,7 +98,8 @@ else {
 				<div id="target" style="width:200px">';
 				$nom = $data['Nom'];
 				$consigne= $data['consigne'];
-				echo $nom;
+				$donnee= $data['Donnee'];
+				echo '<h2>'.$nom.'</h2>';
 				
 				
 				echo'<form method="POST" action="./controleurs/update_Button.php">
@@ -114,7 +115,10 @@ else {
 				 <option value="'.$data['idEquipement'].'">' . $data['idEquipement'] . '</option>
 				 </select>';
 				
-				
+				echo'
+				 <img src="../CSS/icons/temp.jpg" style="width:50%;"/>
+				<p id="temp">'.$donnee.'°C </p>';
+
 				echo'<script>
 			function updateTextInput(val) {
 			document.getElementById("textInput").value=val+"°"; 
@@ -124,9 +128,9 @@ else {
 			
 			<p class="color-t">Température désirée: <a id="clicks"></a><output type="text" id="textInput" value="">'.$consigne.'°</p> </div>
 
-				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" style="width:100px"/>
-				<br>
-				<button type="submit" value="submit">
+				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" style="width:150px"/>
+				<br><br>
+				<button type="submit" style="font-size:small;">Appliquer</button>
 
 				</form>';
 				
