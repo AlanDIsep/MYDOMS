@@ -99,6 +99,7 @@ else {
 				$nom = $data['Nom'];
 				$consigne= $data['consigne'];
 				$donnee= $data['Donnee'];
+				$etat=$data['Etat'];
 				echo '<h2>'.$nom.'</h2>';
 				
 				
@@ -106,17 +107,21 @@ else {
 				<label class="switch">
 				<br>
 				<br>';
-				echo'<input type="checkbox" name="switch"
-				>';
+				echo'<input type="checkbox" name="switch"';
+				if($etat==1) {
+				echo 'checked="checked"';
+				} else { 
+				}		
+				echo'>';
 				
 				echo'<span class="slider round"></span>
-				 <br>
+				
 				 <select name="ideq" style="visibility:hidden;">
 				 <option value="'.$data['idEquipement'].'">' . $data['idEquipement'] . '</option>
 				 </select>';
 				
 				echo'
-				 <img src="../CSS/icons/temp.jpg" style="width:50%;"/>
+				<img src="../CSS/icons/temp.jpg" style="width:50%;"/>
 				<p id="temp">'.$donnee.'°C </p>';
 
 				echo'<script>
@@ -128,7 +133,7 @@ else {
 			
 			<p class="color-t">Température désirée: <a id="clicks"></a><output type="text" id="textInput" value="">'.$consigne.'°</p> </div>
 
-				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="19" onchange="updateTextInput(this.value);" style="width:150px"/>
+				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="'.$consigne.'" onchange="updateTextInput(this.value);" style="width:150px"/>
 				<br><br>
 				<button type="submit" style="font-size:small;">Appliquer</button>
 

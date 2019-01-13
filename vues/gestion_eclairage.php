@@ -99,7 +99,7 @@ else {
 				>';
 				
 				echo'<span class="slider round"></span>
-				 <br>
+				 
 				 <select name="ideq" style="visibility:hidden;">
 				 <option value="'.$data['idEquipement'].'">' . $data['idEquipement'] . '</option>
 				 </select>';
@@ -117,7 +117,9 @@ else {
 			
 			<p class="color-t">Intensité désirée: <a id="clicks"></a><output type="text" id="textInput" value="">'.$consigne.'%</p> </div>
 
-				 <input type="range" name="range" id="range" min="0" max="100" step="5" value="50" onchange="updateTextInput(this.value);" style="width:150px"/>
+				
+
+				 <input type="range" name="range" id="range" min="0" max="100" step="5" value="'.$consigne.'" onchange="updateTextInput(this.value);" style="width:150px"/>
 				<br><br>
 				<button type="submit" style="font-size:small;">Appliquer</button>
 
