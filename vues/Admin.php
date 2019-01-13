@@ -330,7 +330,7 @@ else {
 	
 	<!---.------------------------------------------------------------------------------>	 
 		  
-      <div id="tickets">
+      <div id="tickets" style="height:100%">
       <div class="flex-grid"><br><br>
       <div class="two">
           <table class="my_table">
@@ -537,7 +537,7 @@ else {
 
 
 
-<div id="maisons"style="height:500px;">
+<div id="maisons"style="height:100%;">
 		 <div class="flex-grid">
         <div class="two">
 	        <h2> Liste de(s) Maison(s)</h2>
