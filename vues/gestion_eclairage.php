@@ -88,6 +88,7 @@ else {
 				$nom = $data['Nom'];
 				$consigne= $data['consigne'];
 				$donnee= $data['Donnee'];
+				$etat=$data['Etat'];
 				echo '<h2>'.$nom.'</h2>';
 				
 				
@@ -95,8 +96,12 @@ else {
 				<label class="switch">
 				<br>
 				<br>';
-				echo'<input type="checkbox" name="switch"
-				>';
+				echo'<input type="checkbox" name="switch"';
+				if($etat==1) {
+				echo 'checked="checked"';
+				} else { 
+				}		
+				echo'>';
 				
 				echo'<span class="slider round"></span>
 				 
