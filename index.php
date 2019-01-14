@@ -11,8 +11,6 @@
 // Activation des erreurs
 ini_set('display_errors', 1);
 
-
-
 // Appel des fonctions du contrôleur
 include("controleurs/fonctions.php");
 // Appel des fonctions liées à l'affichage

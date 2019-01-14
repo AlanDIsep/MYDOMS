@@ -185,8 +185,7 @@ else {
     <table id="customers">
           <thead>
           <tr>
-          <th>ID du chemin lumineux</th>
-            <th>Etat du chemin lumineux</th>
+          
             <th>Nom du chemin lumineux</th>
             <th>Capteur</th>
             <th>Capteur</th>
@@ -195,15 +194,17 @@ else {
           </tr>
           </thead>
           <tbody>	
-          <?php foreach ((array) $configurations21 as $element) { ?>
+          <?php
+		  $table="cheminLumineux";
+      				$resultat=$bdd->query("SELECT * FROM cheminLumineux WHERE idUser=$id1");
+      				$resultat->setFetchMode(PDO::FETCH_ASSOC);
+      				
+		  
+		  
+		  foreach ($resultat as $element) { ?>
           <tr>
           <td>
-                <?php echo $element['idCheminLumineux']; ?>
-              </td>
-              <td>
-                <?php echo $element['EtatCheminLumineux']; ?>
-              </td>
-              <td>
+                
                 <?php echo $element['NomCheminLumineux']; ?>
                 </td>
               <td>

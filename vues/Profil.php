@@ -4,6 +4,22 @@
 require "controleurs/verif_session.php";
 include('controleurs/nb_online.php');
 
+?>
+
+<!Doctype html>
+
+<html lang="fr">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='../CSS/profil.css' media='screen'/>
+<link rel="icon" href="../CSS/icons/profile.jpg"/>
+</head>
+
+
+<body>
+<?php
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
@@ -20,28 +36,14 @@ else {
 
 ?>
 
-<!Doctype html>
-
-<html lang="fr">
-
-
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel='stylesheet' type='text/css' href='../CSS/profil.css' media='screen'/>
-<link rel="icon" href="../CSS/icons/profile.jpg"/>
-</head>
-
-
-<body>
-
 <!------------------header------------->
-<header>
+
 		<title>Accueil</title>
 		<a href="index.php?cible=utilisateurs&fonction=Accueil"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
 		<a href="vues/deconnexion.php"><img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"></a>
 
 
-</header>
+
 
 
 
@@ -58,7 +60,7 @@ else {
 				</div>
 			</div>
 <!-------------------Main-------------->
-<main>
+
 
 	<div id="profil">
 	<img src="../CSS/icons/profile.jpg" alt="user" class="image"/>
@@ -159,15 +161,16 @@ else {
 </div>
 
 
-</main>
+
+<div id="footer">
+				<a href="index.php?cible=utilisateurs&fonction=About">© SAS Domisep - Tous droits réservés - A propos</a>
+				</div>
 
 </body>
 <!-------------------Footer-------------->
-<footer>
-		<div id="footer">
-				<a href="index.php?cible=utilisateurs&fonction=About">© SAS Domisep - Tous droits réservés - A propos</a>
-				</div>
-</footer>
+
+		
+
 
 
 </html>
