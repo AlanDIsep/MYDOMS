@@ -7,9 +7,9 @@ include('controleurs/nb_online.php');
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
-	echo '<body>';
+	
 	echo 'Bonjour '.$_SESSION['email'].'.';
-	echo '<br />';
+	
 	$email=$_SESSION['email'];
 	
 }
@@ -25,10 +25,14 @@ else {
 <html lang="fr">
 
 
-
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel='stylesheet' type='text/css' href='../CSS/profil.css' media='screen'/>
 <link rel="icon" href="../CSS/icons/profile.jpg"/>
+</head>
+
+
+<body>
 
 <!------------------header------------->
 <header>
@@ -38,6 +42,8 @@ else {
 
 
 </header>
+
+
 
 
 			<!-------------------Titre de la Page-------------->
@@ -155,6 +161,7 @@ else {
 
 </main>
 
+</body>
 <!-------------------Footer-------------->
 <footer>
 		<div id="footer">
