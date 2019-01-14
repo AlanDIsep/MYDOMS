@@ -104,12 +104,6 @@ switch ($function) {
         $vue = "Temperature";
         $title = "Gestion de la température";
 
-        $values = [
-            'QuestionRecurentes' => $_POST['QuestionRecurentes'],
-            'Reponse' => $_POST['Reponse'],
-        ];
-        // Appel à la BDD à travers une fonction du modèle.
-        $retour = ajouterGraph($bdd, $values);
     
     break;
     

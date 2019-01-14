@@ -103,16 +103,6 @@ function ajouterPanne(PDO $bdd, array $panne) {
     return $donnees->execute();
 }
 
-function ajouterGraph(PDO $bdd, array $panne) {
-    
-    $query = ' INSERT INTO graph (idEquipement, CompteurTemp, idUser) VALUES (:idEquipement, :CompteurTemp, :idUser)';
-    $donnees = $bdd->prepare($query);
-    $donnees->bindParam(":idEquipement", $panne['idEquipement']);
-    $donnees->bindParam(":CompteurTemp", $panne['CompteurTemp']);
-    $donnees->bindParam(":idUser", $panne['idUser']);
-    return $donnees->execute();
-}
-
 function ajouterTypePanne(PDO $bdd, array $typePanne) {
     
     $query = ' INSERT INTO typePanne (typePanne) VALUES (:typePanne)';
