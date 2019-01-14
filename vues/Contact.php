@@ -52,18 +52,15 @@ else {
 			</div>
 			<!-------------------Contenu-------------->
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
 			<!-- test de contact -->
       <h2 style=color:#DCE837 align="center">Autres demandes</h2>
 
       	<div class="">
-      		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;font-family:Kollektif">
-					<a href="mailto:administrateur@domisep.fr?subject=autres_demandes"style="text-decoration:none">Envoyer un mail au service administrateur DOMISEP</a>
+      		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;font-family:Kollektif;">
+					<a href="mailto:administrateur@domisep.fr?subject=autres_demandes"style="text-decoration:none;color:black">Envoyer un mail au service administrateur DOMISEP</a>
 					<br>
-					<a href="mailto:commercial@domisep.fr?subject=feedback"style="text-decoration:none">Envoyer un mail au service commercial DOMISEP</a>
+					<br>
+					<a href="mailto:commercial@domisep.fr?subject=feedback"style="text-decoration:none;color:black">Envoyer un mail au service commercial DOMISEP</a>
 				</p>
       </div>
       	<br>
