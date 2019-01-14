@@ -51,11 +51,6 @@ else {
     <!-------------------Accordéon-------------->
 
 <br>
-<br>
-<br>
-<br>
-<br>
-
 		<h2 style=color:#DCE837>Se connecter</h2>
 
     <button class="accordion">Comment se connecter ?</button>
@@ -166,7 +161,6 @@ else {
                 {echo  '<option value="'.$data['Reponse'].'">' . $data['Reponse'] . '</option>';}
                 ?>
     </div>
-
 		<h2 style=color:#DCE837>Autres demandes</h2>
 		<button class="accordion">Contacter les services DomIsep</button>
 		<div class="panel">

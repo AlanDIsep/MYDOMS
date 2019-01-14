@@ -10,7 +10,6 @@
 $table = "equipement";
 
 
-
 /**
  * Recherche les capteurs en fonction du type passé en paramètre
  * @param PDO $bdd
@@ -64,6 +63,5 @@ function recupereCheminLumineux(PDO $bdd): array {
     $query = "SELECT * FROM cheminLumineux";
     return $bdd->query($query)->fetchAll();
 }
-
 
 ?>
