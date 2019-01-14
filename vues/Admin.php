@@ -36,6 +36,10 @@ else {
            <link rel='stylesheet' type='text/css' href='../CSS/admin.css' media='screen'/>
 	   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
+
+
+<body>
+
 <nav>
 
   <header>
@@ -848,6 +852,8 @@ slider.oninput = function() {
     </script>
 
   </main>
+
+  </body>
 
   <div id="footer">
     <a>© SAS Domisep - Tous droits réservés </a>
