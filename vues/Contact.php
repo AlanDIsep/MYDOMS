@@ -59,10 +59,10 @@ else {
       <h2 style=color:#DCE837 align="center">Autres demandes</h2>
       	<div class="containertwo">
       		<label for="object">Administration de l'application </label>
-      		<select name="Equipement_id" >
+      		<select name="adresseMail" >
       				<?php
-      				$table="equipement";
-      				$resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1");
+      				$table="utilisateur";
+      				$resultat=$bdd->query("SELECT * FROM utilisateur WHERE adresseMail=$id1");
       				$resultat->setFetchMode(PDO::FETCH_ASSOC);
       				foreach ($resultat as $data)
       				{
@@ -74,7 +74,7 @@ else {
       		<select name="Equipement_id" >
       				<?php
       				$table="equipement";
-      				$resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1");
+      				$resultat=$bdd->query("SELECT * FROM utilisateur WHERE adresseMail=$id1");
       				$resultat->setFetchMode(PDO::FETCH_ASSOC);
       				foreach ($resultat as $data)
       				{
