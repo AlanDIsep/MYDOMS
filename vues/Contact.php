@@ -56,33 +56,18 @@ else {
       <br>
       <br>
       <br>
+			<!-- test de contact -->
       <h2 style=color:#DCE837 align="center">Autres demandes</h2>
-      	<div class="containertwo">
-      		<label for="object">Administration de l'application </label>
-      		<select name="adresseMail" >
-      				<?php
-      				$table="utilisateur";
-      				$resultat=$bdd->query("SELECT * FROM utilisateur WHERE adresseMail=$id1");
-      				$resultat->setFetchMode(PDO::FETCH_ASSOC);
-      				foreach ($resultat as $data)
-      				{
-      				echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
-      				} ?>
-      		</select>
 
-      		<label for="object">Service commercial </label>
-      		<select name="Equipement_id" >
-      				<?php
-      				$table="equipement";
-      				$resultat=$bdd->query("SELECT * FROM utilisateur WHERE adresseMail=$id1");
-      				$resultat->setFetchMode(PDO::FETCH_ASSOC);
-      				foreach ($resultat as $data)
-      				{
-      				echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
-      				} ?>
-      		</select>
+      	<div class="">
+      		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
+					<a href="mailto:administrateur@domisep.fr?subject=autres_demandes">Envoyer un mail au service administrateur DOMISEP</a>
+					<br>
+					<a href="mailto:commercial@domisep.fr?subject=feedback">Envoyer un mail au service commercial DOMISEP</a>
+				</p>
       </div>
       	<br>
+
         <h2 style=color:#DCE837 align="center">Signaler une panne capteur</h2>
 		<div class="container">
 
