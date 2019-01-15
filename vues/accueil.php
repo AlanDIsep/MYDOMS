@@ -78,6 +78,8 @@ else {
 
 		</div>
 	</div>
+
+
 	<div class="two">
 			<div class="container">
 			<div class=temperature1>
@@ -96,7 +98,7 @@ else {
 	
 	<div class="nine">
 			<div class="container">
-				Récapitulatif journalier
+				Récapitulatif journalier (h/h)
 				<?php
 				include("graphiqueAccueil.php") ?>
 

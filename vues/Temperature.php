@@ -136,7 +136,9 @@ else {
 				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="'.$consigne.'" onchange="updateTextInput(this.value);" style="width:150px"/>
 				<br><br>
 				<button type="submit" style="font-size:small;">Appliquer</button>
-
+				<select name="idUser" style="visibility:hidden;">
+				<option value="'.$id1.'"></option>
+				</select>
 				</form>';
 				
 				

@@ -2,6 +2,7 @@
 include_once('/.controleurs/Temperature.php');
 					$mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889");
 					$ideq=$_POST['ideq'];
+					$id1=$_POST['idUser'];
 					$switch = (isset($_POST['switch'])) ? 1 : 0;
 					mysqli_query($mysqli,"UPDATE equipement SET Etat='$switch' WHERE idEquipement=$ideq");
 
@@ -12,6 +13,8 @@ include_once('/.controleurs/Temperature.php');
 				 $SQL = "UPDATE equipement SET consigne='$temp' where idEquipement='$ideq'";
 				  mysqli_query($mysqli,$SQL);
 					}
+
+					
 
 
 					

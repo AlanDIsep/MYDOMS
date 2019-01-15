@@ -13,6 +13,11 @@ if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 	$email=$_SESSION['email'];
 	$rep = mysqli_query($mysqli,"SELECT id FROM utilisateur WHERE AdresseMail='$email'");
 	$row = mysqli_fetch_assoc($rep);
+	$table = "utilisateur";
+    // On récupère tout le contenu de la table utilisateur
+    $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+    $donnees1 = $reponse1->fetch();
+    $id1 = $donnees1['id'];
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
@@ -127,7 +132,9 @@ else {
 				 <input type="range" name="range" id="range" min="0" max="100" step="5" value="'.$consigne.'" onchange="updateTextInput(this.value);" style="width:150px"/>
 				<br><br>
 				<button type="submit" style="font-size:small;">Appliquer</button>
-
+				<select name="idUser" style="visibility:hidden;">
+				<option value="'.$id1.'"></option>
+				</select>
 				</form>';
 				
 				
