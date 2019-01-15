@@ -39,12 +39,12 @@ else {
 
 <!------------------Header------------->
 
-	<header>
+	<head>
 		<title>Accueil</title>
 		<a href="index.php?cible=utilisateurs&fonction=Accueil"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
 		<a href="vues/deconnexion.php"><img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"></a>
 
-	</header>
+	</head>
 
 
 <!-------------------Titre de la Page-------------->
@@ -99,8 +99,27 @@ else {
 	<div class="nine">
 			<div class="container">
 				Récapitulatif journalier (h/h)
-				<?php
-				include("graphiqueAccueil.php") ?>
+
+
+			<button type="button">Cliquer ici</button>
+			<p></p>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$("button").click(function(){
+
+						$.ajax({
+							type: 'POST',
+							url: 'graphiqueAccueil.php',
+							success: function(data) {
+								alert(data);
+								$("p").text(data);
+
+							}
+						});
+			});
+			});
+</script>
+
 
 			</div>
 		</div>

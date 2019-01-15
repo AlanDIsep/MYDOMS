@@ -59,78 +59,39 @@ $dataPoints = array(
 );
 	
 ?>
+<!DOCTYPE HTML>
+<html>
 <head>  
 <script>
 window.onload = function () {
-
+ 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
-	backgroundColor:"#4a4a4c",
-	axisY: {
-		title: "Lumière - Nombre Activations",
-		titleFontColor: "#4F81BC",
-		lineColor: "#4F81BC",
-		labelFontColor: "#4F81BC",
-		tickColor: "#4F81BC"
-	},
-	axisY2: {
-		title: "Température - Nombre Activations",
-		titleFontColor: "#C0504E",
-		lineColor: "#C0504E",
-		labelFontColor: "#C0504E",
-		tickColor: "#C0504E"
-	},	
-	toolTip: {
-		shared: true
-	},
+	exportEnabled: true,
+	theme: "dark1", // "light1", "light2", "dark1", "dark2"
 	legend: {
-		cursor:"pointer",
-		itemclick: toggleDataSeries
-	},
+       horizontalAlign: "center", // "center" , "right"
+       verticalAlign: "bottom",  // "top" , "bottom"
+       fontSize: 15
+     },
 	data: [{
-		type: "column",
-		name: "Proven Oil Reserves (bn)",
-		legendText: "Proven Oil Reserves",
-		showInLegend: true, 
-		dataPoints:[
-			{ label: "5", y: .$value1.},
-			{ label: "10", y: 3 },
-			{ label: "15", y: 157.20 },
-			{ label: "20", y: 148.77 },
-			{ label: "23", y: 101.50 },
-			{ label: "UAE", y: 97.8 }
-		]
-	},
-	{
-		type: "column",	
-		name: "Oil Production (million/day)",
-		legendText: "Oil Production",
-		axisYType: "secondary",
+		type: "area", //change type to bar, line, area, pie, etc
+		//indexLabel: "{y}", //Shows y value on all Data Points
 		showInLegend: true,
-		dataPoints:[
-			{ label: "5", y: 3 },
-			{ label: "10", y: 2.27 },
-
-		]
+		legendText: "Nombre d'activation par heure",
+		indexLabelFontColor: "#deea32",
+		indexLabelPlacement: "outside",
+		backgroundColor: "#deea32",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });
 chart.render();
-
-function toggleDataSeries(e) {
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else {
-		e.dataSeries.visible = true;
-	}
-	chart.render();
-}
-
+ 
 }
 </script>
 </head>
 <body>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
-</html>
+</html>      
