@@ -179,7 +179,7 @@ else {
             ARTICLE 8 : Liens hypertextes
              </button>
     <div class="panel">
-    <p>Les domaines vers lesquels mènent les liens hypertextes présents sur le site n’engagent pas la responsabilité de l’Éditeur de [votre site], qui n’a pas de contrôle sur ces liens.
+    <p>Les domaines vers lesquels mènent les liens hypertextes présents sur le site n’engagent pas la responsabilité de l’Éditeur de Mydoms, qui n’a pas de contrôle sur ces liens.
 <br>
             Il est possible pour un tiers de créer un lien vers une page du site DomIsep sans autorisation expresse de l’éditeur.
 
@@ -209,7 +209,7 @@ else {
         </button>
     <div class="panel">
     <p>Le présent contrat dépend de la législation française.
-            En cas de litige non résolu à l’amiable entre l’Utilisateur et l’Éditeur, les tribunaux de [nom de ville] sont compétents pour régler le contentieux.
+            En cas de litige non résolu à l’amiable entre l’Utilisateur et l’Éditeur, les tribunaux de Issy les Moulineaux sont compétents pour régler le contentieux.
 
 
     </p>
@@ -234,7 +234,7 @@ else {
         Contacter le responsable de la publication : contact@sysdoms.com<br>
         Le responsable de la publication est une personne physique<br>
         Le Webmaster est  : DomIsep<br>
-        Contacter le Webmaster :  contact@sysdoms.com<br>
+        Contacter le Webmaster :  administrateur@domisep.fr<br>
         L’hebergeur du site est : localhost<br>
     </p>
     </div>
