@@ -8,7 +8,7 @@ include('controleurs/nb_online.php');
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
 	echo '<body>';
-	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
+	echo 'Votre logiin est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
     echo '<br />';
     $email=$_SESSION['email'];
     $table = "utilisateur";
@@ -58,9 +58,9 @@ else {
 
       	<div class="">
       		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
-					<a href="mailto:administrateur@domisep.fr?subject=autres_demandes" style="color:black;text-decoration:none">Envoyer un mail au service administrateur DOMISEP</a>
+					<a href="mailto:administrateur@domisep.fr?subject=MYDOMS_ADMINISTRATEUR" style="color:black;text-decoration:none">Envoyer un mail au service administrateur DOMISEP</a>
 					<br>
-					<a href="mailto:commercial@domisep.fr?subject=feedback" style="color:black;text-decoration:none">Envoyer un mail au service commercial DOMISEP</a>
+						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">Envoyer un mail au service commercial DOMISEP</a>
 				</p>
       </div>
       	<br>

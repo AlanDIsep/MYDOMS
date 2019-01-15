@@ -10,8 +10,8 @@ include('controleurs/nb_online.php');
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
 	echo '<body>';
-	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
-	
+	echo '<p style=color:white>Bonjour '.$_SESSION['email'].' et bienvenu sur MYDOMS.';
+
 	echo '<br />';
 	$email=$_SESSION['email'];
 	//$table = "utilisateur";
@@ -71,7 +71,7 @@ else {
                 $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Température'");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
-                { 
+                {
                 echo  '<hr width= 100% color=#DCE837><option value="'.$data['Nom'].'">' . $data['Nom'] . '</option><div class=temperature><option value="'.$data['Donnee'].'">' . $data['Donnee'] . ' °C</div></option>';
                 } ?>
 		<hr width= 100% color=#DCE837>
@@ -88,12 +88,12 @@ else {
                 $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1 && Type='Éclairage'");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
-                { 
+                {
                 echo  '<hr width= 100% color=#DCE837><option value="'.$data['Nom'].'">' . $data['Nom'] . '</option><div class=temperature><option value="'.$data['Donnee'].'">' . $data['Donnee'] . ' %</div></option>';
                 } ?>
 		<hr width= 100% color=#DCE837>
 	</div></div>
-	
+
 	<div class="nine">
 			<div class="container">
 				Récapitulatif journalier

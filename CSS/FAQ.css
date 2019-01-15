@@ -103,6 +103,10 @@ body {
 	/*------------------Contenu-------------*/
 
 	/*classe du titre de la question*/
+
+
+
+	/*classe du titre de la question*/
 	.accordion {
 		background-color: #eee;
 		color: #444;
@@ -121,6 +125,7 @@ body {
 	}
 
 	/*classe de la réponse à la question*/
+
 	.panel {
 		padding: 0 18px;
 		display: none;
