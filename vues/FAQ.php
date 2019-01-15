@@ -142,7 +142,7 @@ else {
 			</div>
 				<button class="accordion">Contact</button>
 				<div class="panel">
-				<p>Enfin la page, <a href="index.php?cible=utilisateurs&fonction=contact" style="text-decoration:none">"Contact"</a> vous permet de contacter les services
+				<p>Enfin la page, <a href=index.php?cible=utilisateurs&fonction=Contact style="text-decoration:none">"Contact"</a> vous permet de contacter les services
 				de DomIsep</p>
 				</div>
 			</p>
