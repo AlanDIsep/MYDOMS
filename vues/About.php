@@ -92,16 +92,15 @@ else {
     <div class="panel">
     <br>
     <p>L’Utilisateur du site MyDoms a accès aux services suivants :<br>
-            •	Profil<br>
-            •	FAQ<br>
-            •	Gestion de l’éclairage<br>
-            •	Gestion de la Température<br>
-            •	Configuration de la maison<br>
+            •	Tableau de bord<br>
+						•	Gestion Maison<br>
+						•	Profil<br>
+						•	FAQ<br>
+						•	Contact<br>
             <br>
             Tout Utilisateur ayant accès a internet et ayant un contrat souscrit auprès de DomIsep peut accéder gratuitement en se connectant à son espace personnel et depuis n’importe où au site. Les frais supportés par l’Utilisateur pour y accéder (connexion internet, matériel informatique, etc.) ne sont pas à la charge de l’Éditeur.
             <br>
             Le site et ses différents services peuvent être interrompus ou suspendus par l’Éditeur, notamment à l’occasion d’une maintenance, sans obligation de préavis ou de justification.
-
             </p>
     </div>
 
