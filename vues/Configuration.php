@@ -191,7 +191,7 @@ else {
       				$resultat->setFetchMode(PDO::FETCH_ASSOC);
       				 ?>
             <th>Nom du chemin lumineux</th>
-            <th>Capteur</th>
+            <th><?php echo $element['']; ?></th>
             <th>Capteur</th>
             <th>Capteur</th>
             <th>Capteur</th>
@@ -200,8 +200,7 @@ else {
           <tbody>	
           <?php foreach ($resultat as $element) { ?>
           <tr>
-          
-                
+
               <td>
                 <?php echo $element['NomCheminLumineux']; ?>
                 </td>
@@ -235,15 +234,24 @@ $resultattt4=$bdd->query("SELECT * FROM cheminLumineux WHERE idUser=$id1");
 $resultattt4->setFetchMode(PDO::FETCH_ASSOC);
 foreach ($resultattt4 as $data)
 {
+
+$etat=$data['EtatCheminLumineux'];
+
+
 echo '				
 <div id="conteneur" style="width:100% ">
 <div id="target" style="width:50%">
 <label for="nom">' . $data['NomCheminLumineux'] . '</label><br><br><br>
 <form method="POST" action="./controleurs/update_CheminLumineux.php">
-<label class="switch">
+<label class="switch">';
 
-<input type="checkbox" name="switch"/>
-<span class="slider round"></span>
+echo'<input type="checkbox" name="switch"';
+				if($etat==1) {
+				echo 'checked="checked"';
+				} else { 
+				}		
+				echo'>';
+echo'<span class="slider round"></span>
  <br>
  <select name="idCheminLumineux" style="visibility:hidden;">
  <option value="'.$data['idCheminLumineux'].'">'.$data['idCheminLumineux'].'</option>
