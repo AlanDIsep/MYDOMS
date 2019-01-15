@@ -28,17 +28,17 @@ else {
 <link rel="icon" href="../CSS/images/interrogative.ico"/>
 
 
-<!------------------header-------------> 
+<!------------------header------------->
 <header>
-		<title>À Propos</title>	
+		<title>À Propos</title>
 		<a href="index.php?cible=utilisateurs&fonction=Accueil"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
 		<a href="index.php"><img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"></a>
-		
-		
+
+
 </header>
 
-		
-			<!-------------------Titre de la Page--------------> 
+
+			<!-------------------Titre de la Page-------------->
                         <div class="titlepage">
                         <div class="bordertitle">
                                  <a href="index.php?cible=utilisateurs&fonction=Accueil"><img title="Tableau de bord" src="../CSS/icons/Bandeau/bord.png" class="logo5"/></a>
@@ -50,9 +50,9 @@ else {
                         </div>
                         </div>
 
-<!-------------------Main--------------> 
+<!-------------------Main-------------->
 <main>
-    <!-------------------Accordéon--------------> 
+    <!-------------------Accordéon-------------->
 
     <h2 style=color:#DCE837>
         Conditions Générales d'Utilisation du site MyDoms (CGU) :
@@ -64,7 +64,7 @@ else {
             <br>
             Ce contrat est conclu entre :
             <br>
-            Le gérant du site internet, ci-après désigné « l’Éditeur »,
+            Le gérant du site internet,DomIsep, ci-après désigné « l’Éditeur »,
             <br>
             Toute personne physique ou morale souhaitant accéder au site et à ses services, ci-après appelé « l’Utilisateur ».
             <br>
@@ -77,12 +77,12 @@ else {
     <br>
     <p>Pour les personnes morales :
             <br>
-            Le site MyDoms est édité par la société Sysdoms], au capital de 0 €, dont le siège social est situé au 28 rue Notre-Dame des Champs, 75006 Paris
+            Le site MyDoms est édité par la société Sysdoms, au capital de 0 €, dont le siège social est situé au 28 rue Notre-Dame des Champs, 75006 Paris
             <br>
             La société est représentée par Cyrille ADAM.
             <br>
-            
-            Pour les personnes physiques : 
+
+            Pour les personnes physiques :
             <br>
             Le site MyDoms est édité par Sysdoms, domicilié au 28 rue Notre-Dame des Champs, 75006 Paris.
             <br>
@@ -101,14 +101,14 @@ else {
             Tout Utilisateur ayant accès a internet et ayant un contrat souscrit auprès de DomIsep peut accéder gratuitement en se connectant à son espace personnel et depuis n’importe où au site. Les frais supportés par l’Utilisateur pour y accéder (connexion internet, matériel informatique, etc.) ne sont pas à la charge de l’Éditeur.
             <br>
             Le site et ses différents services peuvent être interrompus ou suspendus par l’Éditeur, notamment à l’occasion d’une maintenance, sans obligation de préavis ou de justification.
-            
+
             </p>
     </div>
-    
+
 
     <button class="accordion">ARTICLE 4: Responsabilité de l’Utilisateur</button>
     <div class="panel">
-    <p>L'Utilisateur est responsable des risques liés à l’utilisation de son identifiant de connexion et de son mot de passe. 
+    <p>L'Utilisateur est responsable des risques liés à l’utilisation de son identifiant de connexion et de son mot de passe.
             <br>
             Le mot de passe de l’Utilisateur doit rester secret. En cas de divulgation de mot de passe, l’Éditeur décline toute responsabilité.
             <br>
@@ -116,7 +116,7 @@ else {
             <br>
             Tout usage du service par l'Utilisateur ayant directement ou indirectement pour conséquence des dommages doit faire l'objet d'une indemnisation au profit du site.
             <br>
-            Le membre s’engage à tenir des propos respectueux des autres et de la loi et accepte que ces publications soient modérées ou refusées par l’Éditeur, sans obligation de justification. 
+            Le membre s’engage à tenir des propos respectueux des autres et de la loi et accepte que ces publications soient modérées ou refusées par l’Éditeur, sans obligation de justification.
             <br>
             En publiant sur le site, l’Utilisateur cède à la société éditrice le droit non exclusif et gratuit de représenter, reproduire, adapter, modifier, diffuser et distribuer sa publication, directement ou par un tiers autorisé.
             <br>
@@ -124,7 +124,7 @@ else {
             <br>
             </p>
     </div>
-    
+
     <button class="accordion">ARTICLE 5 : Responsabilité de l’Éditeur </button>
     <div class="panel">
     <p>Tout dysfonctionnement du serveur ou du réseau ne peut engager la responsabilité de l’Éditeur.
@@ -158,7 +158,7 @@ else {
             ARTICLE 7 : Données personnelles
              </button>
     <div class="panel">
-    <p>L’Utilisateur doit obligatoirement fournir des informations personnelles pour procéder à son inscription sur le site. 
+    <p>L’Utilisateur doit obligatoirement fournir des informations personnelles pour procéder à son inscription sur le site.
             <br>
             L’adresse électronique (e-mail) de l’utilisateur pourra notamment être utilisée par le site [nom de votre site] pour la communication d’informations diverses et la gestion du compte.
             <br>
@@ -183,7 +183,7 @@ else {
     <p>Les domaines vers lesquels mènent les liens hypertextes présents sur le site n’engagent pas la responsabilité de l’Éditeur de [votre site], qui n’a pas de contrôle sur ces liens.
 <br>
             Il est possible pour un tiers de créer un lien vers une page du site DomIsep sans autorisation expresse de l’éditeur.
-            
+
             </p>
     </div>
 
@@ -196,7 +196,7 @@ else {
     </div>
 
     <button class="accordion">
-            
+
         ARTICLE 10 : Durée du contrat
 
              </button>
@@ -209,9 +209,9 @@ else {
 
         </button>
     <div class="panel">
-    <p>Le présent contrat dépend de la législation française. 
+    <p>Le présent contrat dépend de la législation française.
             En cas de litige non résolu à l’amiable entre l’Utilisateur et l’Éditeur, les tribunaux de [nom de ville] sont compétents pour régler le contentieux.
-            
+
 
     </p>
     </div>
@@ -220,7 +220,7 @@ else {
     <br>
     <h2 style=color:#DCE837>Mentions Légales DomIsep (CGV)</h2>
     <button class="accordion">
-            
+
         ARTICLE 1: Informations légales
         </button>
     <div class="panel">
@@ -240,7 +240,7 @@ else {
     </p>
     </div>
     <button class="accordion">
-            
+
                 ARTICLE 2: Présentation et principe
                 </button>
             <div class="panel">
@@ -250,7 +250,7 @@ else {
             </p>
             </div>
         <button class="accordion">
-        
+
                 ARTICLE 3: Accessibilité
                 </button>
                 <div class="panel">
@@ -263,7 +263,7 @@ else {
                 <div class="panel">
                 <p>       <br>DomIsep est propriétaire exclusif de tous les droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, tant sur la structure que sur les textes, images, graphismes, logo, icônes, sons, logiciels…
                         <br><br>Toute reproduction totale ou partielle du site www.maison-et-domotique.com, représentation, modification, publication, adaptation totale ou partielle de l’un quelconque de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de DomIsep, propriétaire du site à l’email : contact@sysdoms.com, à défaut elle sera considérée comme constitutive d’une contrefaçon et passible de poursuite conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
-                
+
                 </div>
         <button class="accordion">
                 ARTICLE 5:  Liens hypertextes et cookies
@@ -285,7 +285,7 @@ else {
                                 <br><br>
                                 Aucune information personnelle de l’utilisateur du site www.mydoms.com n’est publiée à l’insu de l’utilisateur, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers. Seule l’hypothèse du rachat du site www.mydoms.com et de ses droits autorise Cédric Locqueneux à transmettre les dites informations à l’éventuel acquéreur qui serait à son tour tenu à la même obligation de conservation et de modification des données vis à vis de l’utilisateur du site www.mydoms.com.
                                 Le site www.mmydoms.com est déclaré à la CNIL sous le numéro “en cours d’immatriculation”
-                                
+
                                 Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
                         </div>
 
@@ -310,7 +310,7 @@ else {
     <br>
 </main>
 
-<!-------------------Footer--------------> 
+<!-------------------Footer-------------->
 <footer>
     <div id="footer">
         <p>SAS Domisep - Tous droits réservés<p>
