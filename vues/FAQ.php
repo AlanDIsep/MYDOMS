@@ -76,7 +76,7 @@ else {
     </div>
 
     <button class="accordion">J'ai oublié mon mot de passe personnel ?</button>
-    <div class="panel"style="margin:auto;width:60%">
+    <div class="panel">
     <p>Veuillez contacter par téléphone le service client DomIsep afin d'obtenir la procédure à suivre</p>
     </div>
 
