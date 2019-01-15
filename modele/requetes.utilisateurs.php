@@ -21,7 +21,7 @@ $table = "habitation";
  */
 function rechercheParNom(PDO $bdd, string $nom): array {
     
-    $statement = $bdd->prepare('SELECT * FROM  utilisateur WHERE AdresseMail = :AdresseMail INNER JOIN equipement ON utilisateur.id = equipement.idUser');
+    $statement = $bdd->prepare('SELECT * FROM  utilisateur WHERE AdresseMail = :AdresseMail /*INNER JOIN equipement ON utilisateur.id = equipement.idUser*/');
     $statement->bindParam(":AdresseMail", $value);
     $statement->execute();
     
