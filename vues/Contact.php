@@ -61,9 +61,9 @@ else {
 
       	<div class="">
       		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
-					<a href="mailto:administrateur@domisep.fr?subject=autres_demandes">Envoyer un mail au service administrateur DOMISEP</a>
+					<a href="mailto:administrateur@domisep.fr?subject=autres_demandes" style="color:black;text-decoration:none">Envoyer un mail au service administrateur DOMISEP</a>
 					<br>
-					<a href="mailto:commercial@domisep.fr?subject=feedback">Envoyer un mail au service commercial DOMISEP</a>
+					<a href="mailto:commercial@domisep.fr?subject=feedback" style="color:black;text-decoration:none">Envoyer un mail au service commercial DOMISEP</a>
 				</p>
       </div>
       	<br>
