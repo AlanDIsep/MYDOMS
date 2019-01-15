@@ -52,10 +52,7 @@ else {
 			</div>
 			<!-------------------Contenu-------------->
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
+			<br>
 			<!-- test de contact -->
       <h2 style=color:#DCE837 align="center">Autres demandes</h2>
 
