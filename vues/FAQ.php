@@ -142,7 +142,7 @@ else {
 			</div>
 				<button class="accordion">Contact</button>
 				<div class="panel">
-				<p>Enfin la page, <a href="index.php?cible=utilisateurs&fonction=contact" style="text-decoration:none">"Contact"</a> vous permet de contacter les services
+				<p>Enfin la page, <a href=index.php?cible=utilisateurs&fonction=Contact style="text-decoration:none">"Contact"</a> vous permet de contacter les services
 				de DomIsep</p>
 				</div>
 			</p>
@@ -171,8 +171,21 @@ else {
 		<button class="accordion">Contacter les services DomIsep</button>
 		<div class="panel">
 		<p>Vous pouvez contacter par mail le service DomIsep à l'adresse suivante pour toutes autres demandes ou questions :</p>
-		<p align="center">administrateur@gmal.com</p>
+		<p align="center">administrateur@domisep.fr</p>
 		</div>
+
+    <br>
+    <br>
+    <br>
+</main>
+
+<!-------------------Footer-------------->
+<footer>
+        <div id="footer">
+                <a href="index.php?cible=utilisateurs&fonction=About">© SAS Domisep - Tous droits réservés - A propos</a>
+                </div>
+</footer>
+
 
 
 
@@ -192,17 +205,4 @@ else {
         });
     }
     </script>
-    <br>
-    <br>
-    <br>
-</main>
-
-<!-------------------Footer-------------->
-<footer>
-        <div id="footer">
-                <a href="index.php?cible=utilisateurs&fonction=About">© SAS Domisep - Tous droits réservés - A propos</a>
-                </div>
-</footer>
-
-
 </html>

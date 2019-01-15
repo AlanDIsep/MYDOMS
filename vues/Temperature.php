@@ -126,12 +126,16 @@ else {
 
 				echo'<script>
 			function updateTextInput(val) {
-			document.getElementById("textInput").value=val+"°"; 
+			document.getElementsByClassName("textInput").value=val+"°"; 
 			 }</script>';	
 				
 				echo'<div id="modulator">
 			
-			<p class="color-t">Température désirée: <a id="clicks"></a><output type="text" id="textInput" value="">'.$consigne.'°</p> </div>
+			<p class="color-t">Température désirée:
+			
+			<output type="text" class="textInput" value="">'.$consigne.'°</p> 
+			
+			</div>
 
 				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="'.$consigne.'" onchange="updateTextInput(this.value);" style="width:150px"/>
 				<br><br>
