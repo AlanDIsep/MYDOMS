@@ -189,15 +189,19 @@ else {
       				$table="cheminLumineux";
       				$resultat=$bdd->query("SELECT * FROM cheminLumineux WHERE idUser=$id1");
       				$resultat->setFetchMode(PDO::FETCH_ASSOC);
-      				 ?>
+		  ?>
+      				 
+			
             <th>Nom du chemin lumineux</th>
-            <th><?php echo $element['']; ?></th>
-            <th>Capteur</th>
-            <th>Capteur</th>
-            <th>Capteur</th>
-          </tr>
+            <th>Capteur1 </th>
+            <th>Capteur2	</th>
+            <th>Capteur3	</th>
+            <th>Capteur4	</th>
+          </tr>'
+
           </thead>
           <tbody>	
+		  
           <?php foreach ($resultat as $element) { ?>
           <tr>
 
@@ -205,16 +209,16 @@ else {
                 <?php echo $element['NomCheminLumineux']; ?>
                 </td>
               <td>
-                <?php echo $element['Capteur1']; ?> / <?php echo $element['IntensiteCapteur1']; ?>%
+               <?php echo $element['IntensiteCapteur1']; ?>%
               </td>
               <td>
-                <?php echo $element['Capteur2']; ?> / <?php echo $element['IntensiteCapteur2']; ?>%
+                <?php echo $element['IntensiteCapteur2']; ?>%
               </td>
               <td>
-                <?php echo $element['Capteur3']; ?> / <?php echo $element['IntensiteCapteur3']; ?>%
+                 <?php echo $element['IntensiteCapteur3']; ?>%
               </td>
               <td>
-                <?php echo $element['Capteur4']; ?> / <?php echo $element['IntensiteCapteur4']; ?>%
+                <?php echo $element['IntensiteCapteur4']; ?>%
               </td>
             </tr>
       
