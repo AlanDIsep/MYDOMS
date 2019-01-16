@@ -1,26 +1,29 @@
+
 <?php
 
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 require "controleurs/verif_session.php";
+
 include('controleurs/nb_online.php');
 
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
 	$email=$_SESSION['email'];
-	$rep = mysqli_query($mysqli,"SELECT id FROM utilisateur WHERE AdresseMail='$email'");
-	$row = mysqli_fetch_assoc($rep);
-	    $table = "utilisateur";
-    // On récupère tout le contenu de la table utilisateur
-    $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
-    $donnees1 = $reponse1->fetch();
-    $id1 = $donnees1['id'];
+	//$table = "utilisateur";
+	//echo $bdd->query("SELECT id FROM utilisateur WHERE 'AdresseMail'='$email'");
+
+            $table = "utilisateur";
+            // On récupère tout le contenu de la table utilisateur
+            $reponse1 = $bdd->query("SELECT * FROM utilisateur WHERE AdresseMail='$email'");
+            $donnees1 = $reponse1->fetch();
+			$id1 = $donnees1['id'];
+
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
 }
 ?>
-
 
 
 <!DOCTYPE html>
@@ -33,7 +36,7 @@ else {
 <!------------------Header------------->
 
 	<header>
-		<title>Accueil</title>
+		<title>Accueil1</title>
 		<a href="index.php?cible=utilisateurs&fonction=Accueil"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
 		<a href="vues/deconnexion.php"><img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"></a>
 
@@ -91,11 +94,11 @@ else {
 
 	<div class="nine">
 			<div class="container">
-				RÉCAPITULATIF JOURNALIER LUMIERE (h/h)<br>
+			RÉCAPITULATIF JOURNALIER TEMPERATURE (h/h)<br>
 				<a href="index.php?cible=utilisateurs&fonction=Accueil" >Lumière |</a>
 				<a href="index.php?cible=utilisateurs&fonction=Accueill" > Température</a>
 				<?php
-				include ("graphiqueAccueil.php")
+				include ("graphiqueAccueil.1.php")
 				?>
 
 

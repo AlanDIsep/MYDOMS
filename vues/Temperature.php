@@ -7,9 +7,6 @@ include('controleurs/nb_online.php');
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
-	echo '<body>';
-	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
-	echo '<br />';
 	$email=$_SESSION['email'];
 	$rep = mysqli_query($mysqli,"SELECT id FROM utilisateur WHERE AdresseMail='$email'");
 	$row = mysqli_fetch_assoc($rep);

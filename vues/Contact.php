@@ -7,9 +7,7 @@ include('controleurs/nb_online.php');
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
-	echo '<body>';
-	echo 'Votre logiin est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
-    echo '<br />';
+
     $email=$_SESSION['email'];
     $table = "utilisateur";
     // On récupère tout le contenu de la table utilisateur
@@ -23,7 +21,6 @@ else {
 ?>
 <!Doctype html>
 <html lang="fr">
-
 
 <!-------------------Lien vers les feuilles CSS/icones/polices-------------->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -54,13 +51,12 @@ else {
       <br>
 			<br>
 			<!-- test de contact -->
-      <h2 style=color:#DCE837 align="center">Autres demandes</h2>
+      <h2 style=color:#DCE837 align="center">Service Commercial</h2>
 
       	<div class="">
       		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
-					<a href="mailto:administrateur@domisep.fr?subject=MYDOMS_ADMINISTRATEUR" style="color:black;text-decoration:none">Envoyer un mail au service administrateur DOMISEP</a>
-					<br>
-						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">Envoyer un mail au service commercial DOMISEP</a>
+              &#9993;
+						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">CONTACT</a>
 				</p>
       </div>
       	<br>
