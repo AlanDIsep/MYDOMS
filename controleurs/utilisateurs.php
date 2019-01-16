@@ -25,10 +25,15 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
 switch ($function) {
 
     case 'Login':
-        //affichage de l'accueil
         $vue = "login";
         $title = "Login";
         break;
+
+    case 'Accueill':
+    //affichage de l'accueil
+    $vue = "Accueill";
+    $title = "Accueill";
+    break;
 
     case 'Accueil':
         //affichage de l'accueil

@@ -14,7 +14,9 @@ include_once('/.controleurs/Temperature.php');
 				  mysqli_query($mysqli,$SQL);
 					}
 
-					
+					if($switch==1){
+						mysqli_query($mysqli,"INSERT INTO `graph`(`CompteurTemp`,`idUser`) VALUES (1,$id1)");
+						}
 
 
 					

@@ -1,6 +1,6 @@
 
 <?php
-include_once('Accueil.php');
+include_once('Accueill.php');
 
  // On récupère tout le contenu de la table utilisateur
  $datetime = date("Y-m-d");
