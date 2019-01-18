@@ -51,7 +51,7 @@ else {
       <br>
 			<br>
 			<!-- test de contact -->
-      <h2 style=color:#DCE837 align="center">Service Commercial</h2>
+      <h2 style=color:#DCE837 align="center">Contact Domisep</h2>
       	<div class="">
       		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
               &#9993;
@@ -59,7 +59,7 @@ else {
 				</p>
       </div>
 
-      <h2 style=color:#DCE837 align="center">Service Administrateur</h2>
+      <h2 style=color:#DCE837 align="center">Support Utilisateur</h2>
         <div class="">
           <p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
               &#9993;
