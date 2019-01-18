@@ -122,19 +122,33 @@ else {
 				<p id="temp">'.$donnee.'°C </p>';
 
 				echo'<script>
-			function updateTextInput(val) {
-			document.getElementsByClassName("textInput").value=val+"°"; 
-			 }</script>';	
+				$(function() {
+				$(".range").next().text("--"); // Valeur par défaut
+				$(".range").on("input", function() {
+				var $set = $(this).val();
+				$(this).next().text($set);
+				});
+				});</script>';	
 				
-				echo'<div id="modulator">
-			
-			<p class="color-t">Température désirée:
-			
-			<output type="text" class="textInput" value="">'.$consigne.'°</p> 
-			
-			</div>
+				echo'
 
-				 <input type="range" name="range" id="range" min="15" max="30" step="1" value="'.$consigne.'" onchange="updateTextInput(this.value);" style="width:150px"/>
+				
+				
+				<p>Température Désirée</p>
+				<input type="range" class="range"  name="a" min="15" max="30" step="1" value='.$consigne.' style="width:150px"/>
+				
+				<output name="result"></output>
+				
+				
+			
+			
+			
+			
+			
+			
+			
+
+				
 				<br><br>
 				<button type="submit" style="font-size:small;">Appliquer</button>
 				<select name="idUser" style="visibility:hidden;">
