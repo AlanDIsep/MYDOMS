@@ -52,13 +52,22 @@ else {
 			<br>
 			<!-- test de contact -->
       <h2 style=color:#DCE837 align="center">Service Commercial</h2>
-
       	<div class="">
       		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
               &#9993;
-						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">CONTACT</a>
+						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">Commercial</a>
 				</p>
       </div>
+
+      <h2 style=color:#DCE837 align="center">Service Administrateur</h2>
+        <div class="">
+          <p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
+              &#9993;
+            <a href="mailto:commercial@domisep.fr?subject=MYDOMS_ADMINISTRATEUR" style="color:black;text-decoration:none">Administrateur</a>
+        </p>
+      </div>
+
+
       	<br>
 
         <h2 style=color:#DCE837 align="center">Signaler une panne capteur</h2>
