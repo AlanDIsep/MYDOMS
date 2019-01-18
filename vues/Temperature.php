@@ -121,35 +121,35 @@ else {
 				<img src="../CSS/icons/temp.jpg" style="width:50%;"/>
 				<p id="temp">'.$donnee.'°C </p>';
 
+				
+				
+				
 				echo'<script>
 				$(function() {
 				$(".range").next().text("--"); // Valeur par défaut
 				$(".range").on("input", function() {
-				var $set = $(this).val();
+				var $set = $(this).val()+"°";
 				$(this).next().text($set);
 				});
 				});</script>';	
 				
-				echo'
+
+
+				echo '<p>Température Souhaitée : </p>';
 
 				
-				
-				<p>Température Désirée</p>
+
+				echo'
 				<input type="range" class="range"  name="a" min="15" max="30" step="1" value='.$consigne.' style="width:150px"/>
-				
+
 				<output name="result"></output>
 				
+				<br>'
+				;
 				
-			
-			
-			
-			
-			
-			
-			
 
-				
-				<br><br>
+
+				echo'				
 				<button type="submit" style="font-size:small;">Appliquer</button>
 				<select name="idUser" style="visibility:hidden;">
 				<option value="'.$id1.'"></option>

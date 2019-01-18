@@ -115,24 +115,32 @@ else {
 				 <img src="../CSS/icons/lumi.jpg" style="width:50%;"/>
 				<p id="temp">'.$donnee.'% </p>';
 
-				echo'<script>
-			$(function() {
+					echo'<script>
+				$(function() {
 				$(".range").next().text("--"); // Valeur par défaut
 				$(".range").on("input", function() {
-				var $set = $(this).val();
+				var $set = $(this).val()+"%";
 				$(this).next().text($set);
 				});
-				});
-			 }</script>';	
+				});</script>';	
 				
+
+
+				echo '<p style="width:100px;">Luminosité Souhaitée : </p>';
+
+				
+
 				echo'
-			
-			<p>Température Désirée</p>
-				<input type="range" class="range"  name="a" min="0" max="100" step="5" value='.$consigne.' style="width:150px"/>
-				
+				<input type="range" class="range"  name="a" min="0" max="100" step="10" value='.$consigne.' style="width:150px"/>
+
 				<output name="result"></output>
 				
-				<br><br>
+				<br>'
+				;
+				
+
+
+				echo'				
 				<button type="submit" style="font-size:small;">Appliquer</button>
 				<select name="idUser" style="visibility:hidden;">
 				<option value="'.$id1.'"></option>
@@ -142,28 +150,14 @@ else {
 				
 				echo'</div>';
 				 echo'</div>';
-
+					
+				
 				}
+
+				
 				?>
 	
-	<!--<div id="target3">
-        <h2>
-		<div>
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-        </label></div>
-		</br>
-		<img src="../CSS/icons/lumi.jpg" class="lumi"/>
-		</br>
-        <output for="range" class="output4" id="temp" value="0">20%</output>
-		</br>
-		
-		<label for="range">
-        <input type="range" name="range" id="range4" min="0" max="100" step="5" value="20"/>
-		</label>
-		
-    </div> -->
+
 	
 </div>	
 
@@ -174,37 +168,11 @@ else {
   
   </body>
   
-    <script type="text/javascript">/*s
-    //affichage de la première fenêtre
-	$('.toggle').click(function() 
-	{
-		$('#target').toggle('slow');
-		$(this).toggleClass("active");
-	});
-	//affichage de la deuxième fenêtre
-	$('.toggle1').click(function() 
-	{
-		$('#target1').toggle('slow');
-		$(this).toggleClass("active");
-	});
-	$('.toggle2').click(function() 
-	{
-		$('#target2').toggle('slow');
-		$(this).toggleClass("active");
-	});
-	$('.toggle3').click(function() 
-	{
-		$('#target3').toggle('slow');
-		$(this).toggleClass("active");
-	});
+    <script type="text/javascript">
+ 
      </script>
 
-<script>
 
-$('#range').on("input", function() {
-    $('.output').val(this.value +"%" );
-    }).trigger("change");
-</script>
 
 
 
