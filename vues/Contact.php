@@ -55,7 +55,7 @@ else {
       	<div class="">
       		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
               &#9993;
-						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">Commercial</a>
+						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">CONTACT</a>
 				</p>
       </div>
 
@@ -63,7 +63,7 @@ else {
         <div class="">
           <p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
               &#9993;
-            <a href="mailto:commercial@domisep.fr?subject=MYDOMS_ADMINISTRATEUR" style="color:black;text-decoration:none">Administrateur</a>
+            <a href="mailto:commercial@domisep.fr?subject=MYDOMS_ADMINISTRATEUR" style="color:black;text-decoration:none">CONTACT</a>
         </p>
       </div>
 
@@ -85,8 +85,22 @@ else {
                 } ?>
             </select>
 
+            <label for="object">Type de panne *</label>
+            <select name="typePanne" >
+            <option value="0"></option>
+                <?php
+                $table="typePanne";
+                $resultat=$bdd->query("SELECT * FROM typePanne");
+                $resultat->setFetchMode(PDO::FETCH_ASSOC);
+                foreach ($resultat as $data)
+                {
+                echo  '<option value="'.$data['typePanne'].'">' . $data['typePanne'] . '</option>';
+                } ?>
+            </select>
+
             <label for="object">Type de capteur</label>
             <select name="Equipement_id" >
+            <option value="0"></option>
                 <?php
                 $table="equipement";
                 $resultat=$bdd->query("SELECT * FROM equipement WHERE idUser=$id1");
@@ -97,17 +111,7 @@ else {
                 } ?>
             </select>
 
-            <label for="object">Type de panne *</label>
-            <select name="typePanne" >
-                <?php
-                $table="typePanne";
-                $resultat=$bdd->query("SELECT * FROM typePanne");
-                $resultat->setFetchMode(PDO::FETCH_ASSOC);
-                foreach ($resultat as $data)
-                {
-                echo  '<option value="'.$data['typePanne'].'">' . $data['typePanne'] . '</option>';
-                } ?>
-            </select>
+
             <label for="Message">Description de la panne * </label>
             <textarea id="message" name="DescriptionPanne" placeholder="Ecrivez ici..." style="height:200px" required></textarea>
 
@@ -115,14 +119,13 @@ else {
             <input type="date" id="datepanne" name="Date" required>
             <br><br>
             <input type="submit" value="Envoyer">
-         </form><br><br>
+         </form>
     </div>
 
-    <br><br><br><br>
+    <br><br>
 
 
 
-</main>
 
 <!-------------------Footer-------------->
 

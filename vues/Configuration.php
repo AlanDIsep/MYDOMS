@@ -81,7 +81,7 @@ else {
           $resultat->setFetchMode(PDO::FETCH_ASSOC);
           foreach ($resultat as $data)
           {
-          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          echo  '<option value="'.$data['Nom'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
           } ?>
         </select>
         <label for="object">Intensité lumineuse - Capteur 1: *</label>
@@ -101,7 +101,7 @@ else {
           $resultat->setFetchMode(PDO::FETCH_ASSOC);
           foreach ($resultat as $data)
           {
-          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          echo  '<option value="' . $data['Nom'] . '">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
           } ?>
       </select>
       <label for="object">Intensité lumineuse - Capteur 2: </label>
@@ -121,7 +121,7 @@ else {
           $resultat->setFetchMode(PDO::FETCH_ASSOC);
           foreach ($resultat as $data)
           {
-          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          echo  '<option value="' . $data['Nom'] . '">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
           } ?>
       </select>
       <label for="object">Intensité lumineuse - Capteur 3: </label>
@@ -141,7 +141,7 @@ else {
           $resultat->setFetchMode(PDO::FETCH_ASSOC);
           foreach ($resultat as $data)
           {
-          echo  '<option value="'.$data['idEquipement'].'">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
+          echo  '<option value="' . $data['Nom'] . '">' . $data['Type'] . ' ' . $data['Nom'] . '</option>';
           } ?>
       </select><br><br>
       <label for="object">Intensité lumineuse - Capteur 4: </label>
@@ -190,11 +190,11 @@ else {
       				 
 			
             <th>Nom du chemin lumineux</th>
-            <th>Capteur1 </th>
-            <th>Capteur2	</th>
-            <th>Capteur3	</th>
-            <th>Capteur4	</th>
-          </tr>'
+            <th>Capteur </th>
+            <th>Capteur	</th>
+            <th>Capteur	</th>
+            <th>Capteur	</th>
+          </tr>
 
           </thead>
           <tbody>	
@@ -206,15 +206,19 @@ else {
                 <?php echo $element['NomCheminLumineux']; ?>
                 </td>
               <td>
+               <?php echo $element['Capteur1']; ?> | 
                <?php echo $element['IntensiteCapteur1']; ?>%
               </td>
               <td>
+              <?php echo $element['Capteur2']; ?> | 
                 <?php echo $element['IntensiteCapteur2']; ?>%
               </td>
               <td>
+              <?php echo $element['Capteur3']; ?> | 
                  <?php echo $element['IntensiteCapteur3']; ?>%
               </td>
               <td>
+              <?php echo $element['Capteur4']; ?> | 
                 <?php echo $element['IntensiteCapteur4']; ?>%
               </td>
             </tr>
@@ -237,15 +241,14 @@ foreach ($resultattt4 as $data)
 {
 
 $etat=$data['EtatCheminLumineux'];
-
+$idCheminLumineux=$data['idCheminLumineux'];
 
 echo '				
 <div id="conteneur" style="width:100% ">
 <div id="target" style="width:50%">
-<label for="nom">' . $data['NomCheminLumineux'] . '</label><br><br><br>
+<h3>' . $data['NomCheminLumineux'] . '</h3><br>
 <form method="POST" action="./controleurs/update_CheminLumineux.php">
 <label class="switch">';
-
 echo'<input type="checkbox" name="switch"';
 				if($etat==1) {
 				echo 'checked="checked"';
@@ -253,11 +256,30 @@ echo'<input type="checkbox" name="switch"';
 				}		
 				echo'>';
 echo'<span class="slider round"></span>
- <br>
  <select name="idCheminLumineux" style="visibility:hidden;">
  <option value="'.$data['idCheminLumineux'].'">'.$data['idCheminLumineux'].'</option>
+ </select><br>';
+ echo ' <br><button type="submit" value="submit">Valider</button>';
+ $reponse = $bdd->query("SELECT * FROM cheminLumineux WHERE idCheminLumineux='$idCheminLumineux'");
+ $donnees = $reponse->fetch();
+ $capteur1=$donnees['Capteur1'];
+ $capteur2=$donnees['Capteur2'];
+ $capteur3=$donnees['Capteur3'];
+ $capteur4=$donnees['Capteur4'];
+ echo '
+ <select name="Capteur1" style="visibility:hidden;">
+ <option value="'.$capteur1.'"></option>
  </select>
- <button type="submit" value="submit">Valider</button>
+<select name="Capteur2" style="visibility:hidden;">
+ <option value="'.$capteur2.'"></option>
+ </select>
+<select name="Capteur3" style="visibility:hidden;">
+ <option value="'.$capteur3.'"></option>
+ </select>
+<select name="Capteur4" style="visibility:hidden;">
+ <option value="'.$capteur4.'"></option>
+ </select>
+
  </div>
  </div></form>';
 

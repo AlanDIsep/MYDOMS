@@ -159,15 +159,12 @@ body {
 		background-color: #45a049; /* souris au dessus du bouton envoyer */
 	}
 
-	.containertwo {
-
-	}
 
 	/* couleur de fond du formulaire */
 	.container {
 		border-radius: 10px;
 		background-color: #f2f2f2;
-		padding: 20px;
+		padding: 10px;
 		width:60%;
 		margin-left:auto;
 		margin-right:auto;
