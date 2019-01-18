@@ -48,8 +48,8 @@ else {
 				</div>
 			</div>
 			<!-------------------Contenu-------------->
-      <br>
-			<br>
+  
+			
 			<!-- test de contact -->
       <h2 style=color:#DCE837 align="center">Contact Domisep</h2>
       	<div class="">

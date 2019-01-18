@@ -7,7 +7,7 @@ include_once('/.controleurs/Temperature.php');
 					mysqli_query($mysqli,"UPDATE equipement SET Etat='$switch' WHERE idEquipement=$ideq");
 
 
-					$temp= $_POST['range'];
+					$temp= $_POST['a'];
 				if(isset($temp))
 					{
 				 $SQL = "UPDATE equipement SET consigne='$temp' where idEquipement='$ideq'";
