@@ -497,7 +497,7 @@ else {
                 <option value=""></option>
                 <?php
                 $table="utilisateur";
-                $resultat=$bdd->query("SELECT * FROM utilisateur");
+                $resultat=$bdd->query("SELECT * FROM utilisateur WHERE DroitUtilisateur_id=2");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {
@@ -607,7 +607,7 @@ else {
     <select name="idUtilisateur" >
                 <?php
                 $table="utilisateur";
-                $resultat=$bdd->query("SELECT * FROM utilisateur");
+                $resultat=$bdd->query("SELECT * FROM utilisateur WHERE DroitUtilisateur_id=2");
                 $resultat->setFetchMode(PDO::FETCH_ASSOC);
                 foreach ($resultat as $data)
                 {

@@ -232,21 +232,20 @@ switch ($function) {
             }
         }
 
-        else if (isset($_POST['DescriptionPanne'])) {
+        else if (isset($_POST['Nom'])) {
 
             // Tout est ok, on peut envoyer le formulaure
 
             //
             $values = [
-                'DescriptionPanne' => $_POST['DescriptionPanne'],
-                'Date' => $_POST['Date'],
-                'DroitUtilisateur_idDroitUtilisateur' => $_POST['DroitUtilisateur_idDroitUtilisateur'],
-                'typePanne' => $_POST['typePanne'],
-                'Equipement_id'=> $_POST['Equipement_id'],
+                'Type' => $_POST['Type'],
+                'Nom' => $_POST['Nom'],
+                'NumeroDeSerie' => $_POST['NumeroDeSerie'],
+                'idUser' => $_POST['idUser'],
             ];
 
             // Appel à la BDD à travers une fonction du modèle.
-            $retour = ajouterPanne($bdd, $values);
+            $retour = ajouterCapteur($bdd, $values);
 
         }
         elseif (isset($_POST['NomMaison'])) {

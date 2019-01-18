@@ -50,26 +50,30 @@ else {
 			<!-------------------Contenu-------------->
       <br>
 			<br>
-			<!-- test de contact -->
+            <!-- test de contact -->
+            <div class="wrapper">
+            <div class="one">
+                
       <h2 style=color:#DCE837 align="center">Contact Domisep</h2>
-      	<div class="">
-      		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
+      <div class="container">
               &#9993;
-						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">CONTACT</a>
+						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none;text-align:center">CONTACT</a>
 				</p>
       </div>
-
+      </div>
+      <div class="two">
       <h2 style=color:#DCE837 align="center">Support Utilisateur</h2>
-        <div class="">
-          <p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
+      <div class="container">
               &#9993;
             <a href="mailto:commercial@domisep.fr?subject=MYDOMS_ADMINISTRATEUR" style="color:black;text-decoration:none">CONTACT</a>
         </p>
       </div>
+</div>
+
 
 
       	<br>
-
+          <div class="three">
         <h2 style=color:#DCE837 align="center">Signaler une panne capteur</h2>
 		<div class="container">
 
@@ -120,6 +124,7 @@ else {
             <br><br>
             <input type="submit" value="Envoyer">
          </form>
+    </div>
     </div>
 
     <br><br>
