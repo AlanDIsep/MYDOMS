@@ -55,7 +55,7 @@ else {
       	<div class="">
       		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
               &#9993;
-						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">Contacter les services de Domisep pour toutes autres demandes</a>
+						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">Contacter les services de Domisep pour toute autre demande</a>
 				</p>
       </div>
 
