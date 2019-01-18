@@ -158,12 +158,13 @@ else {
 			<div class="panel">
 				<p>La page <a href="index.php?cible=utilisateurs&fonction=gerer_maison" style="color:black;text-decoration:none">"Gestion maison"</a>, vous permet de gérer vos capteurs de
 				température et de luminosité. L'utilisation de ces capteurs est décrite dans les sections plus basses.</p>
+				<p>Vous pouvez également configurer et utiliser les profils lumineux qui vous correspondent.</p>
 			</div>
 
 			<button class="accordion">FAQ</button>
 			<div class="panel">
 				<p>La page <a href="index.php?cible=utilisateurs&fonction=FAQ" style="color:black;text-decoration:none">"FAQ"</a>, vous permet d'avoir toutes les solutions
-				dex problématiques récurrentes rencontrées par les utilisateurs de la solution.</p>
+				aux problématiques récurrentes rencontrées par les utilisateurs de la solution.</p>
 			</div>
 
 				<button class="accordion">Contact</button>
