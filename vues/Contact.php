@@ -51,19 +51,19 @@ else {
       <br>
 			<br>
 			<!-- test de contact -->
-      <h2 style=color:#DCE837 align="center">Service Commercial</h2>
+      <h2 style=color:#DCE837 align="center">Contact Domisep</h2>
       	<div class="">
       		<p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
               &#9993;
-						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">Commercial</a>
+						<a href="mailto:commercial@domisep.fr?subject=MYDOMS_COMMERCIAL" style="color:black;text-decoration:none">Contacter les services de Domisep pour toutes autres demandes</a>
 				</p>
       </div>
 
-      <h2 style=color:#DCE837 align="center">Service Administrateur</h2>
+      <h2 style=color:#DCE837 align="center">Support Utilisateur</h2>
         <div class="">
           <p style="text-align:center;background: #f2f2f2;padding:10px;margin:auto;width:60%;border-radius: 10px;">
               &#9993;
-            <a href="mailto:commercial@domisep.fr?subject=MYDOMS_ADMINISTRATEUR" style="color:black;text-decoration:none">Administrateur</a>
+            <a href="mailto:commercial@domisep.fr?subject=MYDOMS_ADMINISTRATEUR" style="color:black;text-decoration:none">Contacter le support de l'application MYDOMS</a>
         </p>
       </div>
 
