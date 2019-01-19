@@ -54,6 +54,7 @@ else {
 				</div>
 			</div>
 
+			<div class="titlepage" style="padding:40px;">Gestion de l'Eclairage </div>
 <!-------------------Main-------------->
 <body>
 

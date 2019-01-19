@@ -50,12 +50,17 @@ else {
          			<a href="index.php?cible=utilisateurs&fonction=Contact"><img title="Contact" src="../CSS/icons/Bandeau/contact.png" class="logo3"/></a>
 
 				</div>
+				
 			</div>
-
+			<div class="titlepage" style="padding:40px;">Gestion de la température</div>
 <!-------------------Main--------------> 
 <main>
 	
 	
+	 
+	
+
+
 	<?php $mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889"); ?>
 
 
@@ -64,7 +69,7 @@ else {
 	
 	<!------------------------------------------------------------------------------------------------------------>
     
-	<div class="space"></div>
+	
     
 	
     <div id="conteneur">
@@ -131,11 +136,13 @@ else {
 				var $set = $(this).val()+"°";
 				$(this).next().text($set);
 				});
-				});</script>';	
+				});
+				
+				</script>';	
 				
 
 
-				echo '<p>Température Souhaitée : </p>';
+				echo '<p style="width:100px;">Température Souhaitée : </p>';
 
 				
 
@@ -187,28 +194,6 @@ else {
 
 <script type="text/javascript">
 
-/*affichage de la première fenêtre
-$('.toggle').click(function() 
-{
-    $('#target').toggle('slow');
-	$(this).toggleClass("active");
-});
-//affichage de la deuxième fenêtre
-$('.toggle1').click(function() 
-{
-    $('#target1').toggle('slow');
-	$(this).toggleClass("active");
-});
-$('.toggle2').click(function() 
-{
-    $('#target2').toggle('slow');
-	$(this).toggleClass("active");
-});
-$('.toggle3').click(function() 
-{
-	$('#target3').toggle('slow');
-	$(this).toggleClass("active");
-});
  </script>
 
 

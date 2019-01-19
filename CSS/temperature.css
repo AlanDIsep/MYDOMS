@@ -83,7 +83,7 @@ body {
 }
 	/*------------------Titre Page-------------*/
 	.titlepage{
-		padding:65px;
+		padding:0px;
 		font-family: Kollektif;
 		font-size: 22px;
 		text-align: center;
@@ -340,6 +340,13 @@ input[type="range"]::-webkit-slider-thumb {
     transform: scale(1.4);
 	
   }
+
+  .titre_temp
+  {background:#DCE837;
+  width:40%;
+  height:40%;
+  display:block;
+  margin:auto;}
 
 
 /*------------------Footer-------------*/

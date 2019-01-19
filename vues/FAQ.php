@@ -42,16 +42,10 @@ else {
 
 				</div>
 			</div>
-
+			
 <!-------------------Main-------------->
 <main>
     <!-------------------Accordéon-------------->
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 		<h2 style=color:#DCE837>Se connecter</h2>
 

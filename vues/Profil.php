@@ -8,7 +8,7 @@ include('controleurs/nb_online.php');
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
 	
-	echo 'Bonjour '.$_SESSION['email'].'.';
+	
 	
 	$email=$_SESSION['email'];
 	

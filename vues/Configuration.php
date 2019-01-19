@@ -38,7 +38,7 @@ else {
 
 		
 			<!-------------------Titre de la Page--------------> 
-			<div class="titlepage">
+			<div class="titlepage" >
 				<div class="bordertitle">
           <a href="index.php?cible=utilisateurs&fonction=Accueil"><img title="Tableau de bord" src="../CSS/icons/Bandeau/bord.png" class="logo5"/></a>
 					<a href="index.php?cible=utilisateurs&fonction=gerer_maison"><img title="Gérer ma maion" src="../CSS/icons/Bandeau/accueil1.png" class="logo6"/></a>
@@ -48,7 +48,10 @@ else {
 
 
 				</div>
+				
       </div>
+	  
+	<div class="titlepage" style="padding:30px;">Parcours Lumineux</div><br>
 <!-------------------Main--------------> 
 <div class="wrapper">
 <div class="one">
