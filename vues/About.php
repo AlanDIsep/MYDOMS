@@ -1,8 +1,5 @@
 <?php
 
-// On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
-session_start ();
-
 require "controleurs/verif_session.php";
 include('controleurs/nb_online.php');
 
@@ -10,9 +7,6 @@ include('controleurs/nb_online.php');
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
-	echo '<body>';
-	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['pass'].'.';
-	echo '<br />';
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';

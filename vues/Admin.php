@@ -278,7 +278,6 @@ else {
             <select id="account" name="DroitUtilisateur_id">
               <option value="1">Administrateur</option>
               <option value="2">Utilisateur</option>
-              <option value="3">Help Desk</option>
             </select><br><br>
 
             <input type="submit" name="submit">
@@ -471,10 +470,27 @@ else {
                 <?php echo $element['Nom']; ?>
               </td>
               <td>
-                <?php echo $element['Etat']; ?>
+                <?php
+                if ($element['Etat']==1){
+                  echo 'ON';
+                }
+                else {
+                  echo 'OFF';
+                }
+                ?>
+
               </td>
               <td>
-                <?php echo $element['Donnee']; ?>
+              <?php
+                if ($element['Type']=='Température'){
+                  echo $element['Donnee'];
+                  ?>°C<?php
+                }
+                else {
+                  echo $element['Donnee'];
+                  ?>%<?php
+                }
+                ?>
               </td>
               <td>
                 <?php echo $element['NumeroDeSerie']; ?>
