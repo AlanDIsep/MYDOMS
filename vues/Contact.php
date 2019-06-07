@@ -123,16 +123,31 @@ else {
             <input type="date" id="datepanne" name="Date" required>
             <br><br>
             <?php
-  $url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=9999";
+  
+  $url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=0G6C";
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_HEADER, FALSE);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   $data = curl_exec($ch);
-  echo($data);
   curl_close($ch);
-
-?>
+  $data_tab = str_split($data,33);
+  if ($type_capteur == "Capteur de Luminosité") {
+    $type_capteur_num = "5";
+  } else if ($type_capteur == "Capteur de distance") {
+    $type_capteur_num = "1";
+  }
+  $res = "0";
+  for($i=0, $size=count($data_tab);$i<$size;$i++){
+    $trame = $data_tab[$i];
+    //echo "$trame <br/>";
+    list($t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec) = sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+    list($t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec) = sscanf($trame,"%1d%4s%1s%1s%2x%4s%4s%2s%4d%2d%2d%2d%2d%2d");
+    if ($c == $type_capteur_num) {
+      $res = (int)$v;
+    }
+  }
+ ?>
 <br>
             <input type="submit" value="Envoyer">
          </form>
