@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\controleurs",
+    "\\CSS",
     "\\modele",
     "\\vues"
   ],
-  "SelectedNode": "\\vues\\Configuration.php",
+  "SelectedNode": "\\vues\\accueill.php",
   "PreviewInSolutionExplorer": false
 }
