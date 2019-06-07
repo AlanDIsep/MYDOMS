@@ -133,12 +133,14 @@ $capteur_type = array("1" => "distance modèle 1", "2" => "distance modèle 2", 
 "h" => "Requête Heure 2", "p" => "Requête data", "q" => "Requête année");
 $requete_tyep = array("1" => "Requête en écriture", "2" =>"Requête en lecture", "3" => "Requête en lecture/écriture");
 
-  $url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=0G6C";
+  $url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=9999";
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_HEADER, FALSE);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   $data = curl_exec($ch);
+  echo "Bonjour";
+  echo $data;
   curl_close($ch);
   $data_tab = str_split($data,33);
   if ($type_capteur == "Capteur de Luminosité") {
