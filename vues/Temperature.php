@@ -36,10 +36,18 @@ else {
 		<a href="index.php?cible=utilisateurs&fonction=Accueil"><img src="../CSS/mydoms.jpg" alt="logo" class="logo"></a>
 		<a href="vues/deconnexion.php"><img title="Logout" src="../CSS/icons/Bandeau/deconnexion.png" class="logo3ter"></a>
 		
+
+
+
+
 		
 </header>
 
 		
+
+
+
+
 			<!-------------------Titre de la Page--------------> 
 			<div class="titlepage">
 				<div class="bordertitle">
@@ -57,7 +65,41 @@ else {
 <main>
 	
 	
-	 
+	            <?php
+
+$capteur_type = array("1" => "distance modèle 1", "2" => "distance modèle 2", "3" => "température",
+"4" => "humidité", "5" => "lumière modèle 1", "6" => "couleur",
+"7" => "présence", "8" => "lumière modèle 2", "9" => "mouvement",
+"A" => "présence son modèle 1", "B" => "Envoie de la date JJ:MM", "C" => "Envoie de l'année AAAA",
+"D" => "Envoi valeur potentiomètre", "H" => "Requête Heure 1", "a" =>"Requête actionneur 1",
+"h" => "Requête Heure 2", "p" => "Requête data", "q" => "Requête année");
+$requete_tyep = array("1" => "Requête en écriture", "2" =>"Requête en lecture", "3" => "Requête en lecture/écriture");
+
+  $url = "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=001A";
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_HEADER, FALSE);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+  $data= (curl_exec($ch));
+  echo "Bonjour";
+  
+  curl_close($ch);
+  echo $data;
+  $data_tab = str_split($data,33);
+echo "Tabular Data:<br />";
+for($i=0, $size=count($data_tab); $i<$size; $i++){
+echo "Trame $i: $data_tab[$i]<br />";
+}
+$trame = $data_tab[0];
+// décodage avec des substring
+$t = substr($trame,0,1);
+$o = substr($trame,1,4);
+// …
+// décodage avec sscanf
+list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
+sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
+echo"la valeur de la température est $v" ?>
 	
 
 
@@ -100,6 +142,12 @@ else {
 				<div id="target" style="width:200px">';
 				$nom = $data['Nom'];
 				$consigne= $data['consigne'];
+
+				$SQL = "UPDATE equipement SET Donnee='$v' where idEquipement='5'";
+				mysqli_query($mysqli,$SQL);
+
+
+
 				$donnee= $data['Donnee'];
 				$etat=$data['Etat'];
 				echo '<h2>'.$nom.'</h2>';
