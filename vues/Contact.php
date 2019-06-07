@@ -125,7 +125,14 @@ else {
 
             <?php
 
-  
+$capteur_type = array("1" => "distance modèle 1", "2" => "distance modèle 2", "3" => "température",
+"4" => "humidité", "5" => "lumière modèle 1", "6" => "couleur",
+"7" => "présence", "8" => "lumière modèle 2", "9" => "mouvement",
+"A" => "présence son modèle 1", "B" => "Envoie de la date JJ:MM", "C" => "Envoie de l'année AAAA",
+"D" => "Envoi valeur potentiomètre", "H" => "Requête Heure 1", "a" =>"Requête actionneur 1",
+"h" => "Requête Heure 2", "p" => "Requête data", "q" => "Requête année");
+$requete_tyep = array("1" => "Requête en écriture", "2" =>"Requête en lecture", "3" => "Requête en lecture/écriture");
+
   $url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=0G6C";
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
