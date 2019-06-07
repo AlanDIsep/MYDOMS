@@ -122,6 +122,7 @@ else {
             <label for="date">Date de la panne *</label><br>
             <input type="date" id="datepanne" name="Date" required>
             <br><br>
+<<<<<<< HEAD
             <?php
   
   $url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=0G6C";
@@ -149,12 +150,16 @@ else {
   }
  ?>
 <br>
+=======
+>>>>>>> parent of 5dd3d91... xq
             <input type="submit" value="Envoyer">
          </form>
     </div>
     </div>
 
     <br><br>
+
+
 
 
 <!-------------------Footer-------------->
