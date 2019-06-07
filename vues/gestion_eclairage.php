@@ -4,6 +4,8 @@
 require "controleurs/verif_session.php";
 include('controleurs/nb_online.php');
 
+
+
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
@@ -71,7 +73,13 @@ $o = substr($trame,1,4);
 // décodage avec sscanf
 list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
 sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+
+	$SQL = "UPDATE equipement SET Donnee='$v' where idEquipement='6'";
+				mysqli_query($mysqli,$SQL);
 		?>
+
+
+
 			<!-------------------Titre de la Page--------------> 
 			<div class="titlepage">
 				<div class="bordertitle">
