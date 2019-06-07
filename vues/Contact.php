@@ -126,6 +126,9 @@ else {
 <<<<<<< HEAD
 <<<<<<< HEAD
             <?php
+<<<<<<< HEAD
+
+=======
   
   $url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=0G6C";
   $ch = curl_init();
@@ -151,6 +154,7 @@ else {
     }
   }
  ?>
+>>>>>>> b92faedd5f7595355f1cbd0da3bc058112810d77
 <br>
 
 =======
