@@ -62,7 +62,7 @@ $requete_tyep = array("1" => "Requête en écriture", "2" =>"Requête en lecture
   echo "Bonjour";
   
   curl_close($ch);
-  echo $data;
+  //echo $data;
   $data_tab = str_split($data,33);
 
 $trame = $data_tab[0];
@@ -186,6 +186,7 @@ sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 				<select name="idUser" style="visibility:hidden;">
 				<option value="'.$id1.'"></option>
 				</select>
+
 				</form>';
 				
 				
