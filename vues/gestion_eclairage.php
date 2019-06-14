@@ -74,8 +74,10 @@ $o = substr($trame,1,4);
 list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
 sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 
-	$SQL = "UPDATE equipement SET Donnee='$v' where idEquipement='6'";
+	if ($n == 35){
+				$SQL = "UPDATE equipement SET Donnee='$v' where idEquipement='6'";
 				mysqli_query($mysqli,$SQL);
+				}
 		?>
 
 

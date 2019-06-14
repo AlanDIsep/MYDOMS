@@ -81,16 +81,17 @@ $requete_tyep = array("1" => "Requête en écriture", "2" =>"Requête en lecture
   curl_setopt($ch, CURLOPT_HEADER, FALSE);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   $data= (curl_exec($ch));
-  echo "Bonjour";
+  
   
   curl_close($ch);
-  echo $data;
+  //echo $data;
   $data_tab = str_split($data,33);
-echo "Tabular Data:<br />";
+//echo "Tabular Data:<br />";
 for($i=0, $size=count($data_tab); $i<$size; $i++){
-echo "Trame $i: $data_tab[$i]<br />";
+//echo "Trame $i: $data_tab[$i]<br />";
 }
-$trame = $data_tab[0];
+$trame = $data_tab[$size-2];
+//echo $size;
 // décodage avec des substring
 $t = substr($trame,0,1);
 $o = substr($trame,1,4);
@@ -98,9 +99,70 @@ $o = substr($trame,1,4);
 // décodage avec sscanf
 list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
 sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
-echo"la valeur de la température est $v" ?>
+//echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
+//echo"la valeur de la température est $v" ?>
 	
+	<?php 
+// PHP program to convert  
+// hexadecimal to decimal 
+  
+// Function to convert 
+// hexadecimal to decimal 
+
+$hexVal=$v;
+
+
+function hexadecimalToDecimal($hexVal) 
+{  
+    $len = strlen($hexVal); 
+      
+    // Initializing base value  
+    // to 1, i.e 16^0 
+    $base = 1; 
+      
+    $dec_val = 0; 
+      
+    // Extracting characters as  
+    // digits from last character 
+    for ($i = $len - 1; $i >= 0; $i--) 
+    {  
+        // if character lies in '0'-'9',  
+        // converting it to integral 0-9  
+        // by subtracting 48 from ASCII value. 
+        if ($hexVal[$i] >= '0' &&  
+            $hexVal[$i] <= '9') 
+        { 
+            $dec_val += (ord($hexVal[$i]) - 48) *  
+                                         $base; 
+                  
+            // incrementing base by power 
+            $base = $base * 16; 
+        } 
+  
+        // if character lies in 'A'-'F' ,   
+        // converting it to integral  
+        // 10 - 15 by subtracting 55  
+        // from ASCII value 
+        else if ($hexVal[$i] >= 'A' &&  
+                 $hexVal[$i] <= 'F') 
+        { 
+            $dec_val += (ord($hexVal[$i]) - 55) *  
+                                         $base; 
+          
+            // incrementing base by power 
+            $base = $base * 16; 
+        } 
+    } 
+      
+    return $dec_val; 
+} 
+  
+// Driver Code 
+$hexNum = $v;  
+$v= hexadecimalToDecimal($hexNum)/10; 
+  echo $v;
+// This code is contributed by mits 
+?> 
 
 
 	<?php $mysqli = mysqli_connect("localhost", "root", "root", "mydoms","8889"); ?>
@@ -143,8 +205,12 @@ echo"la valeur de la température est $v" ?>
 				$nom = $data['Nom'];
 				$consigne= $data['consigne'];
 
+
+				if ($n == 33){
 				$SQL = "UPDATE equipement SET Donnee='$v' where idEquipement='5'";
 				mysqli_query($mysqli,$SQL);
+				}
+				
 
 
 
