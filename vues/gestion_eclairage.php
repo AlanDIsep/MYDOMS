@@ -4,8 +4,6 @@
 require "controleurs/verif_session.php";
 include('controleurs/nb_online.php');
 
-
-
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
 
@@ -59,7 +57,6 @@ $requete_tyep = array("1" => "Requête en écriture", "2" =>"Requête en lecture
   curl_setopt($ch, CURLOPT_HEADER, FALSE);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   $data= (curl_exec($ch));
-  echo "Bonjour";
   
   curl_close($ch);
   //echo $data;
@@ -74,14 +71,8 @@ $o = substr($trame,1,4);
 list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
 sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 
-	if ($n == 35){
-				$SQL = "UPDATE equipement SET Donnee='$v' where idEquipement='6'";
-				mysqli_query($mysqli,$SQL);
-				}
+
 		?>
-
-
-
 			<!-------------------Titre de la Page--------------> 
 			<div class="titlepage">
 				<div class="bordertitle">
@@ -179,7 +170,17 @@ sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 				<br>'
 				;
 				
+				$valeur =  "1001A2301002B01251B";
+				$ch = curl_init();
+				$url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2301002B01251B";
+				curl_setopt($ch, CURLOPT_URL, $url);
+				curl_setopt($ch, CURLOPT_HEADER, FALSE);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, FALSE);
+				$output = curl_exec($ch);
+				curl_close($ch);
 
+				echo $output;
 
 				echo'				
 				<button type="submit" style="font-size:small;">Appliquer</button>
@@ -187,6 +188,8 @@ sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 				<option value="'.$id1.'"></option>
 				</select>
 
+
+				
 				</form>';
 				
 				
