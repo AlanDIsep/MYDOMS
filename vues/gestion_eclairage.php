@@ -1,5 +1,8 @@
 <?php
 
+$lien = "http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2301002B01251B";
+file_get_contents($lien);
+
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 require "controleurs/verif_session.php";
 include('controleurs/nb_online.php');
@@ -169,18 +172,19 @@ sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 				
 				<br>'
 				;
-				
-				$valeur =  "1001A2301002B01251B";
-				$ch = curl_init();
-				$url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2301002B01251B";
-				curl_setopt($ch, CURLOPT_URL, $url);
-				curl_setopt($ch, CURLOPT_HEADER, FALSE);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, FALSE);
-				$output = curl_exec($ch);
-				curl_close($ch);
 
-				echo $output;
+				$lien = "http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2301002B01250A";
+
+				$curl = curl_init();
+				
+				curl_setopt($curl, CURLOPT_URL, $lien);
+				curl_setopt($curl, CURLOPT_COOKIESESSION, true);
+				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($curl, CURLOPT_POST, true);
+
+				
+				$return = curl_exec($curl);
+				curl_close($curl);
 
 				echo'				
 				<button type="submit" style="font-size:small;">Appliquer</button>
