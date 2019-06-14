@@ -167,20 +167,27 @@ sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 
 				<output name="result"></output>
 				
-				<br>'
-				;
+				<br>';
 				
-				$valeur =  "1001A2301002B01251B";
-				$ch = curl_init();
+				
+				//$valeur =  "1001A2301002B01251B";
+				//$ch = curl_init();
 				$url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2301002B01251B";
-				curl_setopt($ch, CURLOPT_URL, $url);
+				/*curl_setopt($ch, CURLOPT_URL, $url);
 				curl_setopt($ch, CURLOPT_HEADER, FALSE);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, FALSE);
 				$output = curl_exec($ch);
 				curl_close($ch);
 
-				echo $output;
+				echo $output;*/
+				
+				
+				
+				
+				if(isset($_POST['submit'])){
+				header('Location: http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2301002B01251B');
+				} 
 
 				echo'				
 				<button type="submit" style="font-size:small;">Appliquer</button>
