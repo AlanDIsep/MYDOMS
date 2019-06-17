@@ -1,6 +1,6 @@
 <?php
 
-$lien = "http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2301002B01251B";
+$lien = "http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2a36000119250A";
 file_get_contents($lien);
 
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
@@ -173,7 +173,7 @@ sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 				<br>'
 				;
 
-				$lien = "http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2301002B01250A";
+				$lien = "http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=001A&TRAME=1001A2a36000119250A";
 
 				$curl = curl_init();
 				
