@@ -64,15 +64,95 @@ $requete_tyep = array("1" => "Requête en écriture", "2" =>"Requête en lecture
   curl_close($ch);
   //echo $data;
   $data_tab = str_split($data,33);
-
-$trame = $data_tab[0];
+//echo "Tabular Data:<br />";
+for($i=0, $size=count($data_tab); $i<$size; $i++){
+//echo "Trame $i: $data_tab[$i]<br />";
+}
+$trame = $data_tab[$size-2];
+//echo $size;
 // décodage avec des substring
 $t = substr($trame,0,1);
 $o = substr($trame,1,4);
+
+
+echo'Trame numero 2:';
+$trame2 = substr($trame,-18);
+//echo $trame2;
+
+
 // …
 // décodage avec sscanf
 list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
 sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+
+
+
+
+
+$hexVal=$v;
+
+
+function hexadecimalToDecimal($hexVal) 
+{  
+    $len = strlen($hexVal); 
+      
+    // Initializing base value  
+    // to 1, i.e 16^0 
+    $base = 1; 
+      
+    $dec_val = 0; 
+      
+    // Extracting characters as  
+    // digits from last character 
+    for ($i = $len - 1; $i >= 0; $i--) 
+    {  
+        // if character lies in '0'-'9',  
+        // converting it to integral 0-9  
+        // by subtracting 48 from ASCII value. 
+        if ($hexVal[$i] >= '0' &&  
+            $hexVal[$i] <= '9') 
+        { 
+            $dec_val += (ord($hexVal[$i]) - 48) *  
+                                         $base; 
+                  
+            // incrementing base by power 
+            $base = $base * 16; 
+        } 
+  
+        // if character lies in 'A'-'F' ,   
+        // converting it to integral  
+        // 10 - 15 by subtracting 55  
+        // from ASCII value 
+        else if ($hexVal[$i] >= 'A' &&  
+                 $hexVal[$i] <= 'F') 
+        { 
+            $dec_val += (ord($hexVal[$i]) - 55) *  
+                                         $base; 
+          
+            // incrementing base by power 
+            $base = $base * 16; 
+        } 
+    } 
+      
+    return $dec_val; 
+} 
+  
+// Driver Code 
+$hexNum = $v;  
+$v= hexadecimalToDecimal($hexNum); 
+  echo $v;
+
+    
+
+
+  
+
+
+
+
+
+
+
 
 
 		?>
@@ -122,6 +202,15 @@ sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 				echo '
 				<div id="conteneur" style="width:200px ">
 				<div id="target" style="width:200px">';
+
+
+				if ($n == 35){
+				$SQL = "UPDATE equipement SET Donnee='$v' where idEquipement='6'";
+				mysqli_query($mysqli,$SQL);
+				}
+
+
+
 				$nom = $data['Nom'];
 				$consigne= $data['consigne'];
 				$donnee= $data['Donnee'];

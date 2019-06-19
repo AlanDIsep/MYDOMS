@@ -95,12 +95,26 @@ $trame = $data_tab[$size-2];
 // décodage avec des substring
 $t = substr($trame,0,1);
 $o = substr($trame,1,4);
+
+
+echo'Trame numero 2:';
+$trame2 = substr($trame,-18);
+echo $trame2;
+echo'FIN TRAME2';
+
+
+
 // …
 // décodage avec sscanf
 list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
 sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 //echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
-//echo"la valeur de la température est $v" ?>
+//echo"la valeur de la température est $v";
+echo $v;
+
+?>
+	
+
 	
 	<?php 
 // PHP program to convert  
